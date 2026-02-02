@@ -9,95 +9,95 @@ actions:
     info:
       x-overlay-applied: structured-overlay
     paths:
-      "/api/v1/bookdrop/files/bulk-edit":
-        post:
-          operationId: BulkEditBookdropMetadata
-      "/api/v1/book-notes/book/{bookId}":
-        get:
-          operationId: GetNotesForBookV1
-      "/api/v1/book-notes/{noteId}":
-        delete:
-          operationId: DeleteNoteV1          
-      "/api/v1/kobo-settings":
-        put:
-          operationId: UpdateKoboSettings
-      "/api/kobo/{token}":
-        get:
-          operationId: UnhandledKoboGet
-        put:
-          operationId: UnhandledKoboPut
-        post:
-          operationId: UnhandledKoboPost
-        delete:
-          operationId: UnhandledKoboDelete
-        patch:
-          operationId: UnhandledKoboPatch
-      "/api/v1/hardcover-sync-settings":
-        get:
-          operationId: GetHardcoverSyncSettings
-        put:
-          operationId: UpdateHardcoverSyncSettings
-      "/api/v1/files/upload/bookdrop":
-        post:
-          operationId: UploadFileToBookdrop
-      "/api/v1/books/regenerate-covers":
-        post:
-          operationId: RegenerateBookCovers
-      "/api/v1/book-notes":
-        post:
-          operationId: CreateNoteV1
-      "/api/koreader/users/create":
-        post:
-          operationId: CreateKoReaderUser
-      "/api/v2/opds-users/{id}":
-        delete:
-          operationId: DeleteOpdsUserV2
-        patch:
-          operationId: UpdateOpdsUserV2
-      "/komga/api/v2/users/me":
-        get:
-          operationId: GetKomgaCurrentUser
-      "/komga/api/v1/libraries/{libraryId}":
-        get:
-          operationId: GetKomgaLibraryById
-      "/api/v1/opds/{bookId}/download":
-        get:
-          operationId: DownloadOpdsBook
-      "/api/v1/media/book/{bookId}/thumbnail":
-        get:
-          operationId: GetBookThumbnailV1          
-      "/api/v1/libraries/{libraryId}/book/{bookId}":
-        get:
-          operationId: GetLibraryBookById
-      "/api/v1/books":
-        get:
-          operationId: ListBooks
-      "/api/v1/media/book/{bookId}/cover":
-        get:
-          operationId: GetBookCoverV1       
-      "/api/v1/epub/{bookId}/info":
-        get:
-          operationId: GetEpubBookInfo          
-      "/api/v1/cbx/{bookId}/pages":
-        get:
-          operationId: GetCbxBookPages
-      "/api/v1/books/{bookId}/download":
-        get:
-          operationId: DownloadBookById
-      "/api/mobile/v1/libraries":
-        get:
-          operationId: MobileListLibrariesV1
-      "/api/mobile/v1/books":
-        get:
-          operationId: MobileListBooksV1
-      "/api/magic-shelves/{id}":
-        get:
-          operationId: GetMagicShelfById
-        delete:
-          operationId: DeleteMagicShelfById
-      "/api/kobo/{token}/v1/books/{bookId}/download":
-        get:
-          operationId: KoboDownloadBookByIdV1
-      "/api/v1/books/{bookId}":
-        get:
-          operationId: GetBookById
+       "/api/koreader/users/create":
+         post:
+           operationId: CreateKoReaderUser
+       "/api/kobo/{token}":
+         delete:
+           operationId: UnhandledKoboDelete
+         get:
+           operationId: UnhandledKoboGet
+         patch:
+           operationId: UnhandledKoboPatch
+         post:
+           operationId: UnhandledKoboPost
+         put:
+           operationId: UnhandledKoboPut
+       "/api/kobo/{token}/v1/books/{bookId}/download":
+         get:
+           operationId: KoboDownloadBookByIdV1
+       "/api/magic-shelves/{id}":
+         delete:
+           operationId: DeleteMagicShelfById
+         get:
+           operationId: GetMagicShelfById
+       "/api/mobile/v1/books":
+         get:
+           operationId: MobileListBooksV1
+       "/api/mobile/v1/libraries":
+         get:
+           operationId: MobileListLibrariesV1
+       "/api/v1/book-notes":
+         post:
+           operationId: CreateNoteV1
+       "/api/v1/book-notes/book/{bookId}":
+         get:
+           operationId: GetNotesForBookV1
+       "/api/v1/book-notes/{noteId}":
+         delete:
+           operationId: DeleteNoteV1
+       "/api/v1/bookdrop/files/bulk-edit":
+         post:
+           operationId: BulkEditBookdropMetadata
+       "/api/v1/books":
+         get:
+           operationId: ListBooks
+       "/api/v1/books/{bookId}":
+         get:
+           operationId: GetBookById
+       "/api/v1/books/{bookId}/download":
+         get:
+           operationId: DownloadBookById
+       "/api/v1/books/regenerate-covers":
+         post:
+           operationId: RegenerateBookCovers
+       "/api/v1/cbx/{bookId}/pages":
+         get:
+           operationId: GetCbxBookPages
+       "/api/v1/epub/{bookId}/info":
+         get:
+           operationId: GetEpubBookInfo
+       "/api/v1/files/upload/bookdrop":
+         post:
+           operationId: UploadFileToBookdrop
+       "/api/v1/hardcover-sync-settings":
+         get:
+           operationId: GetHardcoverSyncSettings
+         put:
+           operationId: UpdateHardcoverSyncSettings
+       "/api/v1/kobo-settings":
+         put:
+           operationId: UpdateKoboSettings
+       "/api/v1/libraries/{libraryId}/book/{bookId}":
+         get:
+           operationId: GetLibraryBookById
+       "/api/v1/media/book/{bookId}/cover":
+         get:
+           operationId: GetBookCoverV1
+       "/api/v1/media/book/{bookId}/thumbnail":
+         get:
+           operationId: GetBookThumbnailV1
+       "/api/v1/opds/{bookId}/download":
+         get:
+           operationId: DownloadOpdsBook
+       "/api/v2/opds-users/{id}":
+         delete:
+           operationId: DeleteOpdsUserV2
+         patch:
+           operationId: UpdateOpdsUserV2
+       "/komga/api/v1/libraries/{libraryId}":
+         get:
+           operationId: GetKomgaLibraryById
+       "/komga/api/v2/users/me":
+         get:
+           operationId: GetKomgaCurrentUser
