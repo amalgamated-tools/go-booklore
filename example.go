@@ -28,6 +28,9 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
+	if r.JSON200 == nil {
+		panic("received nil JSON200 response from ListBooksWithResponse")
+	}
 	for _, book := range *r.JSON200 {
 		println(*book.Title)
 	}
