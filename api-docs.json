@@ -6733,22 +6733,7 @@
           "200": {
             "description": "OpenSearch description returned successfully",
             "content": {
-              "application/opensearchdescription+xml": {
-                "schema": {
-                  "type": "string"
-                }
-              },
-              "application/atom+xml": {
-                "schema": {
-                  "type": "string"
-                }
-              },
               "application/xml": {
-                "schema": {
-                  "type": "string"
-                }
-              },
-              "text/xml": {
                 "schema": {
                   "type": "string"
                 }

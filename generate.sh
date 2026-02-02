@@ -8,12 +8,27 @@ wget -q -O api-docs.json https://demo.booklore.org/api/v1/api-docs
 # 2. Convert all "*/*" content types to "application/json" (required for oapi-codegen to generate JSON200 fields)
 # 3. Remove /** suffix from paths
 # 4. Add the missing {token} and {bookId} parameters to any path that includes them but doesn't define them
+# 5. Remove duplicate XML content types, keeping only the first one
 jq '
   (.. | select(.exclusiveMinimum? == 0)) .exclusiveMinimum = true |
   (.. | select(.content? != null) | .content) |= 
     with_entries(
       if .key == "*/*" then
         .key = "application/json"
+      else
+        .
+      end
+    ) |
+  (.. | select(.content? != null) | .content) |=
+    (
+      # Remove duplicate XML content types
+      if (has("application/opensearchdescription+xml") or has("application/atom+xml") or has("application/xml") or has("text/xml")) then
+        # Keep only application/xml if multiple XML types exist
+        with_entries(
+          select(
+            .key | test("(application/opensearchdescription\\+xml|application/atom\\+xml|text/xml)") | not
+          )
+        )
       else
         .
       end

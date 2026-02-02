@@ -7,6 +7,7 @@ import (
 	"bytes"
 	"context"
 	"encoding/json"
+	"encoding/xml"
 	"fmt"
 	"io"
 	"net/http"
@@ -393,6 +394,45 @@ const (
 const (
 	NewPdfViewerPreferencesScrollModeINFINITE  NewPdfViewerPreferencesScrollMode = "INFINITE"
 	NewPdfViewerPreferencesScrollModePAGINATED NewPdfViewerPreferencesScrollMode = "PAGINATED"
+)
+
+// Defines values for OpdsUserV2SortOrder.
+const (
+	OpdsUserV2SortOrderAUTHORASC  OpdsUserV2SortOrder = "AUTHOR_ASC"
+	OpdsUserV2SortOrderAUTHORDESC OpdsUserV2SortOrder = "AUTHOR_DESC"
+	OpdsUserV2SortOrderRATINGASC  OpdsUserV2SortOrder = "RATING_ASC"
+	OpdsUserV2SortOrderRATINGDESC OpdsUserV2SortOrder = "RATING_DESC"
+	OpdsUserV2SortOrderRECENT     OpdsUserV2SortOrder = "RECENT"
+	OpdsUserV2SortOrderSERIESASC  OpdsUserV2SortOrder = "SERIES_ASC"
+	OpdsUserV2SortOrderSERIESDESC OpdsUserV2SortOrder = "SERIES_DESC"
+	OpdsUserV2SortOrderTITLEASC   OpdsUserV2SortOrder = "TITLE_ASC"
+	OpdsUserV2SortOrderTITLEDESC  OpdsUserV2SortOrder = "TITLE_DESC"
+)
+
+// Defines values for OpdsUserV2CreateRequestSortOrder.
+const (
+	OpdsUserV2CreateRequestSortOrderAUTHORASC  OpdsUserV2CreateRequestSortOrder = "AUTHOR_ASC"
+	OpdsUserV2CreateRequestSortOrderAUTHORDESC OpdsUserV2CreateRequestSortOrder = "AUTHOR_DESC"
+	OpdsUserV2CreateRequestSortOrderRATINGASC  OpdsUserV2CreateRequestSortOrder = "RATING_ASC"
+	OpdsUserV2CreateRequestSortOrderRATINGDESC OpdsUserV2CreateRequestSortOrder = "RATING_DESC"
+	OpdsUserV2CreateRequestSortOrderRECENT     OpdsUserV2CreateRequestSortOrder = "RECENT"
+	OpdsUserV2CreateRequestSortOrderSERIESASC  OpdsUserV2CreateRequestSortOrder = "SERIES_ASC"
+	OpdsUserV2CreateRequestSortOrderSERIESDESC OpdsUserV2CreateRequestSortOrder = "SERIES_DESC"
+	OpdsUserV2CreateRequestSortOrderTITLEASC   OpdsUserV2CreateRequestSortOrder = "TITLE_ASC"
+	OpdsUserV2CreateRequestSortOrderTITLEDESC  OpdsUserV2CreateRequestSortOrder = "TITLE_DESC"
+)
+
+// Defines values for OpdsUserV2UpdateRequestSortOrder.
+const (
+	AUTHORASC  OpdsUserV2UpdateRequestSortOrder = "AUTHOR_ASC"
+	AUTHORDESC OpdsUserV2UpdateRequestSortOrder = "AUTHOR_DESC"
+	RATINGASC  OpdsUserV2UpdateRequestSortOrder = "RATING_ASC"
+	RATINGDESC OpdsUserV2UpdateRequestSortOrder = "RATING_DESC"
+	RECENT     OpdsUserV2UpdateRequestSortOrder = "RECENT"
+	SERIESASC  OpdsUserV2UpdateRequestSortOrder = "SERIES_ASC"
+	SERIESDESC OpdsUserV2UpdateRequestSortOrder = "SERIES_DESC"
+	TITLEASC   OpdsUserV2UpdateRequestSortOrder = "TITLE_ASC"
+	TITLEDESC  OpdsUserV2UpdateRequestSortOrder = "TITLE_DESC"
 )
 
 // Defines values for PerBookSettingCbx.
@@ -2166,6 +2206,35 @@ type OidcProviderDetails struct {
 	ProviderName *string       `json:"providerName,omitempty"`
 }
 
+// OpdsUserV2 defines model for OpdsUserV2.
+type OpdsUserV2 struct {
+	Id        *int64               `json:"id,omitempty"`
+	SortOrder *OpdsUserV2SortOrder `json:"sortOrder,omitempty"`
+	UserId    *int64               `json:"userId,omitempty"`
+	Username  *string              `json:"username,omitempty"`
+}
+
+// OpdsUserV2SortOrder defines model for OpdsUserV2.SortOrder.
+type OpdsUserV2SortOrder string
+
+// OpdsUserV2CreateRequest OPDS user creation request
+type OpdsUserV2CreateRequest struct {
+	Password  *string                           `json:"password,omitempty"`
+	SortOrder *OpdsUserV2CreateRequestSortOrder `json:"sortOrder,omitempty"`
+	Username  *string                           `json:"username,omitempty"`
+}
+
+// OpdsUserV2CreateRequestSortOrder defines model for OpdsUserV2CreateRequest.SortOrder.
+type OpdsUserV2CreateRequestSortOrder string
+
+// OpdsUserV2UpdateRequest OPDS user update request
+type OpdsUserV2UpdateRequest struct {
+	SortOrder OpdsUserV2UpdateRequestSortOrder `json:"sortOrder"`
+}
+
+// OpdsUserV2UpdateRequestSortOrder defines model for OpdsUserV2UpdateRequest.SortOrder.
+type OpdsUserV2UpdateRequestSortOrder string
+
 // OverrideDetails defines model for OverrideDetails.
 type OverrideDetails struct {
 	OverlayBookType *bool   `json:"overlayBookType,omitempty"`
@@ -3277,6 +3346,63 @@ type GetTimelineForWeekParams struct {
 	Week int32 `form:"week" json:"week"`
 }
 
+// GetAllBooksParams defines parameters for GetAllBooks.
+type GetAllBooksParams struct {
+	// LibraryId Library ID filter
+	LibraryId *int64 `form:"library_id,omitempty" json:"library_id,omitempty"`
+
+	// Page Page number
+	Page *int32 `form:"page,omitempty" json:"page,omitempty"`
+
+	// Size Page size
+	Size *int32 `form:"size,omitempty" json:"size,omitempty"`
+}
+
+// GetBookPageParams defines parameters for GetBookPage.
+type GetBookPageParams struct {
+	// Convert Convert image format (e.g., 'png')
+	Convert *string `form:"convert,omitempty" json:"convert,omitempty"`
+}
+
+// GetCollectionsParams defines parameters for GetCollections.
+type GetCollectionsParams struct {
+	// Page Page number
+	Page *int32 `form:"page,omitempty" json:"page,omitempty"`
+
+	// Size Page size
+	Size *int32 `form:"size,omitempty" json:"size,omitempty"`
+
+	// Unpaged Return all collections without paging
+	Unpaged *bool `form:"unpaged,omitempty" json:"unpaged,omitempty"`
+}
+
+// GetAllSeriesParams defines parameters for GetAllSeries.
+type GetAllSeriesParams struct {
+	// LibraryId Library ID filter
+	LibraryId *int64 `form:"library_id,omitempty" json:"library_id,omitempty"`
+
+	// Page Page number
+	Page *int32 `form:"page,omitempty" json:"page,omitempty"`
+
+	// Size Page size
+	Size *int32 `form:"size,omitempty" json:"size,omitempty"`
+
+	// Unpaged Return all books without paging
+	Unpaged *bool `form:"unpaged,omitempty" json:"unpaged,omitempty"`
+}
+
+// GetSeriesBooksParams defines parameters for GetSeriesBooks.
+type GetSeriesBooksParams struct {
+	// Page Page number
+	Page *int32 `form:"page,omitempty" json:"page,omitempty"`
+
+	// Size Page size
+	Size *int32 `form:"size,omitempty" json:"size,omitempty"`
+
+	// Unpaged Return all books without paging
+	Unpaged *bool `form:"unpaged,omitempty" json:"unpaged,omitempty"`
+}
+
 // CatchAll3JSONRequestBody defines body for CatchAll3 for application/json ContentType.
 type CatchAll3JSONRequestBody = CatchAll3JSONBody
 
@@ -3513,6 +3639,12 @@ type CreateEmailRecipientJSONRequestBody = CreateEmailRecipientRequest
 
 // UpdateEmailRecipientJSONRequestBody defines body for UpdateEmailRecipient for application/json ContentType.
 type UpdateEmailRecipientJSONRequestBody = CreateEmailRecipientRequest
+
+// CreateUserJSONRequestBody defines body for CreateUser for application/json ContentType.
+type CreateUserJSONRequestBody = OpdsUserV2CreateRequest
+
+// UpdateUser1JSONRequestBody defines body for UpdateUser1 for application/json ContentType.
+type UpdateUser1JSONRequestBody = OpdsUserV2UpdateRequest
 
 // RequestEditorFn  is the function signature for the RequestEditor callback function
 type RequestEditorFn func(ctx context.Context, req *http.Request) error
@@ -4183,6 +4315,9 @@ type ClientInterface interface {
 	// GetRecentBooks request
 	GetRecentBooks(ctx context.Context, reqEditors ...RequestEditorFn) (*http.Response, error)
 
+	// GetSearchDescription request
+	GetSearchDescription(ctx context.Context, reqEditors ...RequestEditorFn) (*http.Response, error)
+
 	// GetSeriesNavigation request
 	GetSeriesNavigation(ctx context.Context, reqEditors ...RequestEditorFn) (*http.Response, error)
 
@@ -4422,6 +4557,64 @@ type ClientInterface interface {
 
 	// SetDefaultEmailRecipient request
 	SetDefaultEmailRecipient(ctx context.Context, id int64, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// GetUsers request
+	GetUsers(ctx context.Context, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// CreateUserWithBody request with any body
+	CreateUserWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	CreateUser(ctx context.Context, body CreateUserJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// DeleteUser1 request
+	DeleteUser1(ctx context.Context, id int64, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// UpdateUser1WithBody request with any body
+	UpdateUser1WithBody(ctx context.Context, id int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	UpdateUser1(ctx context.Context, id int64, body UpdateUser1JSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// GetAllBooks request
+	GetAllBooks(ctx context.Context, params *GetAllBooksParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// GetBook request
+	GetBook(ctx context.Context, bookId int64, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// DownloadBook request
+	DownloadBook(ctx context.Context, bookId int64, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// GetBookPages request
+	GetBookPages(ctx context.Context, bookId int64, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// GetBookPage request
+	GetBookPage(ctx context.Context, bookId int64, pageNumber int32, params *GetBookPageParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// GetBookThumbnail request
+	GetBookThumbnail(ctx context.Context, bookId int64, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// GetCollections request
+	GetCollections(ctx context.Context, params *GetCollectionsParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// GetAllLibraries request
+	GetAllLibraries(ctx context.Context, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// GetLibrary1 request
+	GetLibrary1(ctx context.Context, libraryId int64, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// GetAllSeries request
+	GetAllSeries(ctx context.Context, params *GetAllSeriesParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// GetSeries request
+	GetSeries(ctx context.Context, seriesId string, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// GetSeriesBooks request
+	GetSeriesBooks(ctx context.Context, seriesId string, params *GetSeriesBooksParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// GetSeriesThumbnail request
+	GetSeriesThumbnail(ctx context.Context, seriesId string, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// GetCurrentUser1 request
+	GetCurrentUser1(ctx context.Context, reqEditors ...RequestEditorFn) (*http.Response, error)
 }
 
 func (c *Client) CatchAll3WithBody(ctx context.Context, token string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
@@ -7040,6 +7233,18 @@ func (c *Client) GetRecentBooks(ctx context.Context, reqEditors ...RequestEditor
 	return c.Client.Do(req)
 }
 
+func (c *Client) GetSearchDescription(ctx context.Context, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetSearchDescriptionRequest(c.Server)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
 func (c *Client) GetSeriesNavigation(ctx context.Context, reqEditors ...RequestEditorFn) (*http.Response, error) {
 	req, err := NewGetSeriesNavigationRequest(c.Server)
 	if err != nil {
@@ -8062,6 +8267,246 @@ func (c *Client) UpdateEmailRecipient(ctx context.Context, id int64, body Update
 
 func (c *Client) SetDefaultEmailRecipient(ctx context.Context, id int64, reqEditors ...RequestEditorFn) (*http.Response, error) {
 	req, err := NewSetDefaultEmailRecipientRequest(c.Server, id)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) GetUsers(ctx context.Context, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetUsersRequest(c.Server)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) CreateUserWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewCreateUserRequestWithBody(c.Server, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) CreateUser(ctx context.Context, body CreateUserJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewCreateUserRequest(c.Server, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) DeleteUser1(ctx context.Context, id int64, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewDeleteUser1Request(c.Server, id)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) UpdateUser1WithBody(ctx context.Context, id int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewUpdateUser1RequestWithBody(c.Server, id, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) UpdateUser1(ctx context.Context, id int64, body UpdateUser1JSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewUpdateUser1Request(c.Server, id, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) GetAllBooks(ctx context.Context, params *GetAllBooksParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetAllBooksRequest(c.Server, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) GetBook(ctx context.Context, bookId int64, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetBookRequest(c.Server, bookId)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) DownloadBook(ctx context.Context, bookId int64, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewDownloadBookRequest(c.Server, bookId)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) GetBookPages(ctx context.Context, bookId int64, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetBookPagesRequest(c.Server, bookId)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) GetBookPage(ctx context.Context, bookId int64, pageNumber int32, params *GetBookPageParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetBookPageRequest(c.Server, bookId, pageNumber, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) GetBookThumbnail(ctx context.Context, bookId int64, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetBookThumbnailRequest(c.Server, bookId)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) GetCollections(ctx context.Context, params *GetCollectionsParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetCollectionsRequest(c.Server, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) GetAllLibraries(ctx context.Context, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetAllLibrariesRequest(c.Server)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) GetLibrary1(ctx context.Context, libraryId int64, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetLibrary1Request(c.Server, libraryId)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) GetAllSeries(ctx context.Context, params *GetAllSeriesParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetAllSeriesRequest(c.Server, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) GetSeries(ctx context.Context, seriesId string, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetSeriesRequest(c.Server, seriesId)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) GetSeriesBooks(ctx context.Context, seriesId string, params *GetSeriesBooksParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetSeriesBooksRequest(c.Server, seriesId, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) GetSeriesThumbnail(ctx context.Context, seriesId string, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetSeriesThumbnailRequest(c.Server, seriesId)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) GetCurrentUser1(ctx context.Context, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetCurrentUser1Request(c.Server)
 	if err != nil {
 		return nil, err
 	}
@@ -15003,6 +15448,33 @@ func NewGetRecentBooksRequest(server string) (*http.Request, error) {
 	return req, nil
 }
 
+// NewGetSearchDescriptionRequest generates requests for GetSearchDescription
+func NewGetSearchDescriptionRequest(server string) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/api/v1/opds/search.opds")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("GET", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
 // NewGetSeriesNavigationRequest generates requests for GetSeriesNavigation
 func NewGetSeriesNavigationRequest(server string) (*http.Request, error) {
 	var err error
@@ -17593,6 +18065,856 @@ func NewSetDefaultEmailRecipientRequest(server string, id int64) (*http.Request,
 	return req, nil
 }
 
+// NewGetUsersRequest generates requests for GetUsers
+func NewGetUsersRequest(server string) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/api/v2/opds-users")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("GET", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewCreateUserRequest calls the generic CreateUser builder with application/json body
+func NewCreateUserRequest(server string, body CreateUserJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewCreateUserRequestWithBody(server, "application/json", bodyReader)
+}
+
+// NewCreateUserRequestWithBody generates requests for CreateUser with any type of body
+func NewCreateUserRequestWithBody(server string, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/api/v2/opds-users")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("POST", queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewDeleteUser1Request generates requests for DeleteUser1
+func NewDeleteUser1Request(server string, id int64) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "id", runtime.ParamLocationPath, id)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/api/v2/opds-users/%s", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("DELETE", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewUpdateUser1Request calls the generic UpdateUser1 builder with application/json body
+func NewUpdateUser1Request(server string, id int64, body UpdateUser1JSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewUpdateUser1RequestWithBody(server, id, "application/json", bodyReader)
+}
+
+// NewUpdateUser1RequestWithBody generates requests for UpdateUser1 with any type of body
+func NewUpdateUser1RequestWithBody(server string, id int64, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "id", runtime.ParamLocationPath, id)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/api/v2/opds-users/%s", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("PATCH", queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewGetAllBooksRequest generates requests for GetAllBooks
+func NewGetAllBooksRequest(server string, params *GetAllBooksParams) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/komga/api/v1/books")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		queryValues := queryURL.Query()
+
+		if params.LibraryId != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "library_id", runtime.ParamLocationQuery, *params.LibraryId); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.Page != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "page", runtime.ParamLocationQuery, *params.Page); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.Size != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "size", runtime.ParamLocationQuery, *params.Size); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		queryURL.RawQuery = queryValues.Encode()
+	}
+
+	req, err := http.NewRequest("GET", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewGetBookRequest generates requests for GetBook
+func NewGetBookRequest(server string, bookId int64) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "bookId", runtime.ParamLocationPath, bookId)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/komga/api/v1/books/%s", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("GET", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewDownloadBookRequest generates requests for DownloadBook
+func NewDownloadBookRequest(server string, bookId int64) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "bookId", runtime.ParamLocationPath, bookId)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/komga/api/v1/books/%s/file", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("GET", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewGetBookPagesRequest generates requests for GetBookPages
+func NewGetBookPagesRequest(server string, bookId int64) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "bookId", runtime.ParamLocationPath, bookId)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/komga/api/v1/books/%s/pages", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("GET", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewGetBookPageRequest generates requests for GetBookPage
+func NewGetBookPageRequest(server string, bookId int64, pageNumber int32, params *GetBookPageParams) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "bookId", runtime.ParamLocationPath, bookId)
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam1 string
+
+	pathParam1, err = runtime.StyleParamWithLocation("simple", false, "pageNumber", runtime.ParamLocationPath, pageNumber)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/komga/api/v1/books/%s/pages/%s", pathParam0, pathParam1)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		queryValues := queryURL.Query()
+
+		if params.Convert != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "convert", runtime.ParamLocationQuery, *params.Convert); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		queryURL.RawQuery = queryValues.Encode()
+	}
+
+	req, err := http.NewRequest("GET", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewGetBookThumbnailRequest generates requests for GetBookThumbnail
+func NewGetBookThumbnailRequest(server string, bookId int64) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "bookId", runtime.ParamLocationPath, bookId)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/komga/api/v1/books/%s/thumbnail", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("GET", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewGetCollectionsRequest generates requests for GetCollections
+func NewGetCollectionsRequest(server string, params *GetCollectionsParams) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/komga/api/v1/collections")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		queryValues := queryURL.Query()
+
+		if params.Page != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "page", runtime.ParamLocationQuery, *params.Page); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.Size != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "size", runtime.ParamLocationQuery, *params.Size); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.Unpaged != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "unpaged", runtime.ParamLocationQuery, *params.Unpaged); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		queryURL.RawQuery = queryValues.Encode()
+	}
+
+	req, err := http.NewRequest("GET", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewGetAllLibrariesRequest generates requests for GetAllLibraries
+func NewGetAllLibrariesRequest(server string) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/komga/api/v1/libraries")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("GET", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewGetLibrary1Request generates requests for GetLibrary1
+func NewGetLibrary1Request(server string, libraryId int64) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "libraryId", runtime.ParamLocationPath, libraryId)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/komga/api/v1/libraries/%s", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("GET", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewGetAllSeriesRequest generates requests for GetAllSeries
+func NewGetAllSeriesRequest(server string, params *GetAllSeriesParams) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/komga/api/v1/series")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		queryValues := queryURL.Query()
+
+		if params.LibraryId != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "library_id", runtime.ParamLocationQuery, *params.LibraryId); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.Page != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "page", runtime.ParamLocationQuery, *params.Page); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.Size != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "size", runtime.ParamLocationQuery, *params.Size); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.Unpaged != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "unpaged", runtime.ParamLocationQuery, *params.Unpaged); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		queryURL.RawQuery = queryValues.Encode()
+	}
+
+	req, err := http.NewRequest("GET", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewGetSeriesRequest generates requests for GetSeries
+func NewGetSeriesRequest(server string, seriesId string) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "seriesId", runtime.ParamLocationPath, seriesId)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/komga/api/v1/series/%s", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("GET", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewGetSeriesBooksRequest generates requests for GetSeriesBooks
+func NewGetSeriesBooksRequest(server string, seriesId string, params *GetSeriesBooksParams) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "seriesId", runtime.ParamLocationPath, seriesId)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/komga/api/v1/series/%s/books", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		queryValues := queryURL.Query()
+
+		if params.Page != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "page", runtime.ParamLocationQuery, *params.Page); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.Size != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "size", runtime.ParamLocationQuery, *params.Size); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.Unpaged != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "unpaged", runtime.ParamLocationQuery, *params.Unpaged); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		queryURL.RawQuery = queryValues.Encode()
+	}
+
+	req, err := http.NewRequest("GET", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewGetSeriesThumbnailRequest generates requests for GetSeriesThumbnail
+func NewGetSeriesThumbnailRequest(server string, seriesId string) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "seriesId", runtime.ParamLocationPath, seriesId)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/komga/api/v1/series/%s/thumbnail", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("GET", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewGetCurrentUser1Request generates requests for GetCurrentUser1
+func NewGetCurrentUser1Request(server string) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/komga/api/v2/users/me")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("GET", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
 func (c *Client) applyEditors(ctx context.Context, req *http.Request, additionalEditors []RequestEditorFn) error {
 	for _, r := range c.RequestEditors {
 		if err := r(ctx, req); err != nil {
@@ -18232,6 +19554,9 @@ type ClientWithResponsesInterface interface {
 	// GetRecentBooksWithResponse request
 	GetRecentBooksWithResponse(ctx context.Context, reqEditors ...RequestEditorFn) (*GetRecentBooksResponse, error)
 
+	// GetSearchDescriptionWithResponse request
+	GetSearchDescriptionWithResponse(ctx context.Context, reqEditors ...RequestEditorFn) (*GetSearchDescriptionResponse, error)
+
 	// GetSeriesNavigationWithResponse request
 	GetSeriesNavigationWithResponse(ctx context.Context, reqEditors ...RequestEditorFn) (*GetSeriesNavigationResponse, error)
 
@@ -18471,6 +19796,64 @@ type ClientWithResponsesInterface interface {
 
 	// SetDefaultEmailRecipientWithResponse request
 	SetDefaultEmailRecipientWithResponse(ctx context.Context, id int64, reqEditors ...RequestEditorFn) (*SetDefaultEmailRecipientResponse, error)
+
+	// GetUsersWithResponse request
+	GetUsersWithResponse(ctx context.Context, reqEditors ...RequestEditorFn) (*GetUsersResponse, error)
+
+	// CreateUserWithBodyWithResponse request with any body
+	CreateUserWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateUserResponse, error)
+
+	CreateUserWithResponse(ctx context.Context, body CreateUserJSONRequestBody, reqEditors ...RequestEditorFn) (*CreateUserResponse, error)
+
+	// DeleteUser1WithResponse request
+	DeleteUser1WithResponse(ctx context.Context, id int64, reqEditors ...RequestEditorFn) (*DeleteUser1Response, error)
+
+	// UpdateUser1WithBodyWithResponse request with any body
+	UpdateUser1WithBodyWithResponse(ctx context.Context, id int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateUser1Response, error)
+
+	UpdateUser1WithResponse(ctx context.Context, id int64, body UpdateUser1JSONRequestBody, reqEditors ...RequestEditorFn) (*UpdateUser1Response, error)
+
+	// GetAllBooksWithResponse request
+	GetAllBooksWithResponse(ctx context.Context, params *GetAllBooksParams, reqEditors ...RequestEditorFn) (*GetAllBooksResponse, error)
+
+	// GetBookWithResponse request
+	GetBookWithResponse(ctx context.Context, bookId int64, reqEditors ...RequestEditorFn) (*GetBookResponse, error)
+
+	// DownloadBookWithResponse request
+	DownloadBookWithResponse(ctx context.Context, bookId int64, reqEditors ...RequestEditorFn) (*DownloadBookResponse, error)
+
+	// GetBookPagesWithResponse request
+	GetBookPagesWithResponse(ctx context.Context, bookId int64, reqEditors ...RequestEditorFn) (*GetBookPagesResponse, error)
+
+	// GetBookPageWithResponse request
+	GetBookPageWithResponse(ctx context.Context, bookId int64, pageNumber int32, params *GetBookPageParams, reqEditors ...RequestEditorFn) (*GetBookPageResponse, error)
+
+	// GetBookThumbnailWithResponse request
+	GetBookThumbnailWithResponse(ctx context.Context, bookId int64, reqEditors ...RequestEditorFn) (*GetBookThumbnailResponse, error)
+
+	// GetCollectionsWithResponse request
+	GetCollectionsWithResponse(ctx context.Context, params *GetCollectionsParams, reqEditors ...RequestEditorFn) (*GetCollectionsResponse, error)
+
+	// GetAllLibrariesWithResponse request
+	GetAllLibrariesWithResponse(ctx context.Context, reqEditors ...RequestEditorFn) (*GetAllLibrariesResponse, error)
+
+	// GetLibrary1WithResponse request
+	GetLibrary1WithResponse(ctx context.Context, libraryId int64, reqEditors ...RequestEditorFn) (*GetLibrary1Response, error)
+
+	// GetAllSeriesWithResponse request
+	GetAllSeriesWithResponse(ctx context.Context, params *GetAllSeriesParams, reqEditors ...RequestEditorFn) (*GetAllSeriesResponse, error)
+
+	// GetSeriesWithResponse request
+	GetSeriesWithResponse(ctx context.Context, seriesId string, reqEditors ...RequestEditorFn) (*GetSeriesResponse, error)
+
+	// GetSeriesBooksWithResponse request
+	GetSeriesBooksWithResponse(ctx context.Context, seriesId string, params *GetSeriesBooksParams, reqEditors ...RequestEditorFn) (*GetSeriesBooksResponse, error)
+
+	// GetSeriesThumbnailWithResponse request
+	GetSeriesThumbnailWithResponse(ctx context.Context, seriesId string, reqEditors ...RequestEditorFn) (*GetSeriesThumbnailResponse, error)
+
+	// GetCurrentUser1WithResponse request
+	GetCurrentUser1WithResponse(ctx context.Context, reqEditors ...RequestEditorFn) (*GetCurrentUser1Response, error)
 }
 
 type CatchAll3Response struct {
@@ -21976,6 +23359,28 @@ func (r GetRecentBooksResponse) StatusCode() int {
 	return 0
 }
 
+type GetSearchDescriptionResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	XML200       *string
+}
+
+// Status returns HTTPResponse.Status
+func (r GetSearchDescriptionResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r GetSearchDescriptionResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
 type GetSeriesNavigationResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
@@ -23469,6 +24874,401 @@ func (r SetDefaultEmailRecipientResponse) Status() string {
 
 // StatusCode returns HTTPResponse.StatusCode
 func (r SetDefaultEmailRecipientResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type GetUsersResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *[]OpdsUserV2
+}
+
+// Status returns HTTPResponse.Status
+func (r GetUsersResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r GetUsersResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type CreateUserResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *OpdsUserV2
+}
+
+// Status returns HTTPResponse.Status
+func (r CreateUserResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r CreateUserResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type DeleteUser1Response struct {
+	Body         []byte
+	HTTPResponse *http.Response
+}
+
+// Status returns HTTPResponse.Status
+func (r DeleteUser1Response) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r DeleteUser1Response) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type UpdateUser1Response struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *OpdsUserV2
+}
+
+// Status returns HTTPResponse.Status
+func (r UpdateUser1Response) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r UpdateUser1Response) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type GetAllBooksResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *string
+}
+
+// Status returns HTTPResponse.Status
+func (r GetAllBooksResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r GetAllBooksResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type GetBookResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *string
+}
+
+// Status returns HTTPResponse.Status
+func (r GetBookResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r GetBookResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type DownloadBookResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *openapi_types.File
+}
+
+// Status returns HTTPResponse.Status
+func (r DownloadBookResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r DownloadBookResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type GetBookPagesResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *string
+}
+
+// Status returns HTTPResponse.Status
+func (r GetBookPagesResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r GetBookPagesResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type GetBookPageResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *openapi_types.File
+}
+
+// Status returns HTTPResponse.Status
+func (r GetBookPageResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r GetBookPageResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type GetBookThumbnailResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *openapi_types.File
+}
+
+// Status returns HTTPResponse.Status
+func (r GetBookThumbnailResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r GetBookThumbnailResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type GetCollectionsResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *string
+}
+
+// Status returns HTTPResponse.Status
+func (r GetCollectionsResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r GetCollectionsResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type GetAllLibrariesResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *string
+}
+
+// Status returns HTTPResponse.Status
+func (r GetAllLibrariesResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r GetAllLibrariesResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type GetLibrary1Response struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *string
+}
+
+// Status returns HTTPResponse.Status
+func (r GetLibrary1Response) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r GetLibrary1Response) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type GetAllSeriesResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *string
+}
+
+// Status returns HTTPResponse.Status
+func (r GetAllSeriesResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r GetAllSeriesResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type GetSeriesResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *string
+}
+
+// Status returns HTTPResponse.Status
+func (r GetSeriesResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r GetSeriesResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type GetSeriesBooksResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *string
+}
+
+// Status returns HTTPResponse.Status
+func (r GetSeriesBooksResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r GetSeriesBooksResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type GetSeriesThumbnailResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *openapi_types.File
+}
+
+// Status returns HTTPResponse.Status
+func (r GetSeriesThumbnailResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r GetSeriesThumbnailResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type GetCurrentUser1Response struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *string
+}
+
+// Status returns HTTPResponse.Status
+func (r GetCurrentUser1Response) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r GetCurrentUser1Response) StatusCode() int {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.StatusCode
 	}
@@ -25379,6 +27179,15 @@ func (c *ClientWithResponses) GetRecentBooksWithResponse(ctx context.Context, re
 	return ParseGetRecentBooksResponse(rsp)
 }
 
+// GetSearchDescriptionWithResponse request returning *GetSearchDescriptionResponse
+func (c *ClientWithResponses) GetSearchDescriptionWithResponse(ctx context.Context, reqEditors ...RequestEditorFn) (*GetSearchDescriptionResponse, error) {
+	rsp, err := c.GetSearchDescription(ctx, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetSearchDescriptionResponse(rsp)
+}
+
 // GetSeriesNavigationWithResponse request returning *GetSeriesNavigationResponse
 func (c *ClientWithResponses) GetSeriesNavigationWithResponse(ctx context.Context, reqEditors ...RequestEditorFn) (*GetSeriesNavigationResponse, error) {
 	rsp, err := c.GetSeriesNavigation(ctx, reqEditors...)
@@ -26133,6 +27942,184 @@ func (c *ClientWithResponses) SetDefaultEmailRecipientWithResponse(ctx context.C
 		return nil, err
 	}
 	return ParseSetDefaultEmailRecipientResponse(rsp)
+}
+
+// GetUsersWithResponse request returning *GetUsersResponse
+func (c *ClientWithResponses) GetUsersWithResponse(ctx context.Context, reqEditors ...RequestEditorFn) (*GetUsersResponse, error) {
+	rsp, err := c.GetUsers(ctx, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetUsersResponse(rsp)
+}
+
+// CreateUserWithBodyWithResponse request with arbitrary body returning *CreateUserResponse
+func (c *ClientWithResponses) CreateUserWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateUserResponse, error) {
+	rsp, err := c.CreateUserWithBody(ctx, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseCreateUserResponse(rsp)
+}
+
+func (c *ClientWithResponses) CreateUserWithResponse(ctx context.Context, body CreateUserJSONRequestBody, reqEditors ...RequestEditorFn) (*CreateUserResponse, error) {
+	rsp, err := c.CreateUser(ctx, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseCreateUserResponse(rsp)
+}
+
+// DeleteUser1WithResponse request returning *DeleteUser1Response
+func (c *ClientWithResponses) DeleteUser1WithResponse(ctx context.Context, id int64, reqEditors ...RequestEditorFn) (*DeleteUser1Response, error) {
+	rsp, err := c.DeleteUser1(ctx, id, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseDeleteUser1Response(rsp)
+}
+
+// UpdateUser1WithBodyWithResponse request with arbitrary body returning *UpdateUser1Response
+func (c *ClientWithResponses) UpdateUser1WithBodyWithResponse(ctx context.Context, id int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateUser1Response, error) {
+	rsp, err := c.UpdateUser1WithBody(ctx, id, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseUpdateUser1Response(rsp)
+}
+
+func (c *ClientWithResponses) UpdateUser1WithResponse(ctx context.Context, id int64, body UpdateUser1JSONRequestBody, reqEditors ...RequestEditorFn) (*UpdateUser1Response, error) {
+	rsp, err := c.UpdateUser1(ctx, id, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseUpdateUser1Response(rsp)
+}
+
+// GetAllBooksWithResponse request returning *GetAllBooksResponse
+func (c *ClientWithResponses) GetAllBooksWithResponse(ctx context.Context, params *GetAllBooksParams, reqEditors ...RequestEditorFn) (*GetAllBooksResponse, error) {
+	rsp, err := c.GetAllBooks(ctx, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetAllBooksResponse(rsp)
+}
+
+// GetBookWithResponse request returning *GetBookResponse
+func (c *ClientWithResponses) GetBookWithResponse(ctx context.Context, bookId int64, reqEditors ...RequestEditorFn) (*GetBookResponse, error) {
+	rsp, err := c.GetBook(ctx, bookId, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetBookResponse(rsp)
+}
+
+// DownloadBookWithResponse request returning *DownloadBookResponse
+func (c *ClientWithResponses) DownloadBookWithResponse(ctx context.Context, bookId int64, reqEditors ...RequestEditorFn) (*DownloadBookResponse, error) {
+	rsp, err := c.DownloadBook(ctx, bookId, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseDownloadBookResponse(rsp)
+}
+
+// GetBookPagesWithResponse request returning *GetBookPagesResponse
+func (c *ClientWithResponses) GetBookPagesWithResponse(ctx context.Context, bookId int64, reqEditors ...RequestEditorFn) (*GetBookPagesResponse, error) {
+	rsp, err := c.GetBookPages(ctx, bookId, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetBookPagesResponse(rsp)
+}
+
+// GetBookPageWithResponse request returning *GetBookPageResponse
+func (c *ClientWithResponses) GetBookPageWithResponse(ctx context.Context, bookId int64, pageNumber int32, params *GetBookPageParams, reqEditors ...RequestEditorFn) (*GetBookPageResponse, error) {
+	rsp, err := c.GetBookPage(ctx, bookId, pageNumber, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetBookPageResponse(rsp)
+}
+
+// GetBookThumbnailWithResponse request returning *GetBookThumbnailResponse
+func (c *ClientWithResponses) GetBookThumbnailWithResponse(ctx context.Context, bookId int64, reqEditors ...RequestEditorFn) (*GetBookThumbnailResponse, error) {
+	rsp, err := c.GetBookThumbnail(ctx, bookId, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetBookThumbnailResponse(rsp)
+}
+
+// GetCollectionsWithResponse request returning *GetCollectionsResponse
+func (c *ClientWithResponses) GetCollectionsWithResponse(ctx context.Context, params *GetCollectionsParams, reqEditors ...RequestEditorFn) (*GetCollectionsResponse, error) {
+	rsp, err := c.GetCollections(ctx, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetCollectionsResponse(rsp)
+}
+
+// GetAllLibrariesWithResponse request returning *GetAllLibrariesResponse
+func (c *ClientWithResponses) GetAllLibrariesWithResponse(ctx context.Context, reqEditors ...RequestEditorFn) (*GetAllLibrariesResponse, error) {
+	rsp, err := c.GetAllLibraries(ctx, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetAllLibrariesResponse(rsp)
+}
+
+// GetLibrary1WithResponse request returning *GetLibrary1Response
+func (c *ClientWithResponses) GetLibrary1WithResponse(ctx context.Context, libraryId int64, reqEditors ...RequestEditorFn) (*GetLibrary1Response, error) {
+	rsp, err := c.GetLibrary1(ctx, libraryId, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetLibrary1Response(rsp)
+}
+
+// GetAllSeriesWithResponse request returning *GetAllSeriesResponse
+func (c *ClientWithResponses) GetAllSeriesWithResponse(ctx context.Context, params *GetAllSeriesParams, reqEditors ...RequestEditorFn) (*GetAllSeriesResponse, error) {
+	rsp, err := c.GetAllSeries(ctx, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetAllSeriesResponse(rsp)
+}
+
+// GetSeriesWithResponse request returning *GetSeriesResponse
+func (c *ClientWithResponses) GetSeriesWithResponse(ctx context.Context, seriesId string, reqEditors ...RequestEditorFn) (*GetSeriesResponse, error) {
+	rsp, err := c.GetSeries(ctx, seriesId, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetSeriesResponse(rsp)
+}
+
+// GetSeriesBooksWithResponse request returning *GetSeriesBooksResponse
+func (c *ClientWithResponses) GetSeriesBooksWithResponse(ctx context.Context, seriesId string, params *GetSeriesBooksParams, reqEditors ...RequestEditorFn) (*GetSeriesBooksResponse, error) {
+	rsp, err := c.GetSeriesBooks(ctx, seriesId, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetSeriesBooksResponse(rsp)
+}
+
+// GetSeriesThumbnailWithResponse request returning *GetSeriesThumbnailResponse
+func (c *ClientWithResponses) GetSeriesThumbnailWithResponse(ctx context.Context, seriesId string, reqEditors ...RequestEditorFn) (*GetSeriesThumbnailResponse, error) {
+	rsp, err := c.GetSeriesThumbnail(ctx, seriesId, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetSeriesThumbnailResponse(rsp)
+}
+
+// GetCurrentUser1WithResponse request returning *GetCurrentUser1Response
+func (c *ClientWithResponses) GetCurrentUser1WithResponse(ctx context.Context, reqEditors ...RequestEditorFn) (*GetCurrentUser1Response, error) {
+	rsp, err := c.GetCurrentUser1(ctx, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetCurrentUser1Response(rsp)
 }
 
 // ParseCatchAll3Response parses an HTTP response from a CatchAll3WithResponse call
@@ -30047,6 +32034,32 @@ func ParseGetRecentBooksResponse(rsp *http.Response) (*GetRecentBooksResponse, e
 	return response, nil
 }
 
+// ParseGetSearchDescriptionResponse parses an HTTP response from a GetSearchDescriptionWithResponse call
+func ParseGetSearchDescriptionResponse(rsp *http.Response) (*GetSearchDescriptionResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetSearchDescriptionResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "xml") && rsp.StatusCode == 200:
+		var dest string
+		if err := xml.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.XML200 = &dest
+
+	}
+
+	return response, nil
+}
+
 // ParseGetSeriesNavigationResponse parses an HTTP response from a GetSeriesNavigationWithResponse call
 func ParseGetSeriesNavigationResponse(rsp *http.Response) (*GetSeriesNavigationResponse, error) {
 	bodyBytes, err := io.ReadAll(rsp.Body)
@@ -31789,6 +33802,464 @@ func ParseSetDefaultEmailRecipientResponse(rsp *http.Response) (*SetDefaultEmail
 	response := &SetDefaultEmailRecipientResponse{
 		Body:         bodyBytes,
 		HTTPResponse: rsp,
+	}
+
+	return response, nil
+}
+
+// ParseGetUsersResponse parses an HTTP response from a GetUsersWithResponse call
+func ParseGetUsersResponse(rsp *http.Response) (*GetUsersResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetUsersResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest []OpdsUserV2
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseCreateUserResponse parses an HTTP response from a CreateUserWithResponse call
+func ParseCreateUserResponse(rsp *http.Response) (*CreateUserResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &CreateUserResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest OpdsUserV2
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseDeleteUser1Response parses an HTTP response from a DeleteUser1WithResponse call
+func ParseDeleteUser1Response(rsp *http.Response) (*DeleteUser1Response, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &DeleteUser1Response{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	return response, nil
+}
+
+// ParseUpdateUser1Response parses an HTTP response from a UpdateUser1WithResponse call
+func ParseUpdateUser1Response(rsp *http.Response) (*UpdateUser1Response, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &UpdateUser1Response{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest OpdsUserV2
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseGetAllBooksResponse parses an HTTP response from a GetAllBooksWithResponse call
+func ParseGetAllBooksResponse(rsp *http.Response) (*GetAllBooksResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetAllBooksResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest string
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseGetBookResponse parses an HTTP response from a GetBookWithResponse call
+func ParseGetBookResponse(rsp *http.Response) (*GetBookResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetBookResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest string
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseDownloadBookResponse parses an HTTP response from a DownloadBookWithResponse call
+func ParseDownloadBookResponse(rsp *http.Response) (*DownloadBookResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &DownloadBookResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest openapi_types.File
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseGetBookPagesResponse parses an HTTP response from a GetBookPagesWithResponse call
+func ParseGetBookPagesResponse(rsp *http.Response) (*GetBookPagesResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetBookPagesResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest string
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseGetBookPageResponse parses an HTTP response from a GetBookPageWithResponse call
+func ParseGetBookPageResponse(rsp *http.Response) (*GetBookPageResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetBookPageResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest openapi_types.File
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseGetBookThumbnailResponse parses an HTTP response from a GetBookThumbnailWithResponse call
+func ParseGetBookThumbnailResponse(rsp *http.Response) (*GetBookThumbnailResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetBookThumbnailResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest openapi_types.File
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseGetCollectionsResponse parses an HTTP response from a GetCollectionsWithResponse call
+func ParseGetCollectionsResponse(rsp *http.Response) (*GetCollectionsResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetCollectionsResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest string
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseGetAllLibrariesResponse parses an HTTP response from a GetAllLibrariesWithResponse call
+func ParseGetAllLibrariesResponse(rsp *http.Response) (*GetAllLibrariesResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetAllLibrariesResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest string
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseGetLibrary1Response parses an HTTP response from a GetLibrary1WithResponse call
+func ParseGetLibrary1Response(rsp *http.Response) (*GetLibrary1Response, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetLibrary1Response{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest string
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseGetAllSeriesResponse parses an HTTP response from a GetAllSeriesWithResponse call
+func ParseGetAllSeriesResponse(rsp *http.Response) (*GetAllSeriesResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetAllSeriesResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest string
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseGetSeriesResponse parses an HTTP response from a GetSeriesWithResponse call
+func ParseGetSeriesResponse(rsp *http.Response) (*GetSeriesResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetSeriesResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest string
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseGetSeriesBooksResponse parses an HTTP response from a GetSeriesBooksWithResponse call
+func ParseGetSeriesBooksResponse(rsp *http.Response) (*GetSeriesBooksResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetSeriesBooksResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest string
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseGetSeriesThumbnailResponse parses an HTTP response from a GetSeriesThumbnailWithResponse call
+func ParseGetSeriesThumbnailResponse(rsp *http.Response) (*GetSeriesThumbnailResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetSeriesThumbnailResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest openapi_types.File
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseGetCurrentUser1Response parses an HTTP response from a GetCurrentUser1WithResponse call
+func ParseGetCurrentUser1Response(rsp *http.Response) (*GetCurrentUser1Response, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetCurrentUser1Response{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest string
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
 	}
 
 	return response, nil
