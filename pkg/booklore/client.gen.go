@@ -649,159 +649,159 @@ const (
 
 // Amazon defines model for Amazon.
 type Amazon struct {
-	Cookie  *string `json:"cookie,omitempty"`
-	Domain  *string `json:"domain,omitempty"`
-	Enabled *bool   `json:"enabled,omitempty"`
+	Cookie  string `json:"cookie,omitempty,omitzero"`
+	Domain  string `json:"domain,omitempty,omitzero"`
+	Enabled bool   `json:"enabled,omitempty,omitzero"`
 }
 
 // Annotation defines model for Annotation.
 type Annotation struct {
-	BookId       *int64     `json:"bookId,omitempty"`
-	Cfi          *string    `json:"cfi,omitempty"`
-	ChapterTitle *string    `json:"chapterTitle,omitempty"`
-	Color        *string    `json:"color,omitempty"`
-	CreatedAt    *time.Time `json:"createdAt,omitempty"`
-	Id           *int64     `json:"id,omitempty"`
-	Note         *string    `json:"note,omitempty"`
-	Style        *string    `json:"style,omitempty"`
-	Text         *string    `json:"text,omitempty"`
-	UpdatedAt    *time.Time `json:"updatedAt,omitempty"`
-	UserId       *int64     `json:"userId,omitempty"`
+	BookId       int64     `json:"bookId,omitempty,omitzero"`
+	Cfi          string    `json:"cfi,omitempty,omitzero"`
+	ChapterTitle string    `json:"chapterTitle,omitempty,omitzero"`
+	Color        string    `json:"color,omitempty,omitzero"`
+	CreatedAt    time.Time `json:"createdAt,omitempty,omitzero"`
+	Id           int64     `json:"id,omitempty,omitzero"`
+	Note         string    `json:"note,omitempty,omitzero"`
+	Style        string    `json:"style,omitempty,omitzero"`
+	Text         string    `json:"text,omitempty,omitzero"`
+	UpdatedAt    time.Time `json:"updatedAt,omitempty,omitzero"`
+	UserId       int64     `json:"userId,omitempty,omitzero"`
 }
 
 // AppSettings defines model for AppSettings.
 type AppSettings struct {
-	AutoBookSearch                 *bool                           `json:"autoBookSearch,omitempty"`
-	CoverCroppingSettings          *CoverCroppingSettings          `json:"coverCroppingSettings,omitempty"`
-	DefaultMetadataRefreshOptions  *MetadataRefreshOptions         `json:"defaultMetadataRefreshOptions,omitempty"`
-	DiskType                       *string                         `json:"diskType,omitempty"`
-	KoboSettings                   *KoboSettings                   `json:"koboSettings,omitempty"`
-	KomgaApiEnabled                *bool                           `json:"komgaApiEnabled,omitempty"`
-	KomgaGroupUnknown              *bool                           `json:"komgaGroupUnknown,omitempty"`
-	LibraryMetadataRefreshOptions  *[]MetadataRefreshOptions       `json:"libraryMetadataRefreshOptions,omitempty"`
-	MaxFileUploadSizeInMb          *int32                          `json:"maxFileUploadSizeInMb,omitempty"`
-	MetadataDownloadOnBookdrop     *bool                           `json:"metadataDownloadOnBookdrop,omitempty"`
-	MetadataMatchWeights           *MetadataMatchWeights           `json:"metadataMatchWeights,omitempty"`
-	MetadataPersistenceSettings    *MetadataPersistenceSettings    `json:"metadataPersistenceSettings,omitempty"`
-	MetadataProviderSettings       *MetadataProviderSettings       `json:"metadataProviderSettings,omitempty"`
-	MetadataProviderSpecificFields *MetadataProviderSpecificFields `json:"metadataProviderSpecificFields,omitempty"`
-	MetadataPublicReviewsSettings  *MetadataPublicReviewsSettings  `json:"metadataPublicReviewsSettings,omitempty"`
-	OidcAutoProvisionDetails       *OidcAutoProvisionDetails       `json:"oidcAutoProvisionDetails,omitempty"`
-	OidcEnabled                    *bool                           `json:"oidcEnabled,omitempty"`
-	OidcProviderDetails            *OidcProviderDetails            `json:"oidcProviderDetails,omitempty"`
-	OpdsServerEnabled              *bool                           `json:"opdsServerEnabled,omitempty"`
-	PdfCacheSizeInMb               *int32                          `json:"pdfCacheSizeInMb,omitempty"`
-	RemoteAuthEnabled              *bool                           `json:"remoteAuthEnabled,omitempty"`
-	SimilarBookRecommendation      *bool                           `json:"similarBookRecommendation,omitempty"`
-	TelemetryEnabled               *bool                           `json:"telemetryEnabled,omitempty"`
-	UploadPattern                  *string                         `json:"uploadPattern,omitempty"`
+	AutoBookSearch                 bool                           `json:"autoBookSearch,omitempty,omitzero"`
+	CoverCroppingSettings          CoverCroppingSettings          `json:"coverCroppingSettings,omitempty,omitzero"`
+	DefaultMetadataRefreshOptions  MetadataRefreshOptions         `json:"defaultMetadataRefreshOptions,omitempty,omitzero"`
+	DiskType                       string                         `json:"diskType,omitempty,omitzero"`
+	KoboSettings                   KoboSettings                   `json:"koboSettings,omitempty,omitzero"`
+	KomgaApiEnabled                bool                           `json:"komgaApiEnabled,omitempty,omitzero"`
+	KomgaGroupUnknown              bool                           `json:"komgaGroupUnknown,omitempty,omitzero"`
+	LibraryMetadataRefreshOptions  []MetadataRefreshOptions       `json:"libraryMetadataRefreshOptions,omitempty,omitzero"`
+	MaxFileUploadSizeInMb          int32                          `json:"maxFileUploadSizeInMb,omitempty,omitzero"`
+	MetadataDownloadOnBookdrop     bool                           `json:"metadataDownloadOnBookdrop,omitempty,omitzero"`
+	MetadataMatchWeights           MetadataMatchWeights           `json:"metadataMatchWeights,omitempty,omitzero"`
+	MetadataPersistenceSettings    MetadataPersistenceSettings    `json:"metadataPersistenceSettings,omitempty,omitzero"`
+	MetadataProviderSettings       MetadataProviderSettings       `json:"metadataProviderSettings,omitempty,omitzero"`
+	MetadataProviderSpecificFields MetadataProviderSpecificFields `json:"metadataProviderSpecificFields,omitempty,omitzero"`
+	MetadataPublicReviewsSettings  MetadataPublicReviewsSettings  `json:"metadataPublicReviewsSettings,omitempty,omitzero"`
+	OidcAutoProvisionDetails       OidcAutoProvisionDetails       `json:"oidcAutoProvisionDetails,omitempty,omitzero"`
+	OidcEnabled                    bool                           `json:"oidcEnabled,omitempty,omitzero"`
+	OidcProviderDetails            OidcProviderDetails            `json:"oidcProviderDetails,omitempty,omitzero"`
+	OpdsServerEnabled              bool                           `json:"opdsServerEnabled,omitempty,omitzero"`
+	PdfCacheSizeInMb               int32                          `json:"pdfCacheSizeInMb,omitempty,omitzero"`
+	RemoteAuthEnabled              bool                           `json:"remoteAuthEnabled,omitempty,omitzero"`
+	SimilarBookRecommendation      bool                           `json:"similarBookRecommendation,omitempty,omitzero"`
+	TelemetryEnabled               bool                           `json:"telemetryEnabled,omitempty,omitzero"`
+	UploadPattern                  string                         `json:"uploadPattern,omitempty,omitzero"`
 }
 
 // AttachBookFileRequest Request containing source book IDs and delete option
 type AttachBookFileRequest struct {
-	DeleteSourceBooks *bool   `json:"deleteSourceBooks,omitempty"`
+	DeleteSourceBooks bool    `json:"deleteSourceBooks,omitempty,omitzero"`
 	SourceBookIds     []int64 `json:"sourceBookIds"`
 }
 
 // AudiobookChapter defines model for AudiobookChapter.
 type AudiobookChapter struct {
-	DurationMs  *int64  `json:"durationMs,omitempty"`
-	EndTimeMs   *int64  `json:"endTimeMs,omitempty"`
-	Index       *int32  `json:"index,omitempty"`
-	StartTimeMs *int64  `json:"startTimeMs,omitempty"`
-	Title       *string `json:"title,omitempty"`
+	DurationMs  int64  `json:"durationMs,omitempty,omitzero"`
+	EndTimeMs   int64  `json:"endTimeMs,omitempty,omitzero"`
+	Index       int32  `json:"index,omitempty,omitzero"`
+	StartTimeMs int64  `json:"startTimeMs,omitempty,omitzero"`
+	Title       string `json:"title,omitempty,omitzero"`
 }
 
 // AudiobookInfo defines model for AudiobookInfo.
 type AudiobookInfo struct {
-	Author      *string             `json:"author,omitempty"`
-	Bitrate     *int32              `json:"bitrate,omitempty"`
-	BookFileId  *int64              `json:"bookFileId,omitempty"`
-	BookId      *int64              `json:"bookId,omitempty"`
-	Channels    *int32              `json:"channels,omitempty"`
-	Chapters    *[]AudiobookChapter `json:"chapters,omitempty"`
-	Codec       *string             `json:"codec,omitempty"`
-	DurationMs  *int64              `json:"durationMs,omitempty"`
-	FolderBased *bool               `json:"folderBased,omitempty"`
-	Narrator    *string             `json:"narrator,omitempty"`
-	SampleRate  *int32              `json:"sampleRate,omitempty"`
-	Title       *string             `json:"title,omitempty"`
-	Tracks      *[]AudiobookTrack   `json:"tracks,omitempty"`
+	Author      string             `json:"author,omitempty,omitzero"`
+	Bitrate     int32              `json:"bitrate,omitempty,omitzero"`
+	BookFileId  int64              `json:"bookFileId,omitempty,omitzero"`
+	BookId      int64              `json:"bookId,omitempty,omitzero"`
+	Channels    int32              `json:"channels,omitempty,omitzero"`
+	Chapters    []AudiobookChapter `json:"chapters,omitempty,omitzero"`
+	Codec       string             `json:"codec,omitempty,omitzero"`
+	DurationMs  int64              `json:"durationMs,omitempty,omitzero"`
+	FolderBased bool               `json:"folderBased,omitempty,omitzero"`
+	Narrator    string             `json:"narrator,omitempty,omitzero"`
+	SampleRate  int32              `json:"sampleRate,omitempty,omitzero"`
+	Title       string             `json:"title,omitempty,omitzero"`
+	Tracks      []AudiobookTrack   `json:"tracks,omitempty,omitzero"`
 }
 
 // AudiobookProgress defines model for AudiobookProgress.
 type AudiobookProgress struct {
 	Percentage      float32 `json:"percentage"`
 	PositionMs      int64   `json:"positionMs"`
-	TrackIndex      *int32  `json:"trackIndex,omitempty"`
-	TrackPositionMs *int64  `json:"trackPositionMs,omitempty"`
+	TrackIndex      int32   `json:"trackIndex,omitempty,omitzero"`
+	TrackPositionMs int64   `json:"trackPositionMs,omitempty,omitzero"`
 }
 
 // AudiobookTrack defines model for AudiobookTrack.
 type AudiobookTrack struct {
-	CumulativeStartMs *int64  `json:"cumulativeStartMs,omitempty"`
-	DurationMs        *int64  `json:"durationMs,omitempty"`
-	FileName          *string `json:"fileName,omitempty"`
-	FileSizeBytes     *int64  `json:"fileSizeBytes,omitempty"`
-	Index             *int32  `json:"index,omitempty"`
-	Title             *string `json:"title,omitempty"`
+	CumulativeStartMs int64  `json:"cumulativeStartMs,omitempty,omitzero"`
+	DurationMs        int64  `json:"durationMs,omitempty,omitzero"`
+	FileName          string `json:"fileName,omitempty,omitzero"`
+	FileSizeBytes     int64  `json:"fileSizeBytes,omitempty,omitzero"`
+	Index             int32  `json:"index,omitempty,omitzero"`
+	Title             string `json:"title,omitempty,omitzero"`
 }
 
 // Book defines model for Book.
 type Book struct {
-	AddedOn            *time.Time         `json:"addedOn,omitempty"`
-	AlternativeFormats *[]BookFile        `json:"alternativeFormats,omitempty"`
-	AudiobookProgress  *AudiobookProgress `json:"audiobookProgress,omitempty"`
-	CbxProgress        *CbxProgress       `json:"cbxProgress,omitempty"`
-	DateFinished       *time.Time         `json:"dateFinished,omitempty"`
-	EpubProgress       *EpubProgress      `json:"epubProgress,omitempty"`
-	Id                 *int64             `json:"id,omitempty"`
-	IsPhysical         *bool              `json:"isPhysical,omitempty"`
-	KoboProgress       *KoboProgress      `json:"koboProgress,omitempty"`
-	KoreaderProgress   *KoProgress        `json:"koreaderProgress,omitempty"`
-	LastReadTime       *time.Time         `json:"lastReadTime,omitempty"`
-	LibraryId          *int64             `json:"libraryId,omitempty"`
-	LibraryName        *string            `json:"libraryName,omitempty"`
-	LibraryPath        *LibraryPath       `json:"libraryPath,omitempty"`
-	Metadata           *BookMetadata      `json:"metadata,omitempty"`
-	MetadataMatchScore *float32           `json:"metadataMatchScore,omitempty"`
-	PdfProgress        *PdfProgress       `json:"pdfProgress,omitempty"`
-	PersonalRating     *int32             `json:"personalRating,omitempty"`
-	PrimaryFile        *BookFile          `json:"primaryFile,omitempty"`
-	ReadStatus         *string            `json:"readStatus,omitempty"`
-	Shelves            *[]Shelf           `json:"shelves,omitempty"`
-	SupplementaryFiles *[]BookFile        `json:"supplementaryFiles,omitempty"`
-	Title              *string            `json:"title,omitempty"`
+	AddedOn            time.Time         `json:"addedOn,omitempty,omitzero"`
+	AlternativeFormats []BookFile        `json:"alternativeFormats,omitempty,omitzero"`
+	AudiobookProgress  AudiobookProgress `json:"audiobookProgress,omitempty,omitzero"`
+	CbxProgress        CbxProgress       `json:"cbxProgress,omitempty,omitzero"`
+	DateFinished       time.Time         `json:"dateFinished,omitempty,omitzero"`
+	EpubProgress       EpubProgress      `json:"epubProgress,omitempty,omitzero"`
+	Id                 int64             `json:"id,omitempty,omitzero"`
+	IsPhysical         bool              `json:"isPhysical,omitempty,omitzero"`
+	KoboProgress       KoboProgress      `json:"koboProgress,omitempty,omitzero"`
+	KoreaderProgress   KoProgress        `json:"koreaderProgress,omitempty,omitzero"`
+	LastReadTime       time.Time         `json:"lastReadTime,omitempty,omitzero"`
+	LibraryId          int64             `json:"libraryId,omitempty,omitzero"`
+	LibraryName        string            `json:"libraryName,omitempty,omitzero"`
+	LibraryPath        LibraryPath       `json:"libraryPath,omitempty,omitzero"`
+	Metadata           BookMetadata      `json:"metadata,omitempty,omitzero"`
+	MetadataMatchScore float32           `json:"metadataMatchScore,omitempty,omitzero"`
+	PdfProgress        PdfProgress       `json:"pdfProgress,omitempty,omitzero"`
+	PersonalRating     int32             `json:"personalRating,omitempty,omitzero"`
+	PrimaryFile        BookFile          `json:"primaryFile,omitempty,omitzero"`
+	ReadStatus         string            `json:"readStatus,omitempty,omitzero"`
+	Shelves            []Shelf           `json:"shelves,omitempty,omitzero"`
+	SupplementaryFiles []BookFile        `json:"supplementaryFiles,omitempty,omitzero"`
+	Title              string            `json:"title,omitempty,omitzero"`
 }
 
 // BookCompletionHeatmapResponse defines model for BookCompletionHeatmapResponse.
 type BookCompletionHeatmapResponse struct {
-	Count *int64 `json:"count,omitempty"`
-	Month *int32 `json:"month,omitempty"`
-	Year  *int32 `json:"year,omitempty"`
+	Count int64 `json:"count,omitempty,omitzero"`
+	Month int32 `json:"month,omitempty,omitzero"`
+	Year  int32 `json:"year,omitempty,omitzero"`
 }
 
 // BookDeletionResponse defines model for BookDeletionResponse.
 type BookDeletionResponse struct {
-	Deleted             *[]int64 `json:"deleted,omitempty"`
-	FailedFileDeletions *[]int64 `json:"failedFileDeletions,omitempty"`
+	Deleted             []int64 `json:"deleted,omitempty,omitzero"`
+	FailedFileDeletions []int64 `json:"failedFileDeletions,omitempty,omitzero"`
 }
 
 // BookFile defines model for BookFile.
 type BookFile struct {
-	AddedOn     *time.Time           `json:"addedOn,omitempty"`
-	ArchiveType *BookFileArchiveType `json:"archiveType,omitempty"`
-	Book        *bool                `json:"book,omitempty"`
-	BookId      *int64               `json:"bookId,omitempty"`
-	BookType    *BookFileBookType    `json:"bookType,omitempty"`
-	Description *string              `json:"description,omitempty"`
-	Extension   *string              `json:"extension,omitempty"`
-	FileName    *string              `json:"fileName,omitempty"`
-	FilePath    *string              `json:"filePath,omitempty"`
-	FileSizeKb  *int64               `json:"fileSizeKb,omitempty"`
-	FileSubPath *string              `json:"fileSubPath,omitempty"`
-	FolderBased *bool                `json:"folderBased,omitempty"`
-	Id          *int64               `json:"id,omitempty"`
+	AddedOn     time.Time           `json:"addedOn,omitempty,omitzero"`
+	ArchiveType BookFileArchiveType `json:"archiveType,omitempty,omitzero"`
+	Book        bool                `json:"book,omitempty,omitzero"`
+	BookId      int64               `json:"bookId,omitempty,omitzero"`
+	BookType    BookFileBookType    `json:"bookType,omitempty,omitzero"`
+	Description string              `json:"description,omitempty,omitzero"`
+	Extension   string              `json:"extension,omitempty,omitzero"`
+	FileName    string              `json:"fileName,omitempty,omitzero"`
+	FilePath    string              `json:"filePath,omitempty,omitzero"`
+	FileSizeKb  int64               `json:"fileSizeKb,omitempty,omitzero"`
+	FileSubPath string              `json:"fileSubPath,omitempty,omitzero"`
+	FolderBased bool                `json:"folderBased,omitempty,omitzero"`
+	Id          int64               `json:"id,omitempty,omitzero"`
 }
 
 // BookFileArchiveType defines model for BookFile.ArchiveType.
@@ -813,22 +813,22 @@ type BookFileBookType string
 // BookFileProgress defines model for BookFileProgress.
 type BookFileProgress struct {
 	BookFileId      int64   `json:"bookFileId"`
-	PositionData    *string `json:"positionData,omitempty"`
-	PositionHref    *string `json:"positionHref,omitempty"`
+	PositionData    string  `json:"positionData,omitempty,omitzero"`
+	PositionHref    string  `json:"positionHref,omitempty,omitzero"`
 	ProgressPercent float32 `json:"progressPercent"`
 }
 
 // BookLoreUser defines model for BookLoreUser.
 type BookLoreUser struct {
-	AssignedLibraries  *[]Library                      `json:"assignedLibraries,omitempty"`
-	DefaultPassword    *bool                           `json:"defaultPassword,omitempty"`
-	Email              *string                         `json:"email,omitempty"`
-	Id                 *int64                          `json:"id,omitempty"`
-	Name               *string                         `json:"name,omitempty"`
-	Permissions        *UserPermissions                `json:"permissions,omitempty"`
-	ProvisioningMethod *BookLoreUserProvisioningMethod `json:"provisioningMethod,omitempty"`
-	UserSettings       *UserSettings                   `json:"userSettings,omitempty"`
-	Username           *string                         `json:"username,omitempty"`
+	AssignedLibraries  []Library                      `json:"assignedLibraries,omitempty,omitzero"`
+	DefaultPassword    bool                           `json:"defaultPassword,omitempty,omitzero"`
+	Email              string                         `json:"email,omitempty,omitzero"`
+	Id                 int64                          `json:"id,omitempty,omitzero"`
+	Name               string                         `json:"name,omitempty,omitzero"`
+	Permissions        UserPermissions                `json:"permissions,omitempty,omitzero"`
+	ProvisioningMethod BookLoreUserProvisioningMethod `json:"provisioningMethod,omitempty,omitzero"`
+	UserSettings       UserSettings                   `json:"userSettings,omitempty,omitzero"`
+	Username           string                         `json:"username,omitempty,omitzero"`
 }
 
 // BookLoreUserProvisioningMethod defines model for BookLoreUser.ProvisioningMethod.
@@ -836,101 +836,101 @@ type BookLoreUserProvisioningMethod string
 
 // BookMark defines model for BookMark.
 type BookMark struct {
-	BookId     *int64     `json:"bookId,omitempty"`
-	Cfi        *string    `json:"cfi,omitempty"`
-	Color      *string    `json:"color,omitempty"`
-	CreatedAt  *time.Time `json:"createdAt,omitempty"`
-	Id         *int64     `json:"id,omitempty"`
-	Notes      *string    `json:"notes,omitempty"`
-	PositionMs *int64     `json:"positionMs,omitempty"`
-	Priority   *int32     `json:"priority,omitempty"`
-	Title      *string    `json:"title,omitempty"`
-	TrackIndex *int32     `json:"trackIndex,omitempty"`
-	UpdatedAt  *time.Time `json:"updatedAt,omitempty"`
-	UserId     *int64     `json:"userId,omitempty"`
+	BookId     int64     `json:"bookId,omitempty,omitzero"`
+	Cfi        string    `json:"cfi,omitempty,omitzero"`
+	Color      string    `json:"color,omitempty,omitzero"`
+	CreatedAt  time.Time `json:"createdAt,omitempty,omitzero"`
+	Id         int64     `json:"id,omitempty,omitzero"`
+	Notes      string    `json:"notes,omitempty,omitzero"`
+	PositionMs int64     `json:"positionMs,omitempty,omitzero"`
+	Priority   int32     `json:"priority,omitempty,omitzero"`
+	Title      string    `json:"title,omitempty,omitzero"`
+	TrackIndex int32     `json:"trackIndex,omitempty,omitzero"`
+	UpdatedAt  time.Time `json:"updatedAt,omitempty,omitzero"`
+	UserId     int64     `json:"userId,omitempty,omitzero"`
 }
 
 // BookMetadata defines model for BookMetadata.
 type BookMetadata struct {
-	AmazonRating               *float64              `json:"amazonRating,omitempty"`
-	AmazonRatingLocked         *bool                 `json:"amazonRatingLocked,omitempty"`
-	AmazonReviewCount          *int32                `json:"amazonReviewCount,omitempty"`
-	AmazonReviewCountLocked    *bool                 `json:"amazonReviewCountLocked,omitempty"`
-	Asin                       *string               `json:"asin,omitempty"`
-	AsinLocked                 *bool                 `json:"asinLocked,omitempty"`
-	Authors                    *[]string             `json:"authors,omitempty"`
-	AuthorsLocked              *bool                 `json:"authorsLocked,omitempty"`
-	BookId                     *int64                `json:"bookId,omitempty"`
-	BookReviews                *[]BookReview         `json:"bookReviews,omitempty"`
-	Categories                 *[]string             `json:"categories,omitempty"`
-	CategoriesLocked           *bool                 `json:"categoriesLocked,omitempty"`
-	ComicvineId                *string               `json:"comicvineId,omitempty"`
-	ComicvineIdLocked          *bool                 `json:"comicvineIdLocked,omitempty"`
-	CoverLocked                *bool                 `json:"coverLocked,omitempty"`
-	CoverUpdatedOn             *time.Time            `json:"coverUpdatedOn,omitempty"`
-	Description                *string               `json:"description,omitempty"`
-	DescriptionLocked          *bool                 `json:"descriptionLocked,omitempty"`
-	DoubanId                   *string               `json:"doubanId,omitempty"`
-	DoubanIdLocked             *bool                 `json:"doubanIdLocked,omitempty"`
-	DoubanRating               *float64              `json:"doubanRating,omitempty"`
-	DoubanRatingLocked         *bool                 `json:"doubanRatingLocked,omitempty"`
-	DoubanReviewCount          *int32                `json:"doubanReviewCount,omitempty"`
-	DoubanReviewCountLocked    *bool                 `json:"doubanReviewCountLocked,omitempty"`
-	ExternalUrl                *string               `json:"externalUrl,omitempty"`
-	ExternalUrlLocked          *bool                 `json:"externalUrlLocked,omitempty"`
-	GoodreadsId                *string               `json:"goodreadsId,omitempty"`
-	GoodreadsIdLocked          *bool                 `json:"goodreadsIdLocked,omitempty"`
-	GoodreadsRating            *float64              `json:"goodreadsRating,omitempty"`
-	GoodreadsRatingLocked      *bool                 `json:"goodreadsRatingLocked,omitempty"`
-	GoodreadsReviewCount       *int32                `json:"goodreadsReviewCount,omitempty"`
-	GoodreadsReviewCountLocked *bool                 `json:"goodreadsReviewCountLocked,omitempty"`
-	GoogleId                   *string               `json:"googleId,omitempty"`
-	GoogleIdLocked             *bool                 `json:"googleIdLocked,omitempty"`
-	HardcoverBookId            *int32                `json:"hardcoverBookId,omitempty"`
-	HardcoverBookIdLocked      *bool                 `json:"hardcoverBookIdLocked,omitempty"`
-	HardcoverId                *string               `json:"hardcoverId,omitempty"`
-	HardcoverIdLocked          *bool                 `json:"hardcoverIdLocked,omitempty"`
-	HardcoverRating            *float64              `json:"hardcoverRating,omitempty"`
-	HardcoverRatingLocked      *bool                 `json:"hardcoverRatingLocked,omitempty"`
-	HardcoverReviewCount       *int32                `json:"hardcoverReviewCount,omitempty"`
-	HardcoverReviewCountLocked *bool                 `json:"hardcoverReviewCountLocked,omitempty"`
-	Isbn10                     *string               `json:"isbn10,omitempty"`
-	Isbn10Locked               *bool                 `json:"isbn10Locked,omitempty"`
-	Isbn13                     *string               `json:"isbn13,omitempty"`
-	Isbn13Locked               *bool                 `json:"isbn13Locked,omitempty"`
-	Language                   *string               `json:"language,omitempty"`
-	LanguageLocked             *bool                 `json:"languageLocked,omitempty"`
-	LubimyczytacId             *string               `json:"lubimyczytacId,omitempty"`
-	LubimyczytacIdLocked       *bool                 `json:"lubimyczytacIdLocked,omitempty"`
-	LubimyczytacRating         *float64              `json:"lubimyczytacRating,omitempty"`
-	LubimyczytacRatingLocked   *bool                 `json:"lubimyczytacRatingLocked,omitempty"`
-	Moods                      *[]string             `json:"moods,omitempty"`
-	MoodsLocked                *bool                 `json:"moodsLocked,omitempty"`
-	PageCount                  *int32                `json:"pageCount,omitempty"`
-	PageCountLocked            *bool                 `json:"pageCountLocked,omitempty"`
-	Provider                   *BookMetadataProvider `json:"provider,omitempty"`
-	PublishedDate              *openapi_types.Date   `json:"publishedDate,omitempty"`
-	PublishedDateLocked        *bool                 `json:"publishedDateLocked,omitempty"`
-	Publisher                  *string               `json:"publisher,omitempty"`
-	PublisherLocked            *bool                 `json:"publisherLocked,omitempty"`
-	RanobedbId                 *string               `json:"ranobedbId,omitempty"`
-	RanobedbIdLocked           *bool                 `json:"ranobedbIdLocked,omitempty"`
-	RanobedbRating             *float64              `json:"ranobedbRating,omitempty"`
-	RanobedbRatingLocked       *bool                 `json:"ranobedbRatingLocked,omitempty"`
-	ReviewsLocked              *bool                 `json:"reviewsLocked,omitempty"`
-	SeriesName                 *string               `json:"seriesName,omitempty"`
-	SeriesNameLocked           *bool                 `json:"seriesNameLocked,omitempty"`
-	SeriesNumber               *float32              `json:"seriesNumber,omitempty"`
-	SeriesNumberLocked         *bool                 `json:"seriesNumberLocked,omitempty"`
-	SeriesTotal                *int32                `json:"seriesTotal,omitempty"`
-	SeriesTotalLocked          *bool                 `json:"seriesTotalLocked,omitempty"`
-	Subtitle                   *string               `json:"subtitle,omitempty"`
-	SubtitleLocked             *bool                 `json:"subtitleLocked,omitempty"`
-	Tags                       *[]string             `json:"tags,omitempty"`
-	TagsLocked                 *bool                 `json:"tagsLocked,omitempty"`
-	ThumbnailUrl               *string               `json:"thumbnailUrl,omitempty"`
-	Title                      *string               `json:"title,omitempty"`
-	TitleLocked                *bool                 `json:"titleLocked,omitempty"`
+	AmazonRating               float64              `json:"amazonRating,omitempty,omitzero"`
+	AmazonRatingLocked         bool                 `json:"amazonRatingLocked,omitempty,omitzero"`
+	AmazonReviewCount          int32                `json:"amazonReviewCount,omitempty,omitzero"`
+	AmazonReviewCountLocked    bool                 `json:"amazonReviewCountLocked,omitempty,omitzero"`
+	Asin                       string               `json:"asin,omitempty,omitzero"`
+	AsinLocked                 bool                 `json:"asinLocked,omitempty,omitzero"`
+	Authors                    []string             `json:"authors,omitempty,omitzero"`
+	AuthorsLocked              bool                 `json:"authorsLocked,omitempty,omitzero"`
+	BookId                     int64                `json:"bookId,omitempty,omitzero"`
+	BookReviews                []BookReview         `json:"bookReviews,omitempty,omitzero"`
+	Categories                 []string             `json:"categories,omitempty,omitzero"`
+	CategoriesLocked           bool                 `json:"categoriesLocked,omitempty,omitzero"`
+	ComicvineId                string               `json:"comicvineId,omitempty,omitzero"`
+	ComicvineIdLocked          bool                 `json:"comicvineIdLocked,omitempty,omitzero"`
+	CoverLocked                bool                 `json:"coverLocked,omitempty,omitzero"`
+	CoverUpdatedOn             time.Time            `json:"coverUpdatedOn,omitempty,omitzero"`
+	Description                string               `json:"description,omitempty,omitzero"`
+	DescriptionLocked          bool                 `json:"descriptionLocked,omitempty,omitzero"`
+	DoubanId                   string               `json:"doubanId,omitempty,omitzero"`
+	DoubanIdLocked             bool                 `json:"doubanIdLocked,omitempty,omitzero"`
+	DoubanRating               float64              `json:"doubanRating,omitempty,omitzero"`
+	DoubanRatingLocked         bool                 `json:"doubanRatingLocked,omitempty,omitzero"`
+	DoubanReviewCount          int32                `json:"doubanReviewCount,omitempty,omitzero"`
+	DoubanReviewCountLocked    bool                 `json:"doubanReviewCountLocked,omitempty,omitzero"`
+	ExternalUrl                string               `json:"externalUrl,omitempty,omitzero"`
+	ExternalUrlLocked          bool                 `json:"externalUrlLocked,omitempty,omitzero"`
+	GoodreadsId                string               `json:"goodreadsId,omitempty,omitzero"`
+	GoodreadsIdLocked          bool                 `json:"goodreadsIdLocked,omitempty,omitzero"`
+	GoodreadsRating            float64              `json:"goodreadsRating,omitempty,omitzero"`
+	GoodreadsRatingLocked      bool                 `json:"goodreadsRatingLocked,omitempty,omitzero"`
+	GoodreadsReviewCount       int32                `json:"goodreadsReviewCount,omitempty,omitzero"`
+	GoodreadsReviewCountLocked bool                 `json:"goodreadsReviewCountLocked,omitempty,omitzero"`
+	GoogleId                   string               `json:"googleId,omitempty,omitzero"`
+	GoogleIdLocked             bool                 `json:"googleIdLocked,omitempty,omitzero"`
+	HardcoverBookId            int32                `json:"hardcoverBookId,omitempty,omitzero"`
+	HardcoverBookIdLocked      bool                 `json:"hardcoverBookIdLocked,omitempty,omitzero"`
+	HardcoverId                string               `json:"hardcoverId,omitempty,omitzero"`
+	HardcoverIdLocked          bool                 `json:"hardcoverIdLocked,omitempty,omitzero"`
+	HardcoverRating            float64              `json:"hardcoverRating,omitempty,omitzero"`
+	HardcoverRatingLocked      bool                 `json:"hardcoverRatingLocked,omitempty,omitzero"`
+	HardcoverReviewCount       int32                `json:"hardcoverReviewCount,omitempty,omitzero"`
+	HardcoverReviewCountLocked bool                 `json:"hardcoverReviewCountLocked,omitempty,omitzero"`
+	Isbn10                     string               `json:"isbn10,omitempty,omitzero"`
+	Isbn10Locked               bool                 `json:"isbn10Locked,omitempty,omitzero"`
+	Isbn13                     string               `json:"isbn13,omitempty,omitzero"`
+	Isbn13Locked               bool                 `json:"isbn13Locked,omitempty,omitzero"`
+	Language                   string               `json:"language,omitempty,omitzero"`
+	LanguageLocked             bool                 `json:"languageLocked,omitempty,omitzero"`
+	LubimyczytacId             string               `json:"lubimyczytacId,omitempty,omitzero"`
+	LubimyczytacIdLocked       bool                 `json:"lubimyczytacIdLocked,omitempty,omitzero"`
+	LubimyczytacRating         float64              `json:"lubimyczytacRating,omitempty,omitzero"`
+	LubimyczytacRatingLocked   bool                 `json:"lubimyczytacRatingLocked,omitempty,omitzero"`
+	Moods                      []string             `json:"moods,omitempty,omitzero"`
+	MoodsLocked                bool                 `json:"moodsLocked,omitempty,omitzero"`
+	PageCount                  int32                `json:"pageCount,omitempty,omitzero"`
+	PageCountLocked            bool                 `json:"pageCountLocked,omitempty,omitzero"`
+	Provider                   BookMetadataProvider `json:"provider,omitempty,omitzero"`
+	PublishedDate              openapi_types.Date   `json:"publishedDate,omitempty,omitzero"`
+	PublishedDateLocked        bool                 `json:"publishedDateLocked,omitempty,omitzero"`
+	Publisher                  string               `json:"publisher,omitempty,omitzero"`
+	PublisherLocked            bool                 `json:"publisherLocked,omitempty,omitzero"`
+	RanobedbId                 string               `json:"ranobedbId,omitempty,omitzero"`
+	RanobedbIdLocked           bool                 `json:"ranobedbIdLocked,omitempty,omitzero"`
+	RanobedbRating             float64              `json:"ranobedbRating,omitempty,omitzero"`
+	RanobedbRatingLocked       bool                 `json:"ranobedbRatingLocked,omitempty,omitzero"`
+	ReviewsLocked              bool                 `json:"reviewsLocked,omitempty,omitzero"`
+	SeriesName                 string               `json:"seriesName,omitempty,omitzero"`
+	SeriesNameLocked           bool                 `json:"seriesNameLocked,omitempty,omitzero"`
+	SeriesNumber               float32              `json:"seriesNumber,omitempty,omitzero"`
+	SeriesNumberLocked         bool                 `json:"seriesNumberLocked,omitempty,omitzero"`
+	SeriesTotal                int32                `json:"seriesTotal,omitempty,omitzero"`
+	SeriesTotalLocked          bool                 `json:"seriesTotalLocked,omitempty,omitzero"`
+	Subtitle                   string               `json:"subtitle,omitempty,omitzero"`
+	SubtitleLocked             bool                 `json:"subtitleLocked,omitempty,omitzero"`
+	Tags                       []string             `json:"tags,omitempty,omitzero"`
+	TagsLocked                 bool                 `json:"tagsLocked,omitempty,omitzero"`
+	ThumbnailUrl               string               `json:"thumbnailUrl,omitempty,omitzero"`
+	Title                      string               `json:"title,omitempty,omitzero"`
+	TitleLocked                bool                 `json:"titleLocked,omitempty,omitzero"`
 }
 
 // BookMetadataProvider defines model for BookMetadata.Provider.
@@ -938,48 +938,48 @@ type BookMetadataProvider string
 
 // BookNote defines model for BookNote.
 type BookNote struct {
-	BookId    *int64     `json:"bookId,omitempty"`
-	Content   *string    `json:"content,omitempty"`
-	CreatedAt *time.Time `json:"createdAt,omitempty"`
-	Id        *int64     `json:"id,omitempty"`
-	Title     *string    `json:"title,omitempty"`
-	UpdatedAt *time.Time `json:"updatedAt,omitempty"`
-	UserId    *int64     `json:"userId,omitempty"`
+	BookId    int64     `json:"bookId,omitempty,omitzero"`
+	Content   string    `json:"content,omitempty,omitzero"`
+	CreatedAt time.Time `json:"createdAt,omitempty,omitzero"`
+	Id        int64     `json:"id,omitempty,omitzero"`
+	Title     string    `json:"title,omitempty,omitzero"`
+	UpdatedAt time.Time `json:"updatedAt,omitempty,omitzero"`
+	UserId    int64     `json:"userId,omitempty,omitzero"`
 }
 
 // BookNoteV2 defines model for BookNoteV2.
 type BookNoteV2 struct {
-	BookId       *int64     `json:"bookId,omitempty"`
-	Cfi          *string    `json:"cfi,omitempty"`
-	ChapterTitle *string    `json:"chapterTitle,omitempty"`
-	Color        *string    `json:"color,omitempty"`
-	CreatedAt    *time.Time `json:"createdAt,omitempty"`
-	Id           *int64     `json:"id,omitempty"`
-	NoteContent  *string    `json:"noteContent,omitempty"`
-	SelectedText *string    `json:"selectedText,omitempty"`
-	UpdatedAt    *time.Time `json:"updatedAt,omitempty"`
-	UserId       *int64     `json:"userId,omitempty"`
+	BookId       int64     `json:"bookId,omitempty,omitzero"`
+	Cfi          string    `json:"cfi,omitempty,omitzero"`
+	ChapterTitle string    `json:"chapterTitle,omitempty,omitzero"`
+	Color        string    `json:"color,omitempty,omitzero"`
+	CreatedAt    time.Time `json:"createdAt,omitempty,omitzero"`
+	Id           int64     `json:"id,omitempty,omitzero"`
+	NoteContent  string    `json:"noteContent,omitempty,omitzero"`
+	SelectedText string    `json:"selectedText,omitempty,omitzero"`
+	UpdatedAt    time.Time `json:"updatedAt,omitempty,omitzero"`
+	UserId       int64     `json:"userId,omitempty,omitzero"`
 }
 
 // BookRecommendation defines model for BookRecommendation.
 type BookRecommendation struct {
-	Book            *Book    `json:"book,omitempty"`
-	SimilarityScore *float64 `json:"similarityScore,omitempty"`
+	Book            Book    `json:"book,omitempty,omitzero"`
+	SimilarityScore float64 `json:"similarityScore,omitempty,omitzero"`
 }
 
 // BookReview defines model for BookReview.
 type BookReview struct {
-	Body             *string                     `json:"body,omitempty"`
-	Country          *string                     `json:"country,omitempty"`
-	Date             *time.Time                  `json:"date,omitempty"`
-	FollowersCount   *int32                      `json:"followersCount,omitempty"`
-	Id               *int64                      `json:"id,omitempty"`
-	MetadataProvider *BookReviewMetadataProvider `json:"metadataProvider,omitempty"`
-	Rating           *float32                    `json:"rating,omitempty"`
-	ReviewerName     *string                     `json:"reviewerName,omitempty"`
-	Spoiler          *bool                       `json:"spoiler,omitempty"`
-	TextReviewsCount *int32                      `json:"textReviewsCount,omitempty"`
-	Title            *string                     `json:"title,omitempty"`
+	Body             string                     `json:"body,omitempty,omitzero"`
+	Country          string                     `json:"country,omitempty,omitzero"`
+	Date             time.Time                  `json:"date,omitempty,omitzero"`
+	FollowersCount   int32                      `json:"followersCount,omitempty,omitzero"`
+	Id               int64                      `json:"id,omitempty,omitzero"`
+	MetadataProvider BookReviewMetadataProvider `json:"metadataProvider,omitempty,omitzero"`
+	Rating           float32                    `json:"rating,omitempty,omitzero"`
+	ReviewerName     string                     `json:"reviewerName,omitempty,omitzero"`
+	Spoiler          bool                       `json:"spoiler,omitempty,omitzero"`
+	TextReviewsCount int32                      `json:"textReviewsCount,omitempty,omitzero"`
+	Title            string                     `json:"title,omitempty,omitzero"`
 }
 
 // BookReviewMetadataProvider defines model for BookReview.MetadataProvider.
@@ -987,10 +987,10 @@ type BookReviewMetadataProvider string
 
 // BookStatusUpdateResponse defines model for BookStatusUpdateResponse.
 type BookStatusUpdateResponse struct {
-	BookId                 *int64                              `json:"bookId,omitempty"`
-	DateFinished           *time.Time                          `json:"dateFinished,omitempty"`
-	ReadStatus             *BookStatusUpdateResponseReadStatus `json:"readStatus,omitempty"`
-	ReadStatusModifiedTime *time.Time                          `json:"readStatusModifiedTime,omitempty"`
+	BookId                 int64                              `json:"bookId,omitempty,omitzero"`
+	DateFinished           time.Time                          `json:"dateFinished,omitempty,omitzero"`
+	ReadStatus             BookStatusUpdateResponseReadStatus `json:"readStatus,omitempty,omitzero"`
+	ReadStatusModifiedTime time.Time                          `json:"readStatusModifiedTime,omitempty,omitzero"`
 }
 
 // BookStatusUpdateResponseReadStatus defines model for BookStatusUpdateResponse.ReadStatus.
@@ -998,40 +998,40 @@ type BookStatusUpdateResponseReadStatus string
 
 // BookViewerSettings Viewer settings to update
 type BookViewerSettings struct {
-	CbxSettings    *CbxViewerPreferences    `json:"cbxSettings,omitempty"`
-	EbookSettings  *EbookViewerPreferences  `json:"ebookSettings,omitempty"`
-	NewPdfSettings *NewPdfViewerPreferences `json:"newPdfSettings,omitempty"`
-	PdfSettings    *PdfViewerPreferences    `json:"pdfSettings,omitempty"`
+	CbxSettings    CbxViewerPreferences    `json:"cbxSettings,omitempty,omitzero"`
+	EbookSettings  EbookViewerPreferences  `json:"ebookSettings,omitempty,omitzero"`
+	NewPdfSettings NewPdfViewerPreferences `json:"newPdfSettings,omitempty,omitzero"`
+	PdfSettings    PdfViewerPreferences    `json:"pdfSettings,omitempty,omitzero"`
 }
 
 // BookdropBulkEditRequest Bulk edit request
 type BookdropBulkEditRequest struct {
 	EnabledFields []string     `json:"enabledFields"`
-	ExcludedIds   *[]int64     `json:"excludedIds,omitempty"`
+	ExcludedIds   []int64      `json:"excludedIds,omitempty,omitzero"`
 	Fields        BookMetadata `json:"fields"`
-	MergeArrays   *bool        `json:"mergeArrays,omitempty"`
-	SelectAll     *bool        `json:"selectAll,omitempty"`
-	SelectedIds   *[]int64     `json:"selectedIds,omitempty"`
+	MergeArrays   bool         `json:"mergeArrays,omitempty,omitzero"`
+	SelectAll     bool         `json:"selectAll,omitempty,omitzero"`
+	SelectedIds   []int64      `json:"selectedIds,omitempty,omitzero"`
 }
 
 // BookdropBulkEditResult defines model for BookdropBulkEditResult.
 type BookdropBulkEditResult struct {
-	Failed              *int32 `json:"failed,omitempty"`
-	SuccessfullyUpdated *int32 `json:"successfullyUpdated,omitempty"`
-	TotalFiles          *int32 `json:"totalFiles,omitempty"`
+	Failed              int32 `json:"failed,omitempty,omitzero"`
+	SuccessfullyUpdated int32 `json:"successfullyUpdated,omitempty,omitzero"`
+	TotalFiles          int32 `json:"totalFiles,omitempty,omitzero"`
 }
 
 // BookdropFile defines model for BookdropFile.
 type BookdropFile struct {
-	CreatedAt        *string             `json:"createdAt,omitempty"`
-	FetchedMetadata  *BookMetadata       `json:"fetchedMetadata,omitempty"`
-	FileName         *string             `json:"fileName,omitempty"`
-	FilePath         *string             `json:"filePath,omitempty"`
-	FileSize         *int64              `json:"fileSize,omitempty"`
-	Id               *int64              `json:"id,omitempty"`
-	OriginalMetadata *BookMetadata       `json:"originalMetadata,omitempty"`
-	Status           *BookdropFileStatus `json:"status,omitempty"`
-	UpdatedAt        *string             `json:"updatedAt,omitempty"`
+	CreatedAt        string             `json:"createdAt,omitempty,omitzero"`
+	FetchedMetadata  BookMetadata       `json:"fetchedMetadata,omitempty,omitzero"`
+	FileName         string             `json:"fileName,omitempty,omitzero"`
+	FilePath         string             `json:"filePath,omitempty,omitzero"`
+	FileSize         int64              `json:"fileSize,omitempty,omitzero"`
+	Id               int64              `json:"id,omitempty,omitzero"`
+	OriginalMetadata BookMetadata       `json:"originalMetadata,omitempty,omitzero"`
+	Status           BookdropFileStatus `json:"status,omitempty,omitzero"`
+	UpdatedAt        string             `json:"updatedAt,omitempty,omitzero"`
 }
 
 // BookdropFileStatus defines model for BookdropFile.Status.
@@ -1039,66 +1039,66 @@ type BookdropFileStatus string
 
 // BookdropFileNotification defines model for BookdropFileNotification.
 type BookdropFileNotification struct {
-	LastUpdatedAt *string `json:"lastUpdatedAt,omitempty"`
-	PendingCount  *int32  `json:"pendingCount,omitempty"`
-	TotalCount    *int32  `json:"totalCount,omitempty"`
+	LastUpdatedAt string `json:"lastUpdatedAt,omitempty,omitzero"`
+	PendingCount  int32  `json:"pendingCount,omitempty,omitzero"`
+	TotalCount    int32  `json:"totalCount,omitempty,omitzero"`
 }
 
 // BookdropFileResult defines model for BookdropFileResult.
 type BookdropFileResult struct {
-	FileName *string `json:"fileName,omitempty"`
-	Message  *string `json:"message,omitempty"`
-	Success  *bool   `json:"success,omitempty"`
+	FileName string `json:"fileName,omitempty,omitzero"`
+	Message  string `json:"message,omitempty,omitzero"`
+	Success  bool   `json:"success,omitempty,omitzero"`
 }
 
 // BookdropFinalizeFile defines model for BookdropFinalizeFile.
 type BookdropFinalizeFile struct {
-	FileId    *int64        `json:"fileId,omitempty"`
-	LibraryId *int64        `json:"libraryId,omitempty"`
-	Metadata  *BookMetadata `json:"metadata,omitempty"`
-	PathId    *int64        `json:"pathId,omitempty"`
+	FileId    int64        `json:"fileId,omitempty,omitzero"`
+	LibraryId int64        `json:"libraryId,omitempty,omitzero"`
+	Metadata  BookMetadata `json:"metadata,omitempty,omitzero"`
+	PathId    int64        `json:"pathId,omitempty,omitzero"`
 }
 
 // BookdropFinalizeRequest Finalize import request
 type BookdropFinalizeRequest struct {
-	DefaultLibraryId *int64                  `json:"defaultLibraryId,omitempty"`
-	DefaultPathId    *int64                  `json:"defaultPathId,omitempty"`
-	ExcludedIds      *[]int64                `json:"excludedIds,omitempty"`
-	Files            *[]BookdropFinalizeFile `json:"files,omitempty"`
-	SelectAll        *bool                   `json:"selectAll,omitempty"`
+	DefaultLibraryId int64                  `json:"defaultLibraryId,omitempty,omitzero"`
+	DefaultPathId    int64                  `json:"defaultPathId,omitempty,omitzero"`
+	ExcludedIds      []int64                `json:"excludedIds,omitempty,omitzero"`
+	Files            []BookdropFinalizeFile `json:"files,omitempty,omitzero"`
+	SelectAll        bool                   `json:"selectAll,omitempty,omitzero"`
 }
 
 // BookdropFinalizeResult defines model for BookdropFinalizeResult.
 type BookdropFinalizeResult struct {
-	Failed               *int32                `json:"failed,omitempty"`
-	ProcessedAt          *time.Time            `json:"processedAt,omitempty"`
-	Results              *[]BookdropFileResult `json:"results,omitempty"`
-	SuccessfullyImported *int32                `json:"successfullyImported,omitempty"`
-	TotalFiles           *int32                `json:"totalFiles,omitempty"`
+	Failed               int32                `json:"failed,omitempty,omitzero"`
+	ProcessedAt          time.Time            `json:"processedAt,omitempty,omitzero"`
+	Results              []BookdropFileResult `json:"results,omitempty,omitzero"`
+	SuccessfullyImported int32                `json:"successfullyImported,omitempty,omitzero"`
+	TotalFiles           int32                `json:"totalFiles,omitempty,omitzero"`
 }
 
 // BookdropPatternExtractRequest Pattern extraction request
 type BookdropPatternExtractRequest struct {
-	ExcludedIds *[]int64 `json:"excludedIds,omitempty"`
-	Pattern     string   `json:"pattern"`
-	Preview     *bool    `json:"preview,omitempty"`
-	SelectAll   *bool    `json:"selectAll,omitempty"`
-	SelectedIds *[]int64 `json:"selectedIds,omitempty"`
+	ExcludedIds []int64 `json:"excludedIds,omitempty,omitzero"`
+	Pattern     string  `json:"pattern"`
+	Preview     bool    `json:"preview,omitempty,omitzero"`
+	SelectAll   bool    `json:"selectAll,omitempty,omitzero"`
+	SelectedIds []int64 `json:"selectedIds,omitempty,omitzero"`
 }
 
 // BookdropPatternExtractResult defines model for BookdropPatternExtractResult.
 type BookdropPatternExtractResult struct {
-	Failed                *int32                  `json:"failed,omitempty"`
-	Results               *[]FileExtractionResult `json:"results,omitempty"`
-	SuccessfullyExtracted *int32                  `json:"successfullyExtracted,omitempty"`
-	TotalFiles            *int32                  `json:"totalFiles,omitempty"`
+	Failed                int32                  `json:"failed,omitempty,omitzero"`
+	Results               []FileExtractionResult `json:"results,omitempty,omitzero"`
+	SuccessfullyExtracted int32                  `json:"successfullyExtracted,omitempty,omitzero"`
+	TotalFiles            int32                  `json:"totalFiles,omitempty,omitzero"`
 }
 
 // BookdropSelectionRequest Selection request for files to discard
 type BookdropSelectionRequest struct {
-	ExcludedIds *[]int64 `json:"excludedIds,omitempty"`
-	SelectAll   *bool    `json:"selectAll,omitempty"`
-	SelectedIds *[]int64 `json:"selectedIds,omitempty"`
+	ExcludedIds []int64 `json:"excludedIds,omitempty,omitzero"`
+	SelectAll   bool    `json:"selectAll,omitempty,omitzero"`
+	SelectedIds []int64 `json:"selectedIds,omitempty,omitzero"`
 }
 
 // BulkBookIdsRequest List of book IDs
@@ -1108,34 +1108,34 @@ type BulkBookIdsRequest struct {
 
 // BulkMetadataUpdateRequest Bulk metadata update request
 type BulkMetadataUpdateRequest struct {
-	Authors            *[]string           `json:"authors,omitempty"`
-	BookIds            *[]int64            `json:"bookIds,omitempty"`
-	ClearAuthors       *bool               `json:"clearAuthors,omitempty"`
-	ClearGenres        *bool               `json:"clearGenres,omitempty"`
-	ClearLanguage      *bool               `json:"clearLanguage,omitempty"`
-	ClearMoods         *bool               `json:"clearMoods,omitempty"`
-	ClearPublishedDate *bool               `json:"clearPublishedDate,omitempty"`
-	ClearPublisher     *bool               `json:"clearPublisher,omitempty"`
-	ClearSeriesName    *bool               `json:"clearSeriesName,omitempty"`
-	ClearSeriesTotal   *bool               `json:"clearSeriesTotal,omitempty"`
-	ClearTags          *bool               `json:"clearTags,omitempty"`
-	Genres             *[]string           `json:"genres,omitempty"`
-	Language           *string             `json:"language,omitempty"`
-	MergeCategories    *bool               `json:"mergeCategories,omitempty"`
-	MergeMoods         *bool               `json:"mergeMoods,omitempty"`
-	MergeTags          *bool               `json:"mergeTags,omitempty"`
-	Moods              *[]string           `json:"moods,omitempty"`
-	PublishedDate      *openapi_types.Date `json:"publishedDate,omitempty"`
-	Publisher          *string             `json:"publisher,omitempty"`
-	SeriesName         *string             `json:"seriesName,omitempty"`
-	SeriesTotal        *int32              `json:"seriesTotal,omitempty"`
-	Tags               *[]string           `json:"tags,omitempty"`
+	Authors            []string           `json:"authors,omitempty,omitzero"`
+	BookIds            []int64            `json:"bookIds,omitempty,omitzero"`
+	ClearAuthors       bool               `json:"clearAuthors,omitempty,omitzero"`
+	ClearGenres        bool               `json:"clearGenres,omitempty,omitzero"`
+	ClearLanguage      bool               `json:"clearLanguage,omitempty,omitzero"`
+	ClearMoods         bool               `json:"clearMoods,omitempty,omitzero"`
+	ClearPublishedDate bool               `json:"clearPublishedDate,omitempty,omitzero"`
+	ClearPublisher     bool               `json:"clearPublisher,omitempty,omitzero"`
+	ClearSeriesName    bool               `json:"clearSeriesName,omitempty,omitzero"`
+	ClearSeriesTotal   bool               `json:"clearSeriesTotal,omitempty,omitzero"`
+	ClearTags          bool               `json:"clearTags,omitempty,omitzero"`
+	Genres             []string           `json:"genres,omitempty,omitzero"`
+	Language           string             `json:"language,omitempty,omitzero"`
+	MergeCategories    bool               `json:"mergeCategories,omitempty,omitzero"`
+	MergeMoods         bool               `json:"mergeMoods,omitempty,omitzero"`
+	MergeTags          bool               `json:"mergeTags,omitempty,omitzero"`
+	Moods              []string           `json:"moods,omitempty,omitzero"`
+	PublishedDate      openapi_types.Date `json:"publishedDate,omitempty,omitzero"`
+	Publisher          string             `json:"publisher,omitempty,omitzero"`
+	SeriesName         string             `json:"seriesName,omitempty,omitzero"`
+	SeriesTotal        int32              `json:"seriesTotal,omitempty,omitzero"`
+	Tags               []string           `json:"tags,omitempty,omitzero"`
 }
 
 // CbxPageInfo defines model for CbxPageInfo.
 type CbxPageInfo struct {
-	DisplayName *string `json:"displayName,omitempty"`
-	PageNumber  *int32  `json:"pageNumber,omitempty"`
+	DisplayName string `json:"displayName,omitempty,omitzero"`
+	PageNumber  int32  `json:"pageNumber,omitempty,omitzero"`
 }
 
 // CbxProgress defines model for CbxProgress.
@@ -1146,11 +1146,11 @@ type CbxProgress struct {
 
 // CbxReaderSetting defines model for CbxReaderSetting.
 type CbxReaderSetting struct {
-	BackgroundColor *CbxReaderSettingBackgroundColor `json:"backgroundColor,omitempty"`
-	FitMode         *CbxReaderSettingFitMode         `json:"fitMode,omitempty"`
-	PageSpread      *CbxReaderSettingPageSpread      `json:"pageSpread,omitempty"`
-	PageViewMode    *CbxReaderSettingPageViewMode    `json:"pageViewMode,omitempty"`
-	ScrollMode      *CbxReaderSettingScrollMode      `json:"scrollMode,omitempty"`
+	BackgroundColor CbxReaderSettingBackgroundColor `json:"backgroundColor,omitempty,omitzero"`
+	FitMode         CbxReaderSettingFitMode         `json:"fitMode,omitempty,omitzero"`
+	PageSpread      CbxReaderSettingPageSpread      `json:"pageSpread,omitempty,omitzero"`
+	PageViewMode    CbxReaderSettingPageViewMode    `json:"pageViewMode,omitempty,omitzero"`
+	ScrollMode      CbxReaderSettingScrollMode      `json:"scrollMode,omitempty,omitzero"`
 }
 
 // CbxReaderSettingBackgroundColor defines model for CbxReaderSetting.BackgroundColor.
@@ -1170,12 +1170,12 @@ type CbxReaderSettingScrollMode string
 
 // CbxViewerPreferences defines model for CbxViewerPreferences.
 type CbxViewerPreferences struct {
-	BackgroundColor *CbxViewerPreferencesBackgroundColor `json:"backgroundColor,omitempty"`
-	BookId          *int64                               `json:"bookId,omitempty"`
-	FitMode         *CbxViewerPreferencesFitMode         `json:"fitMode,omitempty"`
-	PageSpread      *CbxViewerPreferencesPageSpread      `json:"pageSpread,omitempty"`
-	PageViewMode    *CbxViewerPreferencesPageViewMode    `json:"pageViewMode,omitempty"`
-	ScrollMode      *CbxViewerPreferencesScrollMode      `json:"scrollMode,omitempty"`
+	BackgroundColor CbxViewerPreferencesBackgroundColor `json:"backgroundColor,omitempty,omitzero"`
+	BookId          int64                               `json:"bookId,omitempty,omitzero"`
+	FitMode         CbxViewerPreferencesFitMode         `json:"fitMode,omitempty,omitzero"`
+	PageSpread      CbxViewerPreferencesPageSpread      `json:"pageSpread,omitempty,omitzero"`
+	PageViewMode    CbxViewerPreferencesPageViewMode    `json:"pageViewMode,omitempty,omitzero"`
+	ScrollMode      CbxViewerPreferencesScrollMode      `json:"scrollMode,omitempty,omitzero"`
 }
 
 // CbxViewerPreferencesBackgroundColor defines model for CbxViewerPreferences.BackgroundColor.
@@ -1195,130 +1195,130 @@ type CbxViewerPreferencesScrollMode string
 
 // ChangePasswordRequest Change password request
 type ChangePasswordRequest struct {
-	CurrentPassword *string `json:"currentPassword,omitempty"`
-	NewPassword     *string `json:"newPassword,omitempty"`
+	CurrentPassword string `json:"currentPassword,omitempty,omitzero"`
+	NewPassword     string `json:"newPassword,omitempty,omitzero"`
 }
 
 // ChangeUserPasswordRequest Change user password request
 type ChangeUserPasswordRequest struct {
-	NewPassword *string `json:"newPassword,omitempty"`
-	UserId      *int64  `json:"userId,omitempty"`
+	NewPassword string `json:"newPassword,omitempty,omitzero"`
+	UserId      int64  `json:"userId,omitempty,omitzero"`
 }
 
 // ClaimMapping defines model for ClaimMapping.
 type ClaimMapping struct {
-	Email    *string `json:"email,omitempty"`
-	Name     *string `json:"name,omitempty"`
-	Username *string `json:"username,omitempty"`
+	Email    string `json:"email,omitempty,omitzero"`
+	Name     string `json:"name,omitempty,omitzero"`
+	Username string `json:"username,omitempty,omitzero"`
 }
 
 // Comicvine defines model for Comicvine.
 type Comicvine struct {
-	ApiKey  *string `json:"apiKey,omitempty"`
-	Enabled *bool   `json:"enabled,omitempty"`
+	ApiKey  string `json:"apiKey,omitempty,omitzero"`
+	Enabled bool   `json:"enabled,omitempty,omitzero"`
 }
 
 // CompletionTimelineResponse defines model for CompletionTimelineResponse.
 type CompletionTimelineResponse struct {
-	CompletionRate  *float64          `json:"completionRate,omitempty"`
-	FinishedBooks   *int64            `json:"finishedBooks,omitempty"`
-	Month           *int32            `json:"month,omitempty"`
-	StatusBreakdown *map[string]int64 `json:"statusBreakdown,omitempty"`
-	TotalBooks      *int64            `json:"totalBooks,omitempty"`
-	Year            *int32            `json:"year,omitempty"`
+	CompletionRate  float64          `json:"completionRate,omitempty,omitzero"`
+	FinishedBooks   int64            `json:"finishedBooks,omitempty,omitzero"`
+	Month           int32            `json:"month,omitempty,omitzero"`
+	StatusBreakdown map[string]int64 `json:"statusBreakdown,omitempty,omitzero"`
+	TotalBooks      int64            `json:"totalBooks,omitempty,omitzero"`
+	Year            int32            `json:"year,omitempty,omitzero"`
 }
 
 // CoverCroppingSettings defines model for CoverCroppingSettings.
 type CoverCroppingSettings struct {
-	AspectRatioThreshold      *float64 `json:"aspectRatioThreshold,omitempty"`
-	HorizontalCroppingEnabled *bool    `json:"horizontalCroppingEnabled,omitempty"`
-	SmartCroppingEnabled      *bool    `json:"smartCroppingEnabled,omitempty"`
-	VerticalCroppingEnabled   *bool    `json:"verticalCroppingEnabled,omitempty"`
+	AspectRatioThreshold      float64 `json:"aspectRatioThreshold,omitempty,omitzero"`
+	HorizontalCroppingEnabled bool    `json:"horizontalCroppingEnabled,omitempty,omitzero"`
+	SmartCroppingEnabled      bool    `json:"smartCroppingEnabled,omitempty,omitzero"`
+	VerticalCroppingEnabled   bool    `json:"verticalCroppingEnabled,omitempty,omitzero"`
 }
 
 // CoverFetchRequest Cover fetch request
 type CoverFetchRequest struct {
-	Author      *string `json:"author,omitempty"`
-	Isbn        *string `json:"isbn,omitempty"`
-	SquareCover *bool   `json:"squareCover,omitempty"`
-	Title       *string `json:"title,omitempty"`
+	Author      string `json:"author,omitempty,omitzero"`
+	Isbn        string `json:"isbn,omitempty,omitzero"`
+	SquareCover bool   `json:"squareCover,omitempty,omitzero"`
+	Title       string `json:"title,omitempty,omitzero"`
 }
 
 // CoverImage defines model for CoverImage.
 type CoverImage struct {
-	Height *int32  `json:"height,omitempty"`
-	Index  *int32  `json:"index,omitempty"`
-	Url    *string `json:"url,omitempty"`
-	Width  *int32  `json:"width,omitempty"`
+	Height int32  `json:"height,omitempty,omitzero"`
+	Index  int32  `json:"index,omitempty,omitzero"`
+	Url    string `json:"url,omitempty,omitzero"`
+	Width  int32  `json:"width,omitempty,omitzero"`
 }
 
 // CreateAnnotationRequest Annotation creation request
 type CreateAnnotationRequest struct {
-	BookId       int64   `json:"bookId"`
-	Cfi          string  `json:"cfi"`
-	ChapterTitle *string `json:"chapterTitle,omitempty"`
-	Color        *string `json:"color,omitempty"`
-	Note         *string `json:"note,omitempty"`
-	Style        *string `json:"style,omitempty"`
-	Text         string  `json:"text"`
+	BookId       int64  `json:"bookId"`
+	Cfi          string `json:"cfi"`
+	ChapterTitle string `json:"chapterTitle,omitempty,omitzero"`
+	Color        string `json:"color,omitempty,omitzero"`
+	Note         string `json:"note,omitempty,omitzero"`
+	Style        string `json:"style,omitempty,omitzero"`
+	Text         string `json:"text"`
 }
 
 // CreateBookMarkRequest Bookmark creation request
 type CreateBookMarkRequest struct {
-	AudiobookBookmark *bool   `json:"audiobookBookmark,omitempty"`
-	BookId            int64   `json:"bookId"`
-	Cfi               *string `json:"cfi,omitempty"`
-	PositionMs        *int64  `json:"positionMs,omitempty"`
-	Title             *string `json:"title,omitempty"`
-	TrackIndex        *int32  `json:"trackIndex,omitempty"`
+	AudiobookBookmark bool   `json:"audiobookBookmark,omitempty,omitzero"`
+	BookId            int64  `json:"bookId"`
+	Cfi               string `json:"cfi,omitempty,omitzero"`
+	PositionMs        int64  `json:"positionMs,omitempty,omitzero"`
+	Title             string `json:"title,omitempty,omitzero"`
+	TrackIndex        int32  `json:"trackIndex,omitempty,omitzero"`
 }
 
 // CreateBookNoteRequest Note creation request
 type CreateBookNoteRequest struct {
-	BookId  int64   `json:"bookId"`
-	Content string  `json:"content"`
-	Id      *int64  `json:"id,omitempty"`
-	Title   *string `json:"title,omitempty"`
+	BookId  int64  `json:"bookId"`
+	Content string `json:"content"`
+	Id      int64  `json:"id,omitempty,omitzero"`
+	Title   string `json:"title,omitempty,omitzero"`
 }
 
 // CreateBookNoteV2Request Note creation request
 type CreateBookNoteV2Request struct {
-	BookId       int64   `json:"bookId"`
-	Cfi          string  `json:"cfi"`
-	ChapterTitle *string `json:"chapterTitle,omitempty"`
-	Color        *string `json:"color,omitempty"`
-	NoteContent  string  `json:"noteContent"`
-	SelectedText *string `json:"selectedText,omitempty"`
+	BookId       int64  `json:"bookId"`
+	Cfi          string `json:"cfi"`
+	ChapterTitle string `json:"chapterTitle,omitempty,omitzero"`
+	Color        string `json:"color,omitempty,omitzero"`
+	NoteContent  string `json:"noteContent"`
+	SelectedText string `json:"selectedText,omitempty,omitzero"`
 }
 
 // CreateEmailProviderRequest Email provider creation request
 type CreateEmailProviderRequest struct {
-	Auth        *bool   `json:"auth,omitempty"`
-	FromAddress *string `json:"fromAddress,omitempty"`
-	Host        *string `json:"host,omitempty"`
-	Name        *string `json:"name,omitempty"`
-	Password    *string `json:"password,omitempty"`
-	Port        *int32  `json:"port,omitempty"`
-	Shared      *bool   `json:"shared,omitempty"`
-	StartTls    *bool   `json:"startTls,omitempty"`
-	Username    *string `json:"username,omitempty"`
+	Auth        bool   `json:"auth,omitempty,omitzero"`
+	FromAddress string `json:"fromAddress,omitempty,omitzero"`
+	Host        string `json:"host,omitempty,omitzero"`
+	Name        string `json:"name,omitempty,omitzero"`
+	Password    string `json:"password,omitempty,omitzero"`
+	Port        int32  `json:"port,omitempty,omitzero"`
+	Shared      bool   `json:"shared,omitempty,omitzero"`
+	StartTls    bool   `json:"startTls,omitempty,omitzero"`
+	Username    string `json:"username,omitempty,omitzero"`
 }
 
 // CreateEmailRecipientRequest Email recipient creation request
 type CreateEmailRecipientRequest struct {
-	DefaultRecipient *bool               `json:"defaultRecipient,omitempty"`
+	DefaultRecipient bool                `json:"defaultRecipient,omitempty,omitzero"`
 	Email            openapi_types.Email `json:"email"`
 	Name             string              `json:"name"`
 }
 
 // CreateLibraryRequest Library creation request with paths to scan
 type CreateLibraryRequest struct {
-	FormatPriority *[]CreateLibraryRequestFormatPriority `json:"formatPriority,omitempty"`
-	Icon           string                                `json:"icon"`
-	IconType       CreateLibraryRequestIconType          `json:"iconType"`
-	Name           string                                `json:"name"`
-	Paths          []LibraryPath                         `json:"paths"`
-	Watch          *bool                                 `json:"watch,omitempty"`
+	FormatPriority []CreateLibraryRequestFormatPriority `json:"formatPriority,omitempty,omitzero"`
+	Icon           string                               `json:"icon"`
+	IconType       CreateLibraryRequestIconType         `json:"iconType"`
+	Name           string                               `json:"name"`
+	Paths          []LibraryPath                        `json:"paths"`
+	Watch          bool                                 `json:"watch,omitempty,omitzero"`
 }
 
 // CreateLibraryRequestFormatPriority defines model for CreateLibraryRequest.FormatPriority.
@@ -1329,26 +1329,26 @@ type CreateLibraryRequestIconType string
 
 // CreatePhysicalBookRequest Physical book creation request
 type CreatePhysicalBookRequest struct {
-	Authors       *[]string `json:"authors,omitempty"`
-	Categories    *[]string `json:"categories,omitempty"`
-	Description   *string   `json:"description,omitempty"`
-	Isbn          *string   `json:"isbn,omitempty"`
-	Language      *string   `json:"language,omitempty"`
-	LibraryId     int64     `json:"libraryId"`
-	PageCount     *int32    `json:"pageCount,omitempty"`
-	PublishedDate *string   `json:"publishedDate,omitempty"`
-	Publisher     *string   `json:"publisher,omitempty"`
-	Title         *string   `json:"title,omitempty"`
+	Authors       []string `json:"authors,omitempty,omitzero"`
+	Categories    []string `json:"categories,omitempty,omitzero"`
+	Description   string   `json:"description,omitempty,omitzero"`
+	Isbn          string   `json:"isbn,omitempty,omitzero"`
+	Language      string   `json:"language,omitempty,omitzero"`
+	LibraryId     int64    `json:"libraryId"`
+	PageCount     int32    `json:"pageCount,omitempty,omitzero"`
+	PublishedDate string   `json:"publishedDate,omitempty,omitzero"`
+	Publisher     string   `json:"publisher,omitempty,omitzero"`
+	Title         string   `json:"title,omitempty,omitzero"`
 }
 
 // CronConfig defines model for CronConfig.
 type CronConfig struct {
-	CreatedAt      *time.Time          `json:"createdAt,omitempty"`
-	CronExpression *string             `json:"cronExpression,omitempty"`
-	Enabled        *bool               `json:"enabled,omitempty"`
-	Id             *int64              `json:"id,omitempty"`
-	TaskType       *CronConfigTaskType `json:"taskType,omitempty"`
-	UpdatedAt      *time.Time          `json:"updatedAt,omitempty"`
+	CreatedAt      time.Time          `json:"createdAt,omitempty,omitzero"`
+	CronExpression string             `json:"cronExpression,omitempty,omitzero"`
+	Enabled        bool               `json:"enabled,omitempty,omitzero"`
+	Id             int64              `json:"id,omitempty,omitzero"`
+	TaskType       CronConfigTaskType `json:"taskType,omitempty,omitzero"`
+	UpdatedAt      time.Time          `json:"updatedAt,omitempty,omitzero"`
 }
 
 // CronConfigTaskType defines model for CronConfig.TaskType.
@@ -1356,20 +1356,20 @@ type CronConfigTaskType string
 
 // CurrentBookmark defines model for CurrentBookmark.
 type CurrentBookmark struct {
-	ContentSourceProgressPercent *int32    `json:"ContentSourceProgressPercent,omitempty"`
-	LastModified                 *string   `json:"LastModified,omitempty"`
-	Location                     *Location `json:"Location,omitempty"`
-	ProgressPercent              *int32    `json:"ProgressPercent,omitempty"`
+	ContentSourceProgressPercent int32    `json:"ContentSourceProgressPercent,omitempty,omitzero"`
+	LastModified                 string   `json:"LastModified,omitempty,omitzero"`
+	Location                     Location `json:"Location,omitempty,omitzero"`
+	ProgressPercent              int32    `json:"ProgressPercent,omitempty,omitzero"`
 }
 
 // CustomFontDto defines model for CustomFontDto.
 type CustomFontDto struct {
-	FileSize         *int64               `json:"fileSize,omitempty"`
-	FontName         *string              `json:"fontName,omitempty"`
-	Format           *CustomFontDtoFormat `json:"format,omitempty"`
-	Id               *int64               `json:"id,omitempty"`
-	OriginalFileName *string              `json:"originalFileName,omitempty"`
-	UploadedAt       *time.Time           `json:"uploadedAt,omitempty"`
+	FileSize         int64               `json:"fileSize,omitempty,omitzero"`
+	FontName         string              `json:"fontName,omitempty,omitzero"`
+	Format           CustomFontDtoFormat `json:"format,omitempty,omitzero"`
+	Id               int64               `json:"id,omitempty,omitzero"`
+	OriginalFileName string              `json:"originalFileName,omitempty,omitzero"`
+	UploadedAt       time.Time           `json:"uploadedAt,omitempty,omitzero"`
 }
 
 // CustomFontDtoFormat defines model for CustomFontDto.Format.
@@ -1377,7 +1377,7 @@ type CustomFontDtoFormat string
 
 // DashboardConfig defines model for DashboardConfig.
 type DashboardConfig struct {
-	Scrollers *[]ScrollerConfig `json:"scrollers,omitempty"`
+	Scrollers []ScrollerConfig `json:"scrollers,omitempty,omitzero"`
 }
 
 // DeleteMetadataRequest Delete metadata request
@@ -1391,178 +1391,178 @@ type DeleteMetadataRequestMetadataType string
 
 // Douban defines model for Douban.
 type Douban struct {
-	Enabled *bool `json:"enabled,omitempty"`
+	Enabled bool `json:"enabled,omitempty,omitzero"`
 }
 
 // EbookReaderSetting defines model for EbookReaderSetting.
 type EbookReaderSetting struct {
-	Flow           *string  `json:"flow,omitempty"`
-	FontFamily     *string  `json:"fontFamily,omitempty"`
-	FontSize       *int32   `json:"fontSize,omitempty"`
-	Gap            *float32 `json:"gap,omitempty"`
-	Hyphenate      *bool    `json:"hyphenate,omitempty"`
-	IsDark         *bool    `json:"isDark,omitempty"`
-	Justify        *bool    `json:"justify,omitempty"`
-	LineHeight     *float32 `json:"lineHeight,omitempty"`
-	MaxBlockSize   *int32   `json:"maxBlockSize,omitempty"`
-	MaxColumnCount *int32   `json:"maxColumnCount,omitempty"`
-	MaxInlineSize  *int32   `json:"maxInlineSize,omitempty"`
-	Theme          *string  `json:"theme,omitempty"`
+	Flow           string  `json:"flow,omitempty,omitzero"`
+	FontFamily     string  `json:"fontFamily,omitempty,omitzero"`
+	FontSize       int32   `json:"fontSize,omitempty,omitzero"`
+	Gap            float32 `json:"gap,omitempty,omitzero"`
+	Hyphenate      bool    `json:"hyphenate,omitempty,omitzero"`
+	IsDark         bool    `json:"isDark,omitempty,omitzero"`
+	Justify        bool    `json:"justify,omitempty,omitzero"`
+	LineHeight     float32 `json:"lineHeight,omitempty,omitzero"`
+	MaxBlockSize   int32   `json:"maxBlockSize,omitempty,omitzero"`
+	MaxColumnCount int32   `json:"maxColumnCount,omitempty,omitzero"`
+	MaxInlineSize  int32   `json:"maxInlineSize,omitempty,omitzero"`
+	Theme          string  `json:"theme,omitempty,omitzero"`
 }
 
 // EbookViewerPreferences defines model for EbookViewerPreferences.
 type EbookViewerPreferences struct {
-	BookId         *int64   `json:"bookId,omitempty"`
-	Flow           *string  `json:"flow,omitempty"`
-	FontFamily     *string  `json:"fontFamily,omitempty"`
-	FontSize       *int32   `json:"fontSize,omitempty"`
-	Gap            *float32 `json:"gap,omitempty"`
-	Hyphenate      *bool    `json:"hyphenate,omitempty"`
-	IsDark         *bool    `json:"isDark,omitempty"`
-	Justify        *bool    `json:"justify,omitempty"`
-	LineHeight     *float32 `json:"lineHeight,omitempty"`
-	MaxBlockSize   *int32   `json:"maxBlockSize,omitempty"`
-	MaxColumnCount *int32   `json:"maxColumnCount,omitempty"`
-	MaxInlineSize  *int32   `json:"maxInlineSize,omitempty"`
-	Theme          *string  `json:"theme,omitempty"`
-	UserId         *int64   `json:"userId,omitempty"`
+	BookId         int64   `json:"bookId,omitempty,omitzero"`
+	Flow           string  `json:"flow,omitempty,omitzero"`
+	FontFamily     string  `json:"fontFamily,omitempty,omitzero"`
+	FontSize       int32   `json:"fontSize,omitempty,omitzero"`
+	Gap            float32 `json:"gap,omitempty,omitzero"`
+	Hyphenate      bool    `json:"hyphenate,omitempty,omitzero"`
+	IsDark         bool    `json:"isDark,omitempty,omitzero"`
+	Justify        bool    `json:"justify,omitempty,omitzero"`
+	LineHeight     float32 `json:"lineHeight,omitempty,omitzero"`
+	MaxBlockSize   int32   `json:"maxBlockSize,omitempty,omitzero"`
+	MaxColumnCount int32   `json:"maxColumnCount,omitempty,omitzero"`
+	MaxInlineSize  int32   `json:"maxInlineSize,omitempty,omitzero"`
+	Theme          string  `json:"theme,omitempty,omitzero"`
+	UserId         int64   `json:"userId,omitempty,omitzero"`
 }
 
 // EmailProviderV2 defines model for EmailProviderV2.
 type EmailProviderV2 struct {
-	Auth            *bool   `json:"auth,omitempty"`
-	DefaultProvider *bool   `json:"defaultProvider,omitempty"`
-	FromAddress     *string `json:"fromAddress,omitempty"`
-	Host            *string `json:"host,omitempty"`
-	Id              *int64  `json:"id,omitempty"`
-	Name            *string `json:"name,omitempty"`
-	Port            *int32  `json:"port,omitempty"`
-	Shared          *bool   `json:"shared,omitempty"`
-	StartTls        *bool   `json:"startTls,omitempty"`
-	UserId          *int64  `json:"userId,omitempty"`
-	Username        *string `json:"username,omitempty"`
+	Auth            bool   `json:"auth,omitempty,omitzero"`
+	DefaultProvider bool   `json:"defaultProvider,omitempty,omitzero"`
+	FromAddress     string `json:"fromAddress,omitempty,omitzero"`
+	Host            string `json:"host,omitempty,omitzero"`
+	Id              int64  `json:"id,omitempty,omitzero"`
+	Name            string `json:"name,omitempty,omitzero"`
+	Port            int32  `json:"port,omitempty,omitzero"`
+	Shared          bool   `json:"shared,omitempty,omitzero"`
+	StartTls        bool   `json:"startTls,omitempty,omitzero"`
+	UserId          int64  `json:"userId,omitempty,omitzero"`
+	Username        string `json:"username,omitempty,omitzero"`
 }
 
 // EmailRecipientV2 defines model for EmailRecipientV2.
 type EmailRecipientV2 struct {
-	DefaultRecipient *bool   `json:"defaultRecipient,omitempty"`
-	Email            *string `json:"email,omitempty"`
-	Id               *int64  `json:"id,omitempty"`
-	Name             *string `json:"name,omitempty"`
-	UserId           *int64  `json:"userId,omitempty"`
+	DefaultRecipient bool   `json:"defaultRecipient,omitempty,omitzero"`
+	Email            string `json:"email,omitempty,omitzero"`
+	Id               int64  `json:"id,omitempty,omitzero"`
+	Name             string `json:"name,omitempty,omitzero"`
+	UserId           int64  `json:"userId,omitempty,omitzero"`
 }
 
 // EnabledFields defines model for EnabledFields.
 type EnabledFields struct {
-	AmazonRating         *bool `json:"amazonRating,omitempty"`
-	AmazonReviewCount    *bool `json:"amazonReviewCount,omitempty"`
-	Asin                 *bool `json:"asin,omitempty"`
-	Authors              *bool `json:"authors,omitempty"`
-	Categories           *bool `json:"categories,omitempty"`
-	ComicvineId          *bool `json:"comicvineId,omitempty"`
-	Cover                *bool `json:"cover,omitempty"`
-	Description          *bool `json:"description,omitempty"`
-	GoodreadsId          *bool `json:"goodreadsId,omitempty"`
-	GoodreadsRating      *bool `json:"goodreadsRating,omitempty"`
-	GoodreadsReviewCount *bool `json:"goodreadsReviewCount,omitempty"`
-	GoogleId             *bool `json:"googleId,omitempty"`
-	HardcoverId          *bool `json:"hardcoverId,omitempty"`
-	HardcoverRating      *bool `json:"hardcoverRating,omitempty"`
-	HardcoverReviewCount *bool `json:"hardcoverReviewCount,omitempty"`
-	Isbn10               *bool `json:"isbn10,omitempty"`
-	Isbn13               *bool `json:"isbn13,omitempty"`
-	Language             *bool `json:"language,omitempty"`
-	LubimyczytacId       *bool `json:"lubimyczytacId,omitempty"`
-	LubimyczytacRating   *bool `json:"lubimyczytacRating,omitempty"`
-	Moods                *bool `json:"moods,omitempty"`
-	PageCount            *bool `json:"pageCount,omitempty"`
-	PublishedDate        *bool `json:"publishedDate,omitempty"`
-	Publisher            *bool `json:"publisher,omitempty"`
-	RanobedbId           *bool `json:"ranobedbId,omitempty"`
-	RanobedbRating       *bool `json:"ranobedbRating,omitempty"`
-	SeriesName           *bool `json:"seriesName,omitempty"`
-	SeriesNumber         *bool `json:"seriesNumber,omitempty"`
-	SeriesTotal          *bool `json:"seriesTotal,omitempty"`
-	Subtitle             *bool `json:"subtitle,omitempty"`
-	Tags                 *bool `json:"tags,omitempty"`
-	Title                *bool `json:"title,omitempty"`
+	AmazonRating         bool `json:"amazonRating,omitempty,omitzero"`
+	AmazonReviewCount    bool `json:"amazonReviewCount,omitempty,omitzero"`
+	Asin                 bool `json:"asin,omitempty,omitzero"`
+	Authors              bool `json:"authors,omitempty,omitzero"`
+	Categories           bool `json:"categories,omitempty,omitzero"`
+	ComicvineId          bool `json:"comicvineId,omitempty,omitzero"`
+	Cover                bool `json:"cover,omitempty,omitzero"`
+	Description          bool `json:"description,omitempty,omitzero"`
+	GoodreadsId          bool `json:"goodreadsId,omitempty,omitzero"`
+	GoodreadsRating      bool `json:"goodreadsRating,omitempty,omitzero"`
+	GoodreadsReviewCount bool `json:"goodreadsReviewCount,omitempty,omitzero"`
+	GoogleId             bool `json:"googleId,omitempty,omitzero"`
+	HardcoverId          bool `json:"hardcoverId,omitempty,omitzero"`
+	HardcoverRating      bool `json:"hardcoverRating,omitempty,omitzero"`
+	HardcoverReviewCount bool `json:"hardcoverReviewCount,omitempty,omitzero"`
+	Isbn10               bool `json:"isbn10,omitempty,omitzero"`
+	Isbn13               bool `json:"isbn13,omitempty,omitzero"`
+	Language             bool `json:"language,omitempty,omitzero"`
+	LubimyczytacId       bool `json:"lubimyczytacId,omitempty,omitzero"`
+	LubimyczytacRating   bool `json:"lubimyczytacRating,omitempty,omitzero"`
+	Moods                bool `json:"moods,omitempty,omitzero"`
+	PageCount            bool `json:"pageCount,omitempty,omitzero"`
+	PublishedDate        bool `json:"publishedDate,omitempty,omitzero"`
+	Publisher            bool `json:"publisher,omitempty,omitzero"`
+	RanobedbId           bool `json:"ranobedbId,omitempty,omitzero"`
+	RanobedbRating       bool `json:"ranobedbRating,omitempty,omitzero"`
+	SeriesName           bool `json:"seriesName,omitempty,omitzero"`
+	SeriesNumber         bool `json:"seriesNumber,omitempty,omitzero"`
+	SeriesTotal          bool `json:"seriesTotal,omitempty,omitzero"`
+	Subtitle             bool `json:"subtitle,omitempty,omitzero"`
+	Tags                 bool `json:"tags,omitempty,omitzero"`
+	Title                bool `json:"title,omitempty,omitzero"`
 }
 
 // EntityViewPreferences defines model for EntityViewPreferences.
 type EntityViewPreferences struct {
-	Global    *GlobalPreferences    `json:"global,omitempty"`
-	Overrides *[]OverridePreference `json:"overrides,omitempty"`
+	Global    GlobalPreferences    `json:"global,omitempty,omitzero"`
+	Overrides []OverridePreference `json:"overrides,omitempty,omitzero"`
 }
 
 // EpubBookInfo defines model for EpubBookInfo.
 type EpubBookInfo struct {
-	ContainerPath *string                 `json:"containerPath,omitempty"`
-	CoverPath     *string                 `json:"coverPath,omitempty"`
-	Manifest      *[]EpubManifestItem     `json:"manifest,omitempty"`
-	Metadata      *map[string]interface{} `json:"metadata,omitempty"`
-	RootPath      *string                 `json:"rootPath,omitempty"`
-	Spine         *[]EpubSpineItem        `json:"spine,omitempty"`
-	Toc           *EpubTocItem            `json:"toc,omitempty"`
+	ContainerPath string                 `json:"containerPath,omitempty,omitzero"`
+	CoverPath     string                 `json:"coverPath,omitempty,omitzero"`
+	Manifest      []EpubManifestItem     `json:"manifest,omitempty,omitzero"`
+	Metadata      map[string]interface{} `json:"metadata,omitempty,omitzero"`
+	RootPath      string                 `json:"rootPath,omitempty,omitzero"`
+	Spine         []EpubSpineItem        `json:"spine,omitempty,omitzero"`
+	Toc           EpubTocItem            `json:"toc,omitempty,omitzero"`
 }
 
 // EpubManifestItem defines model for EpubManifestItem.
 type EpubManifestItem struct {
-	Href       *string   `json:"href,omitempty"`
-	Id         *string   `json:"id,omitempty"`
-	MediaType  *string   `json:"mediaType,omitempty"`
-	Properties *[]string `json:"properties,omitempty"`
-	Size       *int64    `json:"size,omitempty"`
+	Href       string   `json:"href,omitempty,omitzero"`
+	Id         string   `json:"id,omitempty,omitzero"`
+	MediaType  string   `json:"mediaType,omitempty,omitzero"`
+	Properties []string `json:"properties,omitempty,omitzero"`
+	Size       int64    `json:"size,omitempty,omitzero"`
 }
 
 // EpubProgress defines model for EpubProgress.
 type EpubProgress struct {
 	Cfi        string  `json:"cfi"`
-	Href       *string `json:"href,omitempty"`
+	Href       string  `json:"href,omitempty,omitzero"`
 	Percentage float32 `json:"percentage"`
 }
 
 // EpubReaderSetting defines model for EpubReaderSetting.
 type EpubReaderSetting struct {
-	Flow          *string  `json:"flow,omitempty"`
-	Font          *string  `json:"font,omitempty"`
-	FontSize      *int32   `json:"fontSize,omitempty"`
-	LetterSpacing *float32 `json:"letterSpacing,omitempty"`
-	LineHeight    *float32 `json:"lineHeight,omitempty"`
-	Spread        *string  `json:"spread,omitempty"`
-	Theme         *string  `json:"theme,omitempty"`
+	Flow          string  `json:"flow,omitempty,omitzero"`
+	Font          string  `json:"font,omitempty,omitzero"`
+	FontSize      int32   `json:"fontSize,omitempty,omitzero"`
+	LetterSpacing float32 `json:"letterSpacing,omitempty,omitzero"`
+	LineHeight    float32 `json:"lineHeight,omitempty,omitzero"`
+	Spread        string  `json:"spread,omitempty,omitzero"`
+	Theme         string  `json:"theme,omitempty,omitzero"`
 }
 
 // EpubSpineItem defines model for EpubSpineItem.
 type EpubSpineItem struct {
-	Href      *string `json:"href,omitempty"`
-	Idref     *string `json:"idref,omitempty"`
-	Linear    *bool   `json:"linear,omitempty"`
-	MediaType *string `json:"mediaType,omitempty"`
+	Href      string `json:"href,omitempty,omitzero"`
+	Idref     string `json:"idref,omitempty,omitzero"`
+	Linear    bool   `json:"linear,omitempty,omitzero"`
+	MediaType string `json:"mediaType,omitempty,omitzero"`
 }
 
 // EpubTocItem defines model for EpubTocItem.
 type EpubTocItem struct {
-	Children *[]interface{} `json:"children,omitempty"`
-	Href     *string        `json:"href,omitempty"`
-	Label    *string        `json:"label,omitempty"`
+	Children []interface{} `json:"children,omitempty,omitzero"`
+	Href     string        `json:"href,omitempty,omitzero"`
+	Label    string        `json:"label,omitempty,omitzero"`
 }
 
 // FavoriteReadingDaysResponse defines model for FavoriteReadingDaysResponse.
 type FavoriteReadingDaysResponse struct {
-	DayName              *string `json:"dayName,omitempty"`
-	DayOfWeek            *int32  `json:"dayOfWeek,omitempty"`
-	SessionCount         *int64  `json:"sessionCount,omitempty"`
-	TotalDurationSeconds *int64  `json:"totalDurationSeconds,omitempty"`
+	DayName              string `json:"dayName,omitempty,omitzero"`
+	DayOfWeek            int32  `json:"dayOfWeek,omitempty,omitzero"`
+	SessionCount         int64  `json:"sessionCount,omitempty,omitzero"`
+	TotalDurationSeconds int64  `json:"totalDurationSeconds,omitempty,omitzero"`
 }
 
 // FetchMetadataRequest Fetch metadata request
 type FetchMetadataRequest struct {
-	Asin      *string                          `json:"asin,omitempty"`
-	Author    *string                          `json:"author,omitempty"`
-	BookId    *int64                           `json:"bookId,omitempty"`
-	Isbn      *string                          `json:"isbn,omitempty"`
-	Providers *[]FetchMetadataRequestProviders `json:"providers,omitempty"`
-	Title     *string                          `json:"title,omitempty"`
+	Asin      string                          `json:"asin,omitempty,omitzero"`
+	Author    string                          `json:"author,omitempty,omitzero"`
+	BookId    int64                           `json:"bookId,omitempty,omitzero"`
+	Isbn      string                          `json:"isbn,omitempty,omitzero"`
+	Providers []FetchMetadataRequestProviders `json:"providers,omitempty,omitzero"`
+	Title     string                          `json:"title,omitempty,omitzero"`
 }
 
 // FetchMetadataRequestProviders defines model for FetchMetadataRequest.Providers.
@@ -1570,14 +1570,14 @@ type FetchMetadataRequestProviders string
 
 // FetchedProposal defines model for FetchedProposal.
 type FetchedProposal struct {
-	BookId         *int64                 `json:"bookId,omitempty"`
-	FetchedAt      *time.Time             `json:"fetchedAt,omitempty"`
-	MetadataJson   *BookMetadata          `json:"metadataJson,omitempty"`
-	ProposalId     *int64                 `json:"proposalId,omitempty"`
-	ReviewedAt     *time.Time             `json:"reviewedAt,omitempty"`
-	ReviewerUserId *string                `json:"reviewerUserId,omitempty"`
-	Status         *FetchedProposalStatus `json:"status,omitempty"`
-	TaskId         *string                `json:"taskId,omitempty"`
+	BookId         int64                 `json:"bookId,omitempty,omitzero"`
+	FetchedAt      time.Time             `json:"fetchedAt,omitempty,omitzero"`
+	MetadataJson   BookMetadata          `json:"metadataJson,omitempty,omitzero"`
+	ProposalId     int64                 `json:"proposalId,omitempty,omitzero"`
+	ReviewedAt     time.Time             `json:"reviewedAt,omitempty,omitzero"`
+	ReviewerUserId string                `json:"reviewerUserId,omitempty,omitzero"`
+	Status         FetchedProposalStatus `json:"status,omitempty,omitzero"`
+	TaskId         string                `json:"taskId,omitempty,omitzero"`
 }
 
 // FetchedProposalStatus defines model for FetchedProposal.Status.
@@ -1585,46 +1585,46 @@ type FetchedProposalStatus string
 
 // FieldOptions defines model for FieldOptions.
 type FieldOptions struct {
-	AmazonRating         *FieldProvider `json:"amazonRating,omitempty"`
-	AmazonReviewCount    *FieldProvider `json:"amazonReviewCount,omitempty"`
-	Asin                 *FieldProvider `json:"asin,omitempty"`
-	Authors              *FieldProvider `json:"authors,omitempty"`
-	Categories           *FieldProvider `json:"categories,omitempty"`
-	ComicvineId          *FieldProvider `json:"comicvineId,omitempty"`
-	Cover                *FieldProvider `json:"cover,omitempty"`
-	Description          *FieldProvider `json:"description,omitempty"`
-	GoodreadsId          *FieldProvider `json:"goodreadsId,omitempty"`
-	GoodreadsRating      *FieldProvider `json:"goodreadsRating,omitempty"`
-	GoodreadsReviewCount *FieldProvider `json:"goodreadsReviewCount,omitempty"`
-	GoogleId             *FieldProvider `json:"googleId,omitempty"`
-	HardcoverId          *FieldProvider `json:"hardcoverId,omitempty"`
-	HardcoverRating      *FieldProvider `json:"hardcoverRating,omitempty"`
-	HardcoverReviewCount *FieldProvider `json:"hardcoverReviewCount,omitempty"`
-	Isbn10               *FieldProvider `json:"isbn10,omitempty"`
-	Isbn13               *FieldProvider `json:"isbn13,omitempty"`
-	Language             *FieldProvider `json:"language,omitempty"`
-	LubimyczytacId       *FieldProvider `json:"lubimyczytacId,omitempty"`
-	LubimyczytacRating   *FieldProvider `json:"lubimyczytacRating,omitempty"`
-	Moods                *FieldProvider `json:"moods,omitempty"`
-	PageCount            *FieldProvider `json:"pageCount,omitempty"`
-	PublishedDate        *FieldProvider `json:"publishedDate,omitempty"`
-	Publisher            *FieldProvider `json:"publisher,omitempty"`
-	RanobedbId           *FieldProvider `json:"ranobedbId,omitempty"`
-	RanobedbRating       *FieldProvider `json:"ranobedbRating,omitempty"`
-	SeriesName           *FieldProvider `json:"seriesName,omitempty"`
-	SeriesNumber         *FieldProvider `json:"seriesNumber,omitempty"`
-	SeriesTotal          *FieldProvider `json:"seriesTotal,omitempty"`
-	Subtitle             *FieldProvider `json:"subtitle,omitempty"`
-	Tags                 *FieldProvider `json:"tags,omitempty"`
-	Title                *FieldProvider `json:"title,omitempty"`
+	AmazonRating         FieldProvider `json:"amazonRating,omitempty,omitzero"`
+	AmazonReviewCount    FieldProvider `json:"amazonReviewCount,omitempty,omitzero"`
+	Asin                 FieldProvider `json:"asin,omitempty,omitzero"`
+	Authors              FieldProvider `json:"authors,omitempty,omitzero"`
+	Categories           FieldProvider `json:"categories,omitempty,omitzero"`
+	ComicvineId          FieldProvider `json:"comicvineId,omitempty,omitzero"`
+	Cover                FieldProvider `json:"cover,omitempty,omitzero"`
+	Description          FieldProvider `json:"description,omitempty,omitzero"`
+	GoodreadsId          FieldProvider `json:"goodreadsId,omitempty,omitzero"`
+	GoodreadsRating      FieldProvider `json:"goodreadsRating,omitempty,omitzero"`
+	GoodreadsReviewCount FieldProvider `json:"goodreadsReviewCount,omitempty,omitzero"`
+	GoogleId             FieldProvider `json:"googleId,omitempty,omitzero"`
+	HardcoverId          FieldProvider `json:"hardcoverId,omitempty,omitzero"`
+	HardcoverRating      FieldProvider `json:"hardcoverRating,omitempty,omitzero"`
+	HardcoverReviewCount FieldProvider `json:"hardcoverReviewCount,omitempty,omitzero"`
+	Isbn10               FieldProvider `json:"isbn10,omitempty,omitzero"`
+	Isbn13               FieldProvider `json:"isbn13,omitempty,omitzero"`
+	Language             FieldProvider `json:"language,omitempty,omitzero"`
+	LubimyczytacId       FieldProvider `json:"lubimyczytacId,omitempty,omitzero"`
+	LubimyczytacRating   FieldProvider `json:"lubimyczytacRating,omitempty,omitzero"`
+	Moods                FieldProvider `json:"moods,omitempty,omitzero"`
+	PageCount            FieldProvider `json:"pageCount,omitempty,omitzero"`
+	PublishedDate        FieldProvider `json:"publishedDate,omitempty,omitzero"`
+	Publisher            FieldProvider `json:"publisher,omitempty,omitzero"`
+	RanobedbId           FieldProvider `json:"ranobedbId,omitempty,omitzero"`
+	RanobedbRating       FieldProvider `json:"ranobedbRating,omitempty,omitzero"`
+	SeriesName           FieldProvider `json:"seriesName,omitempty,omitzero"`
+	SeriesNumber         FieldProvider `json:"seriesNumber,omitempty,omitzero"`
+	SeriesTotal          FieldProvider `json:"seriesTotal,omitempty,omitzero"`
+	Subtitle             FieldProvider `json:"subtitle,omitempty,omitzero"`
+	Tags                 FieldProvider `json:"tags,omitempty,omitzero"`
+	Title                FieldProvider `json:"title,omitempty,omitzero"`
 }
 
 // FieldProvider defines model for FieldProvider.
 type FieldProvider struct {
-	P1 *FieldProviderP1 `json:"p1,omitempty"`
-	P2 *FieldProviderP2 `json:"p2,omitempty"`
-	P3 *FieldProviderP3 `json:"p3,omitempty"`
-	P4 *FieldProviderP4 `json:"p4,omitempty"`
+	P1 FieldProviderP1 `json:"p1,omitempty,omitzero"`
+	P2 FieldProviderP2 `json:"p2,omitempty,omitzero"`
+	P3 FieldProviderP3 `json:"p3,omitempty,omitzero"`
+	P4 FieldProviderP4 `json:"p4,omitempty,omitzero"`
 }
 
 // FieldProviderP1 defines model for FieldProvider.P1.
@@ -1641,80 +1641,80 @@ type FieldProviderP4 string
 
 // FileExtractionResult defines model for FileExtractionResult.
 type FileExtractionResult struct {
-	ErrorMessage      *string       `json:"errorMessage,omitempty"`
-	ExtractedMetadata *BookMetadata `json:"extractedMetadata,omitempty"`
-	FileId            *int64        `json:"fileId,omitempty"`
-	FileName          *string       `json:"fileName,omitempty"`
-	Success           *bool         `json:"success,omitempty"`
+	ErrorMessage      string       `json:"errorMessage,omitempty,omitzero"`
+	ExtractedMetadata BookMetadata `json:"extractedMetadata,omitempty,omitzero"`
+	FileId            int64        `json:"fileId,omitempty,omitzero"`
+	FileName          string       `json:"fileName,omitempty,omitzero"`
+	Success           bool         `json:"success,omitempty,omitzero"`
 }
 
 // FileMoveRequest File move request
 type FileMoveRequest struct {
-	BookIds *[]int64 `json:"bookIds,omitempty"`
-	Moves   *[]Move  `json:"moves,omitempty"`
+	BookIds []int64 `json:"bookIds,omitempty,omitzero"`
+	Moves   []Move  `json:"moves,omitempty,omitzero"`
 }
 
 // FormatSettings defines model for FormatSettings.
 type FormatSettings struct {
-	Enabled         *bool  `json:"enabled,omitempty"`
-	MaxFileSizeInMb *int32 `json:"maxFileSizeInMb,omitempty"`
+	Enabled         bool  `json:"enabled,omitempty,omitzero"`
+	MaxFileSizeInMb int32 `json:"maxFileSizeInMb,omitempty,omitzero"`
 }
 
 // GenreStatisticsResponse defines model for GenreStatisticsResponse.
 type GenreStatisticsResponse struct {
-	AverageSessionsPerBook *float64 `json:"averageSessionsPerBook,omitempty"`
-	BookCount              *int64   `json:"bookCount,omitempty"`
-	Genre                  *string  `json:"genre,omitempty"`
-	TotalDurationSeconds   *int64   `json:"totalDurationSeconds,omitempty"`
-	TotalSessions          *int64   `json:"totalSessions,omitempty"`
+	AverageSessionsPerBook float64 `json:"averageSessionsPerBook,omitempty,omitzero"`
+	BookCount              int64   `json:"bookCount,omitempty,omitzero"`
+	Genre                  string  `json:"genre,omitempty,omitzero"`
+	TotalDurationSeconds   int64   `json:"totalDurationSeconds,omitempty,omitzero"`
+	TotalSessions          int64   `json:"totalSessions,omitempty,omitzero"`
 }
 
 // GlobalPreferences defines model for GlobalPreferences.
 type GlobalPreferences struct {
-	CoverSize       *float32 `json:"coverSize,omitempty"`
-	OverlayBookType *bool    `json:"overlayBookType,omitempty"`
-	SeriesCollapsed *bool    `json:"seriesCollapsed,omitempty"`
-	SortDir         *string  `json:"sortDir,omitempty"`
-	SortKey         *string  `json:"sortKey,omitempty"`
-	View            *string  `json:"view,omitempty"`
+	CoverSize       float32 `json:"coverSize,omitempty,omitzero"`
+	OverlayBookType bool    `json:"overlayBookType,omitempty,omitzero"`
+	SeriesCollapsed bool    `json:"seriesCollapsed,omitempty,omitzero"`
+	SortDir         string  `json:"sortDir,omitempty,omitzero"`
+	SortKey         string  `json:"sortKey,omitempty,omitzero"`
+	View            string  `json:"view,omitempty,omitzero"`
 }
 
 // Goodreads defines model for Goodreads.
 type Goodreads struct {
-	Enabled *bool `json:"enabled,omitempty"`
+	Enabled bool `json:"enabled,omitempty,omitzero"`
 }
 
 // Google defines model for Google.
 type Google struct {
-	Enabled  *bool   `json:"enabled,omitempty"`
-	Language *string `json:"language,omitempty"`
+	Enabled  bool   `json:"enabled,omitempty,omitzero"`
+	Language string `json:"language,omitempty,omitzero"`
 }
 
 // Hardcover defines model for Hardcover.
 type Hardcover struct {
-	ApiKey  *string `json:"apiKey,omitempty"`
-	Enabled *bool   `json:"enabled,omitempty"`
+	ApiKey  string `json:"apiKey,omitempty,omitzero"`
+	Enabled bool   `json:"enabled,omitempty,omitzero"`
 }
 
 // HardcoverSyncSettings defines model for HardcoverSyncSettings.
 type HardcoverSyncSettings struct {
-	HardcoverApiKey      *string `json:"hardcoverApiKey,omitempty"`
-	HardcoverSyncEnabled *bool   `json:"hardcoverSyncEnabled,omitempty"`
+	HardcoverApiKey      string `json:"hardcoverApiKey,omitempty,omitzero"`
+	HardcoverSyncEnabled bool   `json:"hardcoverSyncEnabled,omitempty,omitzero"`
 }
 
 // HealthcheckResponse defines model for HealthcheckResponse.
 type HealthcheckResponse struct {
-	Message   *string    `json:"message,omitempty"`
-	Status    *string    `json:"status,omitempty"`
-	Timestamp *time.Time `json:"timestamp,omitempty"`
-	Version   *string    `json:"version,omitempty"`
+	Message   string    `json:"message,omitempty,omitzero"`
+	Status    string    `json:"status,omitempty,omitzero"`
+	Timestamp time.Time `json:"timestamp,omitempty,omitzero"`
+	Version   string    `json:"version,omitempty,omitzero"`
 }
 
 // IconSaveResult defines model for IconSaveResult.
 type IconSaveResult struct {
-	ErrorMessage *string `json:"errorMessage,omitempty"`
-	IconName     *string `json:"iconName,omitempty"`
-	Success      *bool   `json:"success,omitempty"`
+	ErrorMessage string `json:"errorMessage,omitempty,omitzero"`
+	IconName     string `json:"iconName,omitempty,omitzero"`
+	Success      bool   `json:"success,omitempty,omitzero"`
 }
 
 // InitialUserRequest Initial user request
@@ -1730,100 +1730,100 @@ type JsonNode = interface{}
 
 // KoProgress defines model for KoProgress.
 type KoProgress struct {
-	Percentage *float32 `json:"percentage,omitempty"`
+	Percentage float32 `json:"percentage,omitempty,omitzero"`
 }
 
 // KoboAuthentication defines model for KoboAuthentication.
 type KoboAuthentication struct {
-	AccessToken  *string `json:"AccessToken,omitempty"`
-	RefreshToken *string `json:"RefreshToken,omitempty"`
-	TokenType    *string `json:"TokenType,omitempty"`
-	TrackingId   *string `json:"TrackingId,omitempty"`
-	UserKey      *string `json:"UserKey,omitempty"`
+	AccessToken  string `json:"AccessToken,omitempty,omitzero"`
+	RefreshToken string `json:"RefreshToken,omitempty,omitzero"`
+	TokenType    string `json:"TokenType,omitempty,omitzero"`
+	TrackingId   string `json:"TrackingId,omitempty,omitzero"`
+	UserKey      string `json:"UserKey,omitempty,omitzero"`
 }
 
 // KoboProgress defines model for KoboProgress.
 type KoboProgress struct {
-	Percentage *float32 `json:"percentage,omitempty"`
+	Percentage float32 `json:"percentage,omitempty,omitzero"`
 }
 
 // KoboReadingState defines model for KoboReadingState.
 type KoboReadingState struct {
-	Created           *string          `json:"Created,omitempty"`
-	CurrentBookmark   *CurrentBookmark `json:"CurrentBookmark,omitempty"`
-	EntitlementId     *string          `json:"EntitlementId,omitempty"`
-	LastModified      *string          `json:"LastModified,omitempty"`
-	PriorityTimestamp *string          `json:"PriorityTimestamp,omitempty"`
-	Statistics        *Statistics      `json:"Statistics,omitempty"`
-	StatusInfo        *StatusInfo      `json:"StatusInfo,omitempty"`
+	Created           string          `json:"Created,omitempty,omitzero"`
+	CurrentBookmark   CurrentBookmark `json:"CurrentBookmark,omitempty,omitzero"`
+	EntitlementId     string          `json:"EntitlementId,omitempty,omitzero"`
+	LastModified      string          `json:"LastModified,omitempty,omitzero"`
+	PriorityTimestamp string          `json:"PriorityTimestamp,omitempty,omitzero"`
+	Statistics        Statistics      `json:"Statistics,omitempty,omitzero"`
+	StatusInfo        StatusInfo      `json:"StatusInfo,omitempty,omitzero"`
 }
 
 // KoboReadingStateWrapper Reading state update body
 type KoboReadingStateWrapper struct {
-	ReadingStates *[]KoboReadingState `json:"ReadingStates,omitempty"`
+	ReadingStates []KoboReadingState `json:"ReadingStates,omitempty,omitzero"`
 }
 
 // KoboResources defines model for KoboResources.
 type KoboResources struct {
 	// Resources Authentication request body
-	Resources *JsonNode `json:"Resources,omitempty"`
+	Resources JsonNode `json:"Resources,omitempty,omitzero"`
 }
 
 // KoboSettings defines model for KoboSettings.
 type KoboSettings struct {
-	ConversionImageCompressionPercentage *int32 `json:"conversionImageCompressionPercentage,omitempty"`
-	ConversionLimitInMb                  *int32 `json:"conversionLimitInMb,omitempty"`
-	ConversionLimitInMbForCbx            *int32 `json:"conversionLimitInMbForCbx,omitempty"`
-	ConvertCbxToEpub                     *bool  `json:"convertCbxToEpub,omitempty"`
-	ConvertToKepub                       *bool  `json:"convertToKepub,omitempty"`
-	ForceEnableHyphenation               *bool  `json:"forceEnableHyphenation,omitempty"`
+	ConversionImageCompressionPercentage int32 `json:"conversionImageCompressionPercentage,omitempty,omitzero"`
+	ConversionLimitInMb                  int32 `json:"conversionLimitInMb,omitempty,omitzero"`
+	ConversionLimitInMbForCbx            int32 `json:"conversionLimitInMbForCbx,omitempty,omitzero"`
+	ConvertCbxToEpub                     bool  `json:"convertCbxToEpub,omitempty,omitzero"`
+	ConvertToKepub                       bool  `json:"convertToKepub,omitempty,omitzero"`
+	ForceEnableHyphenation               bool  `json:"forceEnableHyphenation,omitempty,omitzero"`
 }
 
 // KoboSyncSettings defines model for KoboSyncSettings.
 type KoboSyncSettings struct {
-	AutoAddToShelf                  *bool    `json:"autoAddToShelf,omitempty"`
-	HardcoverApiKey                 *string  `json:"hardcoverApiKey,omitempty"`
-	HardcoverSyncEnabled            *bool    `json:"hardcoverSyncEnabled,omitempty"`
-	Id                              *int64   `json:"id,omitempty"`
-	ProgressMarkAsFinishedThreshold *float32 `json:"progressMarkAsFinishedThreshold,omitempty"`
-	ProgressMarkAsReadingThreshold  *float32 `json:"progressMarkAsReadingThreshold,omitempty"`
-	SyncEnabled                     *bool    `json:"syncEnabled,omitempty"`
-	Token                           *string  `json:"token,omitempty"`
-	UserId                          *string  `json:"userId,omitempty"`
+	AutoAddToShelf                  bool    `json:"autoAddToShelf,omitempty,omitzero"`
+	HardcoverApiKey                 string  `json:"hardcoverApiKey,omitempty,omitzero"`
+	HardcoverSyncEnabled            bool    `json:"hardcoverSyncEnabled,omitempty,omitzero"`
+	Id                              int64   `json:"id,omitempty,omitzero"`
+	ProgressMarkAsFinishedThreshold float32 `json:"progressMarkAsFinishedThreshold,omitempty,omitzero"`
+	ProgressMarkAsReadingThreshold  float32 `json:"progressMarkAsReadingThreshold,omitempty,omitzero"`
+	SyncEnabled                     bool    `json:"syncEnabled,omitempty,omitzero"`
+	Token                           string  `json:"token,omitempty,omitzero"`
+	UserId                          string  `json:"userId,omitempty,omitzero"`
 }
 
 // KoreaderProgress KoReader progress object
 type KoreaderProgress struct {
-	Device     *string  `json:"device,omitempty"`
-	DeviceId   *string  `json:"device_id,omitempty"`
-	Document   *string  `json:"document,omitempty"`
-	Percentage *float32 `json:"percentage,omitempty"`
-	Progress   *string  `json:"progress,omitempty"`
-	Timestamp  *int64   `json:"timestamp,omitempty"`
+	Device     string  `json:"device,omitempty,omitzero"`
+	DeviceId   string  `json:"device_id,omitempty,omitzero"`
+	Document   string  `json:"document,omitempty,omitzero"`
+	Percentage float32 `json:"percentage,omitempty,omitzero"`
+	Progress   string  `json:"progress,omitempty,omitzero"`
+	Timestamp  int64   `json:"timestamp,omitempty,omitzero"`
 }
 
 // KoreaderUser defines model for KoreaderUser.
 type KoreaderUser struct {
-	Id                     *int64  `json:"id,omitempty"`
-	Password               *string `json:"password,omitempty"`
-	PasswordMD5            *string `json:"passwordMD5,omitempty"`
-	SyncEnabled            *bool   `json:"syncEnabled,omitempty"`
-	SyncWithBookloreReader *bool   `json:"syncWithBookloreReader,omitempty"`
-	Username               *string `json:"username,omitempty"`
+	Id                     int64  `json:"id,omitempty,omitzero"`
+	Password               string `json:"password,omitempty,omitzero"`
+	PasswordMD5            string `json:"passwordMD5,omitempty,omitzero"`
+	SyncEnabled            bool   `json:"syncEnabled,omitempty,omitzero"`
+	SyncWithBookloreReader bool   `json:"syncWithBookloreReader,omitempty,omitzero"`
+	Username               string `json:"username,omitempty,omitzero"`
 }
 
 // Library defines model for Library.
 type Library struct {
-	FileNamingPattern *string                  `json:"fileNamingPattern,omitempty"`
-	FormatPriority    *[]LibraryFormatPriority `json:"formatPriority,omitempty"`
-	Icon              *string                  `json:"icon,omitempty"`
-	IconType          *LibraryIconType         `json:"iconType,omitempty"`
-	Id                *int64                   `json:"id,omitempty"`
-	Name              *string                  `json:"name,omitempty"`
-	OrganizationMode  *LibraryOrganizationMode `json:"organizationMode,omitempty"`
-	Paths             *[]LibraryPath           `json:"paths,omitempty"`
-	Sort              *Sort                    `json:"sort,omitempty"`
-	Watch             *bool                    `json:"watch,omitempty"`
+	FileNamingPattern string                  `json:"fileNamingPattern,omitempty,omitzero"`
+	FormatPriority    []LibraryFormatPriority `json:"formatPriority,omitempty,omitzero"`
+	Icon              string                  `json:"icon,omitempty,omitzero"`
+	IconType          LibraryIconType         `json:"iconType,omitempty,omitzero"`
+	Id                int64                   `json:"id,omitempty,omitzero"`
+	Name              string                  `json:"name,omitempty,omitzero"`
+	OrganizationMode  LibraryOrganizationMode `json:"organizationMode,omitempty,omitzero"`
+	Paths             []LibraryPath           `json:"paths,omitempty,omitzero"`
+	Sort              Sort                    `json:"sort,omitempty,omitzero"`
+	Watch             bool                    `json:"watch,omitempty,omitzero"`
 }
 
 // LibraryFormatPriority defines model for Library.FormatPriority.
@@ -1837,31 +1837,31 @@ type LibraryOrganizationMode string
 
 // LibraryPath defines model for LibraryPath.
 type LibraryPath struct {
-	Id        *int64  `json:"id,omitempty"`
-	LibraryId *int64  `json:"libraryId,omitempty"`
-	Path      *string `json:"path,omitempty"`
+	Id        int64  `json:"id,omitempty,omitzero"`
+	LibraryId int64  `json:"libraryId,omitempty,omitzero"`
+	Path      string `json:"path,omitempty,omitzero"`
 }
 
 // Location defines model for Location.
 type Location struct {
-	Source *string `json:"Source,omitempty"`
-	Type   *string `json:"Type,omitempty"`
-	Value  *string `json:"Value,omitempty"`
+	Source string `json:"Source,omitempty,omitzero"`
+	Type   string `json:"Type,omitempty,omitzero"`
+	Value  string `json:"Value,omitempty,omitzero"`
 }
 
 // Lubimyczytac defines model for Lubimyczytac.
 type Lubimyczytac struct {
-	Enabled *bool `json:"enabled,omitempty"`
+	Enabled bool `json:"enabled,omitempty,omitzero"`
 }
 
 // MagicShelf Magic shelf object
 type MagicShelf struct {
-	FilterJson string              `json:"filterJson"`
-	Icon       string              `json:"icon"`
-	IconType   *MagicShelfIconType `json:"iconType,omitempty"`
-	Id         *int64              `json:"id,omitempty"`
-	IsPublic   *bool               `json:"isPublic,omitempty"`
-	Name       string              `json:"name"`
+	FilterJson string             `json:"filterJson"`
+	Icon       string             `json:"icon"`
+	IconType   MagicShelfIconType `json:"iconType,omitempty,omitzero"`
+	Id         int64              `json:"id,omitempty,omitzero"`
+	IsPublic   bool               `json:"isPublic,omitempty,omitzero"`
+	Name       string             `json:"name"`
 }
 
 // MagicShelfIconType defines model for MagicShelf.IconType.
@@ -1869,9 +1869,9 @@ type MagicShelfIconType string
 
 // MergeMetadataRequest Merge metadata request
 type MergeMetadataRequest struct {
-	MetadataType  *MergeMetadataRequestMetadataType `json:"metadataType,omitempty"`
-	TargetValues  *[]string                         `json:"targetValues,omitempty"`
-	ValuesToMerge *[]string                         `json:"valuesToMerge,omitempty"`
+	MetadataType  MergeMetadataRequestMetadataType `json:"metadataType,omitempty,omitzero"`
+	TargetValues  []string                         `json:"targetValues,omitempty,omitzero"`
+	ValuesToMerge []string                         `json:"valuesToMerge,omitempty,omitzero"`
 }
 
 // MergeMetadataRequestMetadataType defines model for MergeMetadataRequest.MetadataType.
@@ -1879,62 +1879,62 @@ type MergeMetadataRequestMetadataType string
 
 // MetadataBatchProgressNotification defines model for MetadataBatchProgressNotification.
 type MetadataBatchProgressNotification struct {
-	Completed *int32  `json:"completed,omitempty"`
-	Message   *string `json:"message,omitempty"`
-	Review    *bool   `json:"review,omitempty"`
-	Status    *string `json:"status,omitempty"`
-	TaskId    *string `json:"taskId,omitempty"`
-	Total     *int32  `json:"total,omitempty"`
+	Completed int32  `json:"completed,omitempty,omitzero"`
+	Message   string `json:"message,omitempty,omitzero"`
+	Review    bool   `json:"review,omitempty,omitzero"`
+	Status    string `json:"status,omitempty,omitzero"`
+	TaskId    string `json:"taskId,omitempty,omitzero"`
+	Total     int32  `json:"total,omitempty,omitzero"`
 }
 
 // MetadataClearFlags defines model for MetadataClearFlags.
 type MetadataClearFlags struct {
-	AmazonRating         *bool `json:"amazonRating,omitempty"`
-	AmazonReviewCount    *bool `json:"amazonReviewCount,omitempty"`
-	Asin                 *bool `json:"asin,omitempty"`
-	Authors              *bool `json:"authors,omitempty"`
-	Categories           *bool `json:"categories,omitempty"`
-	ComicvineId          *bool `json:"comicvineId,omitempty"`
-	Cover                *bool `json:"cover,omitempty"`
-	Description          *bool `json:"description,omitempty"`
-	GoodreadsId          *bool `json:"goodreadsId,omitempty"`
-	GoodreadsRating      *bool `json:"goodreadsRating,omitempty"`
-	GoodreadsReviewCount *bool `json:"goodreadsReviewCount,omitempty"`
-	GoogleId             *bool `json:"googleId,omitempty"`
-	HardcoverBookId      *bool `json:"hardcoverBookId,omitempty"`
-	HardcoverId          *bool `json:"hardcoverId,omitempty"`
-	HardcoverRating      *bool `json:"hardcoverRating,omitempty"`
-	HardcoverReviewCount *bool `json:"hardcoverReviewCount,omitempty"`
-	Isbn10               *bool `json:"isbn10,omitempty"`
-	Isbn13               *bool `json:"isbn13,omitempty"`
-	Language             *bool `json:"language,omitempty"`
-	LubimyczytacId       *bool `json:"lubimyczytacId,omitempty"`
-	LubimyczytacRating   *bool `json:"lubimyczytacRating,omitempty"`
-	Moods                *bool `json:"moods,omitempty"`
-	PageCount            *bool `json:"pageCount,omitempty"`
-	PublishedDate        *bool `json:"publishedDate,omitempty"`
-	Publisher            *bool `json:"publisher,omitempty"`
-	RanobedbId           *bool `json:"ranobedbId,omitempty"`
-	RanobedbRating       *bool `json:"ranobedbRating,omitempty"`
-	Reviews              *bool `json:"reviews,omitempty"`
-	SeriesName           *bool `json:"seriesName,omitempty"`
-	SeriesNumber         *bool `json:"seriesNumber,omitempty"`
-	SeriesTotal          *bool `json:"seriesTotal,omitempty"`
-	Subtitle             *bool `json:"subtitle,omitempty"`
-	Tags                 *bool `json:"tags,omitempty"`
-	Title                *bool `json:"title,omitempty"`
+	AmazonRating         bool `json:"amazonRating,omitempty,omitzero"`
+	AmazonReviewCount    bool `json:"amazonReviewCount,omitempty,omitzero"`
+	Asin                 bool `json:"asin,omitempty,omitzero"`
+	Authors              bool `json:"authors,omitempty,omitzero"`
+	Categories           bool `json:"categories,omitempty,omitzero"`
+	ComicvineId          bool `json:"comicvineId,omitempty,omitzero"`
+	Cover                bool `json:"cover,omitempty,omitzero"`
+	Description          bool `json:"description,omitempty,omitzero"`
+	GoodreadsId          bool `json:"goodreadsId,omitempty,omitzero"`
+	GoodreadsRating      bool `json:"goodreadsRating,omitempty,omitzero"`
+	GoodreadsReviewCount bool `json:"goodreadsReviewCount,omitempty,omitzero"`
+	GoogleId             bool `json:"googleId,omitempty,omitzero"`
+	HardcoverBookId      bool `json:"hardcoverBookId,omitempty,omitzero"`
+	HardcoverId          bool `json:"hardcoverId,omitempty,omitzero"`
+	HardcoverRating      bool `json:"hardcoverRating,omitempty,omitzero"`
+	HardcoverReviewCount bool `json:"hardcoverReviewCount,omitempty,omitzero"`
+	Isbn10               bool `json:"isbn10,omitempty,omitzero"`
+	Isbn13               bool `json:"isbn13,omitempty,omitzero"`
+	Language             bool `json:"language,omitempty,omitzero"`
+	LubimyczytacId       bool `json:"lubimyczytacId,omitempty,omitzero"`
+	LubimyczytacRating   bool `json:"lubimyczytacRating,omitempty,omitzero"`
+	Moods                bool `json:"moods,omitempty,omitzero"`
+	PageCount            bool `json:"pageCount,omitempty,omitzero"`
+	PublishedDate        bool `json:"publishedDate,omitempty,omitzero"`
+	Publisher            bool `json:"publisher,omitempty,omitzero"`
+	RanobedbId           bool `json:"ranobedbId,omitempty,omitzero"`
+	RanobedbRating       bool `json:"ranobedbRating,omitempty,omitzero"`
+	Reviews              bool `json:"reviews,omitempty,omitzero"`
+	SeriesName           bool `json:"seriesName,omitempty,omitzero"`
+	SeriesNumber         bool `json:"seriesNumber,omitempty,omitzero"`
+	SeriesTotal          bool `json:"seriesTotal,omitempty,omitzero"`
+	Subtitle             bool `json:"subtitle,omitempty,omitzero"`
+	Tags                 bool `json:"tags,omitempty,omitzero"`
+	Title                bool `json:"title,omitempty,omitzero"`
 }
 
 // MetadataFetchTask defines model for MetadataFetchTask.
 type MetadataFetchTask struct {
-	Completed   *int32                   `json:"completed,omitempty"`
-	CompletedAt *time.Time               `json:"completedAt,omitempty"`
-	Id          *string                  `json:"id,omitempty"`
-	InitiatedBy *int64                   `json:"initiatedBy,omitempty"`
-	Proposals   *[]FetchedProposal       `json:"proposals,omitempty"`
-	StartedAt   *time.Time               `json:"startedAt,omitempty"`
-	Status      *MetadataFetchTaskStatus `json:"status,omitempty"`
-	TotalBooks  *int32                   `json:"totalBooks,omitempty"`
+	Completed   int32                   `json:"completed,omitempty,omitzero"`
+	CompletedAt time.Time               `json:"completedAt,omitempty,omitzero"`
+	Id          string                  `json:"id,omitempty,omitzero"`
+	InitiatedBy int64                   `json:"initiatedBy,omitempty,omitzero"`
+	Proposals   []FetchedProposal       `json:"proposals,omitempty,omitzero"`
+	StartedAt   time.Time               `json:"startedAt,omitempty,omitzero"`
+	Status      MetadataFetchTaskStatus `json:"status,omitempty,omitzero"`
+	TotalBooks  int32                   `json:"totalBooks,omitempty,omitzero"`
 }
 
 // MetadataFetchTaskStatus defines model for MetadataFetchTask.Status.
@@ -1942,87 +1942,87 @@ type MetadataFetchTaskStatus string
 
 // MetadataMatchWeights defines model for MetadataMatchWeights.
 type MetadataMatchWeights struct {
-	AmazonRating         *int32 `json:"amazonRating,omitempty"`
-	AmazonReviewCount    *int32 `json:"amazonReviewCount,omitempty"`
-	Authors              *int32 `json:"authors,omitempty"`
-	Categories           *int32 `json:"categories,omitempty"`
-	CoverImage           *int32 `json:"coverImage,omitempty"`
-	Description          *int32 `json:"description,omitempty"`
-	DoubanRating         *int32 `json:"doubanRating,omitempty"`
-	DoubanReviewCount    *int32 `json:"doubanReviewCount,omitempty"`
-	GoodreadsRating      *int32 `json:"goodreadsRating,omitempty"`
-	GoodreadsReviewCount *int32 `json:"goodreadsReviewCount,omitempty"`
-	HardcoverRating      *int32 `json:"hardcoverRating,omitempty"`
-	HardcoverReviewCount *int32 `json:"hardcoverReviewCount,omitempty"`
-	Isbn10               *int32 `json:"isbn10,omitempty"`
-	Isbn13               *int32 `json:"isbn13,omitempty"`
-	Language             *int32 `json:"language,omitempty"`
-	PageCount            *int32 `json:"pageCount,omitempty"`
-	PublishedDate        *int32 `json:"publishedDate,omitempty"`
-	Publisher            *int32 `json:"publisher,omitempty"`
-	RanobedbRating       *int32 `json:"ranobedbRating,omitempty"`
-	SeriesName           *int32 `json:"seriesName,omitempty"`
-	SeriesNumber         *int32 `json:"seriesNumber,omitempty"`
-	SeriesTotal          *int32 `json:"seriesTotal,omitempty"`
-	Subtitle             *int32 `json:"subtitle,omitempty"`
-	Title                *int32 `json:"title,omitempty"`
+	AmazonRating         int32 `json:"amazonRating,omitempty,omitzero"`
+	AmazonReviewCount    int32 `json:"amazonReviewCount,omitempty,omitzero"`
+	Authors              int32 `json:"authors,omitempty,omitzero"`
+	Categories           int32 `json:"categories,omitempty,omitzero"`
+	CoverImage           int32 `json:"coverImage,omitempty,omitzero"`
+	Description          int32 `json:"description,omitempty,omitzero"`
+	DoubanRating         int32 `json:"doubanRating,omitempty,omitzero"`
+	DoubanReviewCount    int32 `json:"doubanReviewCount,omitempty,omitzero"`
+	GoodreadsRating      int32 `json:"goodreadsRating,omitempty,omitzero"`
+	GoodreadsReviewCount int32 `json:"goodreadsReviewCount,omitempty,omitzero"`
+	HardcoverRating      int32 `json:"hardcoverRating,omitempty,omitzero"`
+	HardcoverReviewCount int32 `json:"hardcoverReviewCount,omitempty,omitzero"`
+	Isbn10               int32 `json:"isbn10,omitempty,omitzero"`
+	Isbn13               int32 `json:"isbn13,omitempty,omitzero"`
+	Language             int32 `json:"language,omitempty,omitzero"`
+	PageCount            int32 `json:"pageCount,omitempty,omitzero"`
+	PublishedDate        int32 `json:"publishedDate,omitempty,omitzero"`
+	Publisher            int32 `json:"publisher,omitempty,omitzero"`
+	RanobedbRating       int32 `json:"ranobedbRating,omitempty,omitzero"`
+	SeriesName           int32 `json:"seriesName,omitempty,omitzero"`
+	SeriesNumber         int32 `json:"seriesNumber,omitempty,omitzero"`
+	SeriesTotal          int32 `json:"seriesTotal,omitempty,omitzero"`
+	Subtitle             int32 `json:"subtitle,omitempty,omitzero"`
+	Title                int32 `json:"title,omitempty,omitzero"`
 }
 
 // MetadataPersistenceSettings defines model for MetadataPersistenceSettings.
 type MetadataPersistenceSettings struct {
-	ConvertCbrCb7ToCbz        *bool               `json:"convertCbrCb7ToCbz,omitempty"`
-	MoveFilesToLibraryPattern *bool               `json:"moveFilesToLibraryPattern,omitempty"`
-	SaveToOriginalFile        *SaveToOriginalFile `json:"saveToOriginalFile,omitempty"`
+	ConvertCbrCb7ToCbz        bool               `json:"convertCbrCb7ToCbz,omitempty,omitzero"`
+	MoveFilesToLibraryPattern bool               `json:"moveFilesToLibraryPattern,omitempty,omitzero"`
+	SaveToOriginalFile        SaveToOriginalFile `json:"saveToOriginalFile,omitempty,omitzero"`
 }
 
 // MetadataProviderSettings defines model for MetadataProviderSettings.
 type MetadataProviderSettings struct {
-	Amazon       *Amazon       `json:"amazon,omitempty"`
-	Comicvine    *Comicvine    `json:"comicvine,omitempty"`
-	Douban       *Douban       `json:"douban,omitempty"`
-	GoodReads    *Goodreads    `json:"goodReads,omitempty"`
-	Google       *Google       `json:"google,omitempty"`
-	Hardcover    *Hardcover    `json:"hardcover,omitempty"`
-	Lubimyczytac *Lubimyczytac `json:"lubimyczytac,omitempty"`
-	Ranobedb     *Ranobedb     `json:"ranobedb,omitempty"`
+	Amazon       Amazon       `json:"amazon,omitempty,omitzero"`
+	Comicvine    Comicvine    `json:"comicvine,omitempty,omitzero"`
+	Douban       Douban       `json:"douban,omitempty,omitzero"`
+	GoodReads    Goodreads    `json:"goodReads,omitempty,omitzero"`
+	Google       Google       `json:"google,omitempty,omitzero"`
+	Hardcover    Hardcover    `json:"hardcover,omitempty,omitzero"`
+	Lubimyczytac Lubimyczytac `json:"lubimyczytac,omitempty,omitzero"`
+	Ranobedb     Ranobedb     `json:"ranobedb,omitempty,omitzero"`
 }
 
 // MetadataProviderSpecificFields defines model for MetadataProviderSpecificFields.
 type MetadataProviderSpecificFields struct {
-	AmazonRating         *bool `json:"amazonRating,omitempty"`
-	AmazonReviewCount    *bool `json:"amazonReviewCount,omitempty"`
-	Asin                 *bool `json:"asin,omitempty"`
-	ComicvineId          *bool `json:"comicvineId,omitempty"`
-	GoodreadsId          *bool `json:"goodreadsId,omitempty"`
-	GoodreadsRating      *bool `json:"goodreadsRating,omitempty"`
-	GoodreadsReviewCount *bool `json:"goodreadsReviewCount,omitempty"`
-	GoogleId             *bool `json:"googleId,omitempty"`
-	HardcoverBookId      *bool `json:"hardcoverBookId,omitempty"`
-	HardcoverId          *bool `json:"hardcoverId,omitempty"`
-	HardcoverRating      *bool `json:"hardcoverRating,omitempty"`
-	HardcoverReviewCount *bool `json:"hardcoverReviewCount,omitempty"`
-	LubimyczytacId       *bool `json:"lubimyczytacId,omitempty"`
-	LubimyczytacRating   *bool `json:"lubimyczytacRating,omitempty"`
-	RanobedbId           *bool `json:"ranobedbId,omitempty"`
-	RanobedbRating       *bool `json:"ranobedbRating,omitempty"`
+	AmazonRating         bool `json:"amazonRating,omitempty,omitzero"`
+	AmazonReviewCount    bool `json:"amazonReviewCount,omitempty,omitzero"`
+	Asin                 bool `json:"asin,omitempty,omitzero"`
+	ComicvineId          bool `json:"comicvineId,omitempty,omitzero"`
+	GoodreadsId          bool `json:"goodreadsId,omitempty,omitzero"`
+	GoodreadsRating      bool `json:"goodreadsRating,omitempty,omitzero"`
+	GoodreadsReviewCount bool `json:"goodreadsReviewCount,omitempty,omitzero"`
+	GoogleId             bool `json:"googleId,omitempty,omitzero"`
+	HardcoverBookId      bool `json:"hardcoverBookId,omitempty,omitzero"`
+	HardcoverId          bool `json:"hardcoverId,omitempty,omitzero"`
+	HardcoverRating      bool `json:"hardcoverRating,omitempty,omitzero"`
+	HardcoverReviewCount bool `json:"hardcoverReviewCount,omitempty,omitzero"`
+	LubimyczytacId       bool `json:"lubimyczytacId,omitempty,omitzero"`
+	LubimyczytacRating   bool `json:"lubimyczytacRating,omitempty,omitzero"`
+	RanobedbId           bool `json:"ranobedbId,omitempty,omitzero"`
+	RanobedbRating       bool `json:"ranobedbRating,omitempty,omitzero"`
 }
 
 // MetadataPublicReviewsSettings defines model for MetadataPublicReviewsSettings.
 type MetadataPublicReviewsSettings struct {
-	AutoDownloadEnabled *bool                   `json:"autoDownloadEnabled,omitempty"`
-	DownloadEnabled     *bool                   `json:"downloadEnabled,omitempty"`
-	Providers           *[]ReviewProviderConfig `json:"providers,omitempty"`
+	AutoDownloadEnabled bool                   `json:"autoDownloadEnabled,omitempty,omitzero"`
+	DownloadEnabled     bool                   `json:"downloadEnabled,omitempty,omitzero"`
+	Providers           []ReviewProviderConfig `json:"providers,omitempty,omitzero"`
 }
 
 // MetadataRefreshOptions defines model for MetadataRefreshOptions.
 type MetadataRefreshOptions struct {
-	EnabledFields     EnabledFields                      `json:"enabledFields"`
-	FieldOptions      FieldOptions                       `json:"fieldOptions"`
-	LibraryId         *int64                             `json:"libraryId,omitempty"`
-	MergeCategories   *bool                              `json:"mergeCategories,omitempty"`
-	RefreshCovers     *bool                              `json:"refreshCovers,omitempty"`
-	ReplaceMode       *MetadataRefreshOptionsReplaceMode `json:"replaceMode,omitempty"`
-	ReviewBeforeApply *bool                              `json:"reviewBeforeApply,omitempty"`
+	EnabledFields     EnabledFields                     `json:"enabledFields"`
+	FieldOptions      FieldOptions                      `json:"fieldOptions"`
+	LibraryId         int64                             `json:"libraryId,omitempty,omitzero"`
+	MergeCategories   bool                              `json:"mergeCategories,omitempty,omitzero"`
+	RefreshCovers     bool                              `json:"refreshCovers,omitempty,omitzero"`
+	ReplaceMode       MetadataRefreshOptionsReplaceMode `json:"replaceMode,omitempty,omitzero"`
+	ReviewBeforeApply bool                              `json:"reviewBeforeApply,omitempty,omitzero"`
 }
 
 // MetadataRefreshOptionsReplaceMode defines model for MetadataRefreshOptions.ReplaceMode.
@@ -2030,125 +2030,125 @@ type MetadataRefreshOptionsReplaceMode string
 
 // MetadataTaskDetailsResponse defines model for MetadataTaskDetailsResponse.
 type MetadataTaskDetailsResponse struct {
-	Task *MetadataFetchTask `json:"task,omitempty"`
+	Task MetadataFetchTask `json:"task,omitempty,omitzero"`
 }
 
 // MetadataUpdateWrapper Metadata update wrapper
 type MetadataUpdateWrapper struct {
-	ClearFlags *MetadataClearFlags `json:"clearFlags,omitempty"`
-	Metadata   *BookMetadata       `json:"metadata,omitempty"`
+	ClearFlags MetadataClearFlags `json:"clearFlags,omitempty,omitzero"`
+	Metadata   BookMetadata       `json:"metadata,omitempty,omitzero"`
 }
 
 // MobileBookDetail defines model for MobileBookDetail.
 type MobileBookDetail struct {
-	AddedOn              *time.Time            `json:"addedOn,omitempty"`
-	AudiobookProgress    *AudiobookProgress    `json:"audiobookProgress,omitempty"`
-	Authors              *[]string             `json:"authors,omitempty"`
-	Categories           *[]string             `json:"categories,omitempty"`
-	CbxProgress          *CbxProgress          `json:"cbxProgress,omitempty"`
-	Description          *string               `json:"description,omitempty"`
-	EpubProgress         *EpubProgress         `json:"epubProgress,omitempty"`
-	FileTypes            *[]string             `json:"fileTypes,omitempty"`
-	Files                *[]MobileBookFile     `json:"files,omitempty"`
-	GoodreadsRating      *float64              `json:"goodreadsRating,omitempty"`
-	GoodreadsReviewCount *int32                `json:"goodreadsReviewCount,omitempty"`
-	Id                   *int64                `json:"id,omitempty"`
-	Isbn13               *string               `json:"isbn13,omitempty"`
-	Language             *string               `json:"language,omitempty"`
-	LastReadTime         *time.Time            `json:"lastReadTime,omitempty"`
-	LibraryId            *int64                `json:"libraryId,omitempty"`
-	LibraryName          *string               `json:"libraryName,omitempty"`
-	PageCount            *int32                `json:"pageCount,omitempty"`
-	PdfProgress          *PdfProgress          `json:"pdfProgress,omitempty"`
-	PersonalRating       *int32                `json:"personalRating,omitempty"`
-	PrimaryFileType      *string               `json:"primaryFileType,omitempty"`
-	PublishedDate        *openapi_types.Date   `json:"publishedDate,omitempty"`
-	Publisher            *string               `json:"publisher,omitempty"`
-	ReadProgress         *float32              `json:"readProgress,omitempty"`
-	ReadStatus           *string               `json:"readStatus,omitempty"`
-	SeriesName           *string               `json:"seriesName,omitempty"`
-	SeriesNumber         *float32              `json:"seriesNumber,omitempty"`
-	Shelves              *[]MobileShelfSummary `json:"shelves,omitempty"`
-	Subtitle             *string               `json:"subtitle,omitempty"`
-	ThumbnailUrl         *string               `json:"thumbnailUrl,omitempty"`
-	Title                *string               `json:"title,omitempty"`
+	AddedOn              time.Time            `json:"addedOn,omitempty,omitzero"`
+	AudiobookProgress    AudiobookProgress    `json:"audiobookProgress,omitempty,omitzero"`
+	Authors              []string             `json:"authors,omitempty,omitzero"`
+	Categories           []string             `json:"categories,omitempty,omitzero"`
+	CbxProgress          CbxProgress          `json:"cbxProgress,omitempty,omitzero"`
+	Description          string               `json:"description,omitempty,omitzero"`
+	EpubProgress         EpubProgress         `json:"epubProgress,omitempty,omitzero"`
+	FileTypes            []string             `json:"fileTypes,omitempty,omitzero"`
+	Files                []MobileBookFile     `json:"files,omitempty,omitzero"`
+	GoodreadsRating      float64              `json:"goodreadsRating,omitempty,omitzero"`
+	GoodreadsReviewCount int32                `json:"goodreadsReviewCount,omitempty,omitzero"`
+	Id                   int64                `json:"id,omitempty,omitzero"`
+	Isbn13               string               `json:"isbn13,omitempty,omitzero"`
+	Language             string               `json:"language,omitempty,omitzero"`
+	LastReadTime         time.Time            `json:"lastReadTime,omitempty,omitzero"`
+	LibraryId            int64                `json:"libraryId,omitempty,omitzero"`
+	LibraryName          string               `json:"libraryName,omitempty,omitzero"`
+	PageCount            int32                `json:"pageCount,omitempty,omitzero"`
+	PdfProgress          PdfProgress          `json:"pdfProgress,omitempty,omitzero"`
+	PersonalRating       int32                `json:"personalRating,omitempty,omitzero"`
+	PrimaryFileType      string               `json:"primaryFileType,omitempty,omitzero"`
+	PublishedDate        openapi_types.Date   `json:"publishedDate,omitempty,omitzero"`
+	Publisher            string               `json:"publisher,omitempty,omitzero"`
+	ReadProgress         float32              `json:"readProgress,omitempty,omitzero"`
+	ReadStatus           string               `json:"readStatus,omitempty,omitzero"`
+	SeriesName           string               `json:"seriesName,omitempty,omitzero"`
+	SeriesNumber         float32              `json:"seriesNumber,omitempty,omitzero"`
+	Shelves              []MobileShelfSummary `json:"shelves,omitempty,omitzero"`
+	Subtitle             string               `json:"subtitle,omitempty,omitzero"`
+	ThumbnailUrl         string               `json:"thumbnailUrl,omitempty,omitzero"`
+	Title                string               `json:"title,omitempty,omitzero"`
 }
 
 // MobileBookFile defines model for MobileBookFile.
 type MobileBookFile struct {
-	BookType   *string `json:"bookType,omitempty"`
-	FileName   *string `json:"fileName,omitempty"`
-	FileSizeKb *int64  `json:"fileSizeKb,omitempty"`
-	Id         *int64  `json:"id,omitempty"`
-	Primary    *bool   `json:"primary,omitempty"`
+	BookType   string `json:"bookType,omitempty,omitzero"`
+	FileName   string `json:"fileName,omitempty,omitzero"`
+	FileSizeKb int64  `json:"fileSizeKb,omitempty,omitzero"`
+	Id         int64  `json:"id,omitempty,omitzero"`
+	Primary    bool   `json:"primary,omitempty,omitzero"`
 }
 
 // MobileBookSummary defines model for MobileBookSummary.
 type MobileBookSummary struct {
-	AddedOn        *time.Time `json:"addedOn,omitempty"`
-	Authors        *[]string  `json:"authors,omitempty"`
-	Id             *int64     `json:"id,omitempty"`
-	LastReadTime   *time.Time `json:"lastReadTime,omitempty"`
-	LibraryId      *int64     `json:"libraryId,omitempty"`
-	PersonalRating *int32     `json:"personalRating,omitempty"`
-	ReadStatus     *string    `json:"readStatus,omitempty"`
-	SeriesName     *string    `json:"seriesName,omitempty"`
-	SeriesNumber   *float32   `json:"seriesNumber,omitempty"`
-	ThumbnailUrl   *string    `json:"thumbnailUrl,omitempty"`
-	Title          *string    `json:"title,omitempty"`
+	AddedOn        time.Time `json:"addedOn,omitempty,omitzero"`
+	Authors        []string  `json:"authors,omitempty,omitzero"`
+	Id             int64     `json:"id,omitempty,omitzero"`
+	LastReadTime   time.Time `json:"lastReadTime,omitempty,omitzero"`
+	LibraryId      int64     `json:"libraryId,omitempty,omitzero"`
+	PersonalRating int32     `json:"personalRating,omitempty,omitzero"`
+	ReadStatus     string    `json:"readStatus,omitempty,omitzero"`
+	SeriesName     string    `json:"seriesName,omitempty,omitzero"`
+	SeriesNumber   float32   `json:"seriesNumber,omitempty,omitzero"`
+	ThumbnailUrl   string    `json:"thumbnailUrl,omitempty,omitzero"`
+	Title          string    `json:"title,omitempty,omitzero"`
 }
 
 // MobileLibrarySummary defines model for MobileLibrarySummary.
 type MobileLibrarySummary struct {
-	BookCount *int64  `json:"bookCount,omitempty"`
-	Icon      *string `json:"icon,omitempty"`
-	Id        *int64  `json:"id,omitempty"`
-	Name      *string `json:"name,omitempty"`
+	BookCount int64  `json:"bookCount,omitempty,omitzero"`
+	Icon      string `json:"icon,omitempty,omitzero"`
+	Id        int64  `json:"id,omitempty,omitzero"`
+	Name      string `json:"name,omitempty,omitzero"`
 }
 
 // MobileMagicShelfSummary defines model for MobileMagicShelfSummary.
 type MobileMagicShelfSummary struct {
-	Icon        *string `json:"icon,omitempty"`
-	IconType    *string `json:"iconType,omitempty"`
-	Id          *int64  `json:"id,omitempty"`
-	Name        *string `json:"name,omitempty"`
-	PublicShelf *bool   `json:"publicShelf,omitempty"`
+	Icon        string `json:"icon,omitempty,omitzero"`
+	IconType    string `json:"iconType,omitempty,omitzero"`
+	Id          int64  `json:"id,omitempty,omitzero"`
+	Name        string `json:"name,omitempty,omitzero"`
+	PublicShelf bool   `json:"publicShelf,omitempty,omitzero"`
 }
 
 // MobilePageResponseMobileBookSummary defines model for MobilePageResponseMobileBookSummary.
 type MobilePageResponseMobileBookSummary struct {
-	Content       *[]MobileBookSummary `json:"content,omitempty"`
-	HasNext       *bool                `json:"hasNext,omitempty"`
-	HasPrevious   *bool                `json:"hasPrevious,omitempty"`
-	Page          *int32               `json:"page,omitempty"`
-	Size          *int32               `json:"size,omitempty"`
-	TotalElements *int64               `json:"totalElements,omitempty"`
-	TotalPages    *int32               `json:"totalPages,omitempty"`
+	Content       []MobileBookSummary `json:"content,omitempty,omitzero"`
+	HasNext       bool                `json:"hasNext,omitempty,omitzero"`
+	HasPrevious   bool                `json:"hasPrevious,omitempty,omitzero"`
+	Page          int32               `json:"page,omitempty,omitzero"`
+	Size          int32               `json:"size,omitempty,omitzero"`
+	TotalElements int64               `json:"totalElements,omitempty,omitzero"`
+	TotalPages    int32               `json:"totalPages,omitempty,omitzero"`
 }
 
 // MobileShelfSummary defines model for MobileShelfSummary.
 type MobileShelfSummary struct {
-	BookCount   *int32  `json:"bookCount,omitempty"`
-	Icon        *string `json:"icon,omitempty"`
-	Id          *int64  `json:"id,omitempty"`
-	Name        *string `json:"name,omitempty"`
-	PublicShelf *bool   `json:"publicShelf,omitempty"`
+	BookCount   int32  `json:"bookCount,omitempty,omitzero"`
+	Icon        string `json:"icon,omitempty,omitzero"`
+	Id          int64  `json:"id,omitempty,omitzero"`
+	Name        string `json:"name,omitempty,omitzero"`
+	PublicShelf bool   `json:"publicShelf,omitempty,omitzero"`
 }
 
 // Move defines model for Move.
 type Move struct {
-	BookId              *int64 `json:"bookId,omitempty"`
-	TargetLibraryId     *int64 `json:"targetLibraryId,omitempty"`
-	TargetLibraryPathId *int64 `json:"targetLibraryPathId,omitempty"`
+	BookId              int64 `json:"bookId,omitempty,omitzero"`
+	TargetLibraryId     int64 `json:"targetLibraryId,omitempty,omitzero"`
+	TargetLibraryPathId int64 `json:"targetLibraryPathId,omitempty,omitzero"`
 }
 
 // NewPdfReaderSetting defines model for NewPdfReaderSetting.
 type NewPdfReaderSetting struct {
-	BackgroundColor *NewPdfReaderSettingBackgroundColor `json:"backgroundColor,omitempty"`
-	FitMode         *NewPdfReaderSettingFitMode         `json:"fitMode,omitempty"`
-	PageSpread      *NewPdfReaderSettingPageSpread      `json:"pageSpread,omitempty"`
-	PageViewMode    *NewPdfReaderSettingPageViewMode    `json:"pageViewMode,omitempty"`
-	ScrollMode      *NewPdfReaderSettingScrollMode      `json:"scrollMode,omitempty"`
+	BackgroundColor NewPdfReaderSettingBackgroundColor `json:"backgroundColor,omitempty,omitzero"`
+	FitMode         NewPdfReaderSettingFitMode         `json:"fitMode,omitempty,omitzero"`
+	PageSpread      NewPdfReaderSettingPageSpread      `json:"pageSpread,omitempty,omitzero"`
+	PageViewMode    NewPdfReaderSettingPageViewMode    `json:"pageViewMode,omitempty,omitzero"`
+	ScrollMode      NewPdfReaderSettingScrollMode      `json:"scrollMode,omitempty,omitzero"`
 }
 
 // NewPdfReaderSettingBackgroundColor defines model for NewPdfReaderSetting.BackgroundColor.
@@ -2168,12 +2168,12 @@ type NewPdfReaderSettingScrollMode string
 
 // NewPdfViewerPreferences defines model for NewPdfViewerPreferences.
 type NewPdfViewerPreferences struct {
-	BackgroundColor *NewPdfViewerPreferencesBackgroundColor `json:"backgroundColor,omitempty"`
-	BookId          *int64                                  `json:"bookId,omitempty"`
-	FitMode         *NewPdfViewerPreferencesFitMode         `json:"fitMode,omitempty"`
-	PageSpread      *NewPdfViewerPreferencesPageSpread      `json:"pageSpread,omitempty"`
-	PageViewMode    *NewPdfViewerPreferencesPageViewMode    `json:"pageViewMode,omitempty"`
-	ScrollMode      *NewPdfViewerPreferencesScrollMode      `json:"scrollMode,omitempty"`
+	BackgroundColor NewPdfViewerPreferencesBackgroundColor `json:"backgroundColor,omitempty,omitzero"`
+	BookId          int64                                  `json:"bookId,omitempty,omitzero"`
+	FitMode         NewPdfViewerPreferencesFitMode         `json:"fitMode,omitempty,omitzero"`
+	PageSpread      NewPdfViewerPreferencesPageSpread      `json:"pageSpread,omitempty,omitzero"`
+	PageViewMode    NewPdfViewerPreferencesPageViewMode    `json:"pageViewMode,omitempty,omitzero"`
+	ScrollMode      NewPdfViewerPreferencesScrollMode      `json:"scrollMode,omitempty,omitzero"`
 }
 
 // NewPdfViewerPreferencesBackgroundColor defines model for NewPdfViewerPreferences.BackgroundColor.
@@ -2193,25 +2193,25 @@ type NewPdfViewerPreferencesScrollMode string
 
 // OidcAutoProvisionDetails defines model for OidcAutoProvisionDetails.
 type OidcAutoProvisionDetails struct {
-	DefaultLibraryIds      *[]int64  `json:"defaultLibraryIds,omitempty"`
-	DefaultPermissions     *[]string `json:"defaultPermissions,omitempty"`
-	EnableAutoProvisioning *bool     `json:"enableAutoProvisioning,omitempty"`
+	DefaultLibraryIds      []int64  `json:"defaultLibraryIds,omitempty,omitzero"`
+	DefaultPermissions     []string `json:"defaultPermissions,omitempty,omitzero"`
+	EnableAutoProvisioning bool     `json:"enableAutoProvisioning,omitempty,omitzero"`
 }
 
 // OidcProviderDetails defines model for OidcProviderDetails.
 type OidcProviderDetails struct {
-	ClaimMapping *ClaimMapping `json:"claimMapping,omitempty"`
-	ClientId     *string       `json:"clientId,omitempty"`
-	IssuerUri    *string       `json:"issuerUri,omitempty"`
-	ProviderName *string       `json:"providerName,omitempty"`
+	ClaimMapping ClaimMapping `json:"claimMapping,omitempty,omitzero"`
+	ClientId     string       `json:"clientId,omitempty,omitzero"`
+	IssuerUri    string       `json:"issuerUri,omitempty,omitzero"`
+	ProviderName string       `json:"providerName,omitempty,omitzero"`
 }
 
 // OpdsUserV2 defines model for OpdsUserV2.
 type OpdsUserV2 struct {
-	Id        *int64               `json:"id,omitempty"`
-	SortOrder *OpdsUserV2SortOrder `json:"sortOrder,omitempty"`
-	UserId    *int64               `json:"userId,omitempty"`
-	Username  *string              `json:"username,omitempty"`
+	Id        int64               `json:"id,omitempty,omitzero"`
+	SortOrder OpdsUserV2SortOrder `json:"sortOrder,omitempty,omitzero"`
+	UserId    int64               `json:"userId,omitempty,omitzero"`
+	Username  string              `json:"username,omitempty,omitzero"`
 }
 
 // OpdsUserV2SortOrder defines model for OpdsUserV2.SortOrder.
@@ -2219,9 +2219,9 @@ type OpdsUserV2SortOrder string
 
 // OpdsUserV2CreateRequest OPDS user creation request
 type OpdsUserV2CreateRequest struct {
-	Password  *string                           `json:"password,omitempty"`
-	SortOrder *OpdsUserV2CreateRequestSortOrder `json:"sortOrder,omitempty"`
-	Username  *string                           `json:"username,omitempty"`
+	Password  string                           `json:"password,omitempty,omitzero"`
+	SortOrder OpdsUserV2CreateRequestSortOrder `json:"sortOrder,omitempty,omitzero"`
+	Username  string                           `json:"username,omitempty,omitzero"`
 }
 
 // OpdsUserV2CreateRequestSortOrder defines model for OpdsUserV2CreateRequest.SortOrder.
@@ -2237,92 +2237,92 @@ type OpdsUserV2UpdateRequestSortOrder string
 
 // OverrideDetails defines model for OverrideDetails.
 type OverrideDetails struct {
-	OverlayBookType *bool   `json:"overlayBookType,omitempty"`
-	SeriesCollapsed *bool   `json:"seriesCollapsed,omitempty"`
-	SortDir         *string `json:"sortDir,omitempty"`
-	SortKey         *string `json:"sortKey,omitempty"`
-	View            *string `json:"view,omitempty"`
+	OverlayBookType bool   `json:"overlayBookType,omitempty,omitzero"`
+	SeriesCollapsed bool   `json:"seriesCollapsed,omitempty,omitzero"`
+	SortDir         string `json:"sortDir,omitempty,omitzero"`
+	SortKey         string `json:"sortKey,omitempty,omitzero"`
+	View            string `json:"view,omitempty,omitzero"`
 }
 
 // OverridePreference defines model for OverridePreference.
 type OverridePreference struct {
-	EntityId    *int64           `json:"entityId,omitempty"`
-	EntityType  *string          `json:"entityType,omitempty"`
-	Preferences *OverrideDetails `json:"preferences,omitempty"`
+	EntityId    int64           `json:"entityId,omitempty,omitzero"`
+	EntityType  string          `json:"entityType,omitempty,omitzero"`
+	Preferences OverrideDetails `json:"preferences,omitempty,omitzero"`
 }
 
 // PageBookdropFile defines model for PageBookdropFile.
 type PageBookdropFile struct {
-	Content          *[]BookdropFile `json:"content,omitempty"`
-	Empty            *bool           `json:"empty,omitempty"`
-	First            *bool           `json:"first,omitempty"`
-	Last             *bool           `json:"last,omitempty"`
-	Number           *int32          `json:"number,omitempty"`
-	NumberOfElements *int32          `json:"numberOfElements,omitempty"`
-	Pageable         *PageableObject `json:"pageable,omitempty"`
-	Size             *int32          `json:"size,omitempty"`
-	Sort             *SortObject     `json:"sort,omitempty"`
-	TotalElements    *int64          `json:"totalElements,omitempty"`
-	TotalPages       *int32          `json:"totalPages,omitempty"`
+	Content          []BookdropFile `json:"content,omitempty,omitzero"`
+	Empty            bool           `json:"empty,omitempty,omitzero"`
+	First            bool           `json:"first,omitempty,omitzero"`
+	Last             bool           `json:"last,omitempty,omitzero"`
+	Number           int32          `json:"number,omitempty,omitzero"`
+	NumberOfElements int32          `json:"numberOfElements,omitempty,omitzero"`
+	Pageable         PageableObject `json:"pageable,omitempty,omitzero"`
+	Size             int32          `json:"size,omitempty,omitzero"`
+	Sort             SortObject     `json:"sort,omitempty,omitzero"`
+	TotalElements    int64          `json:"totalElements,omitempty,omitzero"`
+	TotalPages       int32          `json:"totalPages,omitempty,omitzero"`
 }
 
 // PageReadingSessionResponse defines model for PageReadingSessionResponse.
 type PageReadingSessionResponse struct {
-	Content          *[]ReadingSessionResponse `json:"content,omitempty"`
-	Empty            *bool                     `json:"empty,omitempty"`
-	First            *bool                     `json:"first,omitempty"`
-	Last             *bool                     `json:"last,omitempty"`
-	Number           *int32                    `json:"number,omitempty"`
-	NumberOfElements *int32                    `json:"numberOfElements,omitempty"`
-	Pageable         *PageableObject           `json:"pageable,omitempty"`
-	Size             *int32                    `json:"size,omitempty"`
-	Sort             *SortObject               `json:"sort,omitempty"`
-	TotalElements    *int64                    `json:"totalElements,omitempty"`
-	TotalPages       *int32                    `json:"totalPages,omitempty"`
+	Content          []ReadingSessionResponse `json:"content,omitempty,omitzero"`
+	Empty            bool                     `json:"empty,omitempty,omitzero"`
+	First            bool                     `json:"first,omitempty,omitzero"`
+	Last             bool                     `json:"last,omitempty,omitzero"`
+	Number           int32                    `json:"number,omitempty,omitzero"`
+	NumberOfElements int32                    `json:"numberOfElements,omitempty,omitzero"`
+	Pageable         PageableObject           `json:"pageable,omitempty,omitzero"`
+	Size             int32                    `json:"size,omitempty,omitzero"`
+	Sort             SortObject               `json:"sort,omitempty,omitzero"`
+	TotalElements    int64                    `json:"totalElements,omitempty,omitzero"`
+	TotalPages       int32                    `json:"totalPages,omitempty,omitzero"`
 }
 
 // PageString defines model for PageString.
 type PageString struct {
-	Content          *[]string       `json:"content,omitempty"`
-	Empty            *bool           `json:"empty,omitempty"`
-	First            *bool           `json:"first,omitempty"`
-	Last             *bool           `json:"last,omitempty"`
-	Number           *int32          `json:"number,omitempty"`
-	NumberOfElements *int32          `json:"numberOfElements,omitempty"`
-	Pageable         *PageableObject `json:"pageable,omitempty"`
-	Size             *int32          `json:"size,omitempty"`
-	Sort             *SortObject     `json:"sort,omitempty"`
-	TotalElements    *int64          `json:"totalElements,omitempty"`
-	TotalPages       *int32          `json:"totalPages,omitempty"`
+	Content          []string       `json:"content,omitempty,omitzero"`
+	Empty            bool           `json:"empty,omitempty,omitzero"`
+	First            bool           `json:"first,omitempty,omitzero"`
+	Last             bool           `json:"last,omitempty,omitzero"`
+	Number           int32          `json:"number,omitempty,omitzero"`
+	NumberOfElements int32          `json:"numberOfElements,omitempty,omitzero"`
+	Pageable         PageableObject `json:"pageable,omitempty,omitzero"`
+	Size             int32          `json:"size,omitempty,omitzero"`
+	Sort             SortObject     `json:"sort,omitempty,omitzero"`
+	TotalElements    int64          `json:"totalElements,omitempty,omitzero"`
+	TotalPages       int32          `json:"totalPages,omitempty,omitzero"`
 }
 
 // Pageable defines model for Pageable.
 type Pageable struct {
-	Page *int32    `json:"page,omitempty"`
-	Size *int32    `json:"size,omitempty"`
-	Sort *[]string `json:"sort,omitempty"`
+	Page int32    `json:"page,omitempty,omitzero"`
+	Size int32    `json:"size,omitempty,omitzero"`
+	Sort []string `json:"sort,omitempty,omitzero"`
 }
 
 // PageableObject defines model for PageableObject.
 type PageableObject struct {
-	Offset     *int64      `json:"offset,omitempty"`
-	PageNumber *int32      `json:"pageNumber,omitempty"`
-	PageSize   *int32      `json:"pageSize,omitempty"`
-	Paged      *bool       `json:"paged,omitempty"`
-	Sort       *SortObject `json:"sort,omitempty"`
-	Unpaged    *bool       `json:"unpaged,omitempty"`
+	Offset     int64      `json:"offset,omitempty,omitzero"`
+	PageNumber int32      `json:"pageNumber,omitempty,omitzero"`
+	PageSize   int32      `json:"pageSize,omitempty,omitzero"`
+	Paged      bool       `json:"paged,omitempty,omitzero"`
+	Sort       SortObject `json:"sort,omitempty,omitzero"`
+	Unpaged    bool       `json:"unpaged,omitempty,omitzero"`
 }
 
 // PdfBookInfo defines model for PdfBookInfo.
 type PdfBookInfo struct {
-	Outline   *[]PdfOutlineItem `json:"outline,omitempty"`
-	PageCount *int32            `json:"pageCount,omitempty"`
+	Outline   []PdfOutlineItem `json:"outline,omitempty,omitzero"`
+	PageCount int32            `json:"pageCount,omitempty,omitzero"`
 }
 
 // PdfOutlineItem defines model for PdfOutlineItem.
 type PdfOutlineItem struct {
-	PageNumber *int32  `json:"pageNumber,omitempty"`
-	Title      *string `json:"title,omitempty"`
+	PageNumber int32  `json:"pageNumber,omitempty,omitzero"`
+	Title      string `json:"title,omitempty,omitzero"`
 }
 
 // PdfProgress defines model for PdfProgress.
@@ -2333,30 +2333,30 @@ type PdfProgress struct {
 
 // PdfReaderSetting defines model for PdfReaderSetting.
 type PdfReaderSetting struct {
-	PageSpread *string `json:"pageSpread,omitempty"`
-	PageZoom   *string `json:"pageZoom,omitempty"`
+	PageSpread string `json:"pageSpread,omitempty,omitzero"`
+	PageZoom   string `json:"pageZoom,omitempty,omitzero"`
 }
 
 // PdfViewerPreferences defines model for PdfViewerPreferences.
 type PdfViewerPreferences struct {
-	BookId *int64  `json:"bookId,omitempty"`
-	Spread *string `json:"spread,omitempty"`
-	Zoom   *string `json:"zoom,omitempty"`
+	BookId int64  `json:"bookId,omitempty,omitzero"`
+	Spread string `json:"spread,omitempty,omitzero"`
+	Zoom   string `json:"zoom,omitempty,omitzero"`
 }
 
 // PeakReadingHoursResponse defines model for PeakReadingHoursResponse.
 type PeakReadingHoursResponse struct {
-	HourOfDay            *int32 `json:"hourOfDay,omitempty"`
-	SessionCount         *int64 `json:"sessionCount,omitempty"`
-	TotalDurationSeconds *int64 `json:"totalDurationSeconds,omitempty"`
+	HourOfDay            int32 `json:"hourOfDay,omitempty,omitzero"`
+	SessionCount         int64 `json:"sessionCount,omitempty,omitzero"`
+	TotalDurationSeconds int64 `json:"totalDurationSeconds,omitempty,omitzero"`
 }
 
 // PerBookSetting defines model for PerBookSetting.
 type PerBookSetting struct {
-	Cbx    *PerBookSettingCbx    `json:"cbx,omitempty"`
-	Epub   *PerBookSettingEpub   `json:"epub,omitempty"`
-	NewPdf *PerBookSettingNewPdf `json:"newPdf,omitempty"`
-	Pdf    *PerBookSettingPdf    `json:"pdf,omitempty"`
+	Cbx    PerBookSettingCbx    `json:"cbx,omitempty,omitzero"`
+	Epub   PerBookSettingEpub   `json:"epub,omitempty,omitzero"`
+	NewPdf PerBookSettingNewPdf `json:"newPdf,omitempty,omitzero"`
+	Pdf    PerBookSettingPdf    `json:"pdf,omitempty,omitzero"`
 }
 
 // PerBookSettingCbx defines model for PerBookSetting.Cbx.
@@ -2373,69 +2373,69 @@ type PerBookSettingPdf string
 
 // Permissions defines model for Permissions.
 type Permissions struct {
-	Admin                            *bool `json:"admin,omitempty"`
-	CanAccessBookdrop                *bool `json:"canAccessBookdrop,omitempty"`
-	CanAccessLibraryStats            *bool `json:"canAccessLibraryStats,omitempty"`
-	CanAccessOpds                    *bool `json:"canAccessOpds,omitempty"`
-	CanAccessTaskManager             *bool `json:"canAccessTaskManager,omitempty"`
-	CanAccessUserStats               *bool `json:"canAccessUserStats,omitempty"`
-	CanBulkAutoFetchMetadata         *bool `json:"canBulkAutoFetchMetadata,omitempty"`
-	CanBulkCustomFetchMetadata       *bool `json:"canBulkCustomFetchMetadata,omitempty"`
-	CanBulkEditMetadata              *bool `json:"canBulkEditMetadata,omitempty"`
-	CanBulkLockUnlockMetadata        *bool `json:"canBulkLockUnlockMetadata,omitempty"`
-	CanBulkRegenerateCover           *bool `json:"canBulkRegenerateCover,omitempty"`
-	CanBulkResetBookReadStatus       *bool `json:"canBulkResetBookReadStatus,omitempty"`
-	CanBulkResetBookloreReadProgress *bool `json:"canBulkResetBookloreReadProgress,omitempty"`
-	CanBulkResetKoReaderReadProgress *bool `json:"canBulkResetKoReaderReadProgress,omitempty"`
-	CanDeleteBook                    *bool `json:"canDeleteBook,omitempty"`
-	CanDownload                      *bool `json:"canDownload,omitempty"`
-	CanEditMetadata                  *bool `json:"canEditMetadata,omitempty"`
-	CanEmailBook                     *bool `json:"canEmailBook,omitempty"`
-	CanManageFonts                   *bool `json:"canManageFonts,omitempty"`
-	CanManageGlobalPreferences       *bool `json:"canManageGlobalPreferences,omitempty"`
-	CanManageIcons                   *bool `json:"canManageIcons,omitempty"`
-	CanManageLibrary                 *bool `json:"canManageLibrary,omitempty"`
-	CanManageMetadataConfig          *bool `json:"canManageMetadataConfig,omitempty"`
-	CanMoveOrganizeFiles             *bool `json:"canMoveOrganizeFiles,omitempty"`
-	CanSyncKoReader                  *bool `json:"canSyncKoReader,omitempty"`
-	CanSyncKobo                      *bool `json:"canSyncKobo,omitempty"`
-	CanUpload                        *bool `json:"canUpload,omitempty"`
+	Admin                            bool `json:"admin,omitempty,omitzero"`
+	CanAccessBookdrop                bool `json:"canAccessBookdrop,omitempty,omitzero"`
+	CanAccessLibraryStats            bool `json:"canAccessLibraryStats,omitempty,omitzero"`
+	CanAccessOpds                    bool `json:"canAccessOpds,omitempty,omitzero"`
+	CanAccessTaskManager             bool `json:"canAccessTaskManager,omitempty,omitzero"`
+	CanAccessUserStats               bool `json:"canAccessUserStats,omitempty,omitzero"`
+	CanBulkAutoFetchMetadata         bool `json:"canBulkAutoFetchMetadata,omitempty,omitzero"`
+	CanBulkCustomFetchMetadata       bool `json:"canBulkCustomFetchMetadata,omitempty,omitzero"`
+	CanBulkEditMetadata              bool `json:"canBulkEditMetadata,omitempty,omitzero"`
+	CanBulkLockUnlockMetadata        bool `json:"canBulkLockUnlockMetadata,omitempty,omitzero"`
+	CanBulkRegenerateCover           bool `json:"canBulkRegenerateCover,omitempty,omitzero"`
+	CanBulkResetBookReadStatus       bool `json:"canBulkResetBookReadStatus,omitempty,omitzero"`
+	CanBulkResetBookloreReadProgress bool `json:"canBulkResetBookloreReadProgress,omitempty,omitzero"`
+	CanBulkResetKoReaderReadProgress bool `json:"canBulkResetKoReaderReadProgress,omitempty,omitzero"`
+	CanDeleteBook                    bool `json:"canDeleteBook,omitempty,omitzero"`
+	CanDownload                      bool `json:"canDownload,omitempty,omitzero"`
+	CanEditMetadata                  bool `json:"canEditMetadata,omitempty,omitzero"`
+	CanEmailBook                     bool `json:"canEmailBook,omitempty,omitzero"`
+	CanManageFonts                   bool `json:"canManageFonts,omitempty,omitzero"`
+	CanManageGlobalPreferences       bool `json:"canManageGlobalPreferences,omitempty,omitzero"`
+	CanManageIcons                   bool `json:"canManageIcons,omitempty,omitzero"`
+	CanManageLibrary                 bool `json:"canManageLibrary,omitempty,omitzero"`
+	CanManageMetadataConfig          bool `json:"canManageMetadataConfig,omitempty,omitzero"`
+	CanMoveOrganizeFiles             bool `json:"canMoveOrganizeFiles,omitempty,omitzero"`
+	CanSyncKoReader                  bool `json:"canSyncKoReader,omitempty,omitzero"`
+	CanSyncKobo                      bool `json:"canSyncKobo,omitempty,omitzero"`
+	CanUpload                        bool `json:"canUpload,omitempty,omitzero"`
 }
 
 // PersonalRatingUpdateRequest Personal rating update request
 type PersonalRatingUpdateRequest struct {
-	Ids    *[]int64 `json:"ids,omitempty"`
-	Rating *int32   `json:"rating,omitempty"`
+	Ids    []int64 `json:"ids,omitempty,omitzero"`
+	Rating int32   `json:"rating,omitempty,omitzero"`
 }
 
 // PersonalRatingUpdateResponse defines model for PersonalRatingUpdateResponse.
 type PersonalRatingUpdateResponse struct {
-	BookId         *int64 `json:"bookId,omitempty"`
-	PersonalRating *int32 `json:"personalRating,omitempty"`
+	BookId         int64 `json:"bookId,omitempty,omitzero"`
+	PersonalRating int32 `json:"personalRating,omitempty,omitzero"`
 }
 
 // PublicAppSetting defines model for PublicAppSetting.
 type PublicAppSetting struct {
-	OidcEnabled         *bool                `json:"oidcEnabled,omitempty"`
-	OidcProviderDetails *OidcProviderDetails `json:"oidcProviderDetails,omitempty"`
-	RemoteAuthEnabled   *bool                `json:"remoteAuthEnabled,omitempty"`
+	OidcEnabled         bool                `json:"oidcEnabled,omitempty,omitzero"`
+	OidcProviderDetails OidcProviderDetails `json:"oidcProviderDetails,omitempty,omitzero"`
+	RemoteAuthEnabled   bool                `json:"remoteAuthEnabled,omitempty,omitzero"`
 }
 
 // Ranobedb defines model for Ranobedb.
 type Ranobedb struct {
-	Enabled *bool `json:"enabled,omitempty"`
+	Enabled bool `json:"enabled,omitempty,omitzero"`
 }
 
 // ReadProgressRequest Read progress request
 type ReadProgressRequest struct {
-	AudiobookProgress *AudiobookProgress `json:"audiobookProgress,omitempty"`
-	BookId            int64              `json:"bookId"`
-	CbxProgress       *CbxProgress       `json:"cbxProgress,omitempty"`
-	DateFinished      *time.Time         `json:"dateFinished,omitempty"`
-	EpubProgress      *EpubProgress      `json:"epubProgress,omitempty"`
-	FileProgress      *BookFileProgress  `json:"fileProgress,omitempty"`
-	PdfProgress       *PdfProgress       `json:"pdfProgress,omitempty"`
-	ProgressValid     *bool              `json:"progressValid,omitempty"`
+	AudiobookProgress AudiobookProgress `json:"audiobookProgress,omitempty,omitzero"`
+	BookId            int64             `json:"bookId"`
+	CbxProgress       CbxProgress       `json:"cbxProgress,omitempty,omitzero"`
+	DateFinished      time.Time         `json:"dateFinished,omitempty,omitzero"`
+	EpubProgress      EpubProgress      `json:"epubProgress,omitempty,omitzero"`
+	FileProgress      BookFileProgress  `json:"fileProgress,omitempty,omitzero"`
+	PdfProgress       PdfProgress       `json:"pdfProgress,omitempty,omitzero"`
+	ProgressValid     bool              `json:"progressValid,omitempty,omitzero"`
 }
 
 // ReadStatusUpdateRequest defines model for ReadStatusUpdateRequest.
@@ -2446,23 +2446,23 @@ type ReadStatusUpdateRequest struct {
 
 // ReadingSessionHeatmapResponse defines model for ReadingSessionHeatmapResponse.
 type ReadingSessionHeatmapResponse struct {
-	Count *int64              `json:"count,omitempty"`
-	Date  *openapi_types.Date `json:"date,omitempty"`
+	Count int64              `json:"count,omitempty,omitzero"`
+	Date  openapi_types.Date `json:"date,omitempty,omitzero"`
 }
 
 // ReadingSessionRequest defines model for ReadingSessionRequest.
 type ReadingSessionRequest struct {
-	BookId            int64                          `json:"bookId"`
-	BookType          *ReadingSessionRequestBookType `json:"bookType,omitempty"`
-	DurationFormatted *string                        `json:"durationFormatted,omitempty"`
-	DurationSeconds   int32                          `json:"durationSeconds"`
-	EndLocation       *string                        `json:"endLocation,omitempty"`
-	EndProgress       *float32                       `json:"endProgress,omitempty"`
-	EndTime           time.Time                      `json:"endTime"`
-	ProgressDelta     *float32                       `json:"progressDelta,omitempty"`
-	StartLocation     *string                        `json:"startLocation,omitempty"`
-	StartProgress     *float32                       `json:"startProgress,omitempty"`
-	StartTime         time.Time                      `json:"startTime"`
+	BookId            int64                         `json:"bookId"`
+	BookType          ReadingSessionRequestBookType `json:"bookType,omitempty,omitzero"`
+	DurationFormatted string                        `json:"durationFormatted,omitempty,omitzero"`
+	DurationSeconds   int32                         `json:"durationSeconds"`
+	EndLocation       string                        `json:"endLocation,omitempty,omitzero"`
+	EndProgress       float32                       `json:"endProgress,omitempty,omitzero"`
+	EndTime           time.Time                     `json:"endTime"`
+	ProgressDelta     float32                       `json:"progressDelta,omitempty,omitzero"`
+	StartLocation     string                        `json:"startLocation,omitempty,omitzero"`
+	StartProgress     float32                       `json:"startProgress,omitempty,omitzero"`
+	StartTime         time.Time                     `json:"startTime"`
 }
 
 // ReadingSessionRequestBookType defines model for ReadingSessionRequest.BookType.
@@ -2470,19 +2470,19 @@ type ReadingSessionRequestBookType string
 
 // ReadingSessionResponse defines model for ReadingSessionResponse.
 type ReadingSessionResponse struct {
-	BookId          *int64                          `json:"bookId,omitempty"`
-	BookTitle       *string                         `json:"bookTitle,omitempty"`
-	BookType        *ReadingSessionResponseBookType `json:"bookType,omitempty"`
-	CreatedAt       *time.Time                      `json:"createdAt,omitempty"`
-	DurationSeconds *int32                          `json:"durationSeconds,omitempty"`
-	EndLocation     *string                         `json:"endLocation,omitempty"`
-	EndProgress     *float32                        `json:"endProgress,omitempty"`
-	EndTime         *time.Time                      `json:"endTime,omitempty"`
-	Id              *int64                          `json:"id,omitempty"`
-	ProgressDelta   *float32                        `json:"progressDelta,omitempty"`
-	StartLocation   *string                         `json:"startLocation,omitempty"`
-	StartProgress   *float32                        `json:"startProgress,omitempty"`
-	StartTime       *time.Time                      `json:"startTime,omitempty"`
+	BookId          int64                          `json:"bookId,omitempty,omitzero"`
+	BookTitle       string                         `json:"bookTitle,omitempty,omitzero"`
+	BookType        ReadingSessionResponseBookType `json:"bookType,omitempty,omitzero"`
+	CreatedAt       time.Time                      `json:"createdAt,omitempty,omitzero"`
+	DurationSeconds int32                          `json:"durationSeconds,omitempty,omitzero"`
+	EndLocation     string                         `json:"endLocation,omitempty,omitzero"`
+	EndProgress     float32                        `json:"endProgress,omitempty,omitzero"`
+	EndTime         time.Time                      `json:"endTime,omitempty,omitzero"`
+	Id              int64                          `json:"id,omitempty,omitzero"`
+	ProgressDelta   float32                        `json:"progressDelta,omitempty,omitzero"`
+	StartLocation   string                         `json:"startLocation,omitempty,omitzero"`
+	StartProgress   float32                        `json:"startProgress,omitempty,omitzero"`
+	StartTime       time.Time                      `json:"startTime,omitempty,omitzero"`
 }
 
 // ReadingSessionResponseBookType defines model for ReadingSessionResponse.BookType.
@@ -2490,13 +2490,13 @@ type ReadingSessionResponseBookType string
 
 // ReadingSessionTimelineResponse defines model for ReadingSessionTimelineResponse.
 type ReadingSessionTimelineResponse struct {
-	BookId               *int64                                  `json:"bookId,omitempty"`
-	BookTitle            *string                                 `json:"bookTitle,omitempty"`
-	BookType             *ReadingSessionTimelineResponseBookType `json:"bookType,omitempty"`
-	EndDate              *time.Time                              `json:"endDate,omitempty"`
-	StartDate            *time.Time                              `json:"startDate,omitempty"`
-	TotalDurationSeconds *int64                                  `json:"totalDurationSeconds,omitempty"`
-	TotalSessions        *int64                                  `json:"totalSessions,omitempty"`
+	BookId               int64                                  `json:"bookId,omitempty,omitzero"`
+	BookTitle            string                                 `json:"bookTitle,omitempty,omitzero"`
+	BookType             ReadingSessionTimelineResponseBookType `json:"bookType,omitempty,omitzero"`
+	EndDate              time.Time                              `json:"endDate,omitempty,omitzero"`
+	StartDate            time.Time                              `json:"startDate,omitempty,omitzero"`
+	TotalDurationSeconds int64                                  `json:"totalDurationSeconds,omitempty,omitzero"`
+	TotalSessions        int64                                  `json:"totalSessions,omitempty,omitzero"`
 }
 
 // ReadingSessionTimelineResponseBookType defines model for ReadingSessionTimelineResponse.BookType.
@@ -2504,9 +2504,9 @@ type ReadingSessionTimelineResponseBookType string
 
 // ReadingSpeedResponse defines model for ReadingSpeedResponse.
 type ReadingSpeedResponse struct {
-	AvgProgressPerMinute *float64            `json:"avgProgressPerMinute,omitempty"`
-	Date                 *openapi_types.Date `json:"date,omitempty"`
-	TotalSessions        *int32              `json:"totalSessions,omitempty"`
+	AvgProgressPerMinute float64            `json:"avgProgressPerMinute,omitempty,omitzero"`
+	Date                 openapi_types.Date `json:"date,omitempty,omitzero"`
+	TotalSessions        int32              `json:"totalSessions,omitempty,omitzero"`
 }
 
 // RefreshTokenRequest Refresh token request
@@ -2516,18 +2516,18 @@ type RefreshTokenRequest struct {
 
 // ReleaseNote defines model for ReleaseNote.
 type ReleaseNote struct {
-	Changelog   *string    `json:"changelog,omitempty"`
-	Name        *string    `json:"name,omitempty"`
-	PublishedAt *time.Time `json:"publishedAt,omitempty"`
-	Url         *string    `json:"url,omitempty"`
-	Version     *string    `json:"version,omitempty"`
+	Changelog   string    `json:"changelog,omitempty,omitzero"`
+	Name        string    `json:"name,omitempty,omitzero"`
+	PublishedAt time.Time `json:"publishedAt,omitempty,omitzero"`
+	Url         string    `json:"url,omitempty,omitzero"`
+	Version     string    `json:"version,omitempty,omitzero"`
 }
 
 // ReviewProviderConfig defines model for ReviewProviderConfig.
 type ReviewProviderConfig struct {
-	Enabled    *bool                         `json:"enabled,omitempty"`
-	MaxReviews *int32                        `json:"maxReviews,omitempty"`
-	Provider   *ReviewProviderConfigProvider `json:"provider,omitempty"`
+	Enabled    bool                         `json:"enabled,omitempty,omitzero"`
+	MaxReviews int32                        `json:"maxReviews,omitempty,omitzero"`
+	Provider   ReviewProviderConfigProvider `json:"provider,omitempty,omitzero"`
 }
 
 // ReviewProviderConfigProvider defines model for ReviewProviderConfig.Provider.
@@ -2535,23 +2535,23 @@ type ReviewProviderConfigProvider string
 
 // SaveToOriginalFile defines model for SaveToOriginalFile.
 type SaveToOriginalFile struct {
-	AnyFormatEnabled *bool           `json:"anyFormatEnabled,omitempty"`
-	Cbx              *FormatSettings `json:"cbx,omitempty"`
-	Epub             *FormatSettings `json:"epub,omitempty"`
-	Pdf              *FormatSettings `json:"pdf,omitempty"`
+	AnyFormatEnabled bool           `json:"anyFormatEnabled,omitempty,omitzero"`
+	Cbx              FormatSettings `json:"cbx,omitempty,omitzero"`
+	Epub             FormatSettings `json:"epub,omitempty,omitzero"`
+	Pdf              FormatSettings `json:"pdf,omitempty,omitzero"`
 }
 
 // ScrollerConfig defines model for ScrollerConfig.
 type ScrollerConfig struct {
-	Enabled       *bool   `json:"enabled,omitempty"`
-	Id            *string `json:"id,omitempty"`
-	MagicShelfId  *int64  `json:"magicShelfId,omitempty"`
-	MaxItems      *int32  `json:"maxItems,omitempty"`
-	Order         *int32  `json:"order,omitempty"`
-	SortDirection *string `json:"sortDirection,omitempty"`
-	SortField     *string `json:"sortField,omitempty"`
-	Title         *string `json:"title,omitempty"`
-	Type          *string `json:"type,omitempty"`
+	Enabled       bool   `json:"enabled,omitempty,omitzero"`
+	Id            string `json:"id,omitempty,omitzero"`
+	MagicShelfId  int64  `json:"magicShelfId,omitempty,omitzero"`
+	MaxItems      int32  `json:"maxItems,omitempty,omitzero"`
+	Order         int32  `json:"order,omitempty,omitzero"`
+	SortDirection string `json:"sortDirection,omitempty,omitzero"`
+	SortField     string `json:"sortField,omitempty,omitzero"`
+	Title         string `json:"title,omitempty,omitzero"`
+	Type          string `json:"type,omitempty,omitzero"`
 }
 
 // SendBookByEmailRequest Send book by email request
@@ -2563,20 +2563,20 @@ type SendBookByEmailRequest struct {
 
 // SettingRequest defines model for SettingRequest.
 type SettingRequest struct {
-	Name  *string     `json:"name,omitempty"`
-	Value interface{} `json:"value,omitempty"`
+	Name  string      `json:"name,omitempty,omitzero"`
+	Value interface{} `json:"value,omitempty,omitzero"`
 }
 
 // Shelf defines model for Shelf.
 type Shelf struct {
-	BookCount   *int32         `json:"bookCount,omitempty"`
-	Icon        *string        `json:"icon,omitempty"`
-	IconType    *ShelfIconType `json:"iconType,omitempty"`
-	Id          *int64         `json:"id,omitempty"`
-	Name        *string        `json:"name,omitempty"`
-	PublicShelf *bool          `json:"publicShelf,omitempty"`
-	Sort        *Sort          `json:"sort,omitempty"`
-	UserId      *int64         `json:"userId,omitempty"`
+	BookCount   int32         `json:"bookCount,omitempty,omitzero"`
+	Icon        string        `json:"icon,omitempty,omitzero"`
+	IconType    ShelfIconType `json:"iconType,omitempty,omitzero"`
+	Id          int64         `json:"id,omitempty,omitzero"`
+	Name        string        `json:"name,omitempty,omitzero"`
+	PublicShelf bool          `json:"publicShelf,omitempty,omitzero"`
+	Sort        Sort          `json:"sort,omitempty,omitzero"`
+	UserId      int64         `json:"userId,omitempty,omitzero"`
 }
 
 // ShelfIconType defines model for Shelf.IconType.
@@ -2586,9 +2586,9 @@ type ShelfIconType string
 type ShelfCreateRequest struct {
 	Icon        string                     `json:"icon"`
 	IconType    ShelfCreateRequestIconType `json:"iconType"`
-	Id          *int64                     `json:"id,omitempty"`
+	Id          int64                      `json:"id,omitempty,omitzero"`
 	Name        string                     `json:"name"`
-	PublicShelf *bool                      `json:"publicShelf,omitempty"`
+	PublicShelf bool                       `json:"publicShelf,omitempty,omitzero"`
 }
 
 // ShelfCreateRequestIconType defines model for ShelfCreateRequest.IconType.
@@ -2596,21 +2596,21 @@ type ShelfCreateRequestIconType string
 
 // ShelvesAssignmentRequest Shelves assignment request
 type ShelvesAssignmentRequest struct {
-	BookIds           *[]int64 `json:"bookIds,omitempty"`
-	ShelvesToAssign   *[]int64 `json:"shelvesToAssign,omitempty"`
-	ShelvesToUnassign *[]int64 `json:"shelvesToUnassign,omitempty"`
+	BookIds           []int64 `json:"bookIds,omitempty,omitzero"`
+	ShelvesToAssign   []int64 `json:"shelvesToAssign,omitempty,omitzero"`
+	ShelvesToUnassign []int64 `json:"shelvesToUnassign,omitempty,omitzero"`
 }
 
 // SidebarSortOption defines model for SidebarSortOption.
 type SidebarSortOption struct {
-	Field *string `json:"field,omitempty"`
-	Order *string `json:"order,omitempty"`
+	Field string `json:"field,omitempty,omitzero"`
+	Order string `json:"order,omitempty,omitzero"`
 }
 
 // Sort defines model for Sort.
 type Sort struct {
-	Direction *SortDirection `json:"direction,omitempty"`
-	Field     *string        `json:"field,omitempty"`
+	Direction SortDirection `json:"direction,omitempty,omitzero"`
+	Field     string        `json:"field,omitempty,omitzero"`
 }
 
 // SortDirection defines model for Sort.Direction.
@@ -2618,25 +2618,25 @@ type SortDirection string
 
 // SortObject defines model for SortObject.
 type SortObject struct {
-	Empty    *bool `json:"empty,omitempty"`
-	Sorted   *bool `json:"sorted,omitempty"`
-	Unsorted *bool `json:"unsorted,omitempty"`
+	Empty    bool `json:"empty,omitempty,omitzero"`
+	Sorted   bool `json:"sorted,omitempty,omitzero"`
+	Unsorted bool `json:"unsorted,omitempty,omitzero"`
 }
 
 // Statistics defines model for Statistics.
 type Statistics struct {
-	LastModified         *string `json:"LastModified,omitempty"`
-	RemainingTimeMinutes *int32  `json:"RemainingTimeMinutes,omitempty"`
-	SpentReadingMinutes  *int32  `json:"SpentReadingMinutes,omitempty"`
+	LastModified         string `json:"LastModified,omitempty,omitzero"`
+	RemainingTimeMinutes int32  `json:"RemainingTimeMinutes,omitempty,omitzero"`
+	SpentReadingMinutes  int32  `json:"SpentReadingMinutes,omitempty,omitzero"`
 }
 
 // StatusInfo defines model for StatusInfo.
 type StatusInfo struct {
-	LastModified           *string           `json:"LastModified,omitempty"`
-	LastTimeFinished       *string           `json:"LastTimeFinished,omitempty"`
-	LastTimeStartedReading *string           `json:"LastTimeStartedReading,omitempty"`
-	Status                 *StatusInfoStatus `json:"Status,omitempty"`
-	TimesStartedReading    *int32            `json:"TimesStartedReading,omitempty"`
+	LastModified           string           `json:"LastModified,omitempty,omitzero"`
+	LastTimeFinished       string           `json:"LastTimeFinished,omitempty,omitzero"`
+	LastTimeStartedReading string           `json:"LastTimeStartedReading,omitempty,omitzero"`
+	Status                 StatusInfoStatus `json:"Status,omitempty,omitzero"`
+	TimesStartedReading    int32            `json:"TimesStartedReading,omitempty,omitzero"`
 }
 
 // StatusInfoStatus defines model for StatusInfo.Status.
@@ -2644,10 +2644,10 @@ type StatusInfoStatus string
 
 // SuccessResponseHealthcheckResponse defines model for SuccessResponseHealthcheckResponse.
 type SuccessResponseHealthcheckResponse struct {
-	Data      *HealthcheckResponse `json:"data,omitempty"`
-	Message   *string              `json:"message,omitempty"`
-	Status    *int32               `json:"status,omitempty"`
-	Timestamp *time.Time           `json:"timestamp,omitempty"`
+	Data      HealthcheckResponse `json:"data,omitempty,omitzero"`
+	Message   string              `json:"message,omitempty,omitzero"`
+	Status    int32               `json:"status,omitempty,omitzero"`
+	Timestamp time.Time           `json:"timestamp,omitempty,omitzero"`
 }
 
 // SvgIconBatchRequest defines model for SvgIconBatchRequest.
@@ -2657,10 +2657,10 @@ type SvgIconBatchRequest struct {
 
 // SvgIconBatchResponse defines model for SvgIconBatchResponse.
 type SvgIconBatchResponse struct {
-	FailureCount   *int32            `json:"failureCount,omitempty"`
-	Results        *[]IconSaveResult `json:"results,omitempty"`
-	SuccessCount   *int32            `json:"successCount,omitempty"`
-	TotalRequested *int32            `json:"totalRequested,omitempty"`
+	FailureCount   int32            `json:"failureCount,omitempty,omitzero"`
+	Results        []IconSaveResult `json:"results,omitempty,omitzero"`
+	SuccessCount   int32            `json:"successCount,omitempty,omitzero"`
+	TotalRequested int32            `json:"totalRequested,omitempty,omitzero"`
 }
 
 // SvgIconCreateRequest defines model for SvgIconCreateRequest.
@@ -2671,24 +2671,24 @@ type SvgIconCreateRequest struct {
 
 // TableColumnPreference defines model for TableColumnPreference.
 type TableColumnPreference struct {
-	Field   *string `json:"field,omitempty"`
-	Order   *int32  `json:"order,omitempty"`
-	Visible *bool   `json:"visible,omitempty"`
+	Field   string `json:"field,omitempty,omitzero"`
+	Order   int32  `json:"order,omitempty,omitzero"`
+	Visible bool   `json:"visible,omitempty,omitzero"`
 }
 
 // TaskCancelResponse defines model for TaskCancelResponse.
 type TaskCancelResponse struct {
-	Cancelled *bool   `json:"cancelled,omitempty"`
-	Message   *string `json:"message,omitempty"`
-	TaskId    *string `json:"taskId,omitempty"`
+	Cancelled bool   `json:"cancelled,omitempty,omitzero"`
+	Message   string `json:"message,omitempty,omitzero"`
+	TaskId    string `json:"taskId,omitempty,omitzero"`
 }
 
 // TaskCreateRequest defines model for TaskCreateRequest.
 type TaskCreateRequest struct {
-	Options         interface{}                `json:"options,omitempty"`
-	TaskId          *string                    `json:"taskId,omitempty"`
-	TaskType        *TaskCreateRequestTaskType `json:"taskType,omitempty"`
-	TriggeredByCron *bool                      `json:"triggeredByCron,omitempty"`
+	Options         interface{}               `json:"options,omitempty,omitzero"`
+	TaskId          string                    `json:"taskId,omitempty,omitzero"`
+	TaskType        TaskCreateRequestTaskType `json:"taskType,omitempty,omitzero"`
+	TriggeredByCron bool                      `json:"triggeredByCron,omitempty,omitzero"`
 }
 
 // TaskCreateRequestTaskType defines model for TaskCreateRequest.TaskType.
@@ -2696,9 +2696,9 @@ type TaskCreateRequestTaskType string
 
 // TaskCreateResponse defines model for TaskCreateResponse.
 type TaskCreateResponse struct {
-	Status   *TaskCreateResponseStatus   `json:"status,omitempty"`
-	TaskId   *string                     `json:"taskId,omitempty"`
-	TaskType *TaskCreateResponseTaskType `json:"taskType,omitempty"`
+	Status   TaskCreateResponseStatus   `json:"status,omitempty,omitzero"`
+	TaskId   string                     `json:"taskId,omitempty,omitzero"`
+	TaskType TaskCreateResponseTaskType `json:"taskType,omitempty,omitzero"`
 }
 
 // TaskCreateResponseStatus defines model for TaskCreateResponse.Status.
@@ -2709,20 +2709,20 @@ type TaskCreateResponseTaskType string
 
 // TaskCronConfigRequest defines model for TaskCronConfigRequest.
 type TaskCronConfigRequest struct {
-	CronExpression *string `json:"cronExpression,omitempty"`
-	Enabled        *bool   `json:"enabled,omitempty"`
+	CronExpression string `json:"cronExpression,omitempty,omitzero"`
+	Enabled        bool   `json:"enabled,omitempty,omitzero"`
 }
 
 // TaskHistory defines model for TaskHistory.
 type TaskHistory struct {
-	CompletedAt        *time.Time         `json:"completedAt,omitempty"`
-	CreatedAt          *time.Time         `json:"createdAt,omitempty"`
-	Id                 *string            `json:"id,omitempty"`
-	Message            *string            `json:"message,omitempty"`
-	ProgressPercentage *int32             `json:"progressPercentage,omitempty"`
-	Status             *TaskHistoryStatus `json:"status,omitempty"`
-	Type               *TaskHistoryType   `json:"type,omitempty"`
-	UpdatedAt          *time.Time         `json:"updatedAt,omitempty"`
+	CompletedAt        time.Time         `json:"completedAt,omitempty,omitzero"`
+	CreatedAt          time.Time         `json:"createdAt,omitempty,omitzero"`
+	Id                 string            `json:"id,omitempty,omitzero"`
+	Message            string            `json:"message,omitempty,omitzero"`
+	ProgressPercentage int32             `json:"progressPercentage,omitempty,omitzero"`
+	Status             TaskHistoryStatus `json:"status,omitempty,omitzero"`
+	Type               TaskHistoryType   `json:"type,omitempty,omitzero"`
+	UpdatedAt          time.Time         `json:"updatedAt,omitempty,omitzero"`
 }
 
 // TaskHistoryStatus defines model for TaskHistory.Status.
@@ -2733,14 +2733,14 @@ type TaskHistoryType string
 
 // TaskInfo defines model for TaskInfo.
 type TaskInfo struct {
-	Async         *bool             `json:"async,omitempty"`
-	CronConfig    *CronConfig       `json:"cronConfig,omitempty"`
-	CronSupported *bool             `json:"cronSupported,omitempty"`
-	Description   *string           `json:"description,omitempty"`
-	Metadata      *string           `json:"metadata,omitempty"`
-	Name          *string           `json:"name,omitempty"`
-	Parallel      *bool             `json:"parallel,omitempty"`
-	TaskType      *TaskInfoTaskType `json:"taskType,omitempty"`
+	Async         bool             `json:"async,omitempty,omitzero"`
+	CronConfig    CronConfig       `json:"cronConfig,omitempty,omitzero"`
+	CronSupported bool             `json:"cronSupported,omitempty,omitzero"`
+	Description   string           `json:"description,omitempty,omitzero"`
+	Metadata      string           `json:"metadata,omitempty,omitzero"`
+	Name          string           `json:"name,omitempty,omitzero"`
+	Parallel      bool             `json:"parallel,omitempty,omitzero"`
+	TaskType      TaskInfoTaskType `json:"taskType,omitempty,omitzero"`
 }
 
 // TaskInfoTaskType defines model for TaskInfo.TaskType.
@@ -2748,13 +2748,13 @@ type TaskInfoTaskType string
 
 // TasksHistoryResponse defines model for TasksHistoryResponse.
 type TasksHistoryResponse struct {
-	TaskHistories *[]TaskHistory `json:"taskHistories,omitempty"`
+	TaskHistories []TaskHistory `json:"taskHistories,omitempty,omitzero"`
 }
 
 // ToggleAllLockRequest Toggle all lock request
 type ToggleAllLockRequest struct {
-	BookIds *[]int64                  `json:"bookIds,omitempty"`
-	Lock    *ToggleAllLockRequestLock `json:"lock,omitempty"`
+	BookIds []int64                  `json:"bookIds,omitempty,omitzero"`
+	Lock    ToggleAllLockRequestLock `json:"lock,omitempty,omitzero"`
 }
 
 // ToggleAllLockRequestLock defines model for ToggleAllLockRequest.Lock.
@@ -2762,36 +2762,36 @@ type ToggleAllLockRequestLock string
 
 // ToggleFieldLocksRequest Toggle field locks request
 type ToggleFieldLocksRequest struct {
-	BookIds      *[]int64           `json:"bookIds,omitempty"`
-	FieldActions *map[string]string `json:"fieldActions,omitempty"`
+	BookIds      []int64           `json:"bookIds,omitempty,omitzero"`
+	FieldActions map[string]string `json:"fieldActions,omitempty,omitzero"`
 }
 
 // UpdateAnnotationRequest Annotation update request
 type UpdateAnnotationRequest struct {
-	Color *string `json:"color,omitempty"`
-	Note  *string `json:"note,omitempty"`
-	Style *string `json:"style,omitempty"`
+	Color string `json:"color,omitempty,omitzero"`
+	Note  string `json:"note,omitempty,omitzero"`
+	Style string `json:"style,omitempty,omitzero"`
 }
 
 // UpdateBookMarkRequest Bookmark update request
 type UpdateBookMarkRequest struct {
-	Cfi      *string `json:"cfi,omitempty"`
-	Color    *string `json:"color,omitempty"`
-	Notes    *string `json:"notes,omitempty"`
-	Priority *int32  `json:"priority,omitempty"`
-	Title    *string `json:"title,omitempty"`
+	Cfi      string `json:"cfi,omitempty,omitzero"`
+	Color    string `json:"color,omitempty,omitzero"`
+	Notes    string `json:"notes,omitempty,omitzero"`
+	Priority int32  `json:"priority,omitempty,omitzero"`
+	Title    string `json:"title,omitempty,omitzero"`
 }
 
 // UpdateBookNoteV2Request Note update request
 type UpdateBookNoteV2Request struct {
-	ChapterTitle *string `json:"chapterTitle,omitempty"`
-	Color        *string `json:"color,omitempty"`
-	NoteContent  *string `json:"noteContent,omitempty"`
+	ChapterTitle string `json:"chapterTitle,omitempty,omitzero"`
+	Color        string `json:"color,omitempty,omitzero"`
+	NoteContent  string `json:"noteContent,omitempty,omitzero"`
 }
 
 // UpdateRatingRequest defines model for UpdateRatingRequest.
 type UpdateRatingRequest struct {
-	Rating *int32 `json:"rating,omitempty"`
+	Rating int32 `json:"rating,omitempty,omitzero"`
 }
 
 // UpdateStatusRequest defines model for UpdateStatusRequest.
@@ -2804,118 +2804,118 @@ type UpdateStatusRequestStatus string
 
 // UpdateUserSettingRequest Update user setting request
 type UpdateUserSettingRequest struct {
-	Key   *string     `json:"key,omitempty"`
-	Value interface{} `json:"value,omitempty"`
+	Key   string      `json:"key,omitempty,omitzero"`
+	Value interface{} `json:"value,omitempty,omitzero"`
 }
 
 // UserCreateRequest User registration request
 type UserCreateRequest struct {
-	Email                                   *string  `json:"email,omitempty"`
-	Name                                    *string  `json:"name,omitempty"`
-	Password                                *string  `json:"password,omitempty"`
-	PermissionAccessBookdrop                *bool    `json:"permissionAccessBookdrop,omitempty"`
-	PermissionAccessLibraryStats            *bool    `json:"permissionAccessLibraryStats,omitempty"`
-	PermissionAccessOpds                    *bool    `json:"permissionAccessOpds,omitempty"`
-	PermissionAccessTaskManager             *bool    `json:"permissionAccessTaskManager,omitempty"`
-	PermissionAccessUserStats               *bool    `json:"permissionAccessUserStats,omitempty"`
-	PermissionAdmin                         *bool    `json:"permissionAdmin,omitempty"`
-	PermissionBulkAutoFetchMetadata         *bool    `json:"permissionBulkAutoFetchMetadata,omitempty"`
-	PermissionBulkCustomFetchMetadata       *bool    `json:"permissionBulkCustomFetchMetadata,omitempty"`
-	PermissionBulkEditMetadata              *bool    `json:"permissionBulkEditMetadata,omitempty"`
-	PermissionBulkLockUnlockMetadata        *bool    `json:"permissionBulkLockUnlockMetadata,omitempty"`
-	PermissionBulkRegenerateCover           *bool    `json:"permissionBulkRegenerateCover,omitempty"`
-	PermissionBulkResetBookReadStatus       *bool    `json:"permissionBulkResetBookReadStatus,omitempty"`
-	PermissionBulkResetBookloreReadProgress *bool    `json:"permissionBulkResetBookloreReadProgress,omitempty"`
-	PermissionBulkResetKoReaderReadProgress *bool    `json:"permissionBulkResetKoReaderReadProgress,omitempty"`
-	PermissionDeleteBook                    *bool    `json:"permissionDeleteBook,omitempty"`
-	PermissionDownload                      *bool    `json:"permissionDownload,omitempty"`
-	PermissionEditMetadata                  *bool    `json:"permissionEditMetadata,omitempty"`
-	PermissionEmailBook                     *bool    `json:"permissionEmailBook,omitempty"`
-	PermissionManageFonts                   *bool    `json:"permissionManageFonts,omitempty"`
-	PermissionManageGlobalPreferences       *bool    `json:"permissionManageGlobalPreferences,omitempty"`
-	PermissionManageIcons                   *bool    `json:"permissionManageIcons,omitempty"`
-	PermissionManageLibrary                 *bool    `json:"permissionManageLibrary,omitempty"`
-	PermissionManageMetadataConfig          *bool    `json:"permissionManageMetadataConfig,omitempty"`
-	PermissionMoveOrganizeFiles             *bool    `json:"permissionMoveOrganizeFiles,omitempty"`
-	PermissionSyncKobo                      *bool    `json:"permissionSyncKobo,omitempty"`
-	PermissionSyncKoreader                  *bool    `json:"permissionSyncKoreader,omitempty"`
-	PermissionUpload                        *bool    `json:"permissionUpload,omitempty"`
-	SelectedLibraries                       *[]int64 `json:"selectedLibraries,omitempty"`
-	Username                                *string  `json:"username,omitempty"`
+	Email                                   string  `json:"email,omitempty,omitzero"`
+	Name                                    string  `json:"name,omitempty,omitzero"`
+	Password                                string  `json:"password,omitempty,omitzero"`
+	PermissionAccessBookdrop                bool    `json:"permissionAccessBookdrop,omitempty,omitzero"`
+	PermissionAccessLibraryStats            bool    `json:"permissionAccessLibraryStats,omitempty,omitzero"`
+	PermissionAccessOpds                    bool    `json:"permissionAccessOpds,omitempty,omitzero"`
+	PermissionAccessTaskManager             bool    `json:"permissionAccessTaskManager,omitempty,omitzero"`
+	PermissionAccessUserStats               bool    `json:"permissionAccessUserStats,omitempty,omitzero"`
+	PermissionAdmin                         bool    `json:"permissionAdmin,omitempty,omitzero"`
+	PermissionBulkAutoFetchMetadata         bool    `json:"permissionBulkAutoFetchMetadata,omitempty,omitzero"`
+	PermissionBulkCustomFetchMetadata       bool    `json:"permissionBulkCustomFetchMetadata,omitempty,omitzero"`
+	PermissionBulkEditMetadata              bool    `json:"permissionBulkEditMetadata,omitempty,omitzero"`
+	PermissionBulkLockUnlockMetadata        bool    `json:"permissionBulkLockUnlockMetadata,omitempty,omitzero"`
+	PermissionBulkRegenerateCover           bool    `json:"permissionBulkRegenerateCover,omitempty,omitzero"`
+	PermissionBulkResetBookReadStatus       bool    `json:"permissionBulkResetBookReadStatus,omitempty,omitzero"`
+	PermissionBulkResetBookloreReadProgress bool    `json:"permissionBulkResetBookloreReadProgress,omitempty,omitzero"`
+	PermissionBulkResetKoReaderReadProgress bool    `json:"permissionBulkResetKoReaderReadProgress,omitempty,omitzero"`
+	PermissionDeleteBook                    bool    `json:"permissionDeleteBook,omitempty,omitzero"`
+	PermissionDownload                      bool    `json:"permissionDownload,omitempty,omitzero"`
+	PermissionEditMetadata                  bool    `json:"permissionEditMetadata,omitempty,omitzero"`
+	PermissionEmailBook                     bool    `json:"permissionEmailBook,omitempty,omitzero"`
+	PermissionManageFonts                   bool    `json:"permissionManageFonts,omitempty,omitzero"`
+	PermissionManageGlobalPreferences       bool    `json:"permissionManageGlobalPreferences,omitempty,omitzero"`
+	PermissionManageIcons                   bool    `json:"permissionManageIcons,omitempty,omitzero"`
+	PermissionManageLibrary                 bool    `json:"permissionManageLibrary,omitempty,omitzero"`
+	PermissionManageMetadataConfig          bool    `json:"permissionManageMetadataConfig,omitempty,omitzero"`
+	PermissionMoveOrganizeFiles             bool    `json:"permissionMoveOrganizeFiles,omitempty,omitzero"`
+	PermissionSyncKobo                      bool    `json:"permissionSyncKobo,omitempty,omitzero"`
+	PermissionSyncKoreader                  bool    `json:"permissionSyncKoreader,omitempty,omitzero"`
+	PermissionUpload                        bool    `json:"permissionUpload,omitempty,omitzero"`
+	SelectedLibraries                       []int64 `json:"selectedLibraries,omitempty,omitzero"`
+	Username                                string  `json:"username,omitempty,omitzero"`
 }
 
 // UserLoginRequest User login request
 type UserLoginRequest struct {
-	Password *string `json:"password,omitempty"`
-	Username *string `json:"username,omitempty"`
+	Password string `json:"password,omitempty,omitzero"`
+	Username string `json:"username,omitempty,omitzero"`
 }
 
 // UserPermissions defines model for UserPermissions.
 type UserPermissions struct {
-	Admin                            *bool `json:"admin,omitempty"`
-	CanAccessBookdrop                *bool `json:"canAccessBookdrop,omitempty"`
-	CanAccessLibraryStats            *bool `json:"canAccessLibraryStats,omitempty"`
-	CanAccessOpds                    *bool `json:"canAccessOpds,omitempty"`
-	CanAccessTaskManager             *bool `json:"canAccessTaskManager,omitempty"`
-	CanAccessUserStats               *bool `json:"canAccessUserStats,omitempty"`
-	CanBulkAutoFetchMetadata         *bool `json:"canBulkAutoFetchMetadata,omitempty"`
-	CanBulkCustomFetchMetadata       *bool `json:"canBulkCustomFetchMetadata,omitempty"`
-	CanBulkEditMetadata              *bool `json:"canBulkEditMetadata,omitempty"`
-	CanBulkLockUnlockMetadata        *bool `json:"canBulkLockUnlockMetadata,omitempty"`
-	CanBulkRegenerateCover           *bool `json:"canBulkRegenerateCover,omitempty"`
-	CanBulkResetBookReadStatus       *bool `json:"canBulkResetBookReadStatus,omitempty"`
-	CanBulkResetBookloreReadProgress *bool `json:"canBulkResetBookloreReadProgress,omitempty"`
-	CanBulkResetKoReaderReadProgress *bool `json:"canBulkResetKoReaderReadProgress,omitempty"`
-	CanDeleteBook                    *bool `json:"canDeleteBook,omitempty"`
-	CanDownload                      *bool `json:"canDownload,omitempty"`
-	CanEditMetadata                  *bool `json:"canEditMetadata,omitempty"`
-	CanEmailBook                     *bool `json:"canEmailBook,omitempty"`
-	CanManageFonts                   *bool `json:"canManageFonts,omitempty"`
-	CanManageGlobalPreferences       *bool `json:"canManageGlobalPreferences,omitempty"`
-	CanManageIcons                   *bool `json:"canManageIcons,omitempty"`
-	CanManageLibrary                 *bool `json:"canManageLibrary,omitempty"`
-	CanManageMetadataConfig          *bool `json:"canManageMetadataConfig,omitempty"`
-	CanMoveOrganizeFiles             *bool `json:"canMoveOrganizeFiles,omitempty"`
-	CanSyncKoReader                  *bool `json:"canSyncKoReader,omitempty"`
-	CanSyncKobo                      *bool `json:"canSyncKobo,omitempty"`
-	CanUpload                        *bool `json:"canUpload,omitempty"`
-	DemoUser                         *bool `json:"demoUser,omitempty"`
+	Admin                            bool `json:"admin,omitempty,omitzero"`
+	CanAccessBookdrop                bool `json:"canAccessBookdrop,omitempty,omitzero"`
+	CanAccessLibraryStats            bool `json:"canAccessLibraryStats,omitempty,omitzero"`
+	CanAccessOpds                    bool `json:"canAccessOpds,omitempty,omitzero"`
+	CanAccessTaskManager             bool `json:"canAccessTaskManager,omitempty,omitzero"`
+	CanAccessUserStats               bool `json:"canAccessUserStats,omitempty,omitzero"`
+	CanBulkAutoFetchMetadata         bool `json:"canBulkAutoFetchMetadata,omitempty,omitzero"`
+	CanBulkCustomFetchMetadata       bool `json:"canBulkCustomFetchMetadata,omitempty,omitzero"`
+	CanBulkEditMetadata              bool `json:"canBulkEditMetadata,omitempty,omitzero"`
+	CanBulkLockUnlockMetadata        bool `json:"canBulkLockUnlockMetadata,omitempty,omitzero"`
+	CanBulkRegenerateCover           bool `json:"canBulkRegenerateCover,omitempty,omitzero"`
+	CanBulkResetBookReadStatus       bool `json:"canBulkResetBookReadStatus,omitempty,omitzero"`
+	CanBulkResetBookloreReadProgress bool `json:"canBulkResetBookloreReadProgress,omitempty,omitzero"`
+	CanBulkResetKoReaderReadProgress bool `json:"canBulkResetKoReaderReadProgress,omitempty,omitzero"`
+	CanDeleteBook                    bool `json:"canDeleteBook,omitempty,omitzero"`
+	CanDownload                      bool `json:"canDownload,omitempty,omitzero"`
+	CanEditMetadata                  bool `json:"canEditMetadata,omitempty,omitzero"`
+	CanEmailBook                     bool `json:"canEmailBook,omitempty,omitzero"`
+	CanManageFonts                   bool `json:"canManageFonts,omitempty,omitzero"`
+	CanManageGlobalPreferences       bool `json:"canManageGlobalPreferences,omitempty,omitzero"`
+	CanManageIcons                   bool `json:"canManageIcons,omitempty,omitzero"`
+	CanManageLibrary                 bool `json:"canManageLibrary,omitempty,omitzero"`
+	CanManageMetadataConfig          bool `json:"canManageMetadataConfig,omitempty,omitzero"`
+	CanMoveOrganizeFiles             bool `json:"canMoveOrganizeFiles,omitempty,omitzero"`
+	CanSyncKoReader                  bool `json:"canSyncKoReader,omitempty,omitzero"`
+	CanSyncKobo                      bool `json:"canSyncKobo,omitempty,omitzero"`
+	CanUpload                        bool `json:"canUpload,omitempty,omitzero"`
+	DemoUser                         bool `json:"demoUser,omitempty,omitzero"`
 }
 
 // UserSettings defines model for UserSettings.
 type UserSettings struct {
-	AutoSaveMetadata         *bool                    `json:"autoSaveMetadata,omitempty"`
-	CbxReaderSetting         *CbxReaderSetting        `json:"cbxReaderSetting,omitempty"`
-	DashboardConfig          *DashboardConfig         `json:"dashboardConfig,omitempty"`
-	EbookReaderSetting       *EbookReaderSetting      `json:"ebookReaderSetting,omitempty"`
-	EnableSeriesView         *bool                    `json:"enableSeriesView,omitempty"`
-	EntityViewPreferences    *EntityViewPreferences   `json:"entityViewPreferences,omitempty"`
-	EpubReaderSetting        *EpubReaderSetting       `json:"epubReaderSetting,omitempty"`
-	FilterMode               *string                  `json:"filterMode,omitempty"`
-	FilterSortingMode        *string                  `json:"filterSortingMode,omitempty"`
-	KoReaderEnabled          *bool                    `json:"koReaderEnabled,omitempty"`
-	MetadataCenterViewMode   *string                  `json:"metadataCenterViewMode,omitempty"`
-	NewPdfReaderSetting      *NewPdfReaderSetting     `json:"newPdfReaderSetting,omitempty"`
-	PdfReaderSetting         *PdfReaderSetting        `json:"pdfReaderSetting,omitempty"`
-	PerBookSetting           *PerBookSetting          `json:"perBookSetting,omitempty"`
-	SidebarLibrarySorting    *SidebarSortOption       `json:"sidebarLibrarySorting,omitempty"`
-	SidebarMagicShelfSorting *SidebarSortOption       `json:"sidebarMagicShelfSorting,omitempty"`
-	SidebarShelfSorting      *SidebarSortOption       `json:"sidebarShelfSorting,omitempty"`
-	TableColumnPreference    *[]TableColumnPreference `json:"tableColumnPreference,omitempty"`
+	AutoSaveMetadata         bool                    `json:"autoSaveMetadata,omitempty,omitzero"`
+	CbxReaderSetting         CbxReaderSetting        `json:"cbxReaderSetting,omitempty,omitzero"`
+	DashboardConfig          DashboardConfig         `json:"dashboardConfig,omitempty,omitzero"`
+	EbookReaderSetting       EbookReaderSetting      `json:"ebookReaderSetting,omitempty,omitzero"`
+	EnableSeriesView         bool                    `json:"enableSeriesView,omitempty,omitzero"`
+	EntityViewPreferences    EntityViewPreferences   `json:"entityViewPreferences,omitempty,omitzero"`
+	EpubReaderSetting        EpubReaderSetting       `json:"epubReaderSetting,omitempty,omitzero"`
+	FilterMode               string                  `json:"filterMode,omitempty,omitzero"`
+	FilterSortingMode        string                  `json:"filterSortingMode,omitempty,omitzero"`
+	KoReaderEnabled          bool                    `json:"koReaderEnabled,omitempty,omitzero"`
+	MetadataCenterViewMode   string                  `json:"metadataCenterViewMode,omitempty,omitzero"`
+	NewPdfReaderSetting      NewPdfReaderSetting     `json:"newPdfReaderSetting,omitempty,omitzero"`
+	PdfReaderSetting         PdfReaderSetting        `json:"pdfReaderSetting,omitempty,omitzero"`
+	PerBookSetting           PerBookSetting          `json:"perBookSetting,omitempty,omitzero"`
+	SidebarLibrarySorting    SidebarSortOption       `json:"sidebarLibrarySorting,omitempty,omitzero"`
+	SidebarMagicShelfSorting SidebarSortOption       `json:"sidebarMagicShelfSorting,omitempty,omitzero"`
+	SidebarShelfSorting      SidebarSortOption       `json:"sidebarShelfSorting,omitempty,omitzero"`
+	TableColumnPreference    []TableColumnPreference `json:"tableColumnPreference,omitempty,omitzero"`
 }
 
 // UserUpdateRequest User update request
 type UserUpdateRequest struct {
-	AssignedLibraries *[]int64     `json:"assignedLibraries,omitempty"`
-	Email             *string      `json:"email,omitempty"`
-	Name              *string      `json:"name,omitempty"`
-	Permissions       *Permissions `json:"permissions,omitempty"`
+	AssignedLibraries []int64     `json:"assignedLibraries,omitempty,omitzero"`
+	Email             string      `json:"email,omitempty,omitzero"`
+	Name              string      `json:"name,omitempty,omitzero"`
+	Permissions       Permissions `json:"permissions,omitempty,omitzero"`
 }
 
 // VersionInfo defines model for VersionInfo.
 type VersionInfo struct {
-	Current *string `json:"current,omitempty"`
-	Latest  *string `json:"latest,omitempty"`
+	Current string `json:"current,omitempty,omitzero"`
+	Latest  string `json:"latest,omitempty,omitzero"`
 }
 
 // UnhandledKoboDeleteJSONBody defines parameters for UnhandledKoboDelete.
@@ -2948,28 +2948,28 @@ type UpdateProposalStatusParams struct {
 // MobileListBooksV1Params defines parameters for MobileListBooksV1.
 type MobileListBooksV1Params struct {
 	// Page Page number (0-indexed)
-	Page *int32 `form:"page,omitempty" json:"page,omitempty"`
+	Page int32 `form:"page,omitempty" json:"page,omitempty,omitzero"`
 
 	// Size Page size (max 50)
-	Size *int32 `form:"size,omitempty" json:"size,omitempty"`
+	Size int32 `form:"size,omitempty" json:"size,omitempty,omitzero"`
 
 	// Sort Sort field (title, addedOn, lastReadTime, seriesName)
-	Sort *string `form:"sort,omitempty" json:"sort,omitempty"`
+	Sort string `form:"sort,omitempty" json:"sort,omitempty,omitzero"`
 
 	// Dir Sort direction (asc, desc)
-	Dir *string `form:"dir,omitempty" json:"dir,omitempty"`
+	Dir string `form:"dir,omitempty" json:"dir,omitempty,omitzero"`
 
 	// LibraryId Filter by library ID
-	LibraryId *int64 `form:"libraryId,omitempty" json:"libraryId,omitempty"`
+	LibraryId int64 `form:"libraryId,omitempty" json:"libraryId,omitempty,omitzero"`
 
 	// ShelfId Filter by shelf ID
-	ShelfId *int64 `form:"shelfId,omitempty" json:"shelfId,omitempty"`
+	ShelfId int64 `form:"shelfId,omitempty" json:"shelfId,omitempty,omitzero"`
 
 	// Status Filter by read status
-	Status *MobileListBooksV1ParamsStatus `form:"status,omitempty" json:"status,omitempty"`
+	Status MobileListBooksV1ParamsStatus `form:"status,omitempty" json:"status,omitempty,omitzero"`
 
 	// Search Search in title, author, series
-	Search *string `form:"search,omitempty" json:"search,omitempty"`
+	Search string `form:"search,omitempty" json:"search,omitempty,omitzero"`
 }
 
 // MobileListBooksV1ParamsStatus defines parameters for MobileListBooksV1.
@@ -2978,22 +2978,22 @@ type MobileListBooksV1ParamsStatus string
 // GetContinueReadingParams defines parameters for GetContinueReading.
 type GetContinueReadingParams struct {
 	// Limit Maximum number of books to return
-	Limit *int32 `form:"limit,omitempty" json:"limit,omitempty"`
+	Limit int32 `form:"limit,omitempty" json:"limit,omitempty,omitzero"`
 }
 
 // GetBooksByMagicShelfParams defines parameters for GetBooksByMagicShelf.
 type GetBooksByMagicShelfParams struct {
 	// Page Page number (0-indexed)
-	Page *int32 `form:"page,omitempty" json:"page,omitempty"`
+	Page int32 `form:"page,omitempty" json:"page,omitempty,omitzero"`
 
 	// Size Page size (max 50)
-	Size *int32 `form:"size,omitempty" json:"size,omitempty"`
+	Size int32 `form:"size,omitempty" json:"size,omitempty,omitzero"`
 }
 
 // GetRecentlyAddedParams defines parameters for GetRecentlyAdded.
 type GetRecentlyAddedParams struct {
 	// Limit Maximum number of books to return
-	Limit *int32 `form:"limit,omitempty" json:"limit,omitempty"`
+	Limit int32 `form:"limit,omitempty" json:"limit,omitempty,omitzero"`
 }
 
 // SearchBooksParams defines parameters for SearchBooks.
@@ -3002,37 +3002,37 @@ type SearchBooksParams struct {
 	Q string `form:"q" json:"q"`
 
 	// Page Page number (0-indexed)
-	Page *int32 `form:"page,omitempty" json:"page,omitempty"`
+	Page int32 `form:"page,omitempty" json:"page,omitempty,omitzero"`
 
 	// Size Page size (max 50)
-	Size *int32 `form:"size,omitempty" json:"size,omitempty"`
+	Size int32 `form:"size,omitempty" json:"size,omitempty,omitzero"`
 }
 
 // GetEmbeddedCoverParams defines parameters for GetEmbeddedCover.
 type GetEmbeddedCoverParams struct {
 	// BookType Optional book type for alternative format
-	BookType *string `form:"bookType,omitempty" json:"bookType,omitempty"`
+	BookType string `form:"bookType,omitempty" json:"bookType,omitempty,omitzero"`
 }
 
 // GetAudiobookInfoParams defines parameters for GetAudiobookInfo.
 type GetAudiobookInfoParams struct {
 	// BookType Optional book type for alternative format (e.g., AUDIOBOOK)
-	BookType *string `form:"bookType,omitempty" json:"bookType,omitempty"`
+	BookType string `form:"bookType,omitempty" json:"bookType,omitempty,omitzero"`
 }
 
 // StreamAudiobookParams defines parameters for StreamAudiobook.
 type StreamAudiobookParams struct {
 	// BookType Optional book type for alternative format
-	BookType *string `form:"bookType,omitempty" json:"bookType,omitempty"`
+	BookType string `form:"bookType,omitempty" json:"bookType,omitempty,omitzero"`
 
 	// TrackIndex Track index for folder-based audiobooks (0-indexed)
-	TrackIndex *int32 `form:"trackIndex,omitempty" json:"trackIndex,omitempty"`
+	TrackIndex int32 `form:"trackIndex,omitempty" json:"trackIndex,omitempty,omitzero"`
 }
 
 // StreamTrackParams defines parameters for StreamTrack.
 type StreamTrackParams struct {
 	// BookType Optional book type for alternative format
-	BookType *string `form:"bookType,omitempty" json:"bookType,omitempty"`
+	BookType string `form:"bookType,omitempty" json:"bookType,omitempty,omitzero"`
 }
 
 // HandleOidcCallbackParams defines parameters for HandleOidcCallback.
@@ -3065,7 +3065,7 @@ type HandleOidcRedirectParams struct {
 // GetFilesByStatusParams defines parameters for GetFilesByStatus.
 type GetFilesByStatusParams struct {
 	// Status Status to filter files by
-	Status   *string  `form:"status,omitempty" json:"status,omitempty"`
+	Status   string   `form:"status,omitempty" json:"status,omitempty,omitzero"`
 	Pageable Pageable `form:"pageable" json:"pageable"`
 }
 
@@ -3078,7 +3078,7 @@ type DeleteBooksParams struct {
 // ListBooksParams defines parameters for ListBooks.
 type ListBooksParams struct {
 	// WithDescription Include book descriptions in the response
-	WithDescription *bool `form:"withDescription,omitempty" json:"withDescription,omitempty"`
+	WithDescription bool `form:"withDescription,omitempty" json:"withDescription,omitempty,omitzero"`
 }
 
 // GetBooksByIdsParams defines parameters for GetBooksByIds.
@@ -3087,7 +3087,7 @@ type GetBooksByIdsParams struct {
 	Ids []int64 `form:"ids" json:"ids"`
 
 	// WithDescription Include book descriptions in the response
-	WithDescription *bool `form:"withDescription,omitempty" json:"withDescription,omitempty"`
+	WithDescription bool `form:"withDescription,omitempty" json:"withDescription,omitempty,omitzero"`
 }
 
 // BulkUploadCoverJSONBody defines parameters for BulkUploadCover.
@@ -3120,13 +3120,13 @@ type ResetProgressParamsType string
 // GetBookByIdParams defines parameters for GetBookById.
 type GetBookByIdParams struct {
 	// WithDescription Include book description in the response
-	WithDescription *bool `form:"withDescription,omitempty" json:"withDescription,omitempty"`
+	WithDescription bool `form:"withDescription,omitempty" json:"withDescription,omitempty,omitzero"`
 }
 
 // GetBookContentParams defines parameters for GetBookContent.
 type GetBookContentParams struct {
 	// BookType Optional book type for alternative format (e.g., EPUB, PDF, MOBI)
-	BookType *string `form:"bookType,omitempty" json:"bookType,omitempty"`
+	BookType string `form:"bookType,omitempty" json:"bookType,omitempty,omitzero"`
 }
 
 // GetAdditionalFilesParams defines parameters for GetAdditionalFiles.
@@ -3141,9 +3141,9 @@ type UploadAdditionalFileMultipartBody struct {
 
 // UploadAdditionalFileParams defines parameters for UploadAdditionalFile.
 type UploadAdditionalFileParams struct {
-	IsBook      bool                                `form:"isBook" json:"isBook"`
-	BookType    *UploadAdditionalFileParamsBookType `form:"bookType,omitempty" json:"bookType,omitempty"`
-	Description *string                             `form:"description,omitempty" json:"description,omitempty"`
+	IsBook      bool                               `form:"isBook" json:"isBook"`
+	BookType    UploadAdditionalFileParamsBookType `form:"bookType,omitempty" json:"bookType,omitempty,omitzero"`
+	Description string                             `form:"description,omitempty" json:"description,omitempty,omitzero"`
 }
 
 // UploadAdditionalFileParamsBookType defines parameters for UploadAdditionalFile.
@@ -3152,7 +3152,7 @@ type UploadAdditionalFileParamsBookType string
 // UpdateMetadataParams defines parameters for UpdateMetadata.
 type UpdateMetadataParams struct {
 	// MergeCategories Merge categories
-	MergeCategories *bool `form:"mergeCategories,omitempty" json:"mergeCategories,omitempty"`
+	MergeCategories bool `form:"mergeCategories,omitempty" json:"mergeCategories,omitempty,omitzero"`
 }
 
 // UploadCoverFromUrlJSONBody defines parameters for UploadCoverFromUrl.
@@ -3173,19 +3173,19 @@ type GetBookViewerSettingsParams struct {
 // GetRecommendationsParams defines parameters for GetRecommendations.
 type GetRecommendationsParams struct {
 	// Limit Maximum number of recommendations to return (max 25)
-	Limit *int32 `form:"limit,omitempty" json:"limit,omitempty"`
+	Limit int32 `form:"limit,omitempty" json:"limit,omitempty,omitzero"`
 }
 
 // GetPageInfoParams defines parameters for GetPageInfo.
 type GetPageInfoParams struct {
 	// BookType Optional book type for alternative format (e.g., PDF, CBX)
-	BookType *string `form:"bookType,omitempty" json:"bookType,omitempty"`
+	BookType string `form:"bookType,omitempty" json:"bookType,omitempty,omitzero"`
 }
 
 // GetCbxBookPagesParams defines parameters for GetCbxBookPages.
 type GetCbxBookPagesParams struct {
 	// BookType Optional book type for alternative format (e.g., PDF, CBX)
-	BookType *string `form:"bookType,omitempty" json:"bookType,omitempty"`
+	BookType string `form:"bookType,omitempty" json:"bookType,omitempty,omitzero"`
 }
 
 // UploadFontJSONBody defines parameters for UploadFont.
@@ -3197,19 +3197,19 @@ type UploadFontJSONBody struct {
 // UploadFontParams defines parameters for UploadFont.
 type UploadFontParams struct {
 	// FontName Font display name
-	FontName *string `form:"fontName,omitempty" json:"fontName,omitempty"`
+	FontName string `form:"fontName,omitempty" json:"fontName,omitempty,omitzero"`
 }
 
 // GetFileParams defines parameters for GetFile.
 type GetFileParams struct {
 	// BookType Optional book type for alternative format (e.g., EPUB)
-	BookType *string `form:"bookType,omitempty" json:"bookType,omitempty"`
+	BookType string `form:"bookType,omitempty" json:"bookType,omitempty,omitzero"`
 }
 
 // GetEpubBookInfoParams defines parameters for GetEpubBookInfo.
 type GetEpubBookInfoParams struct {
 	// BookType Optional book type for alternative format (e.g., EPUB)
-	BookType *string `form:"bookType,omitempty" json:"bookType,omitempty"`
+	BookType string `form:"bookType,omitempty" json:"bookType,omitempty,omitzero"`
 }
 
 // UploadFileMultipartBody defines parameters for UploadFile.
@@ -3236,10 +3236,10 @@ type UploadFileToBookdropMultipartBody struct {
 // GetIconNamesParams defines parameters for GetIconNames.
 type GetIconNamesParams struct {
 	// Page Page number
-	Page *int32 `form:"page,omitempty" json:"page,omitempty"`
+	Page int32 `form:"page,omitempty" json:"page,omitempty,omitzero"`
 
 	// Size Page size
-	Size *int32 `form:"size,omitempty" json:"size,omitempty"`
+	Size int32 `form:"size,omitempty" json:"size,omitempty,omitzero"`
 }
 
 // UpsertCurrentUserJSONBody defines parameters for UpsertCurrentUser.
@@ -3263,19 +3263,19 @@ type SetFileNamingPatternJSONBody map[string]string
 // GetCbxPageParams defines parameters for GetCbxPage.
 type GetCbxPageParams struct {
 	// BookType Optional book type for alternative format (e.g., PDF, CBX)
-	BookType *string `form:"bookType,omitempty" json:"bookType,omitempty"`
+	BookType string `form:"bookType,omitempty" json:"bookType,omitempty,omitzero"`
 }
 
 // GetPdfPageParams defines parameters for GetPdfPage.
 type GetPdfPageParams struct {
 	// BookType Optional book type for alternative format (e.g., PDF, CBX)
-	BookType *string `form:"bookType,omitempty" json:"bookType,omitempty"`
+	BookType string `form:"bookType,omitempty" json:"bookType,omitempty,omitzero"`
 }
 
 // DownloadOpdsBookParams defines parameters for DownloadOpdsBook.
 type DownloadOpdsBookParams struct {
 	// FileId Optional ID of a specific file format to download
-	FileId *int64 `form:"fileId,omitempty" json:"fileId,omitempty"`
+	FileId int64 `form:"fileId,omitempty" json:"fileId,omitempty,omitzero"`
 }
 
 // GetFoldersParams defines parameters for GetFolders.
@@ -3287,18 +3287,18 @@ type GetFoldersParams struct {
 // GetBookInfoParams defines parameters for GetBookInfo.
 type GetBookInfoParams struct {
 	// BookType Optional book type for alternative format (e.g., PDF, CBX)
-	BookType *string `form:"bookType,omitempty" json:"bookType,omitempty"`
+	BookType string `form:"bookType,omitempty" json:"bookType,omitempty,omitzero"`
 }
 
 // ListPagesParams defines parameters for ListPages.
 type ListPagesParams struct {
 	// BookType Optional book type for alternative format (e.g., PDF, CBX)
-	BookType *string `form:"bookType,omitempty" json:"bookType,omitempty"`
+	BookType string `form:"bookType,omitempty" json:"bookType,omitempty,omitzero"`
 }
 
 // GetReadingSessionsForBookParams defines parameters for GetReadingSessionsForBook.
 type GetReadingSessionsForBookParams struct {
-	Page *int32 `form:"page,omitempty" json:"page,omitempty"`
+	Page int32 `form:"page,omitempty" json:"page,omitempty,omitzero"`
 }
 
 // UpdateSettingsJSONBody defines parameters for UpdateSettings.
@@ -3314,8 +3314,8 @@ type GetCompletionTimelineParams struct {
 
 // GetFavoriteReadingDaysParams defines parameters for GetFavoriteReadingDays.
 type GetFavoriteReadingDaysParams struct {
-	Year  *int32 `form:"year,omitempty" json:"year,omitempty"`
-	Month *int32 `form:"month,omitempty" json:"month,omitempty"`
+	Year  int32 `form:"year,omitempty" json:"year,omitempty,omitzero"`
+	Month int32 `form:"month,omitempty" json:"month,omitempty,omitzero"`
 }
 
 // GetHeatmapForYearParams defines parameters for GetHeatmapForYear.
@@ -3331,8 +3331,8 @@ type GetHeatmapForMonthParams struct {
 
 // GetPeakReadingHoursParams defines parameters for GetPeakReadingHours.
 type GetPeakReadingHoursParams struct {
-	Year  *int32 `form:"year,omitempty" json:"year,omitempty"`
-	Month *int32 `form:"month,omitempty" json:"month,omitempty"`
+	Year  int32 `form:"year,omitempty" json:"year,omitempty,omitzero"`
+	Month int32 `form:"month,omitempty" json:"month,omitempty,omitzero"`
 }
 
 // GetReadingSpeedForYearParams defines parameters for GetReadingSpeedForYear.
@@ -3349,58 +3349,58 @@ type GetTimelineForWeekParams struct {
 // GetAllBooksParams defines parameters for GetAllBooks.
 type GetAllBooksParams struct {
 	// LibraryId Library ID filter
-	LibraryId *int64 `form:"library_id,omitempty" json:"library_id,omitempty"`
+	LibraryId int64 `form:"library_id,omitempty" json:"library_id,omitempty,omitzero"`
 
 	// Page Page number
-	Page *int32 `form:"page,omitempty" json:"page,omitempty"`
+	Page int32 `form:"page,omitempty" json:"page,omitempty,omitzero"`
 
 	// Size Page size
-	Size *int32 `form:"size,omitempty" json:"size,omitempty"`
+	Size int32 `form:"size,omitempty" json:"size,omitempty,omitzero"`
 }
 
 // GetBookPageParams defines parameters for GetBookPage.
 type GetBookPageParams struct {
 	// Convert Convert image format (e.g., 'png')
-	Convert *string `form:"convert,omitempty" json:"convert,omitempty"`
+	Convert string `form:"convert,omitempty" json:"convert,omitempty,omitzero"`
 }
 
 // GetCollectionsParams defines parameters for GetCollections.
 type GetCollectionsParams struct {
 	// Page Page number
-	Page *int32 `form:"page,omitempty" json:"page,omitempty"`
+	Page int32 `form:"page,omitempty" json:"page,omitempty,omitzero"`
 
 	// Size Page size
-	Size *int32 `form:"size,omitempty" json:"size,omitempty"`
+	Size int32 `form:"size,omitempty" json:"size,omitempty,omitzero"`
 
 	// Unpaged Return all collections without paging
-	Unpaged *bool `form:"unpaged,omitempty" json:"unpaged,omitempty"`
+	Unpaged bool `form:"unpaged,omitempty" json:"unpaged,omitempty,omitzero"`
 }
 
 // GetAllSeriesParams defines parameters for GetAllSeries.
 type GetAllSeriesParams struct {
 	// LibraryId Library ID filter
-	LibraryId *int64 `form:"library_id,omitempty" json:"library_id,omitempty"`
+	LibraryId int64 `form:"library_id,omitempty" json:"library_id,omitempty,omitzero"`
 
 	// Page Page number
-	Page *int32 `form:"page,omitempty" json:"page,omitempty"`
+	Page int32 `form:"page,omitempty" json:"page,omitempty,omitzero"`
 
 	// Size Page size
-	Size *int32 `form:"size,omitempty" json:"size,omitempty"`
+	Size int32 `form:"size,omitempty" json:"size,omitempty,omitzero"`
 
 	// Unpaged Return all books without paging
-	Unpaged *bool `form:"unpaged,omitempty" json:"unpaged,omitempty"`
+	Unpaged bool `form:"unpaged,omitempty" json:"unpaged,omitempty,omitzero"`
 }
 
 // GetSeriesBooksParams defines parameters for GetSeriesBooks.
 type GetSeriesBooksParams struct {
 	// Page Page number
-	Page *int32 `form:"page,omitempty" json:"page,omitempty"`
+	Page int32 `form:"page,omitempty" json:"page,omitempty,omitzero"`
 
 	// Size Page size
-	Size *int32 `form:"size,omitempty" json:"size,omitempty"`
+	Size int32 `form:"size,omitempty" json:"size,omitempty,omitzero"`
 
 	// Unpaged Return all books without paging
-	Unpaged *bool `form:"unpaged,omitempty" json:"unpaged,omitempty"`
+	Unpaged bool `form:"unpaged,omitempty" json:"unpaged,omitempty,omitzero"`
 }
 
 // UnhandledKoboDeleteJSONRequestBody defines body for UnhandledKoboDelete for application/json ContentType.
@@ -9846,132 +9846,100 @@ func NewMobileListBooksV1Request(server string, params *MobileListBooksV1Params)
 	if params != nil {
 		queryValues := queryURL.Query()
 
-		if params.Page != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "page", runtime.ParamLocationQuery, *params.Page); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
+		if queryFrag, err := runtime.StyleParamWithLocation("form", true, "page", runtime.ParamLocationQuery, params.Page); err != nil {
+			return nil, err
+		} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+			return nil, err
+		} else {
+			for k, v := range parsed {
+				for _, v2 := range v {
+					queryValues.Add(k, v2)
 				}
 			}
-
 		}
 
-		if params.Size != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "size", runtime.ParamLocationQuery, *params.Size); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
+		if queryFrag, err := runtime.StyleParamWithLocation("form", true, "size", runtime.ParamLocationQuery, params.Size); err != nil {
+			return nil, err
+		} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+			return nil, err
+		} else {
+			for k, v := range parsed {
+				for _, v2 := range v {
+					queryValues.Add(k, v2)
 				}
 			}
-
 		}
 
-		if params.Sort != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "sort", runtime.ParamLocationQuery, *params.Sort); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
+		if queryFrag, err := runtime.StyleParamWithLocation("form", true, "sort", runtime.ParamLocationQuery, params.Sort); err != nil {
+			return nil, err
+		} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+			return nil, err
+		} else {
+			for k, v := range parsed {
+				for _, v2 := range v {
+					queryValues.Add(k, v2)
 				}
 			}
-
 		}
 
-		if params.Dir != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "dir", runtime.ParamLocationQuery, *params.Dir); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
+		if queryFrag, err := runtime.StyleParamWithLocation("form", true, "dir", runtime.ParamLocationQuery, params.Dir); err != nil {
+			return nil, err
+		} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+			return nil, err
+		} else {
+			for k, v := range parsed {
+				for _, v2 := range v {
+					queryValues.Add(k, v2)
 				}
 			}
-
 		}
 
-		if params.LibraryId != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "libraryId", runtime.ParamLocationQuery, *params.LibraryId); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
+		if queryFrag, err := runtime.StyleParamWithLocation("form", true, "libraryId", runtime.ParamLocationQuery, params.LibraryId); err != nil {
+			return nil, err
+		} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+			return nil, err
+		} else {
+			for k, v := range parsed {
+				for _, v2 := range v {
+					queryValues.Add(k, v2)
 				}
 			}
-
 		}
 
-		if params.ShelfId != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "shelfId", runtime.ParamLocationQuery, *params.ShelfId); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
+		if queryFrag, err := runtime.StyleParamWithLocation("form", true, "shelfId", runtime.ParamLocationQuery, params.ShelfId); err != nil {
+			return nil, err
+		} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+			return nil, err
+		} else {
+			for k, v := range parsed {
+				for _, v2 := range v {
+					queryValues.Add(k, v2)
 				}
 			}
-
 		}
 
-		if params.Status != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "status", runtime.ParamLocationQuery, *params.Status); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
+		if queryFrag, err := runtime.StyleParamWithLocation("form", true, "status", runtime.ParamLocationQuery, params.Status); err != nil {
+			return nil, err
+		} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+			return nil, err
+		} else {
+			for k, v := range parsed {
+				for _, v2 := range v {
+					queryValues.Add(k, v2)
 				}
 			}
-
 		}
 
-		if params.Search != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "search", runtime.ParamLocationQuery, *params.Search); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
+		if queryFrag, err := runtime.StyleParamWithLocation("form", true, "search", runtime.ParamLocationQuery, params.Search); err != nil {
+			return nil, err
+		} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+			return nil, err
+		} else {
+			for k, v := range parsed {
+				for _, v2 := range v {
+					queryValues.Add(k, v2)
 				}
 			}
-
 		}
 
 		queryURL.RawQuery = queryValues.Encode()
@@ -10007,20 +9975,16 @@ func NewGetContinueReadingRequest(server string, params *GetContinueReadingParam
 	if params != nil {
 		queryValues := queryURL.Query()
 
-		if params.Limit != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "limit", runtime.ParamLocationQuery, *params.Limit); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
+		if queryFrag, err := runtime.StyleParamWithLocation("form", true, "limit", runtime.ParamLocationQuery, params.Limit); err != nil {
+			return nil, err
+		} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+			return nil, err
+		} else {
+			for k, v := range parsed {
+				for _, v2 := range v {
+					queryValues.Add(k, v2)
 				}
 			}
-
 		}
 
 		queryURL.RawQuery = queryValues.Encode()
@@ -10063,36 +10027,28 @@ func NewGetBooksByMagicShelfRequest(server string, magicShelfId int64, params *G
 	if params != nil {
 		queryValues := queryURL.Query()
 
-		if params.Page != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "page", runtime.ParamLocationQuery, *params.Page); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
+		if queryFrag, err := runtime.StyleParamWithLocation("form", true, "page", runtime.ParamLocationQuery, params.Page); err != nil {
+			return nil, err
+		} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+			return nil, err
+		} else {
+			for k, v := range parsed {
+				for _, v2 := range v {
+					queryValues.Add(k, v2)
 				}
 			}
-
 		}
 
-		if params.Size != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "size", runtime.ParamLocationQuery, *params.Size); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
+		if queryFrag, err := runtime.StyleParamWithLocation("form", true, "size", runtime.ParamLocationQuery, params.Size); err != nil {
+			return nil, err
+		} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+			return nil, err
+		} else {
+			for k, v := range parsed {
+				for _, v2 := range v {
+					queryValues.Add(k, v2)
 				}
 			}
-
 		}
 
 		queryURL.RawQuery = queryValues.Encode()
@@ -10128,20 +10084,16 @@ func NewGetRecentlyAddedRequest(server string, params *GetRecentlyAddedParams) (
 	if params != nil {
 		queryValues := queryURL.Query()
 
-		if params.Limit != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "limit", runtime.ParamLocationQuery, *params.Limit); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
+		if queryFrag, err := runtime.StyleParamWithLocation("form", true, "limit", runtime.ParamLocationQuery, params.Limit); err != nil {
+			return nil, err
+		} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+			return nil, err
+		} else {
+			for k, v := range parsed {
+				for _, v2 := range v {
+					queryValues.Add(k, v2)
 				}
 			}
-
 		}
 
 		queryURL.RawQuery = queryValues.Encode()
@@ -10189,36 +10141,28 @@ func NewSearchBooksRequest(server string, params *SearchBooksParams) (*http.Requ
 			}
 		}
 
-		if params.Page != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "page", runtime.ParamLocationQuery, *params.Page); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
+		if queryFrag, err := runtime.StyleParamWithLocation("form", true, "page", runtime.ParamLocationQuery, params.Page); err != nil {
+			return nil, err
+		} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+			return nil, err
+		} else {
+			for k, v := range parsed {
+				for _, v2 := range v {
+					queryValues.Add(k, v2)
 				}
 			}
-
 		}
 
-		if params.Size != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "size", runtime.ParamLocationQuery, *params.Size); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
+		if queryFrag, err := runtime.StyleParamWithLocation("form", true, "size", runtime.ParamLocationQuery, params.Size); err != nil {
+			return nil, err
+		} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+			return nil, err
+		} else {
+			for k, v := range parsed {
+				for _, v2 := range v {
+					queryValues.Add(k, v2)
 				}
 			}
-
 		}
 
 		queryURL.RawQuery = queryValues.Encode()
@@ -10659,20 +10603,16 @@ func NewGetEmbeddedCoverRequest(server string, bookId int64, params *GetEmbedded
 	if params != nil {
 		queryValues := queryURL.Query()
 
-		if params.BookType != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "bookType", runtime.ParamLocationQuery, *params.BookType); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
+		if queryFrag, err := runtime.StyleParamWithLocation("form", true, "bookType", runtime.ParamLocationQuery, params.BookType); err != nil {
+			return nil, err
+		} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+			return nil, err
+		} else {
+			for k, v := range parsed {
+				for _, v2 := range v {
+					queryValues.Add(k, v2)
 				}
 			}
-
 		}
 
 		queryURL.RawQuery = queryValues.Encode()
@@ -10715,20 +10655,16 @@ func NewGetAudiobookInfoRequest(server string, bookId int64, params *GetAudioboo
 	if params != nil {
 		queryValues := queryURL.Query()
 
-		if params.BookType != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "bookType", runtime.ParamLocationQuery, *params.BookType); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
+		if queryFrag, err := runtime.StyleParamWithLocation("form", true, "bookType", runtime.ParamLocationQuery, params.BookType); err != nil {
+			return nil, err
+		} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+			return nil, err
+		} else {
+			for k, v := range parsed {
+				for _, v2 := range v {
+					queryValues.Add(k, v2)
 				}
 			}
-
 		}
 
 		queryURL.RawQuery = queryValues.Encode()
@@ -10771,36 +10707,28 @@ func NewStreamAudiobookRequest(server string, bookId int64, params *StreamAudiob
 	if params != nil {
 		queryValues := queryURL.Query()
 
-		if params.BookType != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "bookType", runtime.ParamLocationQuery, *params.BookType); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
+		if queryFrag, err := runtime.StyleParamWithLocation("form", true, "bookType", runtime.ParamLocationQuery, params.BookType); err != nil {
+			return nil, err
+		} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+			return nil, err
+		} else {
+			for k, v := range parsed {
+				for _, v2 := range v {
+					queryValues.Add(k, v2)
 				}
 			}
-
 		}
 
-		if params.TrackIndex != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "trackIndex", runtime.ParamLocationQuery, *params.TrackIndex); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
+		if queryFrag, err := runtime.StyleParamWithLocation("form", true, "trackIndex", runtime.ParamLocationQuery, params.TrackIndex); err != nil {
+			return nil, err
+		} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+			return nil, err
+		} else {
+			for k, v := range parsed {
+				for _, v2 := range v {
+					queryValues.Add(k, v2)
 				}
 			}
-
 		}
 
 		queryURL.RawQuery = queryValues.Encode()
@@ -10850,20 +10778,16 @@ func NewStreamTrackRequest(server string, bookId int64, trackIndex int32, params
 	if params != nil {
 		queryValues := queryURL.Query()
 
-		if params.BookType != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "bookType", runtime.ParamLocationQuery, *params.BookType); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
+		if queryFrag, err := runtime.StyleParamWithLocation("form", true, "bookType", runtime.ParamLocationQuery, params.BookType); err != nil {
+			return nil, err
+		} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+			return nil, err
+		} else {
+			for k, v := range parsed {
+				for _, v2 := range v {
+					queryValues.Add(k, v2)
 				}
 			}
-
 		}
 
 		queryURL.RawQuery = queryValues.Encode()
@@ -11338,20 +11262,16 @@ func NewGetFilesByStatusRequest(server string, params *GetFilesByStatusParams) (
 	if params != nil {
 		queryValues := queryURL.Query()
 
-		if params.Status != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "status", runtime.ParamLocationQuery, *params.Status); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
+		if queryFrag, err := runtime.StyleParamWithLocation("form", true, "status", runtime.ParamLocationQuery, params.Status); err != nil {
+			return nil, err
+		} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+			return nil, err
+		} else {
+			for k, v := range parsed {
+				for _, v2 := range v {
+					queryValues.Add(k, v2)
 				}
 			}
-
 		}
 
 		if queryFrag, err := runtime.StyleParamWithLocation("form", true, "pageable", runtime.ParamLocationQuery, params.Pageable); err != nil {
@@ -11847,20 +11767,16 @@ func NewListBooksRequest(server string, params *ListBooksParams) (*http.Request,
 	if params != nil {
 		queryValues := queryURL.Query()
 
-		if params.WithDescription != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "withDescription", runtime.ParamLocationQuery, *params.WithDescription); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
+		if queryFrag, err := runtime.StyleParamWithLocation("form", true, "withDescription", runtime.ParamLocationQuery, params.WithDescription); err != nil {
+			return nil, err
+		} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+			return nil, err
+		} else {
+			for k, v := range parsed {
+				for _, v2 := range v {
+					queryValues.Add(k, v2)
 				}
 			}
-
 		}
 
 		queryURL.RawQuery = queryValues.Encode()
@@ -11908,20 +11824,16 @@ func NewGetBooksByIdsRequest(server string, params *GetBooksByIdsParams) (*http.
 			}
 		}
 
-		if params.WithDescription != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "withDescription", runtime.ParamLocationQuery, *params.WithDescription); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
+		if queryFrag, err := runtime.StyleParamWithLocation("form", true, "withDescription", runtime.ParamLocationQuery, params.WithDescription); err != nil {
+			return nil, err
+		} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+			return nil, err
+		} else {
+			for k, v := range parsed {
+				for _, v2 := range v {
+					queryValues.Add(k, v2)
 				}
 			}
-
 		}
 
 		queryURL.RawQuery = queryValues.Encode()
@@ -12654,20 +12566,16 @@ func NewGetBookByIdRequest(server string, bookId int64, params *GetBookByIdParam
 	if params != nil {
 		queryValues := queryURL.Query()
 
-		if params.WithDescription != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "withDescription", runtime.ParamLocationQuery, *params.WithDescription); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
+		if queryFrag, err := runtime.StyleParamWithLocation("form", true, "withDescription", runtime.ParamLocationQuery, params.WithDescription); err != nil {
+			return nil, err
+		} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+			return nil, err
+		} else {
+			for k, v := range parsed {
+				for _, v2 := range v {
+					queryValues.Add(k, v2)
 				}
 			}
-
 		}
 
 		queryURL.RawQuery = queryValues.Encode()
@@ -12744,20 +12652,16 @@ func NewGetBookContentRequest(server string, bookId int64, params *GetBookConten
 	if params != nil {
 		queryValues := queryURL.Query()
 
-		if params.BookType != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "bookType", runtime.ParamLocationQuery, *params.BookType); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
+		if queryFrag, err := runtime.StyleParamWithLocation("form", true, "bookType", runtime.ParamLocationQuery, params.BookType); err != nil {
+			return nil, err
+		} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+			return nil, err
+		} else {
+			for k, v := range parsed {
+				for _, v2 := range v {
+					queryValues.Add(k, v2)
 				}
 			}
-
 		}
 
 		queryURL.RawQuery = queryValues.Encode()
@@ -12932,36 +12836,28 @@ func NewUploadAdditionalFileRequestWithBody(server string, bookId int64, params 
 			}
 		}
 
-		if params.BookType != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "bookType", runtime.ParamLocationQuery, *params.BookType); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
+		if queryFrag, err := runtime.StyleParamWithLocation("form", true, "bookType", runtime.ParamLocationQuery, params.BookType); err != nil {
+			return nil, err
+		} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+			return nil, err
+		} else {
+			for k, v := range parsed {
+				for _, v2 := range v {
+					queryValues.Add(k, v2)
 				}
 			}
-
 		}
 
-		if params.Description != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "description", runtime.ParamLocationQuery, *params.Description); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
+		if queryFrag, err := runtime.StyleParamWithLocation("form", true, "description", runtime.ParamLocationQuery, params.Description); err != nil {
+			return nil, err
+		} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+			return nil, err
+		} else {
+			for k, v := range parsed {
+				for _, v2 := range v {
+					queryValues.Add(k, v2)
 				}
 			}
-
 		}
 
 		queryURL.RawQuery = queryValues.Encode()
@@ -13133,20 +13029,16 @@ func NewUpdateMetadataRequestWithBody(server string, bookId int64, params *Updat
 	if params != nil {
 		queryValues := queryURL.Query()
 
-		if params.MergeCategories != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "mergeCategories", runtime.ParamLocationQuery, *params.MergeCategories); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
+		if queryFrag, err := runtime.StyleParamWithLocation("form", true, "mergeCategories", runtime.ParamLocationQuery, params.MergeCategories); err != nil {
+			return nil, err
+		} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+			return nil, err
+		} else {
+			for k, v := range parsed {
+				for _, v2 := range v {
+					queryValues.Add(k, v2)
 				}
 			}
-
 		}
 
 		queryURL.RawQuery = queryValues.Encode()
@@ -13512,20 +13404,16 @@ func NewGetRecommendationsRequest(server string, id int64, params *GetRecommenda
 	if params != nil {
 		queryValues := queryURL.Query()
 
-		if params.Limit != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "limit", runtime.ParamLocationQuery, *params.Limit); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
+		if queryFrag, err := runtime.StyleParamWithLocation("form", true, "limit", runtime.ParamLocationQuery, params.Limit); err != nil {
+			return nil, err
+		} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+			return nil, err
+		} else {
+			for k, v := range parsed {
+				for _, v2 := range v {
+					queryValues.Add(k, v2)
 				}
 			}
-
 		}
 
 		queryURL.RawQuery = queryValues.Encode()
@@ -13615,20 +13503,16 @@ func NewGetPageInfoRequest(server string, bookId int64, params *GetPageInfoParam
 	if params != nil {
 		queryValues := queryURL.Query()
 
-		if params.BookType != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "bookType", runtime.ParamLocationQuery, *params.BookType); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
+		if queryFrag, err := runtime.StyleParamWithLocation("form", true, "bookType", runtime.ParamLocationQuery, params.BookType); err != nil {
+			return nil, err
+		} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+			return nil, err
+		} else {
+			for k, v := range parsed {
+				for _, v2 := range v {
+					queryValues.Add(k, v2)
 				}
 			}
-
 		}
 
 		queryURL.RawQuery = queryValues.Encode()
@@ -13671,20 +13555,16 @@ func NewGetCbxBookPagesRequest(server string, bookId int64, params *GetCbxBookPa
 	if params != nil {
 		queryValues := queryURL.Query()
 
-		if params.BookType != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "bookType", runtime.ParamLocationQuery, *params.BookType); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
+		if queryFrag, err := runtime.StyleParamWithLocation("form", true, "bookType", runtime.ParamLocationQuery, params.BookType); err != nil {
+			return nil, err
+		} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+			return nil, err
+		} else {
+			for k, v := range parsed {
+				for _, v2 := range v {
+					queryValues.Add(k, v2)
 				}
 			}
-
 		}
 
 		queryURL.RawQuery = queryValues.Encode()
@@ -13758,20 +13638,16 @@ func NewUploadFontRequestWithBody(server string, params *UploadFontParams, conte
 	if params != nil {
 		queryValues := queryURL.Query()
 
-		if params.FontName != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "fontName", runtime.ParamLocationQuery, *params.FontName); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
+		if queryFrag, err := runtime.StyleParamWithLocation("form", true, "fontName", runtime.ParamLocationQuery, params.FontName); err != nil {
+			return nil, err
+		} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+			return nil, err
+		} else {
+			for k, v := range parsed {
+				for _, v2 := range v {
+					queryValues.Add(k, v2)
 				}
 			}
-
 		}
 
 		queryURL.RawQuery = queryValues.Encode()
@@ -13884,20 +13760,16 @@ func NewGetFileRequest(server string, bookId int64, params *GetFileParams) (*htt
 	if params != nil {
 		queryValues := queryURL.Query()
 
-		if params.BookType != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "bookType", runtime.ParamLocationQuery, *params.BookType); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
+		if queryFrag, err := runtime.StyleParamWithLocation("form", true, "bookType", runtime.ParamLocationQuery, params.BookType); err != nil {
+			return nil, err
+		} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+			return nil, err
+		} else {
+			for k, v := range parsed {
+				for _, v2 := range v {
+					queryValues.Add(k, v2)
 				}
 			}
-
 		}
 
 		queryURL.RawQuery = queryValues.Encode()
@@ -13940,20 +13812,16 @@ func NewGetEpubBookInfoRequest(server string, bookId int64, params *GetEpubBookI
 	if params != nil {
 		queryValues := queryURL.Query()
 
-		if params.BookType != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "bookType", runtime.ParamLocationQuery, *params.BookType); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
+		if queryFrag, err := runtime.StyleParamWithLocation("form", true, "bookType", runtime.ParamLocationQuery, params.BookType); err != nil {
+			return nil, err
+		} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+			return nil, err
+		} else {
+			for k, v := range parsed {
+				for _, v2 := range v {
+					queryValues.Add(k, v2)
 				}
 			}
-
 		}
 
 		queryURL.RawQuery = queryValues.Encode()
@@ -14211,36 +14079,28 @@ func NewGetIconNamesRequest(server string, params *GetIconNamesParams) (*http.Re
 	if params != nil {
 		queryValues := queryURL.Query()
 
-		if params.Page != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "page", runtime.ParamLocationQuery, *params.Page); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
+		if queryFrag, err := runtime.StyleParamWithLocation("form", true, "page", runtime.ParamLocationQuery, params.Page); err != nil {
+			return nil, err
+		} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+			return nil, err
+		} else {
+			for k, v := range parsed {
+				for _, v2 := range v {
+					queryValues.Add(k, v2)
 				}
 			}
-
 		}
 
-		if params.Size != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "size", runtime.ParamLocationQuery, *params.Size); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
+		if queryFrag, err := runtime.StyleParamWithLocation("form", true, "size", runtime.ParamLocationQuery, params.Size); err != nil {
+			return nil, err
+		} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+			return nil, err
+		} else {
+			for k, v := range parsed {
+				for _, v2 := range v {
+					queryValues.Add(k, v2)
 				}
 			}
-
 		}
 
 		queryURL.RawQuery = queryValues.Encode()
@@ -15094,20 +14954,16 @@ func NewGetCbxPageRequest(server string, bookId int64, pageNumber int32, params 
 	if params != nil {
 		queryValues := queryURL.Query()
 
-		if params.BookType != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "bookType", runtime.ParamLocationQuery, *params.BookType); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
+		if queryFrag, err := runtime.StyleParamWithLocation("form", true, "bookType", runtime.ParamLocationQuery, params.BookType); err != nil {
+			return nil, err
+		} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+			return nil, err
+		} else {
+			for k, v := range parsed {
+				for _, v2 := range v {
+					queryValues.Add(k, v2)
 				}
 			}
-
 		}
 
 		queryURL.RawQuery = queryValues.Encode()
@@ -15191,20 +15047,16 @@ func NewGetPdfPageRequest(server string, bookId int64, pageNumber int32, params 
 	if params != nil {
 		queryValues := queryURL.Query()
 
-		if params.BookType != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "bookType", runtime.ParamLocationQuery, *params.BookType); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
+		if queryFrag, err := runtime.StyleParamWithLocation("form", true, "bookType", runtime.ParamLocationQuery, params.BookType); err != nil {
+			return nil, err
+		} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+			return nil, err
+		} else {
+			for k, v := range parsed {
+				for _, v2 := range v {
+					queryValues.Add(k, v2)
 				}
 			}
-
 		}
 
 		queryURL.RawQuery = queryValues.Encode()
@@ -15619,20 +15471,16 @@ func NewDownloadOpdsBookRequest(server string, bookId int64, params *DownloadOpd
 	if params != nil {
 		queryValues := queryURL.Query()
 
-		if params.FileId != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "fileId", runtime.ParamLocationQuery, *params.FileId); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
+		if queryFrag, err := runtime.StyleParamWithLocation("form", true, "fileId", runtime.ParamLocationQuery, params.FileId); err != nil {
+			return nil, err
+		} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+			return nil, err
+		} else {
+			for k, v := range parsed {
+				for _, v2 := range v {
+					queryValues.Add(k, v2)
 				}
 			}
-
 		}
 
 		queryURL.RawQuery = queryValues.Encode()
@@ -15720,20 +15568,16 @@ func NewGetBookInfoRequest(server string, bookId int64, params *GetBookInfoParam
 	if params != nil {
 		queryValues := queryURL.Query()
 
-		if params.BookType != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "bookType", runtime.ParamLocationQuery, *params.BookType); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
+		if queryFrag, err := runtime.StyleParamWithLocation("form", true, "bookType", runtime.ParamLocationQuery, params.BookType); err != nil {
+			return nil, err
+		} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+			return nil, err
+		} else {
+			for k, v := range parsed {
+				for _, v2 := range v {
+					queryValues.Add(k, v2)
 				}
 			}
-
 		}
 
 		queryURL.RawQuery = queryValues.Encode()
@@ -15776,20 +15620,16 @@ func NewListPagesRequest(server string, bookId int64, params *ListPagesParams) (
 	if params != nil {
 		queryValues := queryURL.Query()
 
-		if params.BookType != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "bookType", runtime.ParamLocationQuery, *params.BookType); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
+		if queryFrag, err := runtime.StyleParamWithLocation("form", true, "bookType", runtime.ParamLocationQuery, params.BookType); err != nil {
+			return nil, err
+		} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+			return nil, err
+		} else {
+			for k, v := range parsed {
+				for _, v2 := range v {
+					queryValues.Add(k, v2)
 				}
 			}
-
 		}
 
 		queryURL.RawQuery = queryValues.Encode()
@@ -15899,20 +15739,16 @@ func NewGetReadingSessionsForBookRequest(server string, bookId int64, params *Ge
 	if params != nil {
 		queryValues := queryURL.Query()
 
-		if params.Page != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "page", runtime.ParamLocationQuery, *params.Page); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
+		if queryFrag, err := runtime.StyleParamWithLocation("form", true, "page", runtime.ParamLocationQuery, params.Page); err != nil {
+			return nil, err
+		} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+			return nil, err
+		} else {
+			for k, v := range parsed {
+				for _, v2 := range v {
+					queryValues.Add(k, v2)
 				}
 			}
-
 		}
 
 		queryURL.RawQuery = queryValues.Encode()
@@ -16681,36 +16517,28 @@ func NewGetFavoriteReadingDaysRequest(server string, params *GetFavoriteReadingD
 	if params != nil {
 		queryValues := queryURL.Query()
 
-		if params.Year != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "year", runtime.ParamLocationQuery, *params.Year); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
+		if queryFrag, err := runtime.StyleParamWithLocation("form", true, "year", runtime.ParamLocationQuery, params.Year); err != nil {
+			return nil, err
+		} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+			return nil, err
+		} else {
+			for k, v := range parsed {
+				for _, v2 := range v {
+					queryValues.Add(k, v2)
 				}
 			}
-
 		}
 
-		if params.Month != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "month", runtime.ParamLocationQuery, *params.Month); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
+		if queryFrag, err := runtime.StyleParamWithLocation("form", true, "month", runtime.ParamLocationQuery, params.Month); err != nil {
+			return nil, err
+		} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+			return nil, err
+		} else {
+			for k, v := range parsed {
+				for _, v2 := range v {
+					queryValues.Add(k, v2)
 				}
 			}
-
 		}
 
 		queryURL.RawQuery = queryValues.Encode()
@@ -16875,36 +16703,28 @@ func NewGetPeakReadingHoursRequest(server string, params *GetPeakReadingHoursPar
 	if params != nil {
 		queryValues := queryURL.Query()
 
-		if params.Year != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "year", runtime.ParamLocationQuery, *params.Year); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
+		if queryFrag, err := runtime.StyleParamWithLocation("form", true, "year", runtime.ParamLocationQuery, params.Year); err != nil {
+			return nil, err
+		} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+			return nil, err
+		} else {
+			for k, v := range parsed {
+				for _, v2 := range v {
+					queryValues.Add(k, v2)
 				}
 			}
-
 		}
 
-		if params.Month != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "month", runtime.ParamLocationQuery, *params.Month); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
+		if queryFrag, err := runtime.StyleParamWithLocation("form", true, "month", runtime.ParamLocationQuery, params.Month); err != nil {
+			return nil, err
+		} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+			return nil, err
+		} else {
+			for k, v := range parsed {
+				for _, v2 := range v {
+					queryValues.Add(k, v2)
 				}
 			}
-
 		}
 
 		queryURL.RawQuery = queryValues.Encode()
@@ -18235,52 +18055,40 @@ func NewGetAllBooksRequest(server string, params *GetAllBooksParams) (*http.Requ
 	if params != nil {
 		queryValues := queryURL.Query()
 
-		if params.LibraryId != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "library_id", runtime.ParamLocationQuery, *params.LibraryId); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
+		if queryFrag, err := runtime.StyleParamWithLocation("form", true, "library_id", runtime.ParamLocationQuery, params.LibraryId); err != nil {
+			return nil, err
+		} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+			return nil, err
+		} else {
+			for k, v := range parsed {
+				for _, v2 := range v {
+					queryValues.Add(k, v2)
 				}
 			}
-
 		}
 
-		if params.Page != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "page", runtime.ParamLocationQuery, *params.Page); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
+		if queryFrag, err := runtime.StyleParamWithLocation("form", true, "page", runtime.ParamLocationQuery, params.Page); err != nil {
+			return nil, err
+		} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+			return nil, err
+		} else {
+			for k, v := range parsed {
+				for _, v2 := range v {
+					queryValues.Add(k, v2)
 				}
 			}
-
 		}
 
-		if params.Size != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "size", runtime.ParamLocationQuery, *params.Size); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
+		if queryFrag, err := runtime.StyleParamWithLocation("form", true, "size", runtime.ParamLocationQuery, params.Size); err != nil {
+			return nil, err
+		} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+			return nil, err
+		} else {
+			for k, v := range parsed {
+				for _, v2 := range v {
+					queryValues.Add(k, v2)
 				}
 			}
-
 		}
 
 		queryURL.RawQuery = queryValues.Encode()
@@ -18432,20 +18240,16 @@ func NewGetBookPageRequest(server string, bookId int64, pageNumber int32, params
 	if params != nil {
 		queryValues := queryURL.Query()
 
-		if params.Convert != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "convert", runtime.ParamLocationQuery, *params.Convert); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
+		if queryFrag, err := runtime.StyleParamWithLocation("form", true, "convert", runtime.ParamLocationQuery, params.Convert); err != nil {
+			return nil, err
+		} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+			return nil, err
+		} else {
+			for k, v := range parsed {
+				for _, v2 := range v {
+					queryValues.Add(k, v2)
 				}
 			}
-
 		}
 
 		queryURL.RawQuery = queryValues.Encode()
@@ -18515,52 +18319,40 @@ func NewGetCollectionsRequest(server string, params *GetCollectionsParams) (*htt
 	if params != nil {
 		queryValues := queryURL.Query()
 
-		if params.Page != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "page", runtime.ParamLocationQuery, *params.Page); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
+		if queryFrag, err := runtime.StyleParamWithLocation("form", true, "page", runtime.ParamLocationQuery, params.Page); err != nil {
+			return nil, err
+		} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+			return nil, err
+		} else {
+			for k, v := range parsed {
+				for _, v2 := range v {
+					queryValues.Add(k, v2)
 				}
 			}
-
 		}
 
-		if params.Size != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "size", runtime.ParamLocationQuery, *params.Size); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
+		if queryFrag, err := runtime.StyleParamWithLocation("form", true, "size", runtime.ParamLocationQuery, params.Size); err != nil {
+			return nil, err
+		} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+			return nil, err
+		} else {
+			for k, v := range parsed {
+				for _, v2 := range v {
+					queryValues.Add(k, v2)
 				}
 			}
-
 		}
 
-		if params.Unpaged != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "unpaged", runtime.ParamLocationQuery, *params.Unpaged); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
+		if queryFrag, err := runtime.StyleParamWithLocation("form", true, "unpaged", runtime.ParamLocationQuery, params.Unpaged); err != nil {
+			return nil, err
+		} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+			return nil, err
+		} else {
+			for k, v := range parsed {
+				for _, v2 := range v {
+					queryValues.Add(k, v2)
 				}
 			}
-
 		}
 
 		queryURL.RawQuery = queryValues.Encode()
@@ -18657,68 +18449,52 @@ func NewGetAllSeriesRequest(server string, params *GetAllSeriesParams) (*http.Re
 	if params != nil {
 		queryValues := queryURL.Query()
 
-		if params.LibraryId != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "library_id", runtime.ParamLocationQuery, *params.LibraryId); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
+		if queryFrag, err := runtime.StyleParamWithLocation("form", true, "library_id", runtime.ParamLocationQuery, params.LibraryId); err != nil {
+			return nil, err
+		} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+			return nil, err
+		} else {
+			for k, v := range parsed {
+				for _, v2 := range v {
+					queryValues.Add(k, v2)
 				}
 			}
-
 		}
 
-		if params.Page != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "page", runtime.ParamLocationQuery, *params.Page); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
+		if queryFrag, err := runtime.StyleParamWithLocation("form", true, "page", runtime.ParamLocationQuery, params.Page); err != nil {
+			return nil, err
+		} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+			return nil, err
+		} else {
+			for k, v := range parsed {
+				for _, v2 := range v {
+					queryValues.Add(k, v2)
 				}
 			}
-
 		}
 
-		if params.Size != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "size", runtime.ParamLocationQuery, *params.Size); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
+		if queryFrag, err := runtime.StyleParamWithLocation("form", true, "size", runtime.ParamLocationQuery, params.Size); err != nil {
+			return nil, err
+		} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+			return nil, err
+		} else {
+			for k, v := range parsed {
+				for _, v2 := range v {
+					queryValues.Add(k, v2)
 				}
 			}
-
 		}
 
-		if params.Unpaged != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "unpaged", runtime.ParamLocationQuery, *params.Unpaged); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
+		if queryFrag, err := runtime.StyleParamWithLocation("form", true, "unpaged", runtime.ParamLocationQuery, params.Unpaged); err != nil {
+			return nil, err
+		} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+			return nil, err
+		} else {
+			for k, v := range parsed {
+				for _, v2 := range v {
+					queryValues.Add(k, v2)
 				}
 			}
-
 		}
 
 		queryURL.RawQuery = queryValues.Encode()
@@ -18795,52 +18571,40 @@ func NewGetSeriesBooksRequest(server string, seriesId string, params *GetSeriesB
 	if params != nil {
 		queryValues := queryURL.Query()
 
-		if params.Page != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "page", runtime.ParamLocationQuery, *params.Page); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
+		if queryFrag, err := runtime.StyleParamWithLocation("form", true, "page", runtime.ParamLocationQuery, params.Page); err != nil {
+			return nil, err
+		} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+			return nil, err
+		} else {
+			for k, v := range parsed {
+				for _, v2 := range v {
+					queryValues.Add(k, v2)
 				}
 			}
-
 		}
 
-		if params.Size != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "size", runtime.ParamLocationQuery, *params.Size); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
+		if queryFrag, err := runtime.StyleParamWithLocation("form", true, "size", runtime.ParamLocationQuery, params.Size); err != nil {
+			return nil, err
+		} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+			return nil, err
+		} else {
+			for k, v := range parsed {
+				for _, v2 := range v {
+					queryValues.Add(k, v2)
 				}
 			}
-
 		}
 
-		if params.Unpaged != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "unpaged", runtime.ParamLocationQuery, *params.Unpaged); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
+		if queryFrag, err := runtime.StyleParamWithLocation("form", true, "unpaged", runtime.ParamLocationQuery, params.Unpaged); err != nil {
+			return nil, err
+		} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+			return nil, err
+		} else {
+			for k, v := range parsed {
+				for _, v2 := range v {
+					queryValues.Add(k, v2)
 				}
 			}
-
 		}
 
 		queryURL.RawQuery = queryValues.Encode()
