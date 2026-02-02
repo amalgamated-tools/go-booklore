@@ -1,6 +1,6 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/oapi-codegen/oapi-codegen/HEAD/configuration-schema.json
-package: client
-output: pkg/client/client.gen.go
+package: booklore
+output: pkg/booklore/client.gen.go
 generate:
   models: true
   client: true
