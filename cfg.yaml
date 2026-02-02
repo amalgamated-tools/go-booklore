@@ -1,0 +1,9 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/oapi-codegen/oapi-codegen/HEAD/configuration-schema.json
+package: client
+output: pkg/client/client.gen.go
+generate:
+  models: true
+  client: true
+output-options:
+  exclude-operation-ids: ["getSearchDescription"]
+  exclude-tags: ["Komga API", "OPDS Users"]
