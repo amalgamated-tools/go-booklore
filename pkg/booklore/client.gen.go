@@ -886,7 +886,7 @@ type BookMetadata struct {
 	GoodreadsReviewCountLocked *bool                 `json:"goodreadsReviewCountLocked,omitempty"`
 	GoogleId                   *string               `json:"googleId,omitempty"`
 	GoogleIdLocked             *bool                 `json:"googleIdLocked,omitempty"`
-	HardcoverBookId            *string               `json:"hardcoverBookId,omitempty"`
+	HardcoverBookId            *int32                `json:"hardcoverBookId,omitempty"`
 	HardcoverBookIdLocked      *bool                 `json:"hardcoverBookIdLocked,omitempty"`
 	HardcoverId                *string               `json:"hardcoverId,omitempty"`
 	HardcoverIdLocked          *bool                 `json:"hardcoverIdLocked,omitempty"`

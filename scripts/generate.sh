@@ -33,6 +33,7 @@ jq '
         .
       end
     ) |
+  .components.schemas.BookMetadata.properties.hardcoverBookId = { "type": "integer", "format": "int32" } |
   .paths |= with_entries(
     .key |= gsub("/\\*\\*"; "") |
     

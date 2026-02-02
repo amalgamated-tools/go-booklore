@@ -11471,7 +11471,8 @@
             "type": "string"
           },
           "hardcoverBookId": {
-            "type": "string"
+            "type": "integer",
+            "format": "int32"
           },
           "hardcoverRating": {
             "type": "number",
