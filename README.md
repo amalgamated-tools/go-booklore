@@ -22,6 +22,13 @@ A type-safe Go client SDK for the Booklore API, auto-generated from the OpenAPI 
 go get github.com/amalgamated-tools/go-booklore
 ```
 
+### Latest Release
+
+The latest releases are available on the [Releases page](https://github.com/amalgamated-tools/go-booklore/releases). Pre-built binaries are provided for:
+- Linux (amd64, arm64)
+- macOS (amd64, arm64)
+- Windows (amd64)
+
 ## Quick Start
 
 ### Basic Usage
@@ -326,6 +333,60 @@ if deleteResp.StatusCode() == http.StatusNoContent {
 	fmt.Println("Book deleted successfully")
 }
 ```
+
+## Releases & Versioning
+
+This project follows [semantic versioning](https://semver.org/) for releases.
+
+### Creating a Release
+
+Releases are automated via GitHub Actions and can be triggered in two ways:
+
+**Option 1: Using the helper script (Recommended)**
+```bash
+./scripts/release.sh v1.0.0
+```
+
+**Option 2: Manual git commands**
+```bash
+git tag -a v1.0.0 -m "Release version 1.0.0"
+git push origin v1.0.0
+```
+
+**Option 3: GitHub Actions UI**
+- Navigate to the Actions tab
+- Select the "Release" workflow
+- Click "Run workflow" and enter the version
+
+The workflow will automatically:
+- Build binaries for Linux, macOS, and Windows
+- Create a GitHub release with the binaries
+- Generate release notes from commit history
+- Index the release on pkg.go.dev
+
+For detailed instructions, see [RELEASING.md](./RELEASING.md)
+
+### Installation by Version
+
+To use a specific version:
+
+```bash
+# Latest version
+go get github.com/amalgamated-tools/go-booklore@latest
+
+# Specific version
+go get github.com/amalgamated-tools/go-booklore@v1.0.0
+
+# Development version
+go get github.com/amalgamated-tools/go-booklore@main
+```
+
+### Download Pre-built Binaries
+
+Pre-built binaries are available on the [Releases page](https://github.com/amalgamated-tools/go-booklore/releases) for:
+- Linux (amd64, arm64)
+- macOS (amd64, arm64)
+- Windows (amd64)
 
 ## Contributing
 
