@@ -30,9 +30,9 @@ func (c *Client) LoginWithCredentials(ctx context.Context, creds Credentials) er
 	if response.JSON200 == nil {
 		return errors.New("unexpected response from server")
 	}
-	token, ok := (*response.JSON200)["refreshToken"]
+	token, ok := (*response.JSON200)["accessToken"]
 	if !ok {
-		return errors.New("no refresh token in response")
+		return errors.New("no access token in response")
 	}
 	tokenFunc := func(ctx context.Context, req *http.Request) error {
 		req.Header.Set("Authorization", fmt.Sprintf("Bearer %s", token))
