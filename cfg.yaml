@@ -5,6 +5,10 @@ generate:
   models: true
   client: true
 output-options:
+  # nullable-type: false
+  prefer-skip-optional-pointer: true
+  # prefer-skip-optional-pointer-on-container-types: true
+  prefer-skip-optional-pointer-with-omitzero: true
   overlay:
     path: overlay.yaml
   exclude-tags: [

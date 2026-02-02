@@ -41,6 +41,6 @@ func main() {
 		panic("received nil JSON200 response from ListBooksWithResponse")
 	}
 	for _, book := range *r.JSON200 {
-		println(*book.Id)
+		println(book.Id)
 	}
 }

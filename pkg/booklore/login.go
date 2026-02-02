@@ -16,8 +16,8 @@ func (c *Client) LoginWithCredentials(ctx context.Context, creds Credentials) er
 	resp, err := c.LoginUser(
 		ctx,
 		LoginUserJSONRequestBody{
-			Username: StrToPtr(creds.Username),
-			Password: StrToPtr(creds.Password),
+			Username: creds.Username,
+			Password: creds.Password,
 		},
 	)
 	if err != nil {
