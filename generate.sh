@@ -57,4 +57,5 @@ jq '
 echo "api-docs.json fixed."
 
 echo "Generating client code"
+go mod tidy
 go generate ./...
