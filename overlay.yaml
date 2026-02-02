@@ -12,15 +12,12 @@ actions:
       "/api/v1/bookdrop/files/bulk-edit":
         post:
           operationId: BulkEditBookdropMetadata
-      "/api/v1/book-notes":
-        post:
-          operationId: CreateNoteV1
       "/api/v1/book-notes/book/{bookId}":
         get:
           operationId: GetNotesForBookV1
       "/api/v1/book-notes/{noteId}":
         delete:
-          operationId: DeleteNoteV1
+          operationId: DeleteNoteV1          
       "/api/v1/kobo-settings":
         put:
           operationId: UpdateKoboSettings
@@ -68,37 +65,25 @@ actions:
           operationId: DownloadOpdsBook
       "/api/v1/media/book/{bookId}/thumbnail":
         get:
-          operationId: GetBookThumbnailV1
+          operationId: GetBookThumbnailV1          
       "/api/v1/libraries/{libraryId}/book/{bookId}":
         get:
           operationId: GetLibraryBookById
-      "/api/v1/epub/{bookId}/info":
-        get:
-          operationId: GetEpubBookInfo
-      "/api/v1/cbx/{bookId}/pages":
-        get:
-          operationId: GetCbxBookPages
       "/api/v1/books":
         get:
           operationId: ListBooks
       "/api/v1/media/book/{bookId}/cover":
         get:
-          operationId: GetBookCoverV1
-      "/api/v1/libraries/{libraryId}/book/{bookId}":
-        get:
-          operationId: GetLibraryBookById
+          operationId: GetBookCoverV1       
       "/api/v1/epub/{bookId}/info":
         get:
-          operationId: GetEpubBookInfo
+          operationId: GetEpubBookInfo          
       "/api/v1/cbx/{bookId}/pages":
         get:
           operationId: GetCbxBookPages
       "/api/v1/books/{bookId}/download":
         get:
           operationId: DownloadBookById
-      "/api/v1/book-notes/book/{bookId}":
-        get:
-          operationId: GetNotesForBookV1
       "/api/mobile/v1/libraries":
         get:
           operationId: MobileListLibrariesV1
@@ -113,6 +98,6 @@ actions:
       "/api/kobo/{token}/v1/books/{bookId}/download":
         get:
           operationId: KoboDownloadBookByIdV1
-      "/api/v1/book-notes/{noteId}":
-        delete:
-          operationId: DeleteNoteV1
+      "/api/v1/books/{bookId}":
+        get:
+          operationId: GetBookById

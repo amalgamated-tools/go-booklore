@@ -3117,8 +3117,8 @@ type ResetProgressParams struct {
 // ResetProgressParamsType defines parameters for ResetProgress.
 type ResetProgressParamsType string
 
-// GetBook2Params defines parameters for GetBook2.
-type GetBook2Params struct {
+// GetBookByIdParams defines parameters for GetBookById.
+type GetBookByIdParams struct {
 	// WithDescription Include book description in the response
 	WithDescription *bool `form:"withDescription,omitempty" json:"withDescription,omitempty"`
 }
@@ -4075,8 +4075,8 @@ type ClientInterface interface {
 
 	UpdateReadStatus(ctx context.Context, body UpdateReadStatusJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	// GetBook2 request
-	GetBook2(ctx context.Context, bookId int64, params *GetBook2Params, reqEditors ...RequestEditorFn) (*http.Response, error)
+	// GetBookById request
+	GetBookById(ctx context.Context, bookId int64, params *GetBookByIdParams, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// GetComicInfoMetadata request
 	GetComicInfoMetadata(ctx context.Context, bookId int64, reqEditors ...RequestEditorFn) (*http.Response, error)
@@ -6201,8 +6201,8 @@ func (c *Client) UpdateReadStatus(ctx context.Context, body UpdateReadStatusJSON
 	return c.Client.Do(req)
 }
 
-func (c *Client) GetBook2(ctx context.Context, bookId int64, params *GetBook2Params, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewGetBook2Request(c.Server, bookId, params)
+func (c *Client) GetBookById(ctx context.Context, bookId int64, params *GetBookByIdParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetBookByIdRequest(c.Server, bookId, params)
 	if err != nil {
 		return nil, err
 	}
@@ -12625,8 +12625,8 @@ func NewUpdateReadStatusRequestWithBody(server string, contentType string, body 
 	return req, nil
 }
 
-// NewGetBook2Request generates requests for GetBook2
-func NewGetBook2Request(server string, bookId int64, params *GetBook2Params) (*http.Request, error) {
+// NewGetBookByIdRequest generates requests for GetBookById
+func NewGetBookByIdRequest(server string, bookId int64, params *GetBookByIdParams) (*http.Request, error) {
 	var err error
 
 	var pathParam0 string
@@ -19314,8 +19314,8 @@ type ClientWithResponsesInterface interface {
 
 	UpdateReadStatusWithResponse(ctx context.Context, body UpdateReadStatusJSONRequestBody, reqEditors ...RequestEditorFn) (*UpdateReadStatusResponse, error)
 
-	// GetBook2WithResponse request
-	GetBook2WithResponse(ctx context.Context, bookId int64, params *GetBook2Params, reqEditors ...RequestEditorFn) (*GetBook2Response, error)
+	// GetBookByIdWithResponse request
+	GetBookByIdWithResponse(ctx context.Context, bookId int64, params *GetBookByIdParams, reqEditors ...RequestEditorFn) (*GetBookByIdResponse, error)
 
 	// GetComicInfoMetadataWithResponse request
 	GetComicInfoMetadataWithResponse(ctx context.Context, bookId int64, reqEditors ...RequestEditorFn) (*GetComicInfoMetadataResponse, error)
@@ -21875,7 +21875,7 @@ func (r UpdateReadStatusResponse) StatusCode() int {
 	return 0
 }
 
-type GetBook2Response struct {
+type GetBookByIdResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
 	JSON200      *Book
@@ -21883,7 +21883,7 @@ type GetBook2Response struct {
 }
 
 // Status returns HTTPResponse.Status
-func (r GetBook2Response) Status() string {
+func (r GetBookByIdResponse) Status() string {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.Status
 	}
@@ -21891,7 +21891,7 @@ func (r GetBook2Response) Status() string {
 }
 
 // StatusCode returns HTTPResponse.StatusCode
-func (r GetBook2Response) StatusCode() int {
+func (r GetBookByIdResponse) StatusCode() int {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.StatusCode
 	}
@@ -26423,13 +26423,13 @@ func (c *ClientWithResponses) UpdateReadStatusWithResponse(ctx context.Context, 
 	return ParseUpdateReadStatusResponse(rsp)
 }
 
-// GetBook2WithResponse request returning *GetBook2Response
-func (c *ClientWithResponses) GetBook2WithResponse(ctx context.Context, bookId int64, params *GetBook2Params, reqEditors ...RequestEditorFn) (*GetBook2Response, error) {
-	rsp, err := c.GetBook2(ctx, bookId, params, reqEditors...)
+// GetBookByIdWithResponse request returning *GetBookByIdResponse
+func (c *ClientWithResponses) GetBookByIdWithResponse(ctx context.Context, bookId int64, params *GetBookByIdParams, reqEditors ...RequestEditorFn) (*GetBookByIdResponse, error) {
+	rsp, err := c.GetBookById(ctx, bookId, params, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
-	return ParseGetBook2Response(rsp)
+	return ParseGetBookByIdResponse(rsp)
 }
 
 // GetComicInfoMetadataWithResponse request returning *GetComicInfoMetadataResponse
@@ -30410,15 +30410,15 @@ func ParseUpdateReadStatusResponse(rsp *http.Response) (*UpdateReadStatusRespons
 	return response, nil
 }
 
-// ParseGetBook2Response parses an HTTP response from a GetBook2WithResponse call
-func ParseGetBook2Response(rsp *http.Response) (*GetBook2Response, error) {
+// ParseGetBookByIdResponse parses an HTTP response from a GetBookByIdWithResponse call
+func ParseGetBookByIdResponse(rsp *http.Response) (*GetBookByIdResponse, error) {
 	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
 	}
 
-	response := &GetBook2Response{
+	response := &GetBookByIdResponse{
 		Body:         bodyBytes,
 		HTTPResponse: rsp,
 	}
