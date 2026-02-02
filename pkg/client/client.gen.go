@@ -606,17 +606,17 @@ const (
 	UpdateStatusRequestStatusWONTREAD      UpdateStatusRequestStatus = "WONT_READ"
 )
 
-// Defines values for GetBooks2ParamsStatus.
+// Defines values for MobileListBooksV1ParamsStatus.
 const (
-	ABANDONED     GetBooks2ParamsStatus = "ABANDONED"
-	PARTIALLYREAD GetBooks2ParamsStatus = "PARTIALLY_READ"
-	PAUSED        GetBooks2ParamsStatus = "PAUSED"
-	READ          GetBooks2ParamsStatus = "READ"
-	READING       GetBooks2ParamsStatus = "READING"
-	REREADING     GetBooks2ParamsStatus = "RE_READING"
-	UNREAD        GetBooks2ParamsStatus = "UNREAD"
-	UNSET         GetBooks2ParamsStatus = "UNSET"
-	WONTREAD      GetBooks2ParamsStatus = "WONT_READ"
+	ABANDONED     MobileListBooksV1ParamsStatus = "ABANDONED"
+	PARTIALLYREAD MobileListBooksV1ParamsStatus = "PARTIALLY_READ"
+	PAUSED        MobileListBooksV1ParamsStatus = "PAUSED"
+	READ          MobileListBooksV1ParamsStatus = "READ"
+	READING       MobileListBooksV1ParamsStatus = "READING"
+	REREADING     MobileListBooksV1ParamsStatus = "RE_READING"
+	UNREAD        MobileListBooksV1ParamsStatus = "UNREAD"
+	UNSET         MobileListBooksV1ParamsStatus = "UNSET"
+	WONTREAD      MobileListBooksV1ParamsStatus = "WONT_READ"
 )
 
 // Defines values for ResetProgressParamsType.
@@ -2918,26 +2918,26 @@ type VersionInfo struct {
 	Latest  *string `json:"latest,omitempty"`
 }
 
-// CatchAll3JSONBody defines parameters for CatchAll3.
-type CatchAll3JSONBody = map[string]interface{}
+// UnhandledKoboDeleteJSONBody defines parameters for UnhandledKoboDelete.
+type UnhandledKoboDeleteJSONBody = map[string]interface{}
 
-// CatchAllJSONBody defines parameters for CatchAll.
-type CatchAllJSONBody = map[string]interface{}
+// UnhandledKoboGetJSONBody defines parameters for UnhandledKoboGet.
+type UnhandledKoboGetJSONBody = map[string]interface{}
 
-// CatchAll4JSONBody defines parameters for CatchAll4.
-type CatchAll4JSONBody = map[string]interface{}
+// UnhandledKoboPatchJSONBody defines parameters for UnhandledKoboPatch.
+type UnhandledKoboPatchJSONBody = map[string]interface{}
 
-// CatchAll1JSONBody defines parameters for CatchAll1.
-type CatchAll1JSONBody = map[string]interface{}
+// UnhandledKoboPostJSONBody defines parameters for UnhandledKoboPost.
+type UnhandledKoboPostJSONBody = map[string]interface{}
 
-// CatchAll2JSONBody defines parameters for CatchAll2.
-type CatchAll2JSONBody = map[string]interface{}
+// UnhandledKoboPutJSONBody defines parameters for UnhandledKoboPut.
+type UnhandledKoboPutJSONBody = map[string]interface{}
 
 // GetTestsJSONBody defines parameters for GetTests.
 type GetTestsJSONBody = map[string]interface{}
 
-// CreateUser1JSONBody defines parameters for CreateUser1.
-type CreateUser1JSONBody map[string]interface{}
+// CreateKoReaderUserJSONBody defines parameters for CreateKoReaderUser.
+type CreateKoReaderUserJSONBody map[string]interface{}
 
 // UpdateProposalStatusParams defines parameters for UpdateProposalStatus.
 type UpdateProposalStatusParams struct {
@@ -2945,8 +2945,8 @@ type UpdateProposalStatusParams struct {
 	Status string `form:"status" json:"status"`
 }
 
-// GetBooks2Params defines parameters for GetBooks2.
-type GetBooks2Params struct {
+// MobileListBooksV1Params defines parameters for MobileListBooksV1.
+type MobileListBooksV1Params struct {
 	// Page Page number (0-indexed)
 	Page *int32 `form:"page,omitempty" json:"page,omitempty"`
 
@@ -2966,14 +2966,14 @@ type GetBooks2Params struct {
 	ShelfId *int64 `form:"shelfId,omitempty" json:"shelfId,omitempty"`
 
 	// Status Filter by read status
-	Status *GetBooks2ParamsStatus `form:"status,omitempty" json:"status,omitempty"`
+	Status *MobileListBooksV1ParamsStatus `form:"status,omitempty" json:"status,omitempty"`
 
 	// Search Search in title, author, series
 	Search *string `form:"search,omitempty" json:"search,omitempty"`
 }
 
-// GetBooks2ParamsStatus defines parameters for GetBooks2.
-type GetBooks2ParamsStatus string
+// MobileListBooksV1ParamsStatus defines parameters for MobileListBooksV1.
+type MobileListBooksV1ParamsStatus string
 
 // GetContinueReadingParams defines parameters for GetContinueReading.
 type GetContinueReadingParams struct {
@@ -3075,8 +3075,8 @@ type DeleteBooksParams struct {
 	Ids []int64 `form:"ids" json:"ids"`
 }
 
-// GetBooks1Params defines parameters for GetBooks1.
-type GetBooks1Params struct {
+// ListBooksParams defines parameters for ListBooks.
+type ListBooksParams struct {
 	// WithDescription Include book descriptions in the response
 	WithDescription *bool `form:"withDescription,omitempty" json:"withDescription,omitempty"`
 }
@@ -3117,8 +3117,8 @@ type ResetProgressParams struct {
 // ResetProgressParamsType defines parameters for ResetProgress.
 type ResetProgressParamsType string
 
-// GetBook2Params defines parameters for GetBook2.
-type GetBook2Params struct {
+// GetBookByIdParams defines parameters for GetBookById.
+type GetBookByIdParams struct {
 	// WithDescription Include book description in the response
 	WithDescription *bool `form:"withDescription,omitempty" json:"withDescription,omitempty"`
 }
@@ -3182,8 +3182,8 @@ type GetPageInfoParams struct {
 	BookType *string `form:"bookType,omitempty" json:"bookType,omitempty"`
 }
 
-// ListPages1Params defines parameters for ListPages1.
-type ListPages1Params struct {
+// GetCbxBookPagesParams defines parameters for GetCbxBookPages.
+type GetCbxBookPagesParams struct {
 	// BookType Optional book type for alternative format (e.g., PDF, CBX)
 	BookType *string `form:"bookType,omitempty" json:"bookType,omitempty"`
 }
@@ -3206,8 +3206,8 @@ type GetFileParams struct {
 	BookType *string `form:"bookType,omitempty" json:"bookType,omitempty"`
 }
 
-// GetBookInfo1Params defines parameters for GetBookInfo1.
-type GetBookInfo1Params struct {
+// GetEpubBookInfoParams defines parameters for GetEpubBookInfo.
+type GetEpubBookInfoParams struct {
 	// BookType Optional book type for alternative format (e.g., EPUB)
 	BookType *string `form:"bookType,omitempty" json:"bookType,omitempty"`
 }
@@ -3227,8 +3227,8 @@ type UploadFileParams struct {
 	PathId int64 `form:"pathId" json:"pathId"`
 }
 
-// UploadFile1MultipartBody defines parameters for UploadFile1.
-type UploadFile1MultipartBody struct {
+// UploadFileToBookdropMultipartBody defines parameters for UploadFileToBookdrop.
+type UploadFileToBookdropMultipartBody struct {
 	// File Book file to upload
 	File openapi_types.File `json:"file"`
 }
@@ -3272,8 +3272,8 @@ type GetPdfPageParams struct {
 	BookType *string `form:"bookType,omitempty" json:"bookType,omitempty"`
 }
 
-// DownloadBook1Params defines parameters for DownloadBook1.
-type DownloadBook1Params struct {
+// DownloadOpdsBookParams defines parameters for DownloadOpdsBook.
+type DownloadOpdsBookParams struct {
 	// FileId Optional ID of a specific file format to download
 	FileId *int64 `form:"fileId,omitempty" json:"fileId,omitempty"`
 }
@@ -3403,20 +3403,20 @@ type GetSeriesBooksParams struct {
 	Unpaged *bool `form:"unpaged,omitempty" json:"unpaged,omitempty"`
 }
 
-// CatchAll3JSONRequestBody defines body for CatchAll3 for application/json ContentType.
-type CatchAll3JSONRequestBody = CatchAll3JSONBody
+// UnhandledKoboDeleteJSONRequestBody defines body for UnhandledKoboDelete for application/json ContentType.
+type UnhandledKoboDeleteJSONRequestBody = UnhandledKoboDeleteJSONBody
 
-// CatchAllJSONRequestBody defines body for CatchAll for application/json ContentType.
-type CatchAllJSONRequestBody = CatchAllJSONBody
+// UnhandledKoboGetJSONRequestBody defines body for UnhandledKoboGet for application/json ContentType.
+type UnhandledKoboGetJSONRequestBody = UnhandledKoboGetJSONBody
 
-// CatchAll4JSONRequestBody defines body for CatchAll4 for application/json ContentType.
-type CatchAll4JSONRequestBody = CatchAll4JSONBody
+// UnhandledKoboPatchJSONRequestBody defines body for UnhandledKoboPatch for application/json ContentType.
+type UnhandledKoboPatchJSONRequestBody = UnhandledKoboPatchJSONBody
 
-// CatchAll1JSONRequestBody defines body for CatchAll1 for application/json ContentType.
-type CatchAll1JSONRequestBody = CatchAll1JSONBody
+// UnhandledKoboPostJSONRequestBody defines body for UnhandledKoboPost for application/json ContentType.
+type UnhandledKoboPostJSONRequestBody = UnhandledKoboPostJSONBody
 
-// CatchAll2JSONRequestBody defines body for CatchAll2 for application/json ContentType.
-type CatchAll2JSONRequestBody = CatchAll2JSONBody
+// UnhandledKoboPutJSONRequestBody defines body for UnhandledKoboPut for application/json ContentType.
+type UnhandledKoboPutJSONRequestBody = UnhandledKoboPutJSONBody
 
 // GetTestsJSONRequestBody defines body for GetTests for application/json ContentType.
 type GetTestsJSONRequestBody = GetTestsJSONBody
@@ -3430,8 +3430,8 @@ type UpdateStateJSONRequestBody = KoboReadingStateWrapper
 // UpdateProgressJSONRequestBody defines body for UpdateProgress for application/json ContentType.
 type UpdateProgressJSONRequestBody = KoreaderProgress
 
-// CreateUser1JSONRequestBody defines body for CreateUser1 for application/json ContentType.
-type CreateUser1JSONRequestBody CreateUser1JSONBody
+// CreateKoReaderUserJSONRequestBody defines body for CreateKoReaderUser for application/json ContentType.
+type CreateKoReaderUserJSONRequestBody CreateKoReaderUserJSONBody
 
 // CreateUpdateShelfJSONRequestBody defines body for CreateUpdateShelf for application/json ContentType.
 type CreateUpdateShelfJSONRequestBody = MagicShelf
@@ -3457,11 +3457,11 @@ type RefreshTokenJSONRequestBody = RefreshTokenRequest
 // RegisterUserJSONRequestBody defines body for RegisterUser for application/json ContentType.
 type RegisterUserJSONRequestBody = UserCreateRequest
 
-// CreateNote1JSONRequestBody defines body for CreateNote1 for application/json ContentType.
-type CreateNote1JSONRequestBody = CreateBookNoteRequest
+// CreateNoteV1JSONRequestBody defines body for CreateNoteV1 for application/json ContentType.
+type CreateNoteV1JSONRequestBody = CreateBookNoteRequest
 
-// BulkEditMetadata1JSONRequestBody defines body for BulkEditMetadata1 for application/json ContentType.
-type BulkEditMetadata1JSONRequestBody = BookdropBulkEditRequest
+// BulkEditBookdropMetadataJSONRequestBody defines body for BulkEditBookdropMetadata for application/json ContentType.
+type BulkEditBookdropMetadataJSONRequestBody = BookdropBulkEditRequest
 
 // DiscardSelectedFilesJSONRequestBody defines body for DiscardSelectedFiles for application/json ContentType.
 type DiscardSelectedFilesJSONRequestBody = BookdropSelectionRequest
@@ -3556,11 +3556,11 @@ type MoveFilesJSONRequestBody = FileMoveRequest
 // UploadFileMultipartRequestBody defines body for UploadFile for multipart/form-data ContentType.
 type UploadFileMultipartRequestBody UploadFileMultipartBody
 
-// UploadFile1MultipartRequestBody defines body for UploadFile1 for multipart/form-data ContentType.
-type UploadFile1MultipartRequestBody UploadFile1MultipartBody
+// UploadFileToBookdropMultipartRequestBody defines body for UploadFileToBookdrop for multipart/form-data ContentType.
+type UploadFileToBookdropMultipartRequestBody UploadFileToBookdropMultipartBody
 
-// UpdateSettings2JSONRequestBody defines body for UpdateSettings2 for application/json ContentType.
-type UpdateSettings2JSONRequestBody = HardcoverSyncSettings
+// UpdateHardcoverSyncSettingsJSONRequestBody defines body for UpdateHardcoverSyncSettings for application/json ContentType.
+type UpdateHardcoverSyncSettingsJSONRequestBody = HardcoverSyncSettings
 
 // SaveSvgIconJSONRequestBody defines body for SaveSvgIcon for application/json ContentType.
 type SaveSvgIconJSONRequestBody = SvgIconCreateRequest
@@ -3568,8 +3568,8 @@ type SaveSvgIconJSONRequestBody = SvgIconCreateRequest
 // SaveBatchSvgIconsJSONRequestBody defines body for SaveBatchSvgIcons for application/json ContentType.
 type SaveBatchSvgIconsJSONRequestBody = SvgIconBatchRequest
 
-// UpdateSettings1JSONRequestBody defines body for UpdateSettings1 for application/json ContentType.
-type UpdateSettings1JSONRequestBody = KoboSyncSettings
+// UpdateKoboSettingsJSONRequestBody defines body for UpdateKoboSettings for application/json ContentType.
+type UpdateKoboSettingsJSONRequestBody = KoboSyncSettings
 
 // UpsertCurrentUserJSONRequestBody defines body for UpsertCurrentUser for application/json ContentType.
 type UpsertCurrentUserJSONRequestBody UpsertCurrentUserJSONBody
@@ -3643,8 +3643,8 @@ type UpdateEmailRecipientJSONRequestBody = CreateEmailRecipientRequest
 // CreateUserJSONRequestBody defines body for CreateUser for application/json ContentType.
 type CreateUserJSONRequestBody = OpdsUserV2CreateRequest
 
-// UpdateUser1JSONRequestBody defines body for UpdateUser1 for application/json ContentType.
-type UpdateUser1JSONRequestBody = OpdsUserV2UpdateRequest
+// UpdateOpdsUserV2JSONRequestBody defines body for UpdateOpdsUserV2 for application/json ContentType.
+type UpdateOpdsUserV2JSONRequestBody = OpdsUserV2UpdateRequest
 
 // RequestEditorFn  is the function signature for the RequestEditor callback function
 type RequestEditorFn func(ctx context.Context, req *http.Request) error
@@ -3719,30 +3719,30 @@ func WithRequestEditorFn(fn RequestEditorFn) ClientOption {
 
 // The interface specification for the client above.
 type ClientInterface interface {
-	// CatchAll3WithBody request with any body
-	CatchAll3WithBody(ctx context.Context, token string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+	// UnhandledKoboDeleteWithBody request with any body
+	UnhandledKoboDeleteWithBody(ctx context.Context, token string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	CatchAll3(ctx context.Context, token string, body CatchAll3JSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+	UnhandledKoboDelete(ctx context.Context, token string, body UnhandledKoboDeleteJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	// CatchAllWithBody request with any body
-	CatchAllWithBody(ctx context.Context, token string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+	// UnhandledKoboGetWithBody request with any body
+	UnhandledKoboGetWithBody(ctx context.Context, token string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	CatchAll(ctx context.Context, token string, body CatchAllJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+	UnhandledKoboGet(ctx context.Context, token string, body UnhandledKoboGetJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	// CatchAll4WithBody request with any body
-	CatchAll4WithBody(ctx context.Context, token string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+	// UnhandledKoboPatchWithBody request with any body
+	UnhandledKoboPatchWithBody(ctx context.Context, token string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	CatchAll4(ctx context.Context, token string, body CatchAll4JSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+	UnhandledKoboPatch(ctx context.Context, token string, body UnhandledKoboPatchJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	// CatchAll1WithBody request with any body
-	CatchAll1WithBody(ctx context.Context, token string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+	// UnhandledKoboPostWithBody request with any body
+	UnhandledKoboPostWithBody(ctx context.Context, token string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	CatchAll1(ctx context.Context, token string, body CatchAll1JSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+	UnhandledKoboPost(ctx context.Context, token string, body UnhandledKoboPostJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	// CatchAll2WithBody request with any body
-	CatchAll2WithBody(ctx context.Context, token string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+	// UnhandledKoboPutWithBody request with any body
+	UnhandledKoboPutWithBody(ctx context.Context, token string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	CatchAll2(ctx context.Context, token string, body CatchAll2JSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+	UnhandledKoboPut(ctx context.Context, token string, body UnhandledKoboPutJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// GetTestsWithBody request with any body
 	GetTestsWithBody(ctx context.Context, token string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
@@ -3754,8 +3754,8 @@ type ClientInterface interface {
 
 	AuthenticateDevice(ctx context.Context, token string, body AuthenticateDeviceJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	// DownloadBook3 request
-	DownloadBook3(ctx context.Context, token string, bookId string, reqEditors ...RequestEditorFn) (*http.Response, error)
+	// KoboDownloadBookByIdV1 request
+	KoboDownloadBookByIdV1(ctx context.Context, token string, bookId string, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// GetThumbnail request
 	GetThumbnail(ctx context.Context, token string, imageId string, width int32, height int32, reqEditors ...RequestEditorFn) (*http.Response, error)
@@ -3800,10 +3800,10 @@ type ClientInterface interface {
 	// AuthorizeUser request
 	AuthorizeUser(ctx context.Context, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	// CreateUser1WithBody request with any body
-	CreateUser1WithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+	// CreateKoReaderUserWithBody request with any body
+	CreateKoReaderUserWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	CreateUser1(ctx context.Context, body CreateUser1JSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+	CreateKoReaderUser(ctx context.Context, body CreateKoReaderUserJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// GetAllForUser request
 	GetAllForUser(ctx context.Context, reqEditors ...RequestEditorFn) (*http.Response, error)
@@ -3813,11 +3813,11 @@ type ClientInterface interface {
 
 	CreateUpdateShelf(ctx context.Context, body CreateUpdateShelfJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	// DeleteShelf1 request
-	DeleteShelf1(ctx context.Context, id int64, reqEditors ...RequestEditorFn) (*http.Response, error)
+	// DeleteMagicShelfById request
+	DeleteMagicShelfById(ctx context.Context, id int64, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	// GetShelf1 request
-	GetShelf1(ctx context.Context, id int64, reqEditors ...RequestEditorFn) (*http.Response, error)
+	// GetMagicShelfById request
+	GetMagicShelfById(ctx context.Context, id int64, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// GetActiveTasks request
 	GetActiveTasks(ctx context.Context, reqEditors ...RequestEditorFn) (*http.Response, error)
@@ -3831,8 +3831,8 @@ type ClientInterface interface {
 	// UpdateProposalStatus request
 	UpdateProposalStatus(ctx context.Context, taskId string, proposalId int64, params *UpdateProposalStatusParams, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	// GetBooks2 request
-	GetBooks2(ctx context.Context, params *GetBooks2Params, reqEditors ...RequestEditorFn) (*http.Response, error)
+	// MobileListBooksV1 request
+	MobileListBooksV1(ctx context.Context, params *MobileListBooksV1Params, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// GetContinueReading request
 	GetContinueReading(ctx context.Context, params *GetContinueReadingParams, reqEditors ...RequestEditorFn) (*http.Response, error)
@@ -3859,8 +3859,8 @@ type ClientInterface interface {
 
 	UpdateStatus(ctx context.Context, bookId int64, body UpdateStatusJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	// GetLibraries1 request
-	GetLibraries1(ctx context.Context, reqEditors ...RequestEditorFn) (*http.Response, error)
+	// MobileListLibrariesV1 request
+	MobileListLibrariesV1(ctx context.Context, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// GetShelves request
 	GetShelves(ctx context.Context, reqEditors ...RequestEditorFn) (*http.Response, error)
@@ -3926,24 +3926,24 @@ type ClientInterface interface {
 	// GetAuthorsByBookId request
 	GetAuthorsByBookId(ctx context.Context, bookId int64, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	// CreateNote1WithBody request with any body
-	CreateNote1WithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+	// CreateNoteV1WithBody request with any body
+	CreateNoteV1WithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	CreateNote1(ctx context.Context, body CreateNote1JSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+	CreateNoteV1(ctx context.Context, body CreateNoteV1JSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	// GetNotesForBook1 request
-	GetNotesForBook1(ctx context.Context, bookId int64, reqEditors ...RequestEditorFn) (*http.Response, error)
+	// GetNotesForBookV1 request
+	GetNotesForBookV1(ctx context.Context, bookId int64, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	// DeleteNote1 request
-	DeleteNote1(ctx context.Context, noteId int64, reqEditors ...RequestEditorFn) (*http.Response, error)
+	// DeleteNoteV1 request
+	DeleteNoteV1(ctx context.Context, noteId int64, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// GetFilesByStatus request
 	GetFilesByStatus(ctx context.Context, params *GetFilesByStatusParams, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	// BulkEditMetadata1WithBody request with any body
-	BulkEditMetadata1WithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+	// BulkEditBookdropMetadataWithBody request with any body
+	BulkEditBookdropMetadataWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	BulkEditMetadata1(ctx context.Context, body BulkEditMetadata1JSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+	BulkEditBookdropMetadata(ctx context.Context, body BulkEditBookdropMetadataJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// DiscardSelectedFilesWithBody request with any body
 	DiscardSelectedFilesWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
@@ -3988,8 +3988,8 @@ type ClientInterface interface {
 	// DeleteBooks request
 	DeleteBooks(ctx context.Context, params *DeleteBooksParams, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	// GetBooks1 request
-	GetBooks1(ctx context.Context, params *GetBooks1Params, reqEditors ...RequestEditorFn) (*http.Response, error)
+	// ListBooks request
+	ListBooks(ctx context.Context, params *ListBooksParams, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// GetBooksByIds request
 	GetBooksByIds(ctx context.Context, params *GetBooksByIdsParams, reqEditors ...RequestEditorFn) (*http.Response, error)
@@ -4052,8 +4052,8 @@ type ClientInterface interface {
 
 	AddBookToProgress(ctx context.Context, body AddBookToProgressJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	// RegenerateCovers1 request
-	RegenerateCovers1(ctx context.Context, reqEditors ...RequestEditorFn) (*http.Response, error)
+	// RegenerateBookCovers request
+	RegenerateBookCovers(ctx context.Context, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// ResetPersonalRatingWithBody request with any body
 	ResetPersonalRatingWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
@@ -4075,8 +4075,8 @@ type ClientInterface interface {
 
 	UpdateReadStatus(ctx context.Context, body UpdateReadStatusJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	// GetBook2 request
-	GetBook2(ctx context.Context, bookId int64, params *GetBook2Params, reqEditors ...RequestEditorFn) (*http.Response, error)
+	// GetBookById request
+	GetBookById(ctx context.Context, bookId int64, params *GetBookByIdParams, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// GetComicInfoMetadata request
 	GetComicInfoMetadata(ctx context.Context, bookId int64, reqEditors ...RequestEditorFn) (*http.Response, error)
@@ -4084,8 +4084,8 @@ type ClientInterface interface {
 	// GetBookContent request
 	GetBookContent(ctx context.Context, bookId int64, params *GetBookContentParams, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	// DownloadBook2 request
-	DownloadBook2(ctx context.Context, bookId int64, reqEditors ...RequestEditorFn) (*http.Response, error)
+	// DownloadBookById request
+	DownloadBookById(ctx context.Context, bookId int64, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// DownloadAllBookFiles request
 	DownloadAllBookFiles(ctx context.Context, bookId int64, reqEditors ...RequestEditorFn) (*http.Response, error)
@@ -4152,8 +4152,8 @@ type ClientInterface interface {
 	// GetPageInfo request
 	GetPageInfo(ctx context.Context, bookId int64, params *GetPageInfoParams, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	// ListPages1 request
-	ListPages1(ctx context.Context, bookId int64, params *ListPages1Params, reqEditors ...RequestEditorFn) (*http.Response, error)
+	// GetCbxBookPages request
+	GetCbxBookPages(ctx context.Context, bookId int64, params *GetCbxBookPagesParams, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// GetUserFonts request
 	GetUserFonts(ctx context.Context, reqEditors ...RequestEditorFn) (*http.Response, error)
@@ -4172,8 +4172,8 @@ type ClientInterface interface {
 	// GetFile request
 	GetFile(ctx context.Context, bookId int64, params *GetFileParams, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	// GetBookInfo1 request
-	GetBookInfo1(ctx context.Context, bookId int64, params *GetBookInfo1Params, reqEditors ...RequestEditorFn) (*http.Response, error)
+	// GetEpubBookInfo request
+	GetEpubBookInfo(ctx context.Context, bookId int64, params *GetEpubBookInfoParams, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// MoveFilesWithBody request with any body
 	MoveFilesWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
@@ -4183,16 +4183,16 @@ type ClientInterface interface {
 	// UploadFileWithBody request with any body
 	UploadFileWithBody(ctx context.Context, params *UploadFileParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	// UploadFile1WithBody request with any body
-	UploadFile1WithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+	// UploadFileToBookdropWithBody request with any body
+	UploadFileToBookdropWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	// GetSettings1 request
-	GetSettings1(ctx context.Context, reqEditors ...RequestEditorFn) (*http.Response, error)
+	// GetHardcoverSyncSettings request
+	GetHardcoverSyncSettings(ctx context.Context, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	// UpdateSettings2WithBody request with any body
-	UpdateSettings2WithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+	// UpdateHardcoverSyncSettingsWithBody request with any body
+	UpdateHardcoverSyncSettingsWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	UpdateSettings2(ctx context.Context, body UpdateSettings2JSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+	UpdateHardcoverSyncSettings(ctx context.Context, body UpdateHardcoverSyncSettingsJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// GetPing request
 	GetPing(ctx context.Context, reqEditors ...RequestEditorFn) (*http.Response, error)
@@ -4222,10 +4222,10 @@ type ClientInterface interface {
 	// GetSettings request
 	GetSettings(ctx context.Context, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	// UpdateSettings1WithBody request with any body
-	UpdateSettings1WithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+	// UpdateKoboSettingsWithBody request with any body
+	UpdateKoboSettingsWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	UpdateSettings1(ctx context.Context, body UpdateSettings1JSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+	UpdateKoboSettings(ctx context.Context, body UpdateKoboSettingsJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// CreateOrUpdateToken request
 	CreateOrUpdateToken(ctx context.Context, reqEditors ...RequestEditorFn) (*http.Response, error)
@@ -4271,8 +4271,8 @@ type ClientInterface interface {
 	// GetBooks request
 	GetBooks(ctx context.Context, libraryId int64, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	// GetBook1 request
-	GetBook1(ctx context.Context, libraryId int64, bookId int64, reqEditors ...RequestEditorFn) (*http.Response, error)
+	// GetLibraryBookById request
+	GetLibraryBookById(ctx context.Context, libraryId int64, bookId int64, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// SetFileNamingPatternWithBody request with any body
 	SetFileNamingPatternWithBody(ctx context.Context, libraryId int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
@@ -4285,14 +4285,14 @@ type ClientInterface interface {
 	// GetCbxPage request
 	GetCbxPage(ctx context.Context, bookId int64, pageNumber int32, params *GetCbxPageParams, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	// GetBookCover1 request
-	GetBookCover1(ctx context.Context, bookId int64, reqEditors ...RequestEditorFn) (*http.Response, error)
+	// GetBookCoverV1 request
+	GetBookCoverV1(ctx context.Context, bookId int64, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// GetPdfPage request
 	GetPdfPage(ctx context.Context, bookId int64, pageNumber int32, params *GetPdfPageParams, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	// GetBookThumbnail1 request
-	GetBookThumbnail1(ctx context.Context, bookId int64, reqEditors ...RequestEditorFn) (*http.Response, error)
+	// GetBookThumbnailV1 request
+	GetBookThumbnailV1(ctx context.Context, bookId int64, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// GetBookdropCover request
 	GetBookdropCover(ctx context.Context, bookdropId int64, reqEditors ...RequestEditorFn) (*http.Response, error)
@@ -4330,8 +4330,8 @@ type ClientInterface interface {
 	// GetBookCover request
 	GetBookCover(ctx context.Context, bookId int64, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	// DownloadBook1 request
-	DownloadBook1(ctx context.Context, bookId int64, params *DownloadBook1Params, reqEditors ...RequestEditorFn) (*http.Response, error)
+	// DownloadOpdsBook request
+	DownloadOpdsBook(ctx context.Context, bookId int64, params *DownloadOpdsBookParams, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// GetFolders request
 	GetFolders(ctx context.Context, params *GetFoldersParams, reqEditors ...RequestEditorFn) (*http.Response, error)
@@ -4566,13 +4566,13 @@ type ClientInterface interface {
 
 	CreateUser(ctx context.Context, body CreateUserJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	// DeleteUser1 request
-	DeleteUser1(ctx context.Context, id int64, reqEditors ...RequestEditorFn) (*http.Response, error)
+	// DeleteOpdsUserV2 request
+	DeleteOpdsUserV2(ctx context.Context, id int64, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	// UpdateUser1WithBody request with any body
-	UpdateUser1WithBody(ctx context.Context, id int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+	// UpdateOpdsUserV2WithBody request with any body
+	UpdateOpdsUserV2WithBody(ctx context.Context, id int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	UpdateUser1(ctx context.Context, id int64, body UpdateUser1JSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+	UpdateOpdsUserV2(ctx context.Context, id int64, body UpdateOpdsUserV2JSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// GetAllBooks request
 	GetAllBooks(ctx context.Context, params *GetAllBooksParams, reqEditors ...RequestEditorFn) (*http.Response, error)
@@ -4598,8 +4598,8 @@ type ClientInterface interface {
 	// GetAllLibraries request
 	GetAllLibraries(ctx context.Context, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	// GetLibrary1 request
-	GetLibrary1(ctx context.Context, libraryId int64, reqEditors ...RequestEditorFn) (*http.Response, error)
+	// GetKomgaLibraryById request
+	GetKomgaLibraryById(ctx context.Context, libraryId int64, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// GetAllSeries request
 	GetAllSeries(ctx context.Context, params *GetAllSeriesParams, reqEditors ...RequestEditorFn) (*http.Response, error)
@@ -4613,12 +4613,12 @@ type ClientInterface interface {
 	// GetSeriesThumbnail request
 	GetSeriesThumbnail(ctx context.Context, seriesId string, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	// GetCurrentUser1 request
-	GetCurrentUser1(ctx context.Context, reqEditors ...RequestEditorFn) (*http.Response, error)
+	// GetKomgaCurrentUser request
+	GetKomgaCurrentUser(ctx context.Context, reqEditors ...RequestEditorFn) (*http.Response, error)
 }
 
-func (c *Client) CatchAll3WithBody(ctx context.Context, token string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewCatchAll3RequestWithBody(c.Server, token, contentType, body)
+func (c *Client) UnhandledKoboDeleteWithBody(ctx context.Context, token string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewUnhandledKoboDeleteRequestWithBody(c.Server, token, contentType, body)
 	if err != nil {
 		return nil, err
 	}
@@ -4629,8 +4629,8 @@ func (c *Client) CatchAll3WithBody(ctx context.Context, token string, contentTyp
 	return c.Client.Do(req)
 }
 
-func (c *Client) CatchAll3(ctx context.Context, token string, body CatchAll3JSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewCatchAll3Request(c.Server, token, body)
+func (c *Client) UnhandledKoboDelete(ctx context.Context, token string, body UnhandledKoboDeleteJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewUnhandledKoboDeleteRequest(c.Server, token, body)
 	if err != nil {
 		return nil, err
 	}
@@ -4641,8 +4641,8 @@ func (c *Client) CatchAll3(ctx context.Context, token string, body CatchAll3JSON
 	return c.Client.Do(req)
 }
 
-func (c *Client) CatchAllWithBody(ctx context.Context, token string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewCatchAllRequestWithBody(c.Server, token, contentType, body)
+func (c *Client) UnhandledKoboGetWithBody(ctx context.Context, token string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewUnhandledKoboGetRequestWithBody(c.Server, token, contentType, body)
 	if err != nil {
 		return nil, err
 	}
@@ -4653,8 +4653,8 @@ func (c *Client) CatchAllWithBody(ctx context.Context, token string, contentType
 	return c.Client.Do(req)
 }
 
-func (c *Client) CatchAll(ctx context.Context, token string, body CatchAllJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewCatchAllRequest(c.Server, token, body)
+func (c *Client) UnhandledKoboGet(ctx context.Context, token string, body UnhandledKoboGetJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewUnhandledKoboGetRequest(c.Server, token, body)
 	if err != nil {
 		return nil, err
 	}
@@ -4665,8 +4665,8 @@ func (c *Client) CatchAll(ctx context.Context, token string, body CatchAllJSONRe
 	return c.Client.Do(req)
 }
 
-func (c *Client) CatchAll4WithBody(ctx context.Context, token string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewCatchAll4RequestWithBody(c.Server, token, contentType, body)
+func (c *Client) UnhandledKoboPatchWithBody(ctx context.Context, token string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewUnhandledKoboPatchRequestWithBody(c.Server, token, contentType, body)
 	if err != nil {
 		return nil, err
 	}
@@ -4677,8 +4677,8 @@ func (c *Client) CatchAll4WithBody(ctx context.Context, token string, contentTyp
 	return c.Client.Do(req)
 }
 
-func (c *Client) CatchAll4(ctx context.Context, token string, body CatchAll4JSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewCatchAll4Request(c.Server, token, body)
+func (c *Client) UnhandledKoboPatch(ctx context.Context, token string, body UnhandledKoboPatchJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewUnhandledKoboPatchRequest(c.Server, token, body)
 	if err != nil {
 		return nil, err
 	}
@@ -4689,8 +4689,8 @@ func (c *Client) CatchAll4(ctx context.Context, token string, body CatchAll4JSON
 	return c.Client.Do(req)
 }
 
-func (c *Client) CatchAll1WithBody(ctx context.Context, token string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewCatchAll1RequestWithBody(c.Server, token, contentType, body)
+func (c *Client) UnhandledKoboPostWithBody(ctx context.Context, token string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewUnhandledKoboPostRequestWithBody(c.Server, token, contentType, body)
 	if err != nil {
 		return nil, err
 	}
@@ -4701,8 +4701,8 @@ func (c *Client) CatchAll1WithBody(ctx context.Context, token string, contentTyp
 	return c.Client.Do(req)
 }
 
-func (c *Client) CatchAll1(ctx context.Context, token string, body CatchAll1JSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewCatchAll1Request(c.Server, token, body)
+func (c *Client) UnhandledKoboPost(ctx context.Context, token string, body UnhandledKoboPostJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewUnhandledKoboPostRequest(c.Server, token, body)
 	if err != nil {
 		return nil, err
 	}
@@ -4713,8 +4713,8 @@ func (c *Client) CatchAll1(ctx context.Context, token string, body CatchAll1JSON
 	return c.Client.Do(req)
 }
 
-func (c *Client) CatchAll2WithBody(ctx context.Context, token string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewCatchAll2RequestWithBody(c.Server, token, contentType, body)
+func (c *Client) UnhandledKoboPutWithBody(ctx context.Context, token string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewUnhandledKoboPutRequestWithBody(c.Server, token, contentType, body)
 	if err != nil {
 		return nil, err
 	}
@@ -4725,8 +4725,8 @@ func (c *Client) CatchAll2WithBody(ctx context.Context, token string, contentTyp
 	return c.Client.Do(req)
 }
 
-func (c *Client) CatchAll2(ctx context.Context, token string, body CatchAll2JSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewCatchAll2Request(c.Server, token, body)
+func (c *Client) UnhandledKoboPut(ctx context.Context, token string, body UnhandledKoboPutJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewUnhandledKoboPutRequest(c.Server, token, body)
 	if err != nil {
 		return nil, err
 	}
@@ -4785,8 +4785,8 @@ func (c *Client) AuthenticateDevice(ctx context.Context, token string, body Auth
 	return c.Client.Do(req)
 }
 
-func (c *Client) DownloadBook3(ctx context.Context, token string, bookId string, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewDownloadBook3Request(c.Server, token, bookId)
+func (c *Client) KoboDownloadBookByIdV1(ctx context.Context, token string, bookId string, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewKoboDownloadBookByIdV1Request(c.Server, token, bookId)
 	if err != nil {
 		return nil, err
 	}
@@ -4977,8 +4977,8 @@ func (c *Client) AuthorizeUser(ctx context.Context, reqEditors ...RequestEditorF
 	return c.Client.Do(req)
 }
 
-func (c *Client) CreateUser1WithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewCreateUser1RequestWithBody(c.Server, contentType, body)
+func (c *Client) CreateKoReaderUserWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewCreateKoReaderUserRequestWithBody(c.Server, contentType, body)
 	if err != nil {
 		return nil, err
 	}
@@ -4989,8 +4989,8 @@ func (c *Client) CreateUser1WithBody(ctx context.Context, contentType string, bo
 	return c.Client.Do(req)
 }
 
-func (c *Client) CreateUser1(ctx context.Context, body CreateUser1JSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewCreateUser1Request(c.Server, body)
+func (c *Client) CreateKoReaderUser(ctx context.Context, body CreateKoReaderUserJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewCreateKoReaderUserRequest(c.Server, body)
 	if err != nil {
 		return nil, err
 	}
@@ -5037,8 +5037,8 @@ func (c *Client) CreateUpdateShelf(ctx context.Context, body CreateUpdateShelfJS
 	return c.Client.Do(req)
 }
 
-func (c *Client) DeleteShelf1(ctx context.Context, id int64, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewDeleteShelf1Request(c.Server, id)
+func (c *Client) DeleteMagicShelfById(ctx context.Context, id int64, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewDeleteMagicShelfByIdRequest(c.Server, id)
 	if err != nil {
 		return nil, err
 	}
@@ -5049,8 +5049,8 @@ func (c *Client) DeleteShelf1(ctx context.Context, id int64, reqEditors ...Reque
 	return c.Client.Do(req)
 }
 
-func (c *Client) GetShelf1(ctx context.Context, id int64, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewGetShelf1Request(c.Server, id)
+func (c *Client) GetMagicShelfById(ctx context.Context, id int64, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetMagicShelfByIdRequest(c.Server, id)
 	if err != nil {
 		return nil, err
 	}
@@ -5109,8 +5109,8 @@ func (c *Client) UpdateProposalStatus(ctx context.Context, taskId string, propos
 	return c.Client.Do(req)
 }
 
-func (c *Client) GetBooks2(ctx context.Context, params *GetBooks2Params, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewGetBooks2Request(c.Server, params)
+func (c *Client) MobileListBooksV1(ctx context.Context, params *MobileListBooksV1Params, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewMobileListBooksV1Request(c.Server, params)
 	if err != nil {
 		return nil, err
 	}
@@ -5229,8 +5229,8 @@ func (c *Client) UpdateStatus(ctx context.Context, bookId int64, body UpdateStat
 	return c.Client.Do(req)
 }
 
-func (c *Client) GetLibraries1(ctx context.Context, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewGetLibraries1Request(c.Server)
+func (c *Client) MobileListLibrariesV1(ctx context.Context, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewMobileListLibrariesV1Request(c.Server)
 	if err != nil {
 		return nil, err
 	}
@@ -5517,8 +5517,8 @@ func (c *Client) GetAuthorsByBookId(ctx context.Context, bookId int64, reqEditor
 	return c.Client.Do(req)
 }
 
-func (c *Client) CreateNote1WithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewCreateNote1RequestWithBody(c.Server, contentType, body)
+func (c *Client) CreateNoteV1WithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewCreateNoteV1RequestWithBody(c.Server, contentType, body)
 	if err != nil {
 		return nil, err
 	}
@@ -5529,8 +5529,8 @@ func (c *Client) CreateNote1WithBody(ctx context.Context, contentType string, bo
 	return c.Client.Do(req)
 }
 
-func (c *Client) CreateNote1(ctx context.Context, body CreateNote1JSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewCreateNote1Request(c.Server, body)
+func (c *Client) CreateNoteV1(ctx context.Context, body CreateNoteV1JSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewCreateNoteV1Request(c.Server, body)
 	if err != nil {
 		return nil, err
 	}
@@ -5541,8 +5541,8 @@ func (c *Client) CreateNote1(ctx context.Context, body CreateNote1JSONRequestBod
 	return c.Client.Do(req)
 }
 
-func (c *Client) GetNotesForBook1(ctx context.Context, bookId int64, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewGetNotesForBook1Request(c.Server, bookId)
+func (c *Client) GetNotesForBookV1(ctx context.Context, bookId int64, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetNotesForBookV1Request(c.Server, bookId)
 	if err != nil {
 		return nil, err
 	}
@@ -5553,8 +5553,8 @@ func (c *Client) GetNotesForBook1(ctx context.Context, bookId int64, reqEditors 
 	return c.Client.Do(req)
 }
 
-func (c *Client) DeleteNote1(ctx context.Context, noteId int64, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewDeleteNote1Request(c.Server, noteId)
+func (c *Client) DeleteNoteV1(ctx context.Context, noteId int64, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewDeleteNoteV1Request(c.Server, noteId)
 	if err != nil {
 		return nil, err
 	}
@@ -5577,8 +5577,8 @@ func (c *Client) GetFilesByStatus(ctx context.Context, params *GetFilesByStatusP
 	return c.Client.Do(req)
 }
 
-func (c *Client) BulkEditMetadata1WithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewBulkEditMetadata1RequestWithBody(c.Server, contentType, body)
+func (c *Client) BulkEditBookdropMetadataWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBulkEditBookdropMetadataRequestWithBody(c.Server, contentType, body)
 	if err != nil {
 		return nil, err
 	}
@@ -5589,8 +5589,8 @@ func (c *Client) BulkEditMetadata1WithBody(ctx context.Context, contentType stri
 	return c.Client.Do(req)
 }
 
-func (c *Client) BulkEditMetadata1(ctx context.Context, body BulkEditMetadata1JSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewBulkEditMetadata1Request(c.Server, body)
+func (c *Client) BulkEditBookdropMetadata(ctx context.Context, body BulkEditBookdropMetadataJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBulkEditBookdropMetadataRequest(c.Server, body)
 	if err != nil {
 		return nil, err
 	}
@@ -5793,8 +5793,8 @@ func (c *Client) DeleteBooks(ctx context.Context, params *DeleteBooksParams, req
 	return c.Client.Do(req)
 }
 
-func (c *Client) GetBooks1(ctx context.Context, params *GetBooks1Params, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewGetBooks1Request(c.Server, params)
+func (c *Client) ListBooks(ctx context.Context, params *ListBooksParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewListBooksRequest(c.Server, params)
 	if err != nil {
 		return nil, err
 	}
@@ -6093,8 +6093,8 @@ func (c *Client) AddBookToProgress(ctx context.Context, body AddBookToProgressJS
 	return c.Client.Do(req)
 }
 
-func (c *Client) RegenerateCovers1(ctx context.Context, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewRegenerateCovers1Request(c.Server)
+func (c *Client) RegenerateBookCovers(ctx context.Context, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewRegenerateBookCoversRequest(c.Server)
 	if err != nil {
 		return nil, err
 	}
@@ -6201,8 +6201,8 @@ func (c *Client) UpdateReadStatus(ctx context.Context, body UpdateReadStatusJSON
 	return c.Client.Do(req)
 }
 
-func (c *Client) GetBook2(ctx context.Context, bookId int64, params *GetBook2Params, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewGetBook2Request(c.Server, bookId, params)
+func (c *Client) GetBookById(ctx context.Context, bookId int64, params *GetBookByIdParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetBookByIdRequest(c.Server, bookId, params)
 	if err != nil {
 		return nil, err
 	}
@@ -6237,8 +6237,8 @@ func (c *Client) GetBookContent(ctx context.Context, bookId int64, params *GetBo
 	return c.Client.Do(req)
 }
 
-func (c *Client) DownloadBook2(ctx context.Context, bookId int64, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewDownloadBook2Request(c.Server, bookId)
+func (c *Client) DownloadBookById(ctx context.Context, bookId int64, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewDownloadBookByIdRequest(c.Server, bookId)
 	if err != nil {
 		return nil, err
 	}
@@ -6537,8 +6537,8 @@ func (c *Client) GetPageInfo(ctx context.Context, bookId int64, params *GetPageI
 	return c.Client.Do(req)
 }
 
-func (c *Client) ListPages1(ctx context.Context, bookId int64, params *ListPages1Params, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewListPages1Request(c.Server, bookId, params)
+func (c *Client) GetCbxBookPages(ctx context.Context, bookId int64, params *GetCbxBookPagesParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetCbxBookPagesRequest(c.Server, bookId, params)
 	if err != nil {
 		return nil, err
 	}
@@ -6621,8 +6621,8 @@ func (c *Client) GetFile(ctx context.Context, bookId int64, params *GetFileParam
 	return c.Client.Do(req)
 }
 
-func (c *Client) GetBookInfo1(ctx context.Context, bookId int64, params *GetBookInfo1Params, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewGetBookInfo1Request(c.Server, bookId, params)
+func (c *Client) GetEpubBookInfo(ctx context.Context, bookId int64, params *GetEpubBookInfoParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetEpubBookInfoRequest(c.Server, bookId, params)
 	if err != nil {
 		return nil, err
 	}
@@ -6669,8 +6669,8 @@ func (c *Client) UploadFileWithBody(ctx context.Context, params *UploadFileParam
 	return c.Client.Do(req)
 }
 
-func (c *Client) UploadFile1WithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewUploadFile1RequestWithBody(c.Server, contentType, body)
+func (c *Client) UploadFileToBookdropWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewUploadFileToBookdropRequestWithBody(c.Server, contentType, body)
 	if err != nil {
 		return nil, err
 	}
@@ -6681,8 +6681,8 @@ func (c *Client) UploadFile1WithBody(ctx context.Context, contentType string, bo
 	return c.Client.Do(req)
 }
 
-func (c *Client) GetSettings1(ctx context.Context, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewGetSettings1Request(c.Server)
+func (c *Client) GetHardcoverSyncSettings(ctx context.Context, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetHardcoverSyncSettingsRequest(c.Server)
 	if err != nil {
 		return nil, err
 	}
@@ -6693,8 +6693,8 @@ func (c *Client) GetSettings1(ctx context.Context, reqEditors ...RequestEditorFn
 	return c.Client.Do(req)
 }
 
-func (c *Client) UpdateSettings2WithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewUpdateSettings2RequestWithBody(c.Server, contentType, body)
+func (c *Client) UpdateHardcoverSyncSettingsWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewUpdateHardcoverSyncSettingsRequestWithBody(c.Server, contentType, body)
 	if err != nil {
 		return nil, err
 	}
@@ -6705,8 +6705,8 @@ func (c *Client) UpdateSettings2WithBody(ctx context.Context, contentType string
 	return c.Client.Do(req)
 }
 
-func (c *Client) UpdateSettings2(ctx context.Context, body UpdateSettings2JSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewUpdateSettings2Request(c.Server, body)
+func (c *Client) UpdateHardcoverSyncSettings(ctx context.Context, body UpdateHardcoverSyncSettingsJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewUpdateHardcoverSyncSettingsRequest(c.Server, body)
 	if err != nil {
 		return nil, err
 	}
@@ -6837,8 +6837,8 @@ func (c *Client) GetSettings(ctx context.Context, reqEditors ...RequestEditorFn)
 	return c.Client.Do(req)
 }
 
-func (c *Client) UpdateSettings1WithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewUpdateSettings1RequestWithBody(c.Server, contentType, body)
+func (c *Client) UpdateKoboSettingsWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewUpdateKoboSettingsRequestWithBody(c.Server, contentType, body)
 	if err != nil {
 		return nil, err
 	}
@@ -6849,8 +6849,8 @@ func (c *Client) UpdateSettings1WithBody(ctx context.Context, contentType string
 	return c.Client.Do(req)
 }
 
-func (c *Client) UpdateSettings1(ctx context.Context, body UpdateSettings1JSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewUpdateSettings1Request(c.Server, body)
+func (c *Client) UpdateKoboSettings(ctx context.Context, body UpdateKoboSettingsJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewUpdateKoboSettingsRequest(c.Server, body)
 	if err != nil {
 		return nil, err
 	}
@@ -7053,8 +7053,8 @@ func (c *Client) GetBooks(ctx context.Context, libraryId int64, reqEditors ...Re
 	return c.Client.Do(req)
 }
 
-func (c *Client) GetBook1(ctx context.Context, libraryId int64, bookId int64, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewGetBook1Request(c.Server, libraryId, bookId)
+func (c *Client) GetLibraryBookById(ctx context.Context, libraryId int64, bookId int64, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetLibraryBookByIdRequest(c.Server, libraryId, bookId)
 	if err != nil {
 		return nil, err
 	}
@@ -7113,8 +7113,8 @@ func (c *Client) GetCbxPage(ctx context.Context, bookId int64, pageNumber int32,
 	return c.Client.Do(req)
 }
 
-func (c *Client) GetBookCover1(ctx context.Context, bookId int64, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewGetBookCover1Request(c.Server, bookId)
+func (c *Client) GetBookCoverV1(ctx context.Context, bookId int64, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetBookCoverV1Request(c.Server, bookId)
 	if err != nil {
 		return nil, err
 	}
@@ -7137,8 +7137,8 @@ func (c *Client) GetPdfPage(ctx context.Context, bookId int64, pageNumber int32,
 	return c.Client.Do(req)
 }
 
-func (c *Client) GetBookThumbnail1(ctx context.Context, bookId int64, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewGetBookThumbnail1Request(c.Server, bookId)
+func (c *Client) GetBookThumbnailV1(ctx context.Context, bookId int64, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetBookThumbnailV1Request(c.Server, bookId)
 	if err != nil {
 		return nil, err
 	}
@@ -7293,8 +7293,8 @@ func (c *Client) GetBookCover(ctx context.Context, bookId int64, reqEditors ...R
 	return c.Client.Do(req)
 }
 
-func (c *Client) DownloadBook1(ctx context.Context, bookId int64, params *DownloadBook1Params, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewDownloadBook1Request(c.Server, bookId, params)
+func (c *Client) DownloadOpdsBook(ctx context.Context, bookId int64, params *DownloadOpdsBookParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewDownloadOpdsBookRequest(c.Server, bookId, params)
 	if err != nil {
 		return nil, err
 	}
@@ -8313,8 +8313,8 @@ func (c *Client) CreateUser(ctx context.Context, body CreateUserJSONRequestBody,
 	return c.Client.Do(req)
 }
 
-func (c *Client) DeleteUser1(ctx context.Context, id int64, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewDeleteUser1Request(c.Server, id)
+func (c *Client) DeleteOpdsUserV2(ctx context.Context, id int64, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewDeleteOpdsUserV2Request(c.Server, id)
 	if err != nil {
 		return nil, err
 	}
@@ -8325,8 +8325,8 @@ func (c *Client) DeleteUser1(ctx context.Context, id int64, reqEditors ...Reques
 	return c.Client.Do(req)
 }
 
-func (c *Client) UpdateUser1WithBody(ctx context.Context, id int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewUpdateUser1RequestWithBody(c.Server, id, contentType, body)
+func (c *Client) UpdateOpdsUserV2WithBody(ctx context.Context, id int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewUpdateOpdsUserV2RequestWithBody(c.Server, id, contentType, body)
 	if err != nil {
 		return nil, err
 	}
@@ -8337,8 +8337,8 @@ func (c *Client) UpdateUser1WithBody(ctx context.Context, id int64, contentType 
 	return c.Client.Do(req)
 }
 
-func (c *Client) UpdateUser1(ctx context.Context, id int64, body UpdateUser1JSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewUpdateUser1Request(c.Server, id, body)
+func (c *Client) UpdateOpdsUserV2(ctx context.Context, id int64, body UpdateOpdsUserV2JSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewUpdateOpdsUserV2Request(c.Server, id, body)
 	if err != nil {
 		return nil, err
 	}
@@ -8445,8 +8445,8 @@ func (c *Client) GetAllLibraries(ctx context.Context, reqEditors ...RequestEdito
 	return c.Client.Do(req)
 }
 
-func (c *Client) GetLibrary1(ctx context.Context, libraryId int64, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewGetLibrary1Request(c.Server, libraryId)
+func (c *Client) GetKomgaLibraryById(ctx context.Context, libraryId int64, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetKomgaLibraryByIdRequest(c.Server, libraryId)
 	if err != nil {
 		return nil, err
 	}
@@ -8505,8 +8505,8 @@ func (c *Client) GetSeriesThumbnail(ctx context.Context, seriesId string, reqEdi
 	return c.Client.Do(req)
 }
 
-func (c *Client) GetCurrentUser1(ctx context.Context, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewGetCurrentUser1Request(c.Server)
+func (c *Client) GetKomgaCurrentUser(ctx context.Context, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetKomgaCurrentUserRequest(c.Server)
 	if err != nil {
 		return nil, err
 	}
@@ -8517,19 +8517,19 @@ func (c *Client) GetCurrentUser1(ctx context.Context, reqEditors ...RequestEdito
 	return c.Client.Do(req)
 }
 
-// NewCatchAll3Request calls the generic CatchAll3 builder with application/json body
-func NewCatchAll3Request(server string, token string, body CatchAll3JSONRequestBody) (*http.Request, error) {
+// NewUnhandledKoboDeleteRequest calls the generic UnhandledKoboDelete builder with application/json body
+func NewUnhandledKoboDeleteRequest(server string, token string, body UnhandledKoboDeleteJSONRequestBody) (*http.Request, error) {
 	var bodyReader io.Reader
 	buf, err := json.Marshal(body)
 	if err != nil {
 		return nil, err
 	}
 	bodyReader = bytes.NewReader(buf)
-	return NewCatchAll3RequestWithBody(server, token, "application/json", bodyReader)
+	return NewUnhandledKoboDeleteRequestWithBody(server, token, "application/json", bodyReader)
 }
 
-// NewCatchAll3RequestWithBody generates requests for CatchAll3 with any type of body
-func NewCatchAll3RequestWithBody(server string, token string, contentType string, body io.Reader) (*http.Request, error) {
+// NewUnhandledKoboDeleteRequestWithBody generates requests for UnhandledKoboDelete with any type of body
+func NewUnhandledKoboDeleteRequestWithBody(server string, token string, contentType string, body io.Reader) (*http.Request, error) {
 	var err error
 
 	var pathParam0 string
@@ -8564,19 +8564,19 @@ func NewCatchAll3RequestWithBody(server string, token string, contentType string
 	return req, nil
 }
 
-// NewCatchAllRequest calls the generic CatchAll builder with application/json body
-func NewCatchAllRequest(server string, token string, body CatchAllJSONRequestBody) (*http.Request, error) {
+// NewUnhandledKoboGetRequest calls the generic UnhandledKoboGet builder with application/json body
+func NewUnhandledKoboGetRequest(server string, token string, body UnhandledKoboGetJSONRequestBody) (*http.Request, error) {
 	var bodyReader io.Reader
 	buf, err := json.Marshal(body)
 	if err != nil {
 		return nil, err
 	}
 	bodyReader = bytes.NewReader(buf)
-	return NewCatchAllRequestWithBody(server, token, "application/json", bodyReader)
+	return NewUnhandledKoboGetRequestWithBody(server, token, "application/json", bodyReader)
 }
 
-// NewCatchAllRequestWithBody generates requests for CatchAll with any type of body
-func NewCatchAllRequestWithBody(server string, token string, contentType string, body io.Reader) (*http.Request, error) {
+// NewUnhandledKoboGetRequestWithBody generates requests for UnhandledKoboGet with any type of body
+func NewUnhandledKoboGetRequestWithBody(server string, token string, contentType string, body io.Reader) (*http.Request, error) {
 	var err error
 
 	var pathParam0 string
@@ -8611,19 +8611,19 @@ func NewCatchAllRequestWithBody(server string, token string, contentType string,
 	return req, nil
 }
 
-// NewCatchAll4Request calls the generic CatchAll4 builder with application/json body
-func NewCatchAll4Request(server string, token string, body CatchAll4JSONRequestBody) (*http.Request, error) {
+// NewUnhandledKoboPatchRequest calls the generic UnhandledKoboPatch builder with application/json body
+func NewUnhandledKoboPatchRequest(server string, token string, body UnhandledKoboPatchJSONRequestBody) (*http.Request, error) {
 	var bodyReader io.Reader
 	buf, err := json.Marshal(body)
 	if err != nil {
 		return nil, err
 	}
 	bodyReader = bytes.NewReader(buf)
-	return NewCatchAll4RequestWithBody(server, token, "application/json", bodyReader)
+	return NewUnhandledKoboPatchRequestWithBody(server, token, "application/json", bodyReader)
 }
 
-// NewCatchAll4RequestWithBody generates requests for CatchAll4 with any type of body
-func NewCatchAll4RequestWithBody(server string, token string, contentType string, body io.Reader) (*http.Request, error) {
+// NewUnhandledKoboPatchRequestWithBody generates requests for UnhandledKoboPatch with any type of body
+func NewUnhandledKoboPatchRequestWithBody(server string, token string, contentType string, body io.Reader) (*http.Request, error) {
 	var err error
 
 	var pathParam0 string
@@ -8658,19 +8658,19 @@ func NewCatchAll4RequestWithBody(server string, token string, contentType string
 	return req, nil
 }
 
-// NewCatchAll1Request calls the generic CatchAll1 builder with application/json body
-func NewCatchAll1Request(server string, token string, body CatchAll1JSONRequestBody) (*http.Request, error) {
+// NewUnhandledKoboPostRequest calls the generic UnhandledKoboPost builder with application/json body
+func NewUnhandledKoboPostRequest(server string, token string, body UnhandledKoboPostJSONRequestBody) (*http.Request, error) {
 	var bodyReader io.Reader
 	buf, err := json.Marshal(body)
 	if err != nil {
 		return nil, err
 	}
 	bodyReader = bytes.NewReader(buf)
-	return NewCatchAll1RequestWithBody(server, token, "application/json", bodyReader)
+	return NewUnhandledKoboPostRequestWithBody(server, token, "application/json", bodyReader)
 }
 
-// NewCatchAll1RequestWithBody generates requests for CatchAll1 with any type of body
-func NewCatchAll1RequestWithBody(server string, token string, contentType string, body io.Reader) (*http.Request, error) {
+// NewUnhandledKoboPostRequestWithBody generates requests for UnhandledKoboPost with any type of body
+func NewUnhandledKoboPostRequestWithBody(server string, token string, contentType string, body io.Reader) (*http.Request, error) {
 	var err error
 
 	var pathParam0 string
@@ -8705,19 +8705,19 @@ func NewCatchAll1RequestWithBody(server string, token string, contentType string
 	return req, nil
 }
 
-// NewCatchAll2Request calls the generic CatchAll2 builder with application/json body
-func NewCatchAll2Request(server string, token string, body CatchAll2JSONRequestBody) (*http.Request, error) {
+// NewUnhandledKoboPutRequest calls the generic UnhandledKoboPut builder with application/json body
+func NewUnhandledKoboPutRequest(server string, token string, body UnhandledKoboPutJSONRequestBody) (*http.Request, error) {
 	var bodyReader io.Reader
 	buf, err := json.Marshal(body)
 	if err != nil {
 		return nil, err
 	}
 	bodyReader = bytes.NewReader(buf)
-	return NewCatchAll2RequestWithBody(server, token, "application/json", bodyReader)
+	return NewUnhandledKoboPutRequestWithBody(server, token, "application/json", bodyReader)
 }
 
-// NewCatchAll2RequestWithBody generates requests for CatchAll2 with any type of body
-func NewCatchAll2RequestWithBody(server string, token string, contentType string, body io.Reader) (*http.Request, error) {
+// NewUnhandledKoboPutRequestWithBody generates requests for UnhandledKoboPut with any type of body
+func NewUnhandledKoboPutRequestWithBody(server string, token string, contentType string, body io.Reader) (*http.Request, error) {
 	var err error
 
 	var pathParam0 string
@@ -8846,8 +8846,8 @@ func NewAuthenticateDeviceRequestWithBody(server string, token string, contentTy
 	return req, nil
 }
 
-// NewDownloadBook3Request generates requests for DownloadBook3
-func NewDownloadBook3Request(server string, token string, bookId string) (*http.Request, error) {
+// NewKoboDownloadBookByIdV1Request generates requests for KoboDownloadBookByIdV1
+func NewKoboDownloadBookByIdV1Request(server string, token string, bookId string) (*http.Request, error) {
 	var err error
 
 	var pathParam0 string
@@ -9495,19 +9495,19 @@ func NewAuthorizeUserRequest(server string) (*http.Request, error) {
 	return req, nil
 }
 
-// NewCreateUser1Request calls the generic CreateUser1 builder with application/json body
-func NewCreateUser1Request(server string, body CreateUser1JSONRequestBody) (*http.Request, error) {
+// NewCreateKoReaderUserRequest calls the generic CreateKoReaderUser builder with application/json body
+func NewCreateKoReaderUserRequest(server string, body CreateKoReaderUserJSONRequestBody) (*http.Request, error) {
 	var bodyReader io.Reader
 	buf, err := json.Marshal(body)
 	if err != nil {
 		return nil, err
 	}
 	bodyReader = bytes.NewReader(buf)
-	return NewCreateUser1RequestWithBody(server, "application/json", bodyReader)
+	return NewCreateKoReaderUserRequestWithBody(server, "application/json", bodyReader)
 }
 
-// NewCreateUser1RequestWithBody generates requests for CreateUser1 with any type of body
-func NewCreateUser1RequestWithBody(server string, contentType string, body io.Reader) (*http.Request, error) {
+// NewCreateKoReaderUserRequestWithBody generates requests for CreateKoReaderUser with any type of body
+func NewCreateKoReaderUserRequestWithBody(server string, contentType string, body io.Reader) (*http.Request, error) {
 	var err error
 
 	serverURL, err := url.Parse(server)
@@ -9602,8 +9602,8 @@ func NewCreateUpdateShelfRequestWithBody(server string, contentType string, body
 	return req, nil
 }
 
-// NewDeleteShelf1Request generates requests for DeleteShelf1
-func NewDeleteShelf1Request(server string, id int64) (*http.Request, error) {
+// NewDeleteMagicShelfByIdRequest generates requests for DeleteMagicShelfById
+func NewDeleteMagicShelfByIdRequest(server string, id int64) (*http.Request, error) {
 	var err error
 
 	var pathParam0 string
@@ -9636,8 +9636,8 @@ func NewDeleteShelf1Request(server string, id int64) (*http.Request, error) {
 	return req, nil
 }
 
-// NewGetShelf1Request generates requests for GetShelf1
-func NewGetShelf1Request(server string, id int64) (*http.Request, error) {
+// NewGetMagicShelfByIdRequest generates requests for GetMagicShelfById
+func NewGetMagicShelfByIdRequest(server string, id int64) (*http.Request, error) {
 	var err error
 
 	var pathParam0 string
@@ -9824,8 +9824,8 @@ func NewUpdateProposalStatusRequest(server string, taskId string, proposalId int
 	return req, nil
 }
 
-// NewGetBooks2Request generates requests for GetBooks2
-func NewGetBooks2Request(server string, params *GetBooks2Params) (*http.Request, error) {
+// NewMobileListBooksV1Request generates requests for MobileListBooksV1
+func NewMobileListBooksV1Request(server string, params *MobileListBooksV1Params) (*http.Request, error) {
 	var err error
 
 	serverURL, err := url.Parse(server)
@@ -10360,8 +10360,8 @@ func NewUpdateStatusRequestWithBody(server string, bookId int64, contentType str
 	return req, nil
 }
 
-// NewGetLibraries1Request generates requests for GetLibraries1
-func NewGetLibraries1Request(server string) (*http.Request, error) {
+// NewMobileListLibrariesV1Request generates requests for MobileListLibrariesV1
+func NewMobileListLibrariesV1Request(server string) (*http.Request, error) {
 	var err error
 
 	serverURL, err := url.Parse(server)
@@ -11208,19 +11208,19 @@ func NewGetAuthorsByBookIdRequest(server string, bookId int64) (*http.Request, e
 	return req, nil
 }
 
-// NewCreateNote1Request calls the generic CreateNote1 builder with application/json body
-func NewCreateNote1Request(server string, body CreateNote1JSONRequestBody) (*http.Request, error) {
+// NewCreateNoteV1Request calls the generic CreateNoteV1 builder with application/json body
+func NewCreateNoteV1Request(server string, body CreateNoteV1JSONRequestBody) (*http.Request, error) {
 	var bodyReader io.Reader
 	buf, err := json.Marshal(body)
 	if err != nil {
 		return nil, err
 	}
 	bodyReader = bytes.NewReader(buf)
-	return NewCreateNote1RequestWithBody(server, "application/json", bodyReader)
+	return NewCreateNoteV1RequestWithBody(server, "application/json", bodyReader)
 }
 
-// NewCreateNote1RequestWithBody generates requests for CreateNote1 with any type of body
-func NewCreateNote1RequestWithBody(server string, contentType string, body io.Reader) (*http.Request, error) {
+// NewCreateNoteV1RequestWithBody generates requests for CreateNoteV1 with any type of body
+func NewCreateNoteV1RequestWithBody(server string, contentType string, body io.Reader) (*http.Request, error) {
 	var err error
 
 	serverURL, err := url.Parse(server)
@@ -11248,8 +11248,8 @@ func NewCreateNote1RequestWithBody(server string, contentType string, body io.Re
 	return req, nil
 }
 
-// NewGetNotesForBook1Request generates requests for GetNotesForBook1
-func NewGetNotesForBook1Request(server string, bookId int64) (*http.Request, error) {
+// NewGetNotesForBookV1Request generates requests for GetNotesForBookV1
+func NewGetNotesForBookV1Request(server string, bookId int64) (*http.Request, error) {
 	var err error
 
 	var pathParam0 string
@@ -11282,8 +11282,8 @@ func NewGetNotesForBook1Request(server string, bookId int64) (*http.Request, err
 	return req, nil
 }
 
-// NewDeleteNote1Request generates requests for DeleteNote1
-func NewDeleteNote1Request(server string, noteId int64) (*http.Request, error) {
+// NewDeleteNoteV1Request generates requests for DeleteNoteV1
+func NewDeleteNoteV1Request(server string, noteId int64) (*http.Request, error) {
 	var err error
 
 	var pathParam0 string
@@ -11377,19 +11377,19 @@ func NewGetFilesByStatusRequest(server string, params *GetFilesByStatusParams) (
 	return req, nil
 }
 
-// NewBulkEditMetadata1Request calls the generic BulkEditMetadata1 builder with application/json body
-func NewBulkEditMetadata1Request(server string, body BulkEditMetadata1JSONRequestBody) (*http.Request, error) {
+// NewBulkEditBookdropMetadataRequest calls the generic BulkEditBookdropMetadata builder with application/json body
+func NewBulkEditBookdropMetadataRequest(server string, body BulkEditBookdropMetadataJSONRequestBody) (*http.Request, error) {
 	var bodyReader io.Reader
 	buf, err := json.Marshal(body)
 	if err != nil {
 		return nil, err
 	}
 	bodyReader = bytes.NewReader(buf)
-	return NewBulkEditMetadata1RequestWithBody(server, "application/json", bodyReader)
+	return NewBulkEditBookdropMetadataRequestWithBody(server, "application/json", bodyReader)
 }
 
-// NewBulkEditMetadata1RequestWithBody generates requests for BulkEditMetadata1 with any type of body
-func NewBulkEditMetadata1RequestWithBody(server string, contentType string, body io.Reader) (*http.Request, error) {
+// NewBulkEditBookdropMetadataRequestWithBody generates requests for BulkEditBookdropMetadata with any type of body
+func NewBulkEditBookdropMetadataRequestWithBody(server string, contentType string, body io.Reader) (*http.Request, error) {
 	var err error
 
 	serverURL, err := url.Parse(server)
@@ -11825,8 +11825,8 @@ func NewDeleteBooksRequest(server string, params *DeleteBooksParams) (*http.Requ
 	return req, nil
 }
 
-// NewGetBooks1Request generates requests for GetBooks1
-func NewGetBooks1Request(server string, params *GetBooks1Params) (*http.Request, error) {
+// NewListBooksRequest generates requests for ListBooks
+func NewListBooksRequest(server string, params *ListBooksParams) (*http.Request, error) {
 	var err error
 
 	serverURL, err := url.Parse(server)
@@ -12420,8 +12420,8 @@ func NewAddBookToProgressRequestWithBody(server string, contentType string, body
 	return req, nil
 }
 
-// NewRegenerateCovers1Request generates requests for RegenerateCovers1
-func NewRegenerateCovers1Request(server string) (*http.Request, error) {
+// NewRegenerateBookCoversRequest generates requests for RegenerateBookCovers
+func NewRegenerateBookCoversRequest(server string) (*http.Request, error) {
 	var err error
 
 	serverURL, err := url.Parse(server)
@@ -12625,8 +12625,8 @@ func NewUpdateReadStatusRequestWithBody(server string, contentType string, body 
 	return req, nil
 }
 
-// NewGetBook2Request generates requests for GetBook2
-func NewGetBook2Request(server string, bookId int64, params *GetBook2Params) (*http.Request, error) {
+// NewGetBookByIdRequest generates requests for GetBookById
+func NewGetBookByIdRequest(server string, bookId int64, params *GetBookByIdParams) (*http.Request, error) {
 	var err error
 
 	var pathParam0 string
@@ -12771,8 +12771,8 @@ func NewGetBookContentRequest(server string, bookId int64, params *GetBookConten
 	return req, nil
 }
 
-// NewDownloadBook2Request generates requests for DownloadBook2
-func NewDownloadBook2Request(server string, bookId int64) (*http.Request, error) {
+// NewDownloadBookByIdRequest generates requests for DownloadBookById
+func NewDownloadBookByIdRequest(server string, bookId int64) (*http.Request, error) {
 	var err error
 
 	var pathParam0 string
@@ -13642,8 +13642,8 @@ func NewGetPageInfoRequest(server string, bookId int64, params *GetPageInfoParam
 	return req, nil
 }
 
-// NewListPages1Request generates requests for ListPages1
-func NewListPages1Request(server string, bookId int64, params *ListPages1Params) (*http.Request, error) {
+// NewGetCbxBookPagesRequest generates requests for GetCbxBookPages
+func NewGetCbxBookPagesRequest(server string, bookId int64, params *GetCbxBookPagesParams) (*http.Request, error) {
 	var err error
 
 	var pathParam0 string
@@ -13911,8 +13911,8 @@ func NewGetFileRequest(server string, bookId int64, params *GetFileParams) (*htt
 	return req, nil
 }
 
-// NewGetBookInfo1Request generates requests for GetBookInfo1
-func NewGetBookInfo1Request(server string, bookId int64, params *GetBookInfo1Params) (*http.Request, error) {
+// NewGetEpubBookInfoRequest generates requests for GetEpubBookInfo
+func NewGetEpubBookInfoRequest(server string, bookId int64, params *GetEpubBookInfoParams) (*http.Request, error) {
 	var err error
 
 	var pathParam0 string
@@ -14066,8 +14066,8 @@ func NewUploadFileRequestWithBody(server string, params *UploadFileParams, conte
 	return req, nil
 }
 
-// NewUploadFile1RequestWithBody generates requests for UploadFile1 with any type of body
-func NewUploadFile1RequestWithBody(server string, contentType string, body io.Reader) (*http.Request, error) {
+// NewUploadFileToBookdropRequestWithBody generates requests for UploadFileToBookdrop with any type of body
+func NewUploadFileToBookdropRequestWithBody(server string, contentType string, body io.Reader) (*http.Request, error) {
 	var err error
 
 	serverURL, err := url.Parse(server)
@@ -14095,8 +14095,8 @@ func NewUploadFile1RequestWithBody(server string, contentType string, body io.Re
 	return req, nil
 }
 
-// NewGetSettings1Request generates requests for GetSettings1
-func NewGetSettings1Request(server string) (*http.Request, error) {
+// NewGetHardcoverSyncSettingsRequest generates requests for GetHardcoverSyncSettings
+func NewGetHardcoverSyncSettingsRequest(server string) (*http.Request, error) {
 	var err error
 
 	serverURL, err := url.Parse(server)
@@ -14122,19 +14122,19 @@ func NewGetSettings1Request(server string) (*http.Request, error) {
 	return req, nil
 }
 
-// NewUpdateSettings2Request calls the generic UpdateSettings2 builder with application/json body
-func NewUpdateSettings2Request(server string, body UpdateSettings2JSONRequestBody) (*http.Request, error) {
+// NewUpdateHardcoverSyncSettingsRequest calls the generic UpdateHardcoverSyncSettings builder with application/json body
+func NewUpdateHardcoverSyncSettingsRequest(server string, body UpdateHardcoverSyncSettingsJSONRequestBody) (*http.Request, error) {
 	var bodyReader io.Reader
 	buf, err := json.Marshal(body)
 	if err != nil {
 		return nil, err
 	}
 	bodyReader = bytes.NewReader(buf)
-	return NewUpdateSettings2RequestWithBody(server, "application/json", bodyReader)
+	return NewUpdateHardcoverSyncSettingsRequestWithBody(server, "application/json", bodyReader)
 }
 
-// NewUpdateSettings2RequestWithBody generates requests for UpdateSettings2 with any type of body
-func NewUpdateSettings2RequestWithBody(server string, contentType string, body io.Reader) (*http.Request, error) {
+// NewUpdateHardcoverSyncSettingsRequestWithBody generates requests for UpdateHardcoverSyncSettings with any type of body
+func NewUpdateHardcoverSyncSettingsRequestWithBody(server string, contentType string, body io.Reader) (*http.Request, error) {
 	var err error
 
 	serverURL, err := url.Parse(server)
@@ -14456,19 +14456,19 @@ func NewGetSettingsRequest(server string) (*http.Request, error) {
 	return req, nil
 }
 
-// NewUpdateSettings1Request calls the generic UpdateSettings1 builder with application/json body
-func NewUpdateSettings1Request(server string, body UpdateSettings1JSONRequestBody) (*http.Request, error) {
+// NewUpdateKoboSettingsRequest calls the generic UpdateKoboSettings builder with application/json body
+func NewUpdateKoboSettingsRequest(server string, body UpdateKoboSettingsJSONRequestBody) (*http.Request, error) {
 	var bodyReader io.Reader
 	buf, err := json.Marshal(body)
 	if err != nil {
 		return nil, err
 	}
 	bodyReader = bytes.NewReader(buf)
-	return NewUpdateSettings1RequestWithBody(server, "application/json", bodyReader)
+	return NewUpdateKoboSettingsRequestWithBody(server, "application/json", bodyReader)
 }
 
-// NewUpdateSettings1RequestWithBody generates requests for UpdateSettings1 with any type of body
-func NewUpdateSettings1RequestWithBody(server string, contentType string, body io.Reader) (*http.Request, error) {
+// NewUpdateKoboSettingsRequestWithBody generates requests for UpdateKoboSettings with any type of body
+func NewUpdateKoboSettingsRequestWithBody(server string, contentType string, body io.Reader) (*http.Request, error) {
 	var err error
 
 	serverURL, err := url.Parse(server)
@@ -14936,8 +14936,8 @@ func NewGetBooksRequest(server string, libraryId int64) (*http.Request, error) {
 	return req, nil
 }
 
-// NewGetBook1Request generates requests for GetBook1
-func NewGetBook1Request(server string, libraryId int64, bookId int64) (*http.Request, error) {
+// NewGetLibraryBookByIdRequest generates requests for GetLibraryBookById
+func NewGetLibraryBookByIdRequest(server string, libraryId int64, bookId int64) (*http.Request, error) {
 	var err error
 
 	var pathParam0 string
@@ -15121,8 +15121,8 @@ func NewGetCbxPageRequest(server string, bookId int64, pageNumber int32, params 
 	return req, nil
 }
 
-// NewGetBookCover1Request generates requests for GetBookCover1
-func NewGetBookCover1Request(server string, bookId int64) (*http.Request, error) {
+// NewGetBookCoverV1Request generates requests for GetBookCoverV1
+func NewGetBookCoverV1Request(server string, bookId int64) (*http.Request, error) {
 	var err error
 
 	var pathParam0 string
@@ -15218,8 +15218,8 @@ func NewGetPdfPageRequest(server string, bookId int64, pageNumber int32, params 
 	return req, nil
 }
 
-// NewGetBookThumbnail1Request generates requests for GetBookThumbnail1
-func NewGetBookThumbnail1Request(server string, bookId int64) (*http.Request, error) {
+// NewGetBookThumbnailV1Request generates requests for GetBookThumbnailV1
+func NewGetBookThumbnailV1Request(server string, bookId int64) (*http.Request, error) {
 	var err error
 
 	var pathParam0 string
@@ -15590,8 +15590,8 @@ func NewGetBookCoverRequest(server string, bookId int64) (*http.Request, error) 
 	return req, nil
 }
 
-// NewDownloadBook1Request generates requests for DownloadBook1
-func NewDownloadBook1Request(server string, bookId int64, params *DownloadBook1Params) (*http.Request, error) {
+// NewDownloadOpdsBookRequest generates requests for DownloadOpdsBook
+func NewDownloadOpdsBookRequest(server string, bookId int64, params *DownloadOpdsBookParams) (*http.Request, error) {
 	var err error
 
 	var pathParam0 string
@@ -18132,8 +18132,8 @@ func NewCreateUserRequestWithBody(server string, contentType string, body io.Rea
 	return req, nil
 }
 
-// NewDeleteUser1Request generates requests for DeleteUser1
-func NewDeleteUser1Request(server string, id int64) (*http.Request, error) {
+// NewDeleteOpdsUserV2Request generates requests for DeleteOpdsUserV2
+func NewDeleteOpdsUserV2Request(server string, id int64) (*http.Request, error) {
 	var err error
 
 	var pathParam0 string
@@ -18166,19 +18166,19 @@ func NewDeleteUser1Request(server string, id int64) (*http.Request, error) {
 	return req, nil
 }
 
-// NewUpdateUser1Request calls the generic UpdateUser1 builder with application/json body
-func NewUpdateUser1Request(server string, id int64, body UpdateUser1JSONRequestBody) (*http.Request, error) {
+// NewUpdateOpdsUserV2Request calls the generic UpdateOpdsUserV2 builder with application/json body
+func NewUpdateOpdsUserV2Request(server string, id int64, body UpdateOpdsUserV2JSONRequestBody) (*http.Request, error) {
 	var bodyReader io.Reader
 	buf, err := json.Marshal(body)
 	if err != nil {
 		return nil, err
 	}
 	bodyReader = bytes.NewReader(buf)
-	return NewUpdateUser1RequestWithBody(server, id, "application/json", bodyReader)
+	return NewUpdateOpdsUserV2RequestWithBody(server, id, "application/json", bodyReader)
 }
 
-// NewUpdateUser1RequestWithBody generates requests for UpdateUser1 with any type of body
-func NewUpdateUser1RequestWithBody(server string, id int64, contentType string, body io.Reader) (*http.Request, error) {
+// NewUpdateOpdsUserV2RequestWithBody generates requests for UpdateOpdsUserV2 with any type of body
+func NewUpdateOpdsUserV2RequestWithBody(server string, id int64, contentType string, body io.Reader) (*http.Request, error) {
 	var err error
 
 	var pathParam0 string
@@ -18601,8 +18601,8 @@ func NewGetAllLibrariesRequest(server string) (*http.Request, error) {
 	return req, nil
 }
 
-// NewGetLibrary1Request generates requests for GetLibrary1
-func NewGetLibrary1Request(server string, libraryId int64) (*http.Request, error) {
+// NewGetKomgaLibraryByIdRequest generates requests for GetKomgaLibraryById
+func NewGetKomgaLibraryByIdRequest(server string, libraryId int64) (*http.Request, error) {
 	var err error
 
 	var pathParam0 string
@@ -18888,8 +18888,8 @@ func NewGetSeriesThumbnailRequest(server string, seriesId string) (*http.Request
 	return req, nil
 }
 
-// NewGetCurrentUser1Request generates requests for GetCurrentUser1
-func NewGetCurrentUser1Request(server string) (*http.Request, error) {
+// NewGetKomgaCurrentUserRequest generates requests for GetKomgaCurrentUser
+func NewGetKomgaCurrentUserRequest(server string) (*http.Request, error) {
 	var err error
 
 	serverURL, err := url.Parse(server)
@@ -18958,30 +18958,30 @@ func WithBaseURL(baseURL string) ClientOption {
 
 // ClientWithResponsesInterface is the interface specification for the client with responses above.
 type ClientWithResponsesInterface interface {
-	// CatchAll3WithBodyWithResponse request with any body
-	CatchAll3WithBodyWithResponse(ctx context.Context, token string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CatchAll3Response, error)
+	// UnhandledKoboDeleteWithBodyWithResponse request with any body
+	UnhandledKoboDeleteWithBodyWithResponse(ctx context.Context, token string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UnhandledKoboDeleteResponse, error)
 
-	CatchAll3WithResponse(ctx context.Context, token string, body CatchAll3JSONRequestBody, reqEditors ...RequestEditorFn) (*CatchAll3Response, error)
+	UnhandledKoboDeleteWithResponse(ctx context.Context, token string, body UnhandledKoboDeleteJSONRequestBody, reqEditors ...RequestEditorFn) (*UnhandledKoboDeleteResponse, error)
 
-	// CatchAllWithBodyWithResponse request with any body
-	CatchAllWithBodyWithResponse(ctx context.Context, token string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CatchAllResponse, error)
+	// UnhandledKoboGetWithBodyWithResponse request with any body
+	UnhandledKoboGetWithBodyWithResponse(ctx context.Context, token string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UnhandledKoboGetResponse, error)
 
-	CatchAllWithResponse(ctx context.Context, token string, body CatchAllJSONRequestBody, reqEditors ...RequestEditorFn) (*CatchAllResponse, error)
+	UnhandledKoboGetWithResponse(ctx context.Context, token string, body UnhandledKoboGetJSONRequestBody, reqEditors ...RequestEditorFn) (*UnhandledKoboGetResponse, error)
 
-	// CatchAll4WithBodyWithResponse request with any body
-	CatchAll4WithBodyWithResponse(ctx context.Context, token string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CatchAll4Response, error)
+	// UnhandledKoboPatchWithBodyWithResponse request with any body
+	UnhandledKoboPatchWithBodyWithResponse(ctx context.Context, token string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UnhandledKoboPatchResponse, error)
 
-	CatchAll4WithResponse(ctx context.Context, token string, body CatchAll4JSONRequestBody, reqEditors ...RequestEditorFn) (*CatchAll4Response, error)
+	UnhandledKoboPatchWithResponse(ctx context.Context, token string, body UnhandledKoboPatchJSONRequestBody, reqEditors ...RequestEditorFn) (*UnhandledKoboPatchResponse, error)
 
-	// CatchAll1WithBodyWithResponse request with any body
-	CatchAll1WithBodyWithResponse(ctx context.Context, token string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CatchAll1Response, error)
+	// UnhandledKoboPostWithBodyWithResponse request with any body
+	UnhandledKoboPostWithBodyWithResponse(ctx context.Context, token string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UnhandledKoboPostResponse, error)
 
-	CatchAll1WithResponse(ctx context.Context, token string, body CatchAll1JSONRequestBody, reqEditors ...RequestEditorFn) (*CatchAll1Response, error)
+	UnhandledKoboPostWithResponse(ctx context.Context, token string, body UnhandledKoboPostJSONRequestBody, reqEditors ...RequestEditorFn) (*UnhandledKoboPostResponse, error)
 
-	// CatchAll2WithBodyWithResponse request with any body
-	CatchAll2WithBodyWithResponse(ctx context.Context, token string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CatchAll2Response, error)
+	// UnhandledKoboPutWithBodyWithResponse request with any body
+	UnhandledKoboPutWithBodyWithResponse(ctx context.Context, token string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UnhandledKoboPutResponse, error)
 
-	CatchAll2WithResponse(ctx context.Context, token string, body CatchAll2JSONRequestBody, reqEditors ...RequestEditorFn) (*CatchAll2Response, error)
+	UnhandledKoboPutWithResponse(ctx context.Context, token string, body UnhandledKoboPutJSONRequestBody, reqEditors ...RequestEditorFn) (*UnhandledKoboPutResponse, error)
 
 	// GetTestsWithBodyWithResponse request with any body
 	GetTestsWithBodyWithResponse(ctx context.Context, token string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*GetTestsResponse, error)
@@ -18993,8 +18993,8 @@ type ClientWithResponsesInterface interface {
 
 	AuthenticateDeviceWithResponse(ctx context.Context, token string, body AuthenticateDeviceJSONRequestBody, reqEditors ...RequestEditorFn) (*AuthenticateDeviceResponse, error)
 
-	// DownloadBook3WithResponse request
-	DownloadBook3WithResponse(ctx context.Context, token string, bookId string, reqEditors ...RequestEditorFn) (*DownloadBook3Response, error)
+	// KoboDownloadBookByIdV1WithResponse request
+	KoboDownloadBookByIdV1WithResponse(ctx context.Context, token string, bookId string, reqEditors ...RequestEditorFn) (*KoboDownloadBookByIdV1Response, error)
 
 	// GetThumbnailWithResponse request
 	GetThumbnailWithResponse(ctx context.Context, token string, imageId string, width int32, height int32, reqEditors ...RequestEditorFn) (*GetThumbnailResponse, error)
@@ -19039,10 +19039,10 @@ type ClientWithResponsesInterface interface {
 	// AuthorizeUserWithResponse request
 	AuthorizeUserWithResponse(ctx context.Context, reqEditors ...RequestEditorFn) (*AuthorizeUserResponse, error)
 
-	// CreateUser1WithBodyWithResponse request with any body
-	CreateUser1WithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateUser1Response, error)
+	// CreateKoReaderUserWithBodyWithResponse request with any body
+	CreateKoReaderUserWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateKoReaderUserResponse, error)
 
-	CreateUser1WithResponse(ctx context.Context, body CreateUser1JSONRequestBody, reqEditors ...RequestEditorFn) (*CreateUser1Response, error)
+	CreateKoReaderUserWithResponse(ctx context.Context, body CreateKoReaderUserJSONRequestBody, reqEditors ...RequestEditorFn) (*CreateKoReaderUserResponse, error)
 
 	// GetAllForUserWithResponse request
 	GetAllForUserWithResponse(ctx context.Context, reqEditors ...RequestEditorFn) (*GetAllForUserResponse, error)
@@ -19052,11 +19052,11 @@ type ClientWithResponsesInterface interface {
 
 	CreateUpdateShelfWithResponse(ctx context.Context, body CreateUpdateShelfJSONRequestBody, reqEditors ...RequestEditorFn) (*CreateUpdateShelfResponse, error)
 
-	// DeleteShelf1WithResponse request
-	DeleteShelf1WithResponse(ctx context.Context, id int64, reqEditors ...RequestEditorFn) (*DeleteShelf1Response, error)
+	// DeleteMagicShelfByIdWithResponse request
+	DeleteMagicShelfByIdWithResponse(ctx context.Context, id int64, reqEditors ...RequestEditorFn) (*DeleteMagicShelfByIdResponse, error)
 
-	// GetShelf1WithResponse request
-	GetShelf1WithResponse(ctx context.Context, id int64, reqEditors ...RequestEditorFn) (*GetShelf1Response, error)
+	// GetMagicShelfByIdWithResponse request
+	GetMagicShelfByIdWithResponse(ctx context.Context, id int64, reqEditors ...RequestEditorFn) (*GetMagicShelfByIdResponse, error)
 
 	// GetActiveTasksWithResponse request
 	GetActiveTasksWithResponse(ctx context.Context, reqEditors ...RequestEditorFn) (*GetActiveTasksResponse, error)
@@ -19070,8 +19070,8 @@ type ClientWithResponsesInterface interface {
 	// UpdateProposalStatusWithResponse request
 	UpdateProposalStatusWithResponse(ctx context.Context, taskId string, proposalId int64, params *UpdateProposalStatusParams, reqEditors ...RequestEditorFn) (*UpdateProposalStatusResponse, error)
 
-	// GetBooks2WithResponse request
-	GetBooks2WithResponse(ctx context.Context, params *GetBooks2Params, reqEditors ...RequestEditorFn) (*GetBooks2Response, error)
+	// MobileListBooksV1WithResponse request
+	MobileListBooksV1WithResponse(ctx context.Context, params *MobileListBooksV1Params, reqEditors ...RequestEditorFn) (*MobileListBooksV1Response, error)
 
 	// GetContinueReadingWithResponse request
 	GetContinueReadingWithResponse(ctx context.Context, params *GetContinueReadingParams, reqEditors ...RequestEditorFn) (*GetContinueReadingResponse, error)
@@ -19098,8 +19098,8 @@ type ClientWithResponsesInterface interface {
 
 	UpdateStatusWithResponse(ctx context.Context, bookId int64, body UpdateStatusJSONRequestBody, reqEditors ...RequestEditorFn) (*UpdateStatusResponse, error)
 
-	// GetLibraries1WithResponse request
-	GetLibraries1WithResponse(ctx context.Context, reqEditors ...RequestEditorFn) (*GetLibraries1Response, error)
+	// MobileListLibrariesV1WithResponse request
+	MobileListLibrariesV1WithResponse(ctx context.Context, reqEditors ...RequestEditorFn) (*MobileListLibrariesV1Response, error)
 
 	// GetShelvesWithResponse request
 	GetShelvesWithResponse(ctx context.Context, reqEditors ...RequestEditorFn) (*GetShelvesResponse, error)
@@ -19165,24 +19165,24 @@ type ClientWithResponsesInterface interface {
 	// GetAuthorsByBookIdWithResponse request
 	GetAuthorsByBookIdWithResponse(ctx context.Context, bookId int64, reqEditors ...RequestEditorFn) (*GetAuthorsByBookIdResponse, error)
 
-	// CreateNote1WithBodyWithResponse request with any body
-	CreateNote1WithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateNote1Response, error)
+	// CreateNoteV1WithBodyWithResponse request with any body
+	CreateNoteV1WithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateNoteV1Response, error)
 
-	CreateNote1WithResponse(ctx context.Context, body CreateNote1JSONRequestBody, reqEditors ...RequestEditorFn) (*CreateNote1Response, error)
+	CreateNoteV1WithResponse(ctx context.Context, body CreateNoteV1JSONRequestBody, reqEditors ...RequestEditorFn) (*CreateNoteV1Response, error)
 
-	// GetNotesForBook1WithResponse request
-	GetNotesForBook1WithResponse(ctx context.Context, bookId int64, reqEditors ...RequestEditorFn) (*GetNotesForBook1Response, error)
+	// GetNotesForBookV1WithResponse request
+	GetNotesForBookV1WithResponse(ctx context.Context, bookId int64, reqEditors ...RequestEditorFn) (*GetNotesForBookV1Response, error)
 
-	// DeleteNote1WithResponse request
-	DeleteNote1WithResponse(ctx context.Context, noteId int64, reqEditors ...RequestEditorFn) (*DeleteNote1Response, error)
+	// DeleteNoteV1WithResponse request
+	DeleteNoteV1WithResponse(ctx context.Context, noteId int64, reqEditors ...RequestEditorFn) (*DeleteNoteV1Response, error)
 
 	// GetFilesByStatusWithResponse request
 	GetFilesByStatusWithResponse(ctx context.Context, params *GetFilesByStatusParams, reqEditors ...RequestEditorFn) (*GetFilesByStatusResponse, error)
 
-	// BulkEditMetadata1WithBodyWithResponse request with any body
-	BulkEditMetadata1WithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BulkEditMetadata1Response, error)
+	// BulkEditBookdropMetadataWithBodyWithResponse request with any body
+	BulkEditBookdropMetadataWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BulkEditBookdropMetadataResponse, error)
 
-	BulkEditMetadata1WithResponse(ctx context.Context, body BulkEditMetadata1JSONRequestBody, reqEditors ...RequestEditorFn) (*BulkEditMetadata1Response, error)
+	BulkEditBookdropMetadataWithResponse(ctx context.Context, body BulkEditBookdropMetadataJSONRequestBody, reqEditors ...RequestEditorFn) (*BulkEditBookdropMetadataResponse, error)
 
 	// DiscardSelectedFilesWithBodyWithResponse request with any body
 	DiscardSelectedFilesWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*DiscardSelectedFilesResponse, error)
@@ -19227,8 +19227,8 @@ type ClientWithResponsesInterface interface {
 	// DeleteBooksWithResponse request
 	DeleteBooksWithResponse(ctx context.Context, params *DeleteBooksParams, reqEditors ...RequestEditorFn) (*DeleteBooksResponse, error)
 
-	// GetBooks1WithResponse request
-	GetBooks1WithResponse(ctx context.Context, params *GetBooks1Params, reqEditors ...RequestEditorFn) (*GetBooks1Response, error)
+	// ListBooksWithResponse request
+	ListBooksWithResponse(ctx context.Context, params *ListBooksParams, reqEditors ...RequestEditorFn) (*ListBooksResponse, error)
 
 	// GetBooksByIdsWithResponse request
 	GetBooksByIdsWithResponse(ctx context.Context, params *GetBooksByIdsParams, reqEditors ...RequestEditorFn) (*GetBooksByIdsResponse, error)
@@ -19291,8 +19291,8 @@ type ClientWithResponsesInterface interface {
 
 	AddBookToProgressWithResponse(ctx context.Context, body AddBookToProgressJSONRequestBody, reqEditors ...RequestEditorFn) (*AddBookToProgressResponse, error)
 
-	// RegenerateCovers1WithResponse request
-	RegenerateCovers1WithResponse(ctx context.Context, reqEditors ...RequestEditorFn) (*RegenerateCovers1Response, error)
+	// RegenerateBookCoversWithResponse request
+	RegenerateBookCoversWithResponse(ctx context.Context, reqEditors ...RequestEditorFn) (*RegenerateBookCoversResponse, error)
 
 	// ResetPersonalRatingWithBodyWithResponse request with any body
 	ResetPersonalRatingWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*ResetPersonalRatingResponse, error)
@@ -19314,8 +19314,8 @@ type ClientWithResponsesInterface interface {
 
 	UpdateReadStatusWithResponse(ctx context.Context, body UpdateReadStatusJSONRequestBody, reqEditors ...RequestEditorFn) (*UpdateReadStatusResponse, error)
 
-	// GetBook2WithResponse request
-	GetBook2WithResponse(ctx context.Context, bookId int64, params *GetBook2Params, reqEditors ...RequestEditorFn) (*GetBook2Response, error)
+	// GetBookByIdWithResponse request
+	GetBookByIdWithResponse(ctx context.Context, bookId int64, params *GetBookByIdParams, reqEditors ...RequestEditorFn) (*GetBookByIdResponse, error)
 
 	// GetComicInfoMetadataWithResponse request
 	GetComicInfoMetadataWithResponse(ctx context.Context, bookId int64, reqEditors ...RequestEditorFn) (*GetComicInfoMetadataResponse, error)
@@ -19323,8 +19323,8 @@ type ClientWithResponsesInterface interface {
 	// GetBookContentWithResponse request
 	GetBookContentWithResponse(ctx context.Context, bookId int64, params *GetBookContentParams, reqEditors ...RequestEditorFn) (*GetBookContentResponse, error)
 
-	// DownloadBook2WithResponse request
-	DownloadBook2WithResponse(ctx context.Context, bookId int64, reqEditors ...RequestEditorFn) (*DownloadBook2Response, error)
+	// DownloadBookByIdWithResponse request
+	DownloadBookByIdWithResponse(ctx context.Context, bookId int64, reqEditors ...RequestEditorFn) (*DownloadBookByIdResponse, error)
 
 	// DownloadAllBookFilesWithResponse request
 	DownloadAllBookFilesWithResponse(ctx context.Context, bookId int64, reqEditors ...RequestEditorFn) (*DownloadAllBookFilesResponse, error)
@@ -19391,8 +19391,8 @@ type ClientWithResponsesInterface interface {
 	// GetPageInfoWithResponse request
 	GetPageInfoWithResponse(ctx context.Context, bookId int64, params *GetPageInfoParams, reqEditors ...RequestEditorFn) (*GetPageInfoResponse, error)
 
-	// ListPages1WithResponse request
-	ListPages1WithResponse(ctx context.Context, bookId int64, params *ListPages1Params, reqEditors ...RequestEditorFn) (*ListPages1Response, error)
+	// GetCbxBookPagesWithResponse request
+	GetCbxBookPagesWithResponse(ctx context.Context, bookId int64, params *GetCbxBookPagesParams, reqEditors ...RequestEditorFn) (*GetCbxBookPagesResponse, error)
 
 	// GetUserFontsWithResponse request
 	GetUserFontsWithResponse(ctx context.Context, reqEditors ...RequestEditorFn) (*GetUserFontsResponse, error)
@@ -19411,8 +19411,8 @@ type ClientWithResponsesInterface interface {
 	// GetFileWithResponse request
 	GetFileWithResponse(ctx context.Context, bookId int64, params *GetFileParams, reqEditors ...RequestEditorFn) (*GetFileResponse, error)
 
-	// GetBookInfo1WithResponse request
-	GetBookInfo1WithResponse(ctx context.Context, bookId int64, params *GetBookInfo1Params, reqEditors ...RequestEditorFn) (*GetBookInfo1Response, error)
+	// GetEpubBookInfoWithResponse request
+	GetEpubBookInfoWithResponse(ctx context.Context, bookId int64, params *GetEpubBookInfoParams, reqEditors ...RequestEditorFn) (*GetEpubBookInfoResponse, error)
 
 	// MoveFilesWithBodyWithResponse request with any body
 	MoveFilesWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*MoveFilesResponse, error)
@@ -19422,16 +19422,16 @@ type ClientWithResponsesInterface interface {
 	// UploadFileWithBodyWithResponse request with any body
 	UploadFileWithBodyWithResponse(ctx context.Context, params *UploadFileParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UploadFileResponse, error)
 
-	// UploadFile1WithBodyWithResponse request with any body
-	UploadFile1WithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UploadFile1Response, error)
+	// UploadFileToBookdropWithBodyWithResponse request with any body
+	UploadFileToBookdropWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UploadFileToBookdropResponse, error)
 
-	// GetSettings1WithResponse request
-	GetSettings1WithResponse(ctx context.Context, reqEditors ...RequestEditorFn) (*GetSettings1Response, error)
+	// GetHardcoverSyncSettingsWithResponse request
+	GetHardcoverSyncSettingsWithResponse(ctx context.Context, reqEditors ...RequestEditorFn) (*GetHardcoverSyncSettingsResponse, error)
 
-	// UpdateSettings2WithBodyWithResponse request with any body
-	UpdateSettings2WithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateSettings2Response, error)
+	// UpdateHardcoverSyncSettingsWithBodyWithResponse request with any body
+	UpdateHardcoverSyncSettingsWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateHardcoverSyncSettingsResponse, error)
 
-	UpdateSettings2WithResponse(ctx context.Context, body UpdateSettings2JSONRequestBody, reqEditors ...RequestEditorFn) (*UpdateSettings2Response, error)
+	UpdateHardcoverSyncSettingsWithResponse(ctx context.Context, body UpdateHardcoverSyncSettingsJSONRequestBody, reqEditors ...RequestEditorFn) (*UpdateHardcoverSyncSettingsResponse, error)
 
 	// GetPingWithResponse request
 	GetPingWithResponse(ctx context.Context, reqEditors ...RequestEditorFn) (*GetPingResponse, error)
@@ -19461,10 +19461,10 @@ type ClientWithResponsesInterface interface {
 	// GetSettingsWithResponse request
 	GetSettingsWithResponse(ctx context.Context, reqEditors ...RequestEditorFn) (*GetSettingsResponse, error)
 
-	// UpdateSettings1WithBodyWithResponse request with any body
-	UpdateSettings1WithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateSettings1Response, error)
+	// UpdateKoboSettingsWithBodyWithResponse request with any body
+	UpdateKoboSettingsWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateKoboSettingsResponse, error)
 
-	UpdateSettings1WithResponse(ctx context.Context, body UpdateSettings1JSONRequestBody, reqEditors ...RequestEditorFn) (*UpdateSettings1Response, error)
+	UpdateKoboSettingsWithResponse(ctx context.Context, body UpdateKoboSettingsJSONRequestBody, reqEditors ...RequestEditorFn) (*UpdateKoboSettingsResponse, error)
 
 	// CreateOrUpdateTokenWithResponse request
 	CreateOrUpdateTokenWithResponse(ctx context.Context, reqEditors ...RequestEditorFn) (*CreateOrUpdateTokenResponse, error)
@@ -19510,8 +19510,8 @@ type ClientWithResponsesInterface interface {
 	// GetBooksWithResponse request
 	GetBooksWithResponse(ctx context.Context, libraryId int64, reqEditors ...RequestEditorFn) (*GetBooksResponse, error)
 
-	// GetBook1WithResponse request
-	GetBook1WithResponse(ctx context.Context, libraryId int64, bookId int64, reqEditors ...RequestEditorFn) (*GetBook1Response, error)
+	// GetLibraryBookByIdWithResponse request
+	GetLibraryBookByIdWithResponse(ctx context.Context, libraryId int64, bookId int64, reqEditors ...RequestEditorFn) (*GetLibraryBookByIdResponse, error)
 
 	// SetFileNamingPatternWithBodyWithResponse request with any body
 	SetFileNamingPatternWithBodyWithResponse(ctx context.Context, libraryId int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*SetFileNamingPatternResponse, error)
@@ -19524,14 +19524,14 @@ type ClientWithResponsesInterface interface {
 	// GetCbxPageWithResponse request
 	GetCbxPageWithResponse(ctx context.Context, bookId int64, pageNumber int32, params *GetCbxPageParams, reqEditors ...RequestEditorFn) (*GetCbxPageResponse, error)
 
-	// GetBookCover1WithResponse request
-	GetBookCover1WithResponse(ctx context.Context, bookId int64, reqEditors ...RequestEditorFn) (*GetBookCover1Response, error)
+	// GetBookCoverV1WithResponse request
+	GetBookCoverV1WithResponse(ctx context.Context, bookId int64, reqEditors ...RequestEditorFn) (*GetBookCoverV1Response, error)
 
 	// GetPdfPageWithResponse request
 	GetPdfPageWithResponse(ctx context.Context, bookId int64, pageNumber int32, params *GetPdfPageParams, reqEditors ...RequestEditorFn) (*GetPdfPageResponse, error)
 
-	// GetBookThumbnail1WithResponse request
-	GetBookThumbnail1WithResponse(ctx context.Context, bookId int64, reqEditors ...RequestEditorFn) (*GetBookThumbnail1Response, error)
+	// GetBookThumbnailV1WithResponse request
+	GetBookThumbnailV1WithResponse(ctx context.Context, bookId int64, reqEditors ...RequestEditorFn) (*GetBookThumbnailV1Response, error)
 
 	// GetBookdropCoverWithResponse request
 	GetBookdropCoverWithResponse(ctx context.Context, bookdropId int64, reqEditors ...RequestEditorFn) (*GetBookdropCoverResponse, error)
@@ -19569,8 +19569,8 @@ type ClientWithResponsesInterface interface {
 	// GetBookCoverWithResponse request
 	GetBookCoverWithResponse(ctx context.Context, bookId int64, reqEditors ...RequestEditorFn) (*GetBookCoverResponse, error)
 
-	// DownloadBook1WithResponse request
-	DownloadBook1WithResponse(ctx context.Context, bookId int64, params *DownloadBook1Params, reqEditors ...RequestEditorFn) (*DownloadBook1Response, error)
+	// DownloadOpdsBookWithResponse request
+	DownloadOpdsBookWithResponse(ctx context.Context, bookId int64, params *DownloadOpdsBookParams, reqEditors ...RequestEditorFn) (*DownloadOpdsBookResponse, error)
 
 	// GetFoldersWithResponse request
 	GetFoldersWithResponse(ctx context.Context, params *GetFoldersParams, reqEditors ...RequestEditorFn) (*GetFoldersResponse, error)
@@ -19805,13 +19805,13 @@ type ClientWithResponsesInterface interface {
 
 	CreateUserWithResponse(ctx context.Context, body CreateUserJSONRequestBody, reqEditors ...RequestEditorFn) (*CreateUserResponse, error)
 
-	// DeleteUser1WithResponse request
-	DeleteUser1WithResponse(ctx context.Context, id int64, reqEditors ...RequestEditorFn) (*DeleteUser1Response, error)
+	// DeleteOpdsUserV2WithResponse request
+	DeleteOpdsUserV2WithResponse(ctx context.Context, id int64, reqEditors ...RequestEditorFn) (*DeleteOpdsUserV2Response, error)
 
-	// UpdateUser1WithBodyWithResponse request with any body
-	UpdateUser1WithBodyWithResponse(ctx context.Context, id int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateUser1Response, error)
+	// UpdateOpdsUserV2WithBodyWithResponse request with any body
+	UpdateOpdsUserV2WithBodyWithResponse(ctx context.Context, id int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateOpdsUserV2Response, error)
 
-	UpdateUser1WithResponse(ctx context.Context, id int64, body UpdateUser1JSONRequestBody, reqEditors ...RequestEditorFn) (*UpdateUser1Response, error)
+	UpdateOpdsUserV2WithResponse(ctx context.Context, id int64, body UpdateOpdsUserV2JSONRequestBody, reqEditors ...RequestEditorFn) (*UpdateOpdsUserV2Response, error)
 
 	// GetAllBooksWithResponse request
 	GetAllBooksWithResponse(ctx context.Context, params *GetAllBooksParams, reqEditors ...RequestEditorFn) (*GetAllBooksResponse, error)
@@ -19837,8 +19837,8 @@ type ClientWithResponsesInterface interface {
 	// GetAllLibrariesWithResponse request
 	GetAllLibrariesWithResponse(ctx context.Context, reqEditors ...RequestEditorFn) (*GetAllLibrariesResponse, error)
 
-	// GetLibrary1WithResponse request
-	GetLibrary1WithResponse(ctx context.Context, libraryId int64, reqEditors ...RequestEditorFn) (*GetLibrary1Response, error)
+	// GetKomgaLibraryByIdWithResponse request
+	GetKomgaLibraryByIdWithResponse(ctx context.Context, libraryId int64, reqEditors ...RequestEditorFn) (*GetKomgaLibraryByIdResponse, error)
 
 	// GetAllSeriesWithResponse request
 	GetAllSeriesWithResponse(ctx context.Context, params *GetAllSeriesParams, reqEditors ...RequestEditorFn) (*GetAllSeriesResponse, error)
@@ -19852,18 +19852,18 @@ type ClientWithResponsesInterface interface {
 	// GetSeriesThumbnailWithResponse request
 	GetSeriesThumbnailWithResponse(ctx context.Context, seriesId string, reqEditors ...RequestEditorFn) (*GetSeriesThumbnailResponse, error)
 
-	// GetCurrentUser1WithResponse request
-	GetCurrentUser1WithResponse(ctx context.Context, reqEditors ...RequestEditorFn) (*GetCurrentUser1Response, error)
+	// GetKomgaCurrentUserWithResponse request
+	GetKomgaCurrentUserWithResponse(ctx context.Context, reqEditors ...RequestEditorFn) (*GetKomgaCurrentUserResponse, error)
 }
 
-type CatchAll3Response struct {
+type UnhandledKoboDeleteResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
 	JSON200      *JsonNode
 }
 
 // Status returns HTTPResponse.Status
-func (r CatchAll3Response) Status() string {
+func (r UnhandledKoboDeleteResponse) Status() string {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.Status
 	}
@@ -19871,21 +19871,21 @@ func (r CatchAll3Response) Status() string {
 }
 
 // StatusCode returns HTTPResponse.StatusCode
-func (r CatchAll3Response) StatusCode() int {
+func (r UnhandledKoboDeleteResponse) StatusCode() int {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.StatusCode
 	}
 	return 0
 }
 
-type CatchAllResponse struct {
+type UnhandledKoboGetResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
 	JSON200      *JsonNode
 }
 
 // Status returns HTTPResponse.Status
-func (r CatchAllResponse) Status() string {
+func (r UnhandledKoboGetResponse) Status() string {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.Status
 	}
@@ -19893,21 +19893,21 @@ func (r CatchAllResponse) Status() string {
 }
 
 // StatusCode returns HTTPResponse.StatusCode
-func (r CatchAllResponse) StatusCode() int {
+func (r UnhandledKoboGetResponse) StatusCode() int {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.StatusCode
 	}
 	return 0
 }
 
-type CatchAll4Response struct {
+type UnhandledKoboPatchResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
 	JSON200      *JsonNode
 }
 
 // Status returns HTTPResponse.Status
-func (r CatchAll4Response) Status() string {
+func (r UnhandledKoboPatchResponse) Status() string {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.Status
 	}
@@ -19915,21 +19915,21 @@ func (r CatchAll4Response) Status() string {
 }
 
 // StatusCode returns HTTPResponse.StatusCode
-func (r CatchAll4Response) StatusCode() int {
+func (r UnhandledKoboPatchResponse) StatusCode() int {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.StatusCode
 	}
 	return 0
 }
 
-type CatchAll1Response struct {
+type UnhandledKoboPostResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
 	JSON200      *JsonNode
 }
 
 // Status returns HTTPResponse.Status
-func (r CatchAll1Response) Status() string {
+func (r UnhandledKoboPostResponse) Status() string {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.Status
 	}
@@ -19937,21 +19937,21 @@ func (r CatchAll1Response) Status() string {
 }
 
 // StatusCode returns HTTPResponse.StatusCode
-func (r CatchAll1Response) StatusCode() int {
+func (r UnhandledKoboPostResponse) StatusCode() int {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.StatusCode
 	}
 	return 0
 }
 
-type CatchAll2Response struct {
+type UnhandledKoboPutResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
 	JSON200      *JsonNode
 }
 
 // Status returns HTTPResponse.Status
-func (r CatchAll2Response) Status() string {
+func (r UnhandledKoboPutResponse) Status() string {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.Status
 	}
@@ -19959,7 +19959,7 @@ func (r CatchAll2Response) Status() string {
 }
 
 // StatusCode returns HTTPResponse.StatusCode
-func (r CatchAll2Response) StatusCode() int {
+func (r UnhandledKoboPutResponse) StatusCode() int {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.StatusCode
 	}
@@ -20010,13 +20010,13 @@ func (r AuthenticateDeviceResponse) StatusCode() int {
 	return 0
 }
 
-type DownloadBook3Response struct {
+type KoboDownloadBookByIdV1Response struct {
 	Body         []byte
 	HTTPResponse *http.Response
 }
 
 // Status returns HTTPResponse.Status
-func (r DownloadBook3Response) Status() string {
+func (r KoboDownloadBookByIdV1Response) Status() string {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.Status
 	}
@@ -20024,7 +20024,7 @@ func (r DownloadBook3Response) Status() string {
 }
 
 // StatusCode returns HTTPResponse.StatusCode
-func (r DownloadBook3Response) StatusCode() int {
+func (r KoboDownloadBookByIdV1Response) StatusCode() int {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.StatusCode
 	}
@@ -20317,14 +20317,14 @@ func (r AuthorizeUserResponse) StatusCode() int {
 	return 0
 }
 
-type CreateUser1Response struct {
+type CreateKoReaderUserResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
 	JSON403      *map[string]interface{}
 }
 
 // Status returns HTTPResponse.Status
-func (r CreateUser1Response) Status() string {
+func (r CreateKoReaderUserResponse) Status() string {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.Status
 	}
@@ -20332,7 +20332,7 @@ func (r CreateUser1Response) Status() string {
 }
 
 // StatusCode returns HTTPResponse.StatusCode
-func (r CreateUser1Response) StatusCode() int {
+func (r CreateKoReaderUserResponse) StatusCode() int {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.StatusCode
 	}
@@ -20383,13 +20383,13 @@ func (r CreateUpdateShelfResponse) StatusCode() int {
 	return 0
 }
 
-type DeleteShelf1Response struct {
+type DeleteMagicShelfByIdResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
 }
 
 // Status returns HTTPResponse.Status
-func (r DeleteShelf1Response) Status() string {
+func (r DeleteMagicShelfByIdResponse) Status() string {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.Status
 	}
@@ -20397,21 +20397,21 @@ func (r DeleteShelf1Response) Status() string {
 }
 
 // StatusCode returns HTTPResponse.StatusCode
-func (r DeleteShelf1Response) StatusCode() int {
+func (r DeleteMagicShelfByIdResponse) StatusCode() int {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.StatusCode
 	}
 	return 0
 }
 
-type GetShelf1Response struct {
+type GetMagicShelfByIdResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
 	JSON200      *MagicShelf
 }
 
 // Status returns HTTPResponse.Status
-func (r GetShelf1Response) Status() string {
+func (r GetMagicShelfByIdResponse) Status() string {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.Status
 	}
@@ -20419,7 +20419,7 @@ func (r GetShelf1Response) Status() string {
 }
 
 // StatusCode returns HTTPResponse.StatusCode
-func (r GetShelf1Response) StatusCode() int {
+func (r GetMagicShelfByIdResponse) StatusCode() int {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.StatusCode
 	}
@@ -20512,7 +20512,7 @@ func (r UpdateProposalStatusResponse) StatusCode() int {
 	return 0
 }
 
-type GetBooks2Response struct {
+type MobileListBooksV1Response struct {
 	Body         []byte
 	HTTPResponse *http.Response
 	JSON200      *MobilePageResponseMobileBookSummary
@@ -20520,7 +20520,7 @@ type GetBooks2Response struct {
 }
 
 // Status returns HTTPResponse.Status
-func (r GetBooks2Response) Status() string {
+func (r MobileListBooksV1Response) Status() string {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.Status
 	}
@@ -20528,7 +20528,7 @@ func (r GetBooks2Response) Status() string {
 }
 
 // StatusCode returns HTTPResponse.StatusCode
-func (r GetBooks2Response) StatusCode() int {
+func (r MobileListBooksV1Response) StatusCode() int {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.StatusCode
 	}
@@ -20692,14 +20692,14 @@ func (r UpdateStatusResponse) StatusCode() int {
 	return 0
 }
 
-type GetLibraries1Response struct {
+type MobileListLibrariesV1Response struct {
 	Body         []byte
 	HTTPResponse *http.Response
 	JSON200      *[]MobileLibrarySummary
 }
 
 // Status returns HTTPResponse.Status
-func (r GetLibraries1Response) Status() string {
+func (r MobileListLibrariesV1Response) Status() string {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.Status
 	}
@@ -20707,7 +20707,7 @@ func (r GetLibraries1Response) Status() string {
 }
 
 // StatusCode returns HTTPResponse.StatusCode
-func (r GetLibraries1Response) StatusCode() int {
+func (r MobileListLibrariesV1Response) StatusCode() int {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.StatusCode
 	}
@@ -21112,14 +21112,14 @@ func (r GetAuthorsByBookIdResponse) StatusCode() int {
 	return 0
 }
 
-type CreateNote1Response struct {
+type CreateNoteV1Response struct {
 	Body         []byte
 	HTTPResponse *http.Response
 	JSON200      *BookNote
 }
 
 // Status returns HTTPResponse.Status
-func (r CreateNote1Response) Status() string {
+func (r CreateNoteV1Response) Status() string {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.Status
 	}
@@ -21127,21 +21127,21 @@ func (r CreateNote1Response) Status() string {
 }
 
 // StatusCode returns HTTPResponse.StatusCode
-func (r CreateNote1Response) StatusCode() int {
+func (r CreateNoteV1Response) StatusCode() int {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.StatusCode
 	}
 	return 0
 }
 
-type GetNotesForBook1Response struct {
+type GetNotesForBookV1Response struct {
 	Body         []byte
 	HTTPResponse *http.Response
 	JSON200      *[]BookNote
 }
 
 // Status returns HTTPResponse.Status
-func (r GetNotesForBook1Response) Status() string {
+func (r GetNotesForBookV1Response) Status() string {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.Status
 	}
@@ -21149,20 +21149,20 @@ func (r GetNotesForBook1Response) Status() string {
 }
 
 // StatusCode returns HTTPResponse.StatusCode
-func (r GetNotesForBook1Response) StatusCode() int {
+func (r GetNotesForBookV1Response) StatusCode() int {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.StatusCode
 	}
 	return 0
 }
 
-type DeleteNote1Response struct {
+type DeleteNoteV1Response struct {
 	Body         []byte
 	HTTPResponse *http.Response
 }
 
 // Status returns HTTPResponse.Status
-func (r DeleteNote1Response) Status() string {
+func (r DeleteNoteV1Response) Status() string {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.Status
 	}
@@ -21170,7 +21170,7 @@ func (r DeleteNote1Response) Status() string {
 }
 
 // StatusCode returns HTTPResponse.StatusCode
-func (r DeleteNote1Response) StatusCode() int {
+func (r DeleteNoteV1Response) StatusCode() int {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.StatusCode
 	}
@@ -21199,14 +21199,14 @@ func (r GetFilesByStatusResponse) StatusCode() int {
 	return 0
 }
 
-type BulkEditMetadata1Response struct {
+type BulkEditBookdropMetadataResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
 	JSON200      *BookdropBulkEditResult
 }
 
 // Status returns HTTPResponse.Status
-func (r BulkEditMetadata1Response) Status() string {
+func (r BulkEditBookdropMetadataResponse) Status() string {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.Status
 	}
@@ -21214,7 +21214,7 @@ func (r BulkEditMetadata1Response) Status() string {
 }
 
 // StatusCode returns HTTPResponse.StatusCode
-func (r BulkEditMetadata1Response) StatusCode() int {
+func (r BulkEditBookdropMetadataResponse) StatusCode() int {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.StatusCode
 	}
@@ -21461,14 +21461,14 @@ func (r DeleteBooksResponse) StatusCode() int {
 	return 0
 }
 
-type GetBooks1Response struct {
+type ListBooksResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
 	JSON200      *[]Book
 }
 
 // Status returns HTTPResponse.Status
-func (r GetBooks1Response) Status() string {
+func (r ListBooksResponse) Status() string {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.Status
 	}
@@ -21476,7 +21476,7 @@ func (r GetBooks1Response) Status() string {
 }
 
 // StatusCode returns HTTPResponse.StatusCode
-func (r GetBooks1Response) StatusCode() int {
+func (r ListBooksResponse) StatusCode() int {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.StatusCode
 	}
@@ -21764,13 +21764,13 @@ func (r AddBookToProgressResponse) StatusCode() int {
 	return 0
 }
 
-type RegenerateCovers1Response struct {
+type RegenerateBookCoversResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
 }
 
 // Status returns HTTPResponse.Status
-func (r RegenerateCovers1Response) Status() string {
+func (r RegenerateBookCoversResponse) Status() string {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.Status
 	}
@@ -21778,7 +21778,7 @@ func (r RegenerateCovers1Response) Status() string {
 }
 
 // StatusCode returns HTTPResponse.StatusCode
-func (r RegenerateCovers1Response) StatusCode() int {
+func (r RegenerateBookCoversResponse) StatusCode() int {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.StatusCode
 	}
@@ -21875,7 +21875,7 @@ func (r UpdateReadStatusResponse) StatusCode() int {
 	return 0
 }
 
-type GetBook2Response struct {
+type GetBookByIdResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
 	JSON200      *Book
@@ -21883,7 +21883,7 @@ type GetBook2Response struct {
 }
 
 // Status returns HTTPResponse.Status
-func (r GetBook2Response) Status() string {
+func (r GetBookByIdResponse) Status() string {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.Status
 	}
@@ -21891,7 +21891,7 @@ func (r GetBook2Response) Status() string {
 }
 
 // StatusCode returns HTTPResponse.StatusCode
-func (r GetBook2Response) StatusCode() int {
+func (r GetBookByIdResponse) StatusCode() int {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.StatusCode
 	}
@@ -21942,7 +21942,7 @@ func (r GetBookContentResponse) StatusCode() int {
 	return 0
 }
 
-type DownloadBook2Response struct {
+type DownloadBookByIdResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
 	JSON200      *openapi_types.File
@@ -21950,7 +21950,7 @@ type DownloadBook2Response struct {
 }
 
 // Status returns HTTPResponse.Status
-func (r DownloadBook2Response) Status() string {
+func (r DownloadBookByIdResponse) Status() string {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.Status
 	}
@@ -21958,7 +21958,7 @@ func (r DownloadBook2Response) Status() string {
 }
 
 // StatusCode returns HTTPResponse.StatusCode
-func (r DownloadBook2Response) StatusCode() int {
+func (r DownloadBookByIdResponse) StatusCode() int {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.StatusCode
 	}
@@ -22334,14 +22334,14 @@ func (r GetPageInfoResponse) StatusCode() int {
 	return 0
 }
 
-type ListPages1Response struct {
+type GetCbxBookPagesResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
 	JSON200      *[]int32
 }
 
 // Status returns HTTPResponse.Status
-func (r ListPages1Response) Status() string {
+func (r GetCbxBookPagesResponse) Status() string {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.Status
 	}
@@ -22349,7 +22349,7 @@ func (r ListPages1Response) Status() string {
 }
 
 // StatusCode returns HTTPResponse.StatusCode
-func (r ListPages1Response) StatusCode() int {
+func (r GetCbxBookPagesResponse) StatusCode() int {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.StatusCode
 	}
@@ -22466,14 +22466,14 @@ func (r GetFileResponse) StatusCode() int {
 	return 0
 }
 
-type GetBookInfo1Response struct {
+type GetEpubBookInfoResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
 	JSON200      *EpubBookInfo
 }
 
 // Status returns HTTPResponse.Status
-func (r GetBookInfo1Response) Status() string {
+func (r GetEpubBookInfoResponse) Status() string {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.Status
 	}
@@ -22481,7 +22481,7 @@ func (r GetBookInfo1Response) Status() string {
 }
 
 // StatusCode returns HTTPResponse.StatusCode
-func (r GetBookInfo1Response) StatusCode() int {
+func (r GetEpubBookInfoResponse) StatusCode() int {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.StatusCode
 	}
@@ -22532,14 +22532,14 @@ func (r UploadFileResponse) StatusCode() int {
 	return 0
 }
 
-type UploadFile1Response struct {
+type UploadFileToBookdropResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
 	JSON200      *Book
 }
 
 // Status returns HTTPResponse.Status
-func (r UploadFile1Response) Status() string {
+func (r UploadFileToBookdropResponse) Status() string {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.Status
 	}
@@ -22547,21 +22547,21 @@ func (r UploadFile1Response) Status() string {
 }
 
 // StatusCode returns HTTPResponse.StatusCode
-func (r UploadFile1Response) StatusCode() int {
+func (r UploadFileToBookdropResponse) StatusCode() int {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.StatusCode
 	}
 	return 0
 }
 
-type GetSettings1Response struct {
+type GetHardcoverSyncSettingsResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
 	JSON200      *HardcoverSyncSettings
 }
 
 // Status returns HTTPResponse.Status
-func (r GetSettings1Response) Status() string {
+func (r GetHardcoverSyncSettingsResponse) Status() string {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.Status
 	}
@@ -22569,21 +22569,21 @@ func (r GetSettings1Response) Status() string {
 }
 
 // StatusCode returns HTTPResponse.StatusCode
-func (r GetSettings1Response) StatusCode() int {
+func (r GetHardcoverSyncSettingsResponse) StatusCode() int {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.StatusCode
 	}
 	return 0
 }
 
-type UpdateSettings2Response struct {
+type UpdateHardcoverSyncSettingsResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
 	JSON200      *HardcoverSyncSettings
 }
 
 // Status returns HTTPResponse.Status
-func (r UpdateSettings2Response) Status() string {
+func (r UpdateHardcoverSyncSettingsResponse) Status() string {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.Status
 	}
@@ -22591,7 +22591,7 @@ func (r UpdateSettings2Response) Status() string {
 }
 
 // StatusCode returns HTTPResponse.StatusCode
-func (r UpdateSettings2Response) StatusCode() int {
+func (r UpdateHardcoverSyncSettingsResponse) StatusCode() int {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.StatusCode
 	}
@@ -22774,14 +22774,14 @@ func (r GetSettingsResponse) StatusCode() int {
 	return 0
 }
 
-type UpdateSettings1Response struct {
+type UpdateKoboSettingsResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
 	JSON200      *KoboSyncSettings
 }
 
 // Status returns HTTPResponse.Status
-func (r UpdateSettings1Response) Status() string {
+func (r UpdateKoboSettingsResponse) Status() string {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.Status
 	}
@@ -22789,7 +22789,7 @@ func (r UpdateSettings1Response) Status() string {
 }
 
 // StatusCode returns HTTPResponse.StatusCode
-func (r UpdateSettings1Response) StatusCode() int {
+func (r UpdateKoboSettingsResponse) StatusCode() int {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.StatusCode
 	}
@@ -23059,14 +23059,14 @@ func (r GetBooksResponse) StatusCode() int {
 	return 0
 }
 
-type GetBook1Response struct {
+type GetLibraryBookByIdResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
 	JSON200      *Book
 }
 
 // Status returns HTTPResponse.Status
-func (r GetBook1Response) Status() string {
+func (r GetLibraryBookByIdResponse) Status() string {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.Status
 	}
@@ -23074,7 +23074,7 @@ func (r GetBook1Response) Status() string {
 }
 
 // StatusCode returns HTTPResponse.StatusCode
-func (r GetBook1Response) StatusCode() int {
+func (r GetLibraryBookByIdResponse) StatusCode() int {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.StatusCode
 	}
@@ -23146,14 +23146,14 @@ func (r GetCbxPageResponse) StatusCode() int {
 	return 0
 }
 
-type GetBookCover1Response struct {
+type GetBookCoverV1Response struct {
 	Body         []byte
 	HTTPResponse *http.Response
 	JSON200      *openapi_types.File
 }
 
 // Status returns HTTPResponse.Status
-func (r GetBookCover1Response) Status() string {
+func (r GetBookCoverV1Response) Status() string {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.Status
 	}
@@ -23161,7 +23161,7 @@ func (r GetBookCover1Response) Status() string {
 }
 
 // StatusCode returns HTTPResponse.StatusCode
-func (r GetBookCover1Response) StatusCode() int {
+func (r GetBookCoverV1Response) StatusCode() int {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.StatusCode
 	}
@@ -23189,14 +23189,14 @@ func (r GetPdfPageResponse) StatusCode() int {
 	return 0
 }
 
-type GetBookThumbnail1Response struct {
+type GetBookThumbnailV1Response struct {
 	Body         []byte
 	HTTPResponse *http.Response
 	JSON200      *openapi_types.File
 }
 
 // Status returns HTTPResponse.Status
-func (r GetBookThumbnail1Response) Status() string {
+func (r GetBookThumbnailV1Response) Status() string {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.Status
 	}
@@ -23204,7 +23204,7 @@ func (r GetBookThumbnail1Response) Status() string {
 }
 
 // StatusCode returns HTTPResponse.StatusCode
-func (r GetBookThumbnail1Response) StatusCode() int {
+func (r GetBookThumbnailV1Response) StatusCode() int {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.StatusCode
 	}
@@ -23467,7 +23467,7 @@ func (r GetBookCoverResponse) StatusCode() int {
 	return 0
 }
 
-type DownloadBook1Response struct {
+type DownloadOpdsBookResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
 	JSON200      *openapi_types.File
@@ -23475,7 +23475,7 @@ type DownloadBook1Response struct {
 }
 
 // Status returns HTTPResponse.Status
-func (r DownloadBook1Response) Status() string {
+func (r DownloadOpdsBookResponse) Status() string {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.Status
 	}
@@ -23483,7 +23483,7 @@ func (r DownloadBook1Response) Status() string {
 }
 
 // StatusCode returns HTTPResponse.StatusCode
-func (r DownloadBook1Response) StatusCode() int {
+func (r DownloadOpdsBookResponse) StatusCode() int {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.StatusCode
 	}
@@ -24924,13 +24924,13 @@ func (r CreateUserResponse) StatusCode() int {
 	return 0
 }
 
-type DeleteUser1Response struct {
+type DeleteOpdsUserV2Response struct {
 	Body         []byte
 	HTTPResponse *http.Response
 }
 
 // Status returns HTTPResponse.Status
-func (r DeleteUser1Response) Status() string {
+func (r DeleteOpdsUserV2Response) Status() string {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.Status
 	}
@@ -24938,21 +24938,21 @@ func (r DeleteUser1Response) Status() string {
 }
 
 // StatusCode returns HTTPResponse.StatusCode
-func (r DeleteUser1Response) StatusCode() int {
+func (r DeleteOpdsUserV2Response) StatusCode() int {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.StatusCode
 	}
 	return 0
 }
 
-type UpdateUser1Response struct {
+type UpdateOpdsUserV2Response struct {
 	Body         []byte
 	HTTPResponse *http.Response
 	JSON200      *OpdsUserV2
 }
 
 // Status returns HTTPResponse.Status
-func (r UpdateUser1Response) Status() string {
+func (r UpdateOpdsUserV2Response) Status() string {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.Status
 	}
@@ -24960,7 +24960,7 @@ func (r UpdateUser1Response) Status() string {
 }
 
 // StatusCode returns HTTPResponse.StatusCode
-func (r UpdateUser1Response) StatusCode() int {
+func (r UpdateOpdsUserV2Response) StatusCode() int {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.StatusCode
 	}
@@ -25143,14 +25143,14 @@ func (r GetAllLibrariesResponse) StatusCode() int {
 	return 0
 }
 
-type GetLibrary1Response struct {
+type GetKomgaLibraryByIdResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
 	JSON200      *string
 }
 
 // Status returns HTTPResponse.Status
-func (r GetLibrary1Response) Status() string {
+func (r GetKomgaLibraryByIdResponse) Status() string {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.Status
 	}
@@ -25158,7 +25158,7 @@ func (r GetLibrary1Response) Status() string {
 }
 
 // StatusCode returns HTTPResponse.StatusCode
-func (r GetLibrary1Response) StatusCode() int {
+func (r GetKomgaLibraryByIdResponse) StatusCode() int {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.StatusCode
 	}
@@ -25253,14 +25253,14 @@ func (r GetSeriesThumbnailResponse) StatusCode() int {
 	return 0
 }
 
-type GetCurrentUser1Response struct {
+type GetKomgaCurrentUserResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
 	JSON200      *string
 }
 
 // Status returns HTTPResponse.Status
-func (r GetCurrentUser1Response) Status() string {
+func (r GetKomgaCurrentUserResponse) Status() string {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.Status
 	}
@@ -25268,96 +25268,96 @@ func (r GetCurrentUser1Response) Status() string {
 }
 
 // StatusCode returns HTTPResponse.StatusCode
-func (r GetCurrentUser1Response) StatusCode() int {
+func (r GetKomgaCurrentUserResponse) StatusCode() int {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.StatusCode
 	}
 	return 0
 }
 
-// CatchAll3WithBodyWithResponse request with arbitrary body returning *CatchAll3Response
-func (c *ClientWithResponses) CatchAll3WithBodyWithResponse(ctx context.Context, token string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CatchAll3Response, error) {
-	rsp, err := c.CatchAll3WithBody(ctx, token, contentType, body, reqEditors...)
+// UnhandledKoboDeleteWithBodyWithResponse request with arbitrary body returning *UnhandledKoboDeleteResponse
+func (c *ClientWithResponses) UnhandledKoboDeleteWithBodyWithResponse(ctx context.Context, token string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UnhandledKoboDeleteResponse, error) {
+	rsp, err := c.UnhandledKoboDeleteWithBody(ctx, token, contentType, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
-	return ParseCatchAll3Response(rsp)
+	return ParseUnhandledKoboDeleteResponse(rsp)
 }
 
-func (c *ClientWithResponses) CatchAll3WithResponse(ctx context.Context, token string, body CatchAll3JSONRequestBody, reqEditors ...RequestEditorFn) (*CatchAll3Response, error) {
-	rsp, err := c.CatchAll3(ctx, token, body, reqEditors...)
+func (c *ClientWithResponses) UnhandledKoboDeleteWithResponse(ctx context.Context, token string, body UnhandledKoboDeleteJSONRequestBody, reqEditors ...RequestEditorFn) (*UnhandledKoboDeleteResponse, error) {
+	rsp, err := c.UnhandledKoboDelete(ctx, token, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
-	return ParseCatchAll3Response(rsp)
+	return ParseUnhandledKoboDeleteResponse(rsp)
 }
 
-// CatchAllWithBodyWithResponse request with arbitrary body returning *CatchAllResponse
-func (c *ClientWithResponses) CatchAllWithBodyWithResponse(ctx context.Context, token string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CatchAllResponse, error) {
-	rsp, err := c.CatchAllWithBody(ctx, token, contentType, body, reqEditors...)
+// UnhandledKoboGetWithBodyWithResponse request with arbitrary body returning *UnhandledKoboGetResponse
+func (c *ClientWithResponses) UnhandledKoboGetWithBodyWithResponse(ctx context.Context, token string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UnhandledKoboGetResponse, error) {
+	rsp, err := c.UnhandledKoboGetWithBody(ctx, token, contentType, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
-	return ParseCatchAllResponse(rsp)
+	return ParseUnhandledKoboGetResponse(rsp)
 }
 
-func (c *ClientWithResponses) CatchAllWithResponse(ctx context.Context, token string, body CatchAllJSONRequestBody, reqEditors ...RequestEditorFn) (*CatchAllResponse, error) {
-	rsp, err := c.CatchAll(ctx, token, body, reqEditors...)
+func (c *ClientWithResponses) UnhandledKoboGetWithResponse(ctx context.Context, token string, body UnhandledKoboGetJSONRequestBody, reqEditors ...RequestEditorFn) (*UnhandledKoboGetResponse, error) {
+	rsp, err := c.UnhandledKoboGet(ctx, token, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
-	return ParseCatchAllResponse(rsp)
+	return ParseUnhandledKoboGetResponse(rsp)
 }
 
-// CatchAll4WithBodyWithResponse request with arbitrary body returning *CatchAll4Response
-func (c *ClientWithResponses) CatchAll4WithBodyWithResponse(ctx context.Context, token string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CatchAll4Response, error) {
-	rsp, err := c.CatchAll4WithBody(ctx, token, contentType, body, reqEditors...)
+// UnhandledKoboPatchWithBodyWithResponse request with arbitrary body returning *UnhandledKoboPatchResponse
+func (c *ClientWithResponses) UnhandledKoboPatchWithBodyWithResponse(ctx context.Context, token string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UnhandledKoboPatchResponse, error) {
+	rsp, err := c.UnhandledKoboPatchWithBody(ctx, token, contentType, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
-	return ParseCatchAll4Response(rsp)
+	return ParseUnhandledKoboPatchResponse(rsp)
 }
 
-func (c *ClientWithResponses) CatchAll4WithResponse(ctx context.Context, token string, body CatchAll4JSONRequestBody, reqEditors ...RequestEditorFn) (*CatchAll4Response, error) {
-	rsp, err := c.CatchAll4(ctx, token, body, reqEditors...)
+func (c *ClientWithResponses) UnhandledKoboPatchWithResponse(ctx context.Context, token string, body UnhandledKoboPatchJSONRequestBody, reqEditors ...RequestEditorFn) (*UnhandledKoboPatchResponse, error) {
+	rsp, err := c.UnhandledKoboPatch(ctx, token, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
-	return ParseCatchAll4Response(rsp)
+	return ParseUnhandledKoboPatchResponse(rsp)
 }
 
-// CatchAll1WithBodyWithResponse request with arbitrary body returning *CatchAll1Response
-func (c *ClientWithResponses) CatchAll1WithBodyWithResponse(ctx context.Context, token string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CatchAll1Response, error) {
-	rsp, err := c.CatchAll1WithBody(ctx, token, contentType, body, reqEditors...)
+// UnhandledKoboPostWithBodyWithResponse request with arbitrary body returning *UnhandledKoboPostResponse
+func (c *ClientWithResponses) UnhandledKoboPostWithBodyWithResponse(ctx context.Context, token string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UnhandledKoboPostResponse, error) {
+	rsp, err := c.UnhandledKoboPostWithBody(ctx, token, contentType, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
-	return ParseCatchAll1Response(rsp)
+	return ParseUnhandledKoboPostResponse(rsp)
 }
 
-func (c *ClientWithResponses) CatchAll1WithResponse(ctx context.Context, token string, body CatchAll1JSONRequestBody, reqEditors ...RequestEditorFn) (*CatchAll1Response, error) {
-	rsp, err := c.CatchAll1(ctx, token, body, reqEditors...)
+func (c *ClientWithResponses) UnhandledKoboPostWithResponse(ctx context.Context, token string, body UnhandledKoboPostJSONRequestBody, reqEditors ...RequestEditorFn) (*UnhandledKoboPostResponse, error) {
+	rsp, err := c.UnhandledKoboPost(ctx, token, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
-	return ParseCatchAll1Response(rsp)
+	return ParseUnhandledKoboPostResponse(rsp)
 }
 
-// CatchAll2WithBodyWithResponse request with arbitrary body returning *CatchAll2Response
-func (c *ClientWithResponses) CatchAll2WithBodyWithResponse(ctx context.Context, token string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CatchAll2Response, error) {
-	rsp, err := c.CatchAll2WithBody(ctx, token, contentType, body, reqEditors...)
+// UnhandledKoboPutWithBodyWithResponse request with arbitrary body returning *UnhandledKoboPutResponse
+func (c *ClientWithResponses) UnhandledKoboPutWithBodyWithResponse(ctx context.Context, token string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UnhandledKoboPutResponse, error) {
+	rsp, err := c.UnhandledKoboPutWithBody(ctx, token, contentType, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
-	return ParseCatchAll2Response(rsp)
+	return ParseUnhandledKoboPutResponse(rsp)
 }
 
-func (c *ClientWithResponses) CatchAll2WithResponse(ctx context.Context, token string, body CatchAll2JSONRequestBody, reqEditors ...RequestEditorFn) (*CatchAll2Response, error) {
-	rsp, err := c.CatchAll2(ctx, token, body, reqEditors...)
+func (c *ClientWithResponses) UnhandledKoboPutWithResponse(ctx context.Context, token string, body UnhandledKoboPutJSONRequestBody, reqEditors ...RequestEditorFn) (*UnhandledKoboPutResponse, error) {
+	rsp, err := c.UnhandledKoboPut(ctx, token, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
-	return ParseCatchAll2Response(rsp)
+	return ParseUnhandledKoboPutResponse(rsp)
 }
 
 // GetTestsWithBodyWithResponse request with arbitrary body returning *GetTestsResponse
@@ -25394,13 +25394,13 @@ func (c *ClientWithResponses) AuthenticateDeviceWithResponse(ctx context.Context
 	return ParseAuthenticateDeviceResponse(rsp)
 }
 
-// DownloadBook3WithResponse request returning *DownloadBook3Response
-func (c *ClientWithResponses) DownloadBook3WithResponse(ctx context.Context, token string, bookId string, reqEditors ...RequestEditorFn) (*DownloadBook3Response, error) {
-	rsp, err := c.DownloadBook3(ctx, token, bookId, reqEditors...)
+// KoboDownloadBookByIdV1WithResponse request returning *KoboDownloadBookByIdV1Response
+func (c *ClientWithResponses) KoboDownloadBookByIdV1WithResponse(ctx context.Context, token string, bookId string, reqEditors ...RequestEditorFn) (*KoboDownloadBookByIdV1Response, error) {
+	rsp, err := c.KoboDownloadBookByIdV1(ctx, token, bookId, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
-	return ParseDownloadBook3Response(rsp)
+	return ParseKoboDownloadBookByIdV1Response(rsp)
 }
 
 // GetThumbnailWithResponse request returning *GetThumbnailResponse
@@ -25536,21 +25536,21 @@ func (c *ClientWithResponses) AuthorizeUserWithResponse(ctx context.Context, req
 	return ParseAuthorizeUserResponse(rsp)
 }
 
-// CreateUser1WithBodyWithResponse request with arbitrary body returning *CreateUser1Response
-func (c *ClientWithResponses) CreateUser1WithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateUser1Response, error) {
-	rsp, err := c.CreateUser1WithBody(ctx, contentType, body, reqEditors...)
+// CreateKoReaderUserWithBodyWithResponse request with arbitrary body returning *CreateKoReaderUserResponse
+func (c *ClientWithResponses) CreateKoReaderUserWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateKoReaderUserResponse, error) {
+	rsp, err := c.CreateKoReaderUserWithBody(ctx, contentType, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
-	return ParseCreateUser1Response(rsp)
+	return ParseCreateKoReaderUserResponse(rsp)
 }
 
-func (c *ClientWithResponses) CreateUser1WithResponse(ctx context.Context, body CreateUser1JSONRequestBody, reqEditors ...RequestEditorFn) (*CreateUser1Response, error) {
-	rsp, err := c.CreateUser1(ctx, body, reqEditors...)
+func (c *ClientWithResponses) CreateKoReaderUserWithResponse(ctx context.Context, body CreateKoReaderUserJSONRequestBody, reqEditors ...RequestEditorFn) (*CreateKoReaderUserResponse, error) {
+	rsp, err := c.CreateKoReaderUser(ctx, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
-	return ParseCreateUser1Response(rsp)
+	return ParseCreateKoReaderUserResponse(rsp)
 }
 
 // GetAllForUserWithResponse request returning *GetAllForUserResponse
@@ -25579,22 +25579,22 @@ func (c *ClientWithResponses) CreateUpdateShelfWithResponse(ctx context.Context,
 	return ParseCreateUpdateShelfResponse(rsp)
 }
 
-// DeleteShelf1WithResponse request returning *DeleteShelf1Response
-func (c *ClientWithResponses) DeleteShelf1WithResponse(ctx context.Context, id int64, reqEditors ...RequestEditorFn) (*DeleteShelf1Response, error) {
-	rsp, err := c.DeleteShelf1(ctx, id, reqEditors...)
+// DeleteMagicShelfByIdWithResponse request returning *DeleteMagicShelfByIdResponse
+func (c *ClientWithResponses) DeleteMagicShelfByIdWithResponse(ctx context.Context, id int64, reqEditors ...RequestEditorFn) (*DeleteMagicShelfByIdResponse, error) {
+	rsp, err := c.DeleteMagicShelfById(ctx, id, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
-	return ParseDeleteShelf1Response(rsp)
+	return ParseDeleteMagicShelfByIdResponse(rsp)
 }
 
-// GetShelf1WithResponse request returning *GetShelf1Response
-func (c *ClientWithResponses) GetShelf1WithResponse(ctx context.Context, id int64, reqEditors ...RequestEditorFn) (*GetShelf1Response, error) {
-	rsp, err := c.GetShelf1(ctx, id, reqEditors...)
+// GetMagicShelfByIdWithResponse request returning *GetMagicShelfByIdResponse
+func (c *ClientWithResponses) GetMagicShelfByIdWithResponse(ctx context.Context, id int64, reqEditors ...RequestEditorFn) (*GetMagicShelfByIdResponse, error) {
+	rsp, err := c.GetMagicShelfById(ctx, id, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
-	return ParseGetShelf1Response(rsp)
+	return ParseGetMagicShelfByIdResponse(rsp)
 }
 
 // GetActiveTasksWithResponse request returning *GetActiveTasksResponse
@@ -25633,13 +25633,13 @@ func (c *ClientWithResponses) UpdateProposalStatusWithResponse(ctx context.Conte
 	return ParseUpdateProposalStatusResponse(rsp)
 }
 
-// GetBooks2WithResponse request returning *GetBooks2Response
-func (c *ClientWithResponses) GetBooks2WithResponse(ctx context.Context, params *GetBooks2Params, reqEditors ...RequestEditorFn) (*GetBooks2Response, error) {
-	rsp, err := c.GetBooks2(ctx, params, reqEditors...)
+// MobileListBooksV1WithResponse request returning *MobileListBooksV1Response
+func (c *ClientWithResponses) MobileListBooksV1WithResponse(ctx context.Context, params *MobileListBooksV1Params, reqEditors ...RequestEditorFn) (*MobileListBooksV1Response, error) {
+	rsp, err := c.MobileListBooksV1(ctx, params, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
-	return ParseGetBooks2Response(rsp)
+	return ParseMobileListBooksV1Response(rsp)
 }
 
 // GetContinueReadingWithResponse request returning *GetContinueReadingResponse
@@ -25721,13 +25721,13 @@ func (c *ClientWithResponses) UpdateStatusWithResponse(ctx context.Context, book
 	return ParseUpdateStatusResponse(rsp)
 }
 
-// GetLibraries1WithResponse request returning *GetLibraries1Response
-func (c *ClientWithResponses) GetLibraries1WithResponse(ctx context.Context, reqEditors ...RequestEditorFn) (*GetLibraries1Response, error) {
-	rsp, err := c.GetLibraries1(ctx, reqEditors...)
+// MobileListLibrariesV1WithResponse request returning *MobileListLibrariesV1Response
+func (c *ClientWithResponses) MobileListLibrariesV1WithResponse(ctx context.Context, reqEditors ...RequestEditorFn) (*MobileListLibrariesV1Response, error) {
+	rsp, err := c.MobileListLibrariesV1(ctx, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
-	return ParseGetLibraries1Response(rsp)
+	return ParseMobileListLibrariesV1Response(rsp)
 }
 
 // GetShelvesWithResponse request returning *GetShelvesResponse
@@ -25932,39 +25932,39 @@ func (c *ClientWithResponses) GetAuthorsByBookIdWithResponse(ctx context.Context
 	return ParseGetAuthorsByBookIdResponse(rsp)
 }
 
-// CreateNote1WithBodyWithResponse request with arbitrary body returning *CreateNote1Response
-func (c *ClientWithResponses) CreateNote1WithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateNote1Response, error) {
-	rsp, err := c.CreateNote1WithBody(ctx, contentType, body, reqEditors...)
+// CreateNoteV1WithBodyWithResponse request with arbitrary body returning *CreateNoteV1Response
+func (c *ClientWithResponses) CreateNoteV1WithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateNoteV1Response, error) {
+	rsp, err := c.CreateNoteV1WithBody(ctx, contentType, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
-	return ParseCreateNote1Response(rsp)
+	return ParseCreateNoteV1Response(rsp)
 }
 
-func (c *ClientWithResponses) CreateNote1WithResponse(ctx context.Context, body CreateNote1JSONRequestBody, reqEditors ...RequestEditorFn) (*CreateNote1Response, error) {
-	rsp, err := c.CreateNote1(ctx, body, reqEditors...)
+func (c *ClientWithResponses) CreateNoteV1WithResponse(ctx context.Context, body CreateNoteV1JSONRequestBody, reqEditors ...RequestEditorFn) (*CreateNoteV1Response, error) {
+	rsp, err := c.CreateNoteV1(ctx, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
-	return ParseCreateNote1Response(rsp)
+	return ParseCreateNoteV1Response(rsp)
 }
 
-// GetNotesForBook1WithResponse request returning *GetNotesForBook1Response
-func (c *ClientWithResponses) GetNotesForBook1WithResponse(ctx context.Context, bookId int64, reqEditors ...RequestEditorFn) (*GetNotesForBook1Response, error) {
-	rsp, err := c.GetNotesForBook1(ctx, bookId, reqEditors...)
+// GetNotesForBookV1WithResponse request returning *GetNotesForBookV1Response
+func (c *ClientWithResponses) GetNotesForBookV1WithResponse(ctx context.Context, bookId int64, reqEditors ...RequestEditorFn) (*GetNotesForBookV1Response, error) {
+	rsp, err := c.GetNotesForBookV1(ctx, bookId, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
-	return ParseGetNotesForBook1Response(rsp)
+	return ParseGetNotesForBookV1Response(rsp)
 }
 
-// DeleteNote1WithResponse request returning *DeleteNote1Response
-func (c *ClientWithResponses) DeleteNote1WithResponse(ctx context.Context, noteId int64, reqEditors ...RequestEditorFn) (*DeleteNote1Response, error) {
-	rsp, err := c.DeleteNote1(ctx, noteId, reqEditors...)
+// DeleteNoteV1WithResponse request returning *DeleteNoteV1Response
+func (c *ClientWithResponses) DeleteNoteV1WithResponse(ctx context.Context, noteId int64, reqEditors ...RequestEditorFn) (*DeleteNoteV1Response, error) {
+	rsp, err := c.DeleteNoteV1(ctx, noteId, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
-	return ParseDeleteNote1Response(rsp)
+	return ParseDeleteNoteV1Response(rsp)
 }
 
 // GetFilesByStatusWithResponse request returning *GetFilesByStatusResponse
@@ -25976,21 +25976,21 @@ func (c *ClientWithResponses) GetFilesByStatusWithResponse(ctx context.Context, 
 	return ParseGetFilesByStatusResponse(rsp)
 }
 
-// BulkEditMetadata1WithBodyWithResponse request with arbitrary body returning *BulkEditMetadata1Response
-func (c *ClientWithResponses) BulkEditMetadata1WithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BulkEditMetadata1Response, error) {
-	rsp, err := c.BulkEditMetadata1WithBody(ctx, contentType, body, reqEditors...)
+// BulkEditBookdropMetadataWithBodyWithResponse request with arbitrary body returning *BulkEditBookdropMetadataResponse
+func (c *ClientWithResponses) BulkEditBookdropMetadataWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BulkEditBookdropMetadataResponse, error) {
+	rsp, err := c.BulkEditBookdropMetadataWithBody(ctx, contentType, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
-	return ParseBulkEditMetadata1Response(rsp)
+	return ParseBulkEditBookdropMetadataResponse(rsp)
 }
 
-func (c *ClientWithResponses) BulkEditMetadata1WithResponse(ctx context.Context, body BulkEditMetadata1JSONRequestBody, reqEditors ...RequestEditorFn) (*BulkEditMetadata1Response, error) {
-	rsp, err := c.BulkEditMetadata1(ctx, body, reqEditors...)
+func (c *ClientWithResponses) BulkEditBookdropMetadataWithResponse(ctx context.Context, body BulkEditBookdropMetadataJSONRequestBody, reqEditors ...RequestEditorFn) (*BulkEditBookdropMetadataResponse, error) {
+	rsp, err := c.BulkEditBookdropMetadata(ctx, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
-	return ParseBulkEditMetadata1Response(rsp)
+	return ParseBulkEditBookdropMetadataResponse(rsp)
 }
 
 // DiscardSelectedFilesWithBodyWithResponse request with arbitrary body returning *DiscardSelectedFilesResponse
@@ -26132,13 +26132,13 @@ func (c *ClientWithResponses) DeleteBooksWithResponse(ctx context.Context, param
 	return ParseDeleteBooksResponse(rsp)
 }
 
-// GetBooks1WithResponse request returning *GetBooks1Response
-func (c *ClientWithResponses) GetBooks1WithResponse(ctx context.Context, params *GetBooks1Params, reqEditors ...RequestEditorFn) (*GetBooks1Response, error) {
-	rsp, err := c.GetBooks1(ctx, params, reqEditors...)
+// ListBooksWithResponse request returning *ListBooksResponse
+func (c *ClientWithResponses) ListBooksWithResponse(ctx context.Context, params *ListBooksParams, reqEditors ...RequestEditorFn) (*ListBooksResponse, error) {
+	rsp, err := c.ListBooks(ctx, params, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
-	return ParseGetBooks1Response(rsp)
+	return ParseListBooksResponse(rsp)
 }
 
 // GetBooksByIdsWithResponse request returning *GetBooksByIdsResponse
@@ -26346,13 +26346,13 @@ func (c *ClientWithResponses) AddBookToProgressWithResponse(ctx context.Context,
 	return ParseAddBookToProgressResponse(rsp)
 }
 
-// RegenerateCovers1WithResponse request returning *RegenerateCovers1Response
-func (c *ClientWithResponses) RegenerateCovers1WithResponse(ctx context.Context, reqEditors ...RequestEditorFn) (*RegenerateCovers1Response, error) {
-	rsp, err := c.RegenerateCovers1(ctx, reqEditors...)
+// RegenerateBookCoversWithResponse request returning *RegenerateBookCoversResponse
+func (c *ClientWithResponses) RegenerateBookCoversWithResponse(ctx context.Context, reqEditors ...RequestEditorFn) (*RegenerateBookCoversResponse, error) {
+	rsp, err := c.RegenerateBookCovers(ctx, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
-	return ParseRegenerateCovers1Response(rsp)
+	return ParseRegenerateBookCoversResponse(rsp)
 }
 
 // ResetPersonalRatingWithBodyWithResponse request with arbitrary body returning *ResetPersonalRatingResponse
@@ -26423,13 +26423,13 @@ func (c *ClientWithResponses) UpdateReadStatusWithResponse(ctx context.Context, 
 	return ParseUpdateReadStatusResponse(rsp)
 }
 
-// GetBook2WithResponse request returning *GetBook2Response
-func (c *ClientWithResponses) GetBook2WithResponse(ctx context.Context, bookId int64, params *GetBook2Params, reqEditors ...RequestEditorFn) (*GetBook2Response, error) {
-	rsp, err := c.GetBook2(ctx, bookId, params, reqEditors...)
+// GetBookByIdWithResponse request returning *GetBookByIdResponse
+func (c *ClientWithResponses) GetBookByIdWithResponse(ctx context.Context, bookId int64, params *GetBookByIdParams, reqEditors ...RequestEditorFn) (*GetBookByIdResponse, error) {
+	rsp, err := c.GetBookById(ctx, bookId, params, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
-	return ParseGetBook2Response(rsp)
+	return ParseGetBookByIdResponse(rsp)
 }
 
 // GetComicInfoMetadataWithResponse request returning *GetComicInfoMetadataResponse
@@ -26450,13 +26450,13 @@ func (c *ClientWithResponses) GetBookContentWithResponse(ctx context.Context, bo
 	return ParseGetBookContentResponse(rsp)
 }
 
-// DownloadBook2WithResponse request returning *DownloadBook2Response
-func (c *ClientWithResponses) DownloadBook2WithResponse(ctx context.Context, bookId int64, reqEditors ...RequestEditorFn) (*DownloadBook2Response, error) {
-	rsp, err := c.DownloadBook2(ctx, bookId, reqEditors...)
+// DownloadBookByIdWithResponse request returning *DownloadBookByIdResponse
+func (c *ClientWithResponses) DownloadBookByIdWithResponse(ctx context.Context, bookId int64, reqEditors ...RequestEditorFn) (*DownloadBookByIdResponse, error) {
+	rsp, err := c.DownloadBookById(ctx, bookId, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
-	return ParseDownloadBook2Response(rsp)
+	return ParseDownloadBookByIdResponse(rsp)
 }
 
 // DownloadAllBookFilesWithResponse request returning *DownloadAllBookFilesResponse
@@ -26668,13 +26668,13 @@ func (c *ClientWithResponses) GetPageInfoWithResponse(ctx context.Context, bookI
 	return ParseGetPageInfoResponse(rsp)
 }
 
-// ListPages1WithResponse request returning *ListPages1Response
-func (c *ClientWithResponses) ListPages1WithResponse(ctx context.Context, bookId int64, params *ListPages1Params, reqEditors ...RequestEditorFn) (*ListPages1Response, error) {
-	rsp, err := c.ListPages1(ctx, bookId, params, reqEditors...)
+// GetCbxBookPagesWithResponse request returning *GetCbxBookPagesResponse
+func (c *ClientWithResponses) GetCbxBookPagesWithResponse(ctx context.Context, bookId int64, params *GetCbxBookPagesParams, reqEditors ...RequestEditorFn) (*GetCbxBookPagesResponse, error) {
+	rsp, err := c.GetCbxBookPages(ctx, bookId, params, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
-	return ParseListPages1Response(rsp)
+	return ParseGetCbxBookPagesResponse(rsp)
 }
 
 // GetUserFontsWithResponse request returning *GetUserFontsResponse
@@ -26730,13 +26730,13 @@ func (c *ClientWithResponses) GetFileWithResponse(ctx context.Context, bookId in
 	return ParseGetFileResponse(rsp)
 }
 
-// GetBookInfo1WithResponse request returning *GetBookInfo1Response
-func (c *ClientWithResponses) GetBookInfo1WithResponse(ctx context.Context, bookId int64, params *GetBookInfo1Params, reqEditors ...RequestEditorFn) (*GetBookInfo1Response, error) {
-	rsp, err := c.GetBookInfo1(ctx, bookId, params, reqEditors...)
+// GetEpubBookInfoWithResponse request returning *GetEpubBookInfoResponse
+func (c *ClientWithResponses) GetEpubBookInfoWithResponse(ctx context.Context, bookId int64, params *GetEpubBookInfoParams, reqEditors ...RequestEditorFn) (*GetEpubBookInfoResponse, error) {
+	rsp, err := c.GetEpubBookInfo(ctx, bookId, params, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
-	return ParseGetBookInfo1Response(rsp)
+	return ParseGetEpubBookInfoResponse(rsp)
 }
 
 // MoveFilesWithBodyWithResponse request with arbitrary body returning *MoveFilesResponse
@@ -26765,39 +26765,39 @@ func (c *ClientWithResponses) UploadFileWithBodyWithResponse(ctx context.Context
 	return ParseUploadFileResponse(rsp)
 }
 
-// UploadFile1WithBodyWithResponse request with arbitrary body returning *UploadFile1Response
-func (c *ClientWithResponses) UploadFile1WithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UploadFile1Response, error) {
-	rsp, err := c.UploadFile1WithBody(ctx, contentType, body, reqEditors...)
+// UploadFileToBookdropWithBodyWithResponse request with arbitrary body returning *UploadFileToBookdropResponse
+func (c *ClientWithResponses) UploadFileToBookdropWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UploadFileToBookdropResponse, error) {
+	rsp, err := c.UploadFileToBookdropWithBody(ctx, contentType, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
-	return ParseUploadFile1Response(rsp)
+	return ParseUploadFileToBookdropResponse(rsp)
 }
 
-// GetSettings1WithResponse request returning *GetSettings1Response
-func (c *ClientWithResponses) GetSettings1WithResponse(ctx context.Context, reqEditors ...RequestEditorFn) (*GetSettings1Response, error) {
-	rsp, err := c.GetSettings1(ctx, reqEditors...)
+// GetHardcoverSyncSettingsWithResponse request returning *GetHardcoverSyncSettingsResponse
+func (c *ClientWithResponses) GetHardcoverSyncSettingsWithResponse(ctx context.Context, reqEditors ...RequestEditorFn) (*GetHardcoverSyncSettingsResponse, error) {
+	rsp, err := c.GetHardcoverSyncSettings(ctx, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
-	return ParseGetSettings1Response(rsp)
+	return ParseGetHardcoverSyncSettingsResponse(rsp)
 }
 
-// UpdateSettings2WithBodyWithResponse request with arbitrary body returning *UpdateSettings2Response
-func (c *ClientWithResponses) UpdateSettings2WithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateSettings2Response, error) {
-	rsp, err := c.UpdateSettings2WithBody(ctx, contentType, body, reqEditors...)
+// UpdateHardcoverSyncSettingsWithBodyWithResponse request with arbitrary body returning *UpdateHardcoverSyncSettingsResponse
+func (c *ClientWithResponses) UpdateHardcoverSyncSettingsWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateHardcoverSyncSettingsResponse, error) {
+	rsp, err := c.UpdateHardcoverSyncSettingsWithBody(ctx, contentType, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
-	return ParseUpdateSettings2Response(rsp)
+	return ParseUpdateHardcoverSyncSettingsResponse(rsp)
 }
 
-func (c *ClientWithResponses) UpdateSettings2WithResponse(ctx context.Context, body UpdateSettings2JSONRequestBody, reqEditors ...RequestEditorFn) (*UpdateSettings2Response, error) {
-	rsp, err := c.UpdateSettings2(ctx, body, reqEditors...)
+func (c *ClientWithResponses) UpdateHardcoverSyncSettingsWithResponse(ctx context.Context, body UpdateHardcoverSyncSettingsJSONRequestBody, reqEditors ...RequestEditorFn) (*UpdateHardcoverSyncSettingsResponse, error) {
+	rsp, err := c.UpdateHardcoverSyncSettings(ctx, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
-	return ParseUpdateSettings2Response(rsp)
+	return ParseUpdateHardcoverSyncSettingsResponse(rsp)
 }
 
 // GetPingWithResponse request returning *GetPingResponse
@@ -26888,21 +26888,21 @@ func (c *ClientWithResponses) GetSettingsWithResponse(ctx context.Context, reqEd
 	return ParseGetSettingsResponse(rsp)
 }
 
-// UpdateSettings1WithBodyWithResponse request with arbitrary body returning *UpdateSettings1Response
-func (c *ClientWithResponses) UpdateSettings1WithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateSettings1Response, error) {
-	rsp, err := c.UpdateSettings1WithBody(ctx, contentType, body, reqEditors...)
+// UpdateKoboSettingsWithBodyWithResponse request with arbitrary body returning *UpdateKoboSettingsResponse
+func (c *ClientWithResponses) UpdateKoboSettingsWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateKoboSettingsResponse, error) {
+	rsp, err := c.UpdateKoboSettingsWithBody(ctx, contentType, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
-	return ParseUpdateSettings1Response(rsp)
+	return ParseUpdateKoboSettingsResponse(rsp)
 }
 
-func (c *ClientWithResponses) UpdateSettings1WithResponse(ctx context.Context, body UpdateSettings1JSONRequestBody, reqEditors ...RequestEditorFn) (*UpdateSettings1Response, error) {
-	rsp, err := c.UpdateSettings1(ctx, body, reqEditors...)
+func (c *ClientWithResponses) UpdateKoboSettingsWithResponse(ctx context.Context, body UpdateKoboSettingsJSONRequestBody, reqEditors ...RequestEditorFn) (*UpdateKoboSettingsResponse, error) {
+	rsp, err := c.UpdateKoboSettings(ctx, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
-	return ParseUpdateSettings1Response(rsp)
+	return ParseUpdateKoboSettingsResponse(rsp)
 }
 
 // CreateOrUpdateTokenWithResponse request returning *CreateOrUpdateTokenResponse
@@ -27045,13 +27045,13 @@ func (c *ClientWithResponses) GetBooksWithResponse(ctx context.Context, libraryI
 	return ParseGetBooksResponse(rsp)
 }
 
-// GetBook1WithResponse request returning *GetBook1Response
-func (c *ClientWithResponses) GetBook1WithResponse(ctx context.Context, libraryId int64, bookId int64, reqEditors ...RequestEditorFn) (*GetBook1Response, error) {
-	rsp, err := c.GetBook1(ctx, libraryId, bookId, reqEditors...)
+// GetLibraryBookByIdWithResponse request returning *GetLibraryBookByIdResponse
+func (c *ClientWithResponses) GetLibraryBookByIdWithResponse(ctx context.Context, libraryId int64, bookId int64, reqEditors ...RequestEditorFn) (*GetLibraryBookByIdResponse, error) {
+	rsp, err := c.GetLibraryBookById(ctx, libraryId, bookId, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
-	return ParseGetBook1Response(rsp)
+	return ParseGetLibraryBookByIdResponse(rsp)
 }
 
 // SetFileNamingPatternWithBodyWithResponse request with arbitrary body returning *SetFileNamingPatternResponse
@@ -27089,13 +27089,13 @@ func (c *ClientWithResponses) GetCbxPageWithResponse(ctx context.Context, bookId
 	return ParseGetCbxPageResponse(rsp)
 }
 
-// GetBookCover1WithResponse request returning *GetBookCover1Response
-func (c *ClientWithResponses) GetBookCover1WithResponse(ctx context.Context, bookId int64, reqEditors ...RequestEditorFn) (*GetBookCover1Response, error) {
-	rsp, err := c.GetBookCover1(ctx, bookId, reqEditors...)
+// GetBookCoverV1WithResponse request returning *GetBookCoverV1Response
+func (c *ClientWithResponses) GetBookCoverV1WithResponse(ctx context.Context, bookId int64, reqEditors ...RequestEditorFn) (*GetBookCoverV1Response, error) {
+	rsp, err := c.GetBookCoverV1(ctx, bookId, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
-	return ParseGetBookCover1Response(rsp)
+	return ParseGetBookCoverV1Response(rsp)
 }
 
 // GetPdfPageWithResponse request returning *GetPdfPageResponse
@@ -27107,13 +27107,13 @@ func (c *ClientWithResponses) GetPdfPageWithResponse(ctx context.Context, bookId
 	return ParseGetPdfPageResponse(rsp)
 }
 
-// GetBookThumbnail1WithResponse request returning *GetBookThumbnail1Response
-func (c *ClientWithResponses) GetBookThumbnail1WithResponse(ctx context.Context, bookId int64, reqEditors ...RequestEditorFn) (*GetBookThumbnail1Response, error) {
-	rsp, err := c.GetBookThumbnail1(ctx, bookId, reqEditors...)
+// GetBookThumbnailV1WithResponse request returning *GetBookThumbnailV1Response
+func (c *ClientWithResponses) GetBookThumbnailV1WithResponse(ctx context.Context, bookId int64, reqEditors ...RequestEditorFn) (*GetBookThumbnailV1Response, error) {
+	rsp, err := c.GetBookThumbnailV1(ctx, bookId, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
-	return ParseGetBookThumbnail1Response(rsp)
+	return ParseGetBookThumbnailV1Response(rsp)
 }
 
 // GetBookdropCoverWithResponse request returning *GetBookdropCoverResponse
@@ -27224,13 +27224,13 @@ func (c *ClientWithResponses) GetBookCoverWithResponse(ctx context.Context, book
 	return ParseGetBookCoverResponse(rsp)
 }
 
-// DownloadBook1WithResponse request returning *DownloadBook1Response
-func (c *ClientWithResponses) DownloadBook1WithResponse(ctx context.Context, bookId int64, params *DownloadBook1Params, reqEditors ...RequestEditorFn) (*DownloadBook1Response, error) {
-	rsp, err := c.DownloadBook1(ctx, bookId, params, reqEditors...)
+// DownloadOpdsBookWithResponse request returning *DownloadOpdsBookResponse
+func (c *ClientWithResponses) DownloadOpdsBookWithResponse(ctx context.Context, bookId int64, params *DownloadOpdsBookParams, reqEditors ...RequestEditorFn) (*DownloadOpdsBookResponse, error) {
+	rsp, err := c.DownloadOpdsBook(ctx, bookId, params, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
-	return ParseDownloadBook1Response(rsp)
+	return ParseDownloadOpdsBookResponse(rsp)
 }
 
 // GetFoldersWithResponse request returning *GetFoldersResponse
@@ -27970,30 +27970,30 @@ func (c *ClientWithResponses) CreateUserWithResponse(ctx context.Context, body C
 	return ParseCreateUserResponse(rsp)
 }
 
-// DeleteUser1WithResponse request returning *DeleteUser1Response
-func (c *ClientWithResponses) DeleteUser1WithResponse(ctx context.Context, id int64, reqEditors ...RequestEditorFn) (*DeleteUser1Response, error) {
-	rsp, err := c.DeleteUser1(ctx, id, reqEditors...)
+// DeleteOpdsUserV2WithResponse request returning *DeleteOpdsUserV2Response
+func (c *ClientWithResponses) DeleteOpdsUserV2WithResponse(ctx context.Context, id int64, reqEditors ...RequestEditorFn) (*DeleteOpdsUserV2Response, error) {
+	rsp, err := c.DeleteOpdsUserV2(ctx, id, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
-	return ParseDeleteUser1Response(rsp)
+	return ParseDeleteOpdsUserV2Response(rsp)
 }
 
-// UpdateUser1WithBodyWithResponse request with arbitrary body returning *UpdateUser1Response
-func (c *ClientWithResponses) UpdateUser1WithBodyWithResponse(ctx context.Context, id int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateUser1Response, error) {
-	rsp, err := c.UpdateUser1WithBody(ctx, id, contentType, body, reqEditors...)
+// UpdateOpdsUserV2WithBodyWithResponse request with arbitrary body returning *UpdateOpdsUserV2Response
+func (c *ClientWithResponses) UpdateOpdsUserV2WithBodyWithResponse(ctx context.Context, id int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateOpdsUserV2Response, error) {
+	rsp, err := c.UpdateOpdsUserV2WithBody(ctx, id, contentType, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
-	return ParseUpdateUser1Response(rsp)
+	return ParseUpdateOpdsUserV2Response(rsp)
 }
 
-func (c *ClientWithResponses) UpdateUser1WithResponse(ctx context.Context, id int64, body UpdateUser1JSONRequestBody, reqEditors ...RequestEditorFn) (*UpdateUser1Response, error) {
-	rsp, err := c.UpdateUser1(ctx, id, body, reqEditors...)
+func (c *ClientWithResponses) UpdateOpdsUserV2WithResponse(ctx context.Context, id int64, body UpdateOpdsUserV2JSONRequestBody, reqEditors ...RequestEditorFn) (*UpdateOpdsUserV2Response, error) {
+	rsp, err := c.UpdateOpdsUserV2(ctx, id, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
-	return ParseUpdateUser1Response(rsp)
+	return ParseUpdateOpdsUserV2Response(rsp)
 }
 
 // GetAllBooksWithResponse request returning *GetAllBooksResponse
@@ -28068,13 +28068,13 @@ func (c *ClientWithResponses) GetAllLibrariesWithResponse(ctx context.Context, r
 	return ParseGetAllLibrariesResponse(rsp)
 }
 
-// GetLibrary1WithResponse request returning *GetLibrary1Response
-func (c *ClientWithResponses) GetLibrary1WithResponse(ctx context.Context, libraryId int64, reqEditors ...RequestEditorFn) (*GetLibrary1Response, error) {
-	rsp, err := c.GetLibrary1(ctx, libraryId, reqEditors...)
+// GetKomgaLibraryByIdWithResponse request returning *GetKomgaLibraryByIdResponse
+func (c *ClientWithResponses) GetKomgaLibraryByIdWithResponse(ctx context.Context, libraryId int64, reqEditors ...RequestEditorFn) (*GetKomgaLibraryByIdResponse, error) {
+	rsp, err := c.GetKomgaLibraryById(ctx, libraryId, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
-	return ParseGetLibrary1Response(rsp)
+	return ParseGetKomgaLibraryByIdResponse(rsp)
 }
 
 // GetAllSeriesWithResponse request returning *GetAllSeriesResponse
@@ -28113,24 +28113,24 @@ func (c *ClientWithResponses) GetSeriesThumbnailWithResponse(ctx context.Context
 	return ParseGetSeriesThumbnailResponse(rsp)
 }
 
-// GetCurrentUser1WithResponse request returning *GetCurrentUser1Response
-func (c *ClientWithResponses) GetCurrentUser1WithResponse(ctx context.Context, reqEditors ...RequestEditorFn) (*GetCurrentUser1Response, error) {
-	rsp, err := c.GetCurrentUser1(ctx, reqEditors...)
+// GetKomgaCurrentUserWithResponse request returning *GetKomgaCurrentUserResponse
+func (c *ClientWithResponses) GetKomgaCurrentUserWithResponse(ctx context.Context, reqEditors ...RequestEditorFn) (*GetKomgaCurrentUserResponse, error) {
+	rsp, err := c.GetKomgaCurrentUser(ctx, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
-	return ParseGetCurrentUser1Response(rsp)
+	return ParseGetKomgaCurrentUserResponse(rsp)
 }
 
-// ParseCatchAll3Response parses an HTTP response from a CatchAll3WithResponse call
-func ParseCatchAll3Response(rsp *http.Response) (*CatchAll3Response, error) {
+// ParseUnhandledKoboDeleteResponse parses an HTTP response from a UnhandledKoboDeleteWithResponse call
+func ParseUnhandledKoboDeleteResponse(rsp *http.Response) (*UnhandledKoboDeleteResponse, error) {
 	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
 	}
 
-	response := &CatchAll3Response{
+	response := &UnhandledKoboDeleteResponse{
 		Body:         bodyBytes,
 		HTTPResponse: rsp,
 	}
@@ -28148,15 +28148,15 @@ func ParseCatchAll3Response(rsp *http.Response) (*CatchAll3Response, error) {
 	return response, nil
 }
 
-// ParseCatchAllResponse parses an HTTP response from a CatchAllWithResponse call
-func ParseCatchAllResponse(rsp *http.Response) (*CatchAllResponse, error) {
+// ParseUnhandledKoboGetResponse parses an HTTP response from a UnhandledKoboGetWithResponse call
+func ParseUnhandledKoboGetResponse(rsp *http.Response) (*UnhandledKoboGetResponse, error) {
 	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
 	}
 
-	response := &CatchAllResponse{
+	response := &UnhandledKoboGetResponse{
 		Body:         bodyBytes,
 		HTTPResponse: rsp,
 	}
@@ -28174,15 +28174,15 @@ func ParseCatchAllResponse(rsp *http.Response) (*CatchAllResponse, error) {
 	return response, nil
 }
 
-// ParseCatchAll4Response parses an HTTP response from a CatchAll4WithResponse call
-func ParseCatchAll4Response(rsp *http.Response) (*CatchAll4Response, error) {
+// ParseUnhandledKoboPatchResponse parses an HTTP response from a UnhandledKoboPatchWithResponse call
+func ParseUnhandledKoboPatchResponse(rsp *http.Response) (*UnhandledKoboPatchResponse, error) {
 	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
 	}
 
-	response := &CatchAll4Response{
+	response := &UnhandledKoboPatchResponse{
 		Body:         bodyBytes,
 		HTTPResponse: rsp,
 	}
@@ -28200,15 +28200,15 @@ func ParseCatchAll4Response(rsp *http.Response) (*CatchAll4Response, error) {
 	return response, nil
 }
 
-// ParseCatchAll1Response parses an HTTP response from a CatchAll1WithResponse call
-func ParseCatchAll1Response(rsp *http.Response) (*CatchAll1Response, error) {
+// ParseUnhandledKoboPostResponse parses an HTTP response from a UnhandledKoboPostWithResponse call
+func ParseUnhandledKoboPostResponse(rsp *http.Response) (*UnhandledKoboPostResponse, error) {
 	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
 	}
 
-	response := &CatchAll1Response{
+	response := &UnhandledKoboPostResponse{
 		Body:         bodyBytes,
 		HTTPResponse: rsp,
 	}
@@ -28226,15 +28226,15 @@ func ParseCatchAll1Response(rsp *http.Response) (*CatchAll1Response, error) {
 	return response, nil
 }
 
-// ParseCatchAll2Response parses an HTTP response from a CatchAll2WithResponse call
-func ParseCatchAll2Response(rsp *http.Response) (*CatchAll2Response, error) {
+// ParseUnhandledKoboPutResponse parses an HTTP response from a UnhandledKoboPutWithResponse call
+func ParseUnhandledKoboPutResponse(rsp *http.Response) (*UnhandledKoboPutResponse, error) {
 	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
 	}
 
-	response := &CatchAll2Response{
+	response := &UnhandledKoboPutResponse{
 		Body:         bodyBytes,
 		HTTPResponse: rsp,
 	}
@@ -28304,15 +28304,15 @@ func ParseAuthenticateDeviceResponse(rsp *http.Response) (*AuthenticateDeviceRes
 	return response, nil
 }
 
-// ParseDownloadBook3Response parses an HTTP response from a DownloadBook3WithResponse call
-func ParseDownloadBook3Response(rsp *http.Response) (*DownloadBook3Response, error) {
+// ParseKoboDownloadBookByIdV1Response parses an HTTP response from a KoboDownloadBookByIdV1WithResponse call
+func ParseKoboDownloadBookByIdV1Response(rsp *http.Response) (*KoboDownloadBookByIdV1Response, error) {
 	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
 	}
 
-	response := &DownloadBook3Response{
+	response := &KoboDownloadBookByIdV1Response{
 		Body:         bodyBytes,
 		HTTPResponse: rsp,
 	}
@@ -28658,15 +28658,15 @@ func ParseAuthorizeUserResponse(rsp *http.Response) (*AuthorizeUserResponse, err
 	return response, nil
 }
 
-// ParseCreateUser1Response parses an HTTP response from a CreateUser1WithResponse call
-func ParseCreateUser1Response(rsp *http.Response) (*CreateUser1Response, error) {
+// ParseCreateKoReaderUserResponse parses an HTTP response from a CreateKoReaderUserWithResponse call
+func ParseCreateKoReaderUserResponse(rsp *http.Response) (*CreateKoReaderUserResponse, error) {
 	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
 	}
 
-	response := &CreateUser1Response{
+	response := &CreateKoReaderUserResponse{
 		Body:         bodyBytes,
 		HTTPResponse: rsp,
 	}
@@ -28736,15 +28736,15 @@ func ParseCreateUpdateShelfResponse(rsp *http.Response) (*CreateUpdateShelfRespo
 	return response, nil
 }
 
-// ParseDeleteShelf1Response parses an HTTP response from a DeleteShelf1WithResponse call
-func ParseDeleteShelf1Response(rsp *http.Response) (*DeleteShelf1Response, error) {
+// ParseDeleteMagicShelfByIdResponse parses an HTTP response from a DeleteMagicShelfByIdWithResponse call
+func ParseDeleteMagicShelfByIdResponse(rsp *http.Response) (*DeleteMagicShelfByIdResponse, error) {
 	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
 	}
 
-	response := &DeleteShelf1Response{
+	response := &DeleteMagicShelfByIdResponse{
 		Body:         bodyBytes,
 		HTTPResponse: rsp,
 	}
@@ -28752,15 +28752,15 @@ func ParseDeleteShelf1Response(rsp *http.Response) (*DeleteShelf1Response, error
 	return response, nil
 }
 
-// ParseGetShelf1Response parses an HTTP response from a GetShelf1WithResponse call
-func ParseGetShelf1Response(rsp *http.Response) (*GetShelf1Response, error) {
+// ParseGetMagicShelfByIdResponse parses an HTTP response from a GetMagicShelfByIdWithResponse call
+func ParseGetMagicShelfByIdResponse(rsp *http.Response) (*GetMagicShelfByIdResponse, error) {
 	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
 	}
 
-	response := &GetShelf1Response{
+	response := &GetMagicShelfByIdResponse{
 		Body:         bodyBytes,
 		HTTPResponse: rsp,
 	}
@@ -28862,15 +28862,15 @@ func ParseUpdateProposalStatusResponse(rsp *http.Response) (*UpdateProposalStatu
 	return response, nil
 }
 
-// ParseGetBooks2Response parses an HTTP response from a GetBooks2WithResponse call
-func ParseGetBooks2Response(rsp *http.Response) (*GetBooks2Response, error) {
+// ParseMobileListBooksV1Response parses an HTTP response from a MobileListBooksV1WithResponse call
+func ParseMobileListBooksV1Response(rsp *http.Response) (*MobileListBooksV1Response, error) {
 	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
 	}
 
-	response := &GetBooks2Response{
+	response := &MobileListBooksV1Response{
 		Body:         bodyBytes,
 		HTTPResponse: rsp,
 	}
@@ -29092,15 +29092,15 @@ func ParseUpdateStatusResponse(rsp *http.Response) (*UpdateStatusResponse, error
 	return response, nil
 }
 
-// ParseGetLibraries1Response parses an HTTP response from a GetLibraries1WithResponse call
-func ParseGetLibraries1Response(rsp *http.Response) (*GetLibraries1Response, error) {
+// ParseMobileListLibrariesV1Response parses an HTTP response from a MobileListLibrariesV1WithResponse call
+func ParseMobileListLibrariesV1Response(rsp *http.Response) (*MobileListLibrariesV1Response, error) {
 	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
 	}
 
-	response := &GetLibraries1Response{
+	response := &MobileListLibrariesV1Response{
 		Body:         bodyBytes,
 		HTTPResponse: rsp,
 	}
@@ -29588,15 +29588,15 @@ func ParseGetAuthorsByBookIdResponse(rsp *http.Response) (*GetAuthorsByBookIdRes
 	return response, nil
 }
 
-// ParseCreateNote1Response parses an HTTP response from a CreateNote1WithResponse call
-func ParseCreateNote1Response(rsp *http.Response) (*CreateNote1Response, error) {
+// ParseCreateNoteV1Response parses an HTTP response from a CreateNoteV1WithResponse call
+func ParseCreateNoteV1Response(rsp *http.Response) (*CreateNoteV1Response, error) {
 	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
 	}
 
-	response := &CreateNote1Response{
+	response := &CreateNoteV1Response{
 		Body:         bodyBytes,
 		HTTPResponse: rsp,
 	}
@@ -29614,15 +29614,15 @@ func ParseCreateNote1Response(rsp *http.Response) (*CreateNote1Response, error) 
 	return response, nil
 }
 
-// ParseGetNotesForBook1Response parses an HTTP response from a GetNotesForBook1WithResponse call
-func ParseGetNotesForBook1Response(rsp *http.Response) (*GetNotesForBook1Response, error) {
+// ParseGetNotesForBookV1Response parses an HTTP response from a GetNotesForBookV1WithResponse call
+func ParseGetNotesForBookV1Response(rsp *http.Response) (*GetNotesForBookV1Response, error) {
 	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
 	}
 
-	response := &GetNotesForBook1Response{
+	response := &GetNotesForBookV1Response{
 		Body:         bodyBytes,
 		HTTPResponse: rsp,
 	}
@@ -29640,15 +29640,15 @@ func ParseGetNotesForBook1Response(rsp *http.Response) (*GetNotesForBook1Respons
 	return response, nil
 }
 
-// ParseDeleteNote1Response parses an HTTP response from a DeleteNote1WithResponse call
-func ParseDeleteNote1Response(rsp *http.Response) (*DeleteNote1Response, error) {
+// ParseDeleteNoteV1Response parses an HTTP response from a DeleteNoteV1WithResponse call
+func ParseDeleteNoteV1Response(rsp *http.Response) (*DeleteNoteV1Response, error) {
 	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
 	}
 
-	response := &DeleteNote1Response{
+	response := &DeleteNoteV1Response{
 		Body:         bodyBytes,
 		HTTPResponse: rsp,
 	}
@@ -29682,15 +29682,15 @@ func ParseGetFilesByStatusResponse(rsp *http.Response) (*GetFilesByStatusRespons
 	return response, nil
 }
 
-// ParseBulkEditMetadata1Response parses an HTTP response from a BulkEditMetadata1WithResponse call
-func ParseBulkEditMetadata1Response(rsp *http.Response) (*BulkEditMetadata1Response, error) {
+// ParseBulkEditBookdropMetadataResponse parses an HTTP response from a BulkEditBookdropMetadataWithResponse call
+func ParseBulkEditBookdropMetadataResponse(rsp *http.Response) (*BulkEditBookdropMetadataResponse, error) {
 	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
 	}
 
-	response := &BulkEditMetadata1Response{
+	response := &BulkEditBookdropMetadataResponse{
 		Body:         bodyBytes,
 		HTTPResponse: rsp,
 	}
@@ -29971,15 +29971,15 @@ func ParseDeleteBooksResponse(rsp *http.Response) (*DeleteBooksResponse, error) 
 	return response, nil
 }
 
-// ParseGetBooks1Response parses an HTTP response from a GetBooks1WithResponse call
-func ParseGetBooks1Response(rsp *http.Response) (*GetBooks1Response, error) {
+// ParseListBooksResponse parses an HTTP response from a ListBooksWithResponse call
+func ParseListBooksResponse(rsp *http.Response) (*ListBooksResponse, error) {
 	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
 	}
 
-	response := &GetBooks1Response{
+	response := &ListBooksResponse{
 		Body:         bodyBytes,
 		HTTPResponse: rsp,
 	}
@@ -30276,15 +30276,15 @@ func ParseAddBookToProgressResponse(rsp *http.Response) (*AddBookToProgressRespo
 	return response, nil
 }
 
-// ParseRegenerateCovers1Response parses an HTTP response from a RegenerateCovers1WithResponse call
-func ParseRegenerateCovers1Response(rsp *http.Response) (*RegenerateCovers1Response, error) {
+// ParseRegenerateBookCoversResponse parses an HTTP response from a RegenerateBookCoversWithResponse call
+func ParseRegenerateBookCoversResponse(rsp *http.Response) (*RegenerateBookCoversResponse, error) {
 	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
 	}
 
-	response := &RegenerateCovers1Response{
+	response := &RegenerateBookCoversResponse{
 		Body:         bodyBytes,
 		HTTPResponse: rsp,
 	}
@@ -30410,15 +30410,15 @@ func ParseUpdateReadStatusResponse(rsp *http.Response) (*UpdateReadStatusRespons
 	return response, nil
 }
 
-// ParseGetBook2Response parses an HTTP response from a GetBook2WithResponse call
-func ParseGetBook2Response(rsp *http.Response) (*GetBook2Response, error) {
+// ParseGetBookByIdResponse parses an HTTP response from a GetBookByIdWithResponse call
+func ParseGetBookByIdResponse(rsp *http.Response) (*GetBookByIdResponse, error) {
 	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
 	}
 
-	response := &GetBook2Response{
+	response := &GetBookByIdResponse{
 		Body:         bodyBytes,
 		HTTPResponse: rsp,
 	}
@@ -30495,15 +30495,15 @@ func ParseGetBookContentResponse(rsp *http.Response) (*GetBookContentResponse, e
 	return response, nil
 }
 
-// ParseDownloadBook2Response parses an HTTP response from a DownloadBook2WithResponse call
-func ParseDownloadBook2Response(rsp *http.Response) (*DownloadBook2Response, error) {
+// ParseDownloadBookByIdResponse parses an HTTP response from a DownloadBookByIdWithResponse call
+func ParseDownloadBookByIdResponse(rsp *http.Response) (*DownloadBookByIdResponse, error) {
 	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
 	}
 
-	response := &DownloadBook2Response{
+	response := &DownloadBookByIdResponse{
 		Body:         bodyBytes,
 		HTTPResponse: rsp,
 	}
@@ -30911,15 +30911,15 @@ func ParseGetPageInfoResponse(rsp *http.Response) (*GetPageInfoResponse, error) 
 	return response, nil
 }
 
-// ParseListPages1Response parses an HTTP response from a ListPages1WithResponse call
-func ParseListPages1Response(rsp *http.Response) (*ListPages1Response, error) {
+// ParseGetCbxBookPagesResponse parses an HTTP response from a GetCbxBookPagesWithResponse call
+func ParseGetCbxBookPagesResponse(rsp *http.Response) (*GetCbxBookPagesResponse, error) {
 	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
 	}
 
-	response := &ListPages1Response{
+	response := &GetCbxBookPagesResponse{
 		Body:         bodyBytes,
 		HTTPResponse: rsp,
 	}
@@ -31061,15 +31061,15 @@ func ParseGetFileResponse(rsp *http.Response) (*GetFileResponse, error) {
 	return response, nil
 }
 
-// ParseGetBookInfo1Response parses an HTTP response from a GetBookInfo1WithResponse call
-func ParseGetBookInfo1Response(rsp *http.Response) (*GetBookInfo1Response, error) {
+// ParseGetEpubBookInfoResponse parses an HTTP response from a GetEpubBookInfoWithResponse call
+func ParseGetEpubBookInfoResponse(rsp *http.Response) (*GetEpubBookInfoResponse, error) {
 	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
 	}
 
-	response := &GetBookInfo1Response{
+	response := &GetEpubBookInfoResponse{
 		Body:         bodyBytes,
 		HTTPResponse: rsp,
 	}
@@ -31139,15 +31139,15 @@ func ParseUploadFileResponse(rsp *http.Response) (*UploadFileResponse, error) {
 	return response, nil
 }
 
-// ParseUploadFile1Response parses an HTTP response from a UploadFile1WithResponse call
-func ParseUploadFile1Response(rsp *http.Response) (*UploadFile1Response, error) {
+// ParseUploadFileToBookdropResponse parses an HTTP response from a UploadFileToBookdropWithResponse call
+func ParseUploadFileToBookdropResponse(rsp *http.Response) (*UploadFileToBookdropResponse, error) {
 	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
 	}
 
-	response := &UploadFile1Response{
+	response := &UploadFileToBookdropResponse{
 		Body:         bodyBytes,
 		HTTPResponse: rsp,
 	}
@@ -31165,15 +31165,15 @@ func ParseUploadFile1Response(rsp *http.Response) (*UploadFile1Response, error) 
 	return response, nil
 }
 
-// ParseGetSettings1Response parses an HTTP response from a GetSettings1WithResponse call
-func ParseGetSettings1Response(rsp *http.Response) (*GetSettings1Response, error) {
+// ParseGetHardcoverSyncSettingsResponse parses an HTTP response from a GetHardcoverSyncSettingsWithResponse call
+func ParseGetHardcoverSyncSettingsResponse(rsp *http.Response) (*GetHardcoverSyncSettingsResponse, error) {
 	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
 	}
 
-	response := &GetSettings1Response{
+	response := &GetHardcoverSyncSettingsResponse{
 		Body:         bodyBytes,
 		HTTPResponse: rsp,
 	}
@@ -31191,15 +31191,15 @@ func ParseGetSettings1Response(rsp *http.Response) (*GetSettings1Response, error
 	return response, nil
 }
 
-// ParseUpdateSettings2Response parses an HTTP response from a UpdateSettings2WithResponse call
-func ParseUpdateSettings2Response(rsp *http.Response) (*UpdateSettings2Response, error) {
+// ParseUpdateHardcoverSyncSettingsResponse parses an HTTP response from a UpdateHardcoverSyncSettingsWithResponse call
+func ParseUpdateHardcoverSyncSettingsResponse(rsp *http.Response) (*UpdateHardcoverSyncSettingsResponse, error) {
 	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
 	}
 
-	response := &UpdateSettings2Response{
+	response := &UpdateHardcoverSyncSettingsResponse{
 		Body:         bodyBytes,
 		HTTPResponse: rsp,
 	}
@@ -31425,15 +31425,15 @@ func ParseGetSettingsResponse(rsp *http.Response) (*GetSettingsResponse, error) 
 	return response, nil
 }
 
-// ParseUpdateSettings1Response parses an HTTP response from a UpdateSettings1WithResponse call
-func ParseUpdateSettings1Response(rsp *http.Response) (*UpdateSettings1Response, error) {
+// ParseUpdateKoboSettingsResponse parses an HTTP response from a UpdateKoboSettingsWithResponse call
+func ParseUpdateKoboSettingsResponse(rsp *http.Response) (*UpdateKoboSettingsResponse, error) {
 	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
 	}
 
-	response := &UpdateSettings1Response{
+	response := &UpdateKoboSettingsResponse{
 		Body:         bodyBytes,
 		HTTPResponse: rsp,
 	}
@@ -31750,15 +31750,15 @@ func ParseGetBooksResponse(rsp *http.Response) (*GetBooksResponse, error) {
 	return response, nil
 }
 
-// ParseGetBook1Response parses an HTTP response from a GetBook1WithResponse call
-func ParseGetBook1Response(rsp *http.Response) (*GetBook1Response, error) {
+// ParseGetLibraryBookByIdResponse parses an HTTP response from a GetLibraryBookByIdWithResponse call
+func ParseGetLibraryBookByIdResponse(rsp *http.Response) (*GetLibraryBookByIdResponse, error) {
 	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
 	}
 
-	response := &GetBook1Response{
+	response := &GetLibraryBookByIdResponse{
 		Body:         bodyBytes,
 		HTTPResponse: rsp,
 	}
@@ -31844,15 +31844,15 @@ func ParseGetCbxPageResponse(rsp *http.Response) (*GetCbxPageResponse, error) {
 	return response, nil
 }
 
-// ParseGetBookCover1Response parses an HTTP response from a GetBookCover1WithResponse call
-func ParseGetBookCover1Response(rsp *http.Response) (*GetBookCover1Response, error) {
+// ParseGetBookCoverV1Response parses an HTTP response from a GetBookCoverV1WithResponse call
+func ParseGetBookCoverV1Response(rsp *http.Response) (*GetBookCoverV1Response, error) {
 	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
 	}
 
-	response := &GetBookCover1Response{
+	response := &GetBookCoverV1Response{
 		Body:         bodyBytes,
 		HTTPResponse: rsp,
 	}
@@ -31886,15 +31886,15 @@ func ParseGetPdfPageResponse(rsp *http.Response) (*GetPdfPageResponse, error) {
 	return response, nil
 }
 
-// ParseGetBookThumbnail1Response parses an HTTP response from a GetBookThumbnail1WithResponse call
-func ParseGetBookThumbnail1Response(rsp *http.Response) (*GetBookThumbnail1Response, error) {
+// ParseGetBookThumbnailV1Response parses an HTTP response from a GetBookThumbnailV1WithResponse call
+func ParseGetBookThumbnailV1Response(rsp *http.Response) (*GetBookThumbnailV1Response, error) {
 	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
 	}
 
-	response := &GetBookThumbnail1Response{
+	response := &GetBookThumbnailV1Response{
 		Body:         bodyBytes,
 		HTTPResponse: rsp,
 	}
@@ -32141,15 +32141,15 @@ func ParseGetBookCoverResponse(rsp *http.Response) (*GetBookCoverResponse, error
 	return response, nil
 }
 
-// ParseDownloadBook1Response parses an HTTP response from a DownloadBook1WithResponse call
-func ParseDownloadBook1Response(rsp *http.Response) (*DownloadBook1Response, error) {
+// ParseDownloadOpdsBookResponse parses an HTTP response from a DownloadOpdsBookWithResponse call
+func ParseDownloadOpdsBookResponse(rsp *http.Response) (*DownloadOpdsBookResponse, error) {
 	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
 	}
 
-	response := &DownloadBook1Response{
+	response := &DownloadOpdsBookResponse{
 		Body:         bodyBytes,
 		HTTPResponse: rsp,
 	}
@@ -33859,15 +33859,15 @@ func ParseCreateUserResponse(rsp *http.Response) (*CreateUserResponse, error) {
 	return response, nil
 }
 
-// ParseDeleteUser1Response parses an HTTP response from a DeleteUser1WithResponse call
-func ParseDeleteUser1Response(rsp *http.Response) (*DeleteUser1Response, error) {
+// ParseDeleteOpdsUserV2Response parses an HTTP response from a DeleteOpdsUserV2WithResponse call
+func ParseDeleteOpdsUserV2Response(rsp *http.Response) (*DeleteOpdsUserV2Response, error) {
 	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
 	}
 
-	response := &DeleteUser1Response{
+	response := &DeleteOpdsUserV2Response{
 		Body:         bodyBytes,
 		HTTPResponse: rsp,
 	}
@@ -33875,15 +33875,15 @@ func ParseDeleteUser1Response(rsp *http.Response) (*DeleteUser1Response, error) 
 	return response, nil
 }
 
-// ParseUpdateUser1Response parses an HTTP response from a UpdateUser1WithResponse call
-func ParseUpdateUser1Response(rsp *http.Response) (*UpdateUser1Response, error) {
+// ParseUpdateOpdsUserV2Response parses an HTTP response from a UpdateOpdsUserV2WithResponse call
+func ParseUpdateOpdsUserV2Response(rsp *http.Response) (*UpdateOpdsUserV2Response, error) {
 	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
 	}
 
-	response := &UpdateUser1Response{
+	response := &UpdateOpdsUserV2Response{
 		Body:         bodyBytes,
 		HTTPResponse: rsp,
 	}
@@ -34109,15 +34109,15 @@ func ParseGetAllLibrariesResponse(rsp *http.Response) (*GetAllLibrariesResponse,
 	return response, nil
 }
 
-// ParseGetLibrary1Response parses an HTTP response from a GetLibrary1WithResponse call
-func ParseGetLibrary1Response(rsp *http.Response) (*GetLibrary1Response, error) {
+// ParseGetKomgaLibraryByIdResponse parses an HTTP response from a GetKomgaLibraryByIdWithResponse call
+func ParseGetKomgaLibraryByIdResponse(rsp *http.Response) (*GetKomgaLibraryByIdResponse, error) {
 	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
 	}
 
-	response := &GetLibrary1Response{
+	response := &GetKomgaLibraryByIdResponse{
 		Body:         bodyBytes,
 		HTTPResponse: rsp,
 	}
@@ -34239,15 +34239,15 @@ func ParseGetSeriesThumbnailResponse(rsp *http.Response) (*GetSeriesThumbnailRes
 	return response, nil
 }
 
-// ParseGetCurrentUser1Response parses an HTTP response from a GetCurrentUser1WithResponse call
-func ParseGetCurrentUser1Response(rsp *http.Response) (*GetCurrentUser1Response, error) {
+// ParseGetKomgaCurrentUserResponse parses an HTTP response from a GetKomgaCurrentUserWithResponse call
+func ParseGetKomgaCurrentUserResponse(rsp *http.Response) (*GetKomgaCurrentUserResponse, error) {
 	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
 	}
 
-	response := &GetCurrentUser1Response{
+	response := &GetKomgaCurrentUserResponse{
 		Body:         bodyBytes,
 		HTTPResponse: rsp,
 	}
