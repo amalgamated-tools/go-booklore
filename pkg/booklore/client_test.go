@@ -10,7 +10,6 @@ import (
 // Generated test functions for API endpoints
 // These tests hit the real API endpoint configured in environment variables
 
-
 // TestCatchall_GET tests the GET /api/kobo/{token} endpoint
 func TestCatchall_GET(t *testing.T) {
 	ctx := context.Background()
@@ -25,7 +24,6 @@ func TestCatchall_GET(t *testing.T) {
 	_ = client
 	_ = ctx
 }
-
 
 // TestCatchall2_PUT tests the PUT /api/kobo/{token} endpoint
 func TestCatchall2_PUT(t *testing.T) {
@@ -42,7 +40,6 @@ func TestCatchall2_PUT(t *testing.T) {
 	_ = ctx
 }
 
-
 // TestCatchall1_POST tests the POST /api/kobo/{token} endpoint
 func TestCatchall1_POST(t *testing.T) {
 	ctx := context.Background()
@@ -57,7 +54,6 @@ func TestCatchall1_POST(t *testing.T) {
 	_ = client
 	_ = ctx
 }
-
 
 // TestCatchall3_DELETE tests the DELETE /api/kobo/{token} endpoint
 func TestCatchall3_DELETE(t *testing.T) {
@@ -74,7 +70,6 @@ func TestCatchall3_DELETE(t *testing.T) {
 	_ = ctx
 }
 
-
 // TestCatchall4_PATCH tests the PATCH /api/kobo/{token} endpoint
 func TestCatchall4_PATCH(t *testing.T) {
 	ctx := context.Background()
@@ -89,7 +84,6 @@ func TestCatchall4_PATCH(t *testing.T) {
 	_ = client
 	_ = ctx
 }
-
 
 // TestGetemailrecipient_GET tests the GET /api/v2/email/recipients/{id} endpoint
 func TestGetemailrecipient_GET(t *testing.T) {
@@ -106,7 +100,6 @@ func TestGetemailrecipient_GET(t *testing.T) {
 	_ = ctx
 }
 
-
 // TestUpdateemailrecipient_PUT tests the PUT /api/v2/email/recipients/{id} endpoint
 func TestUpdateemailrecipient_PUT(t *testing.T) {
 	ctx := context.Background()
@@ -121,7 +114,6 @@ func TestUpdateemailrecipient_PUT(t *testing.T) {
 	_ = client
 	_ = ctx
 }
-
 
 // TestDeleteemailrecipient_DELETE tests the DELETE /api/v2/email/recipients/{id} endpoint
 func TestDeleteemailrecipient_DELETE(t *testing.T) {
@@ -138,7 +130,6 @@ func TestDeleteemailrecipient_DELETE(t *testing.T) {
 	_ = ctx
 }
 
-
 // TestGetemailprovider_GET tests the GET /api/v2/email/providers/{id} endpoint
 func TestGetemailprovider_GET(t *testing.T) {
 	ctx := context.Background()
@@ -153,7 +144,6 @@ func TestGetemailprovider_GET(t *testing.T) {
 	_ = client
 	_ = ctx
 }
-
 
 // TestUpdateemailprovider_PUT tests the PUT /api/v2/email/providers/{id} endpoint
 func TestUpdateemailprovider_PUT(t *testing.T) {
@@ -170,7 +160,6 @@ func TestUpdateemailprovider_PUT(t *testing.T) {
 	_ = ctx
 }
 
-
 // TestDeleteemailprovider_DELETE tests the DELETE /api/v2/email/providers/{id} endpoint
 func TestDeleteemailprovider_DELETE(t *testing.T) {
 	ctx := context.Background()
@@ -185,7 +174,6 @@ func TestDeleteemailprovider_DELETE(t *testing.T) {
 	_ = client
 	_ = ctx
 }
-
 
 // TestGetnotebyid_GET tests the GET /api/v2/book-notes/{noteId} endpoint
 func TestGetnotebyid_GET(t *testing.T) {
@@ -202,7 +190,6 @@ func TestGetnotebyid_GET(t *testing.T) {
 	_ = ctx
 }
 
-
 // TestUpdatenote_PUT tests the PUT /api/v2/book-notes/{noteId} endpoint
 func TestUpdatenote_PUT(t *testing.T) {
 	ctx := context.Background()
@@ -217,7 +204,6 @@ func TestUpdatenote_PUT(t *testing.T) {
 	_ = client
 	_ = ctx
 }
-
 
 // TestDeletenote_DELETE tests the DELETE /api/v2/book-notes/{noteId} endpoint
 func TestDeletenote_DELETE(t *testing.T) {
@@ -234,7 +220,6 @@ func TestDeletenote_DELETE(t *testing.T) {
 	_ = ctx
 }
 
-
 // TestGetuser_GET tests the GET /api/v1/users/{id} endpoint
 func TestGetuser_GET(t *testing.T) {
 	ctx := context.Background()
@@ -249,7 +234,6 @@ func TestGetuser_GET(t *testing.T) {
 	_ = client
 	_ = ctx
 }
-
 
 // TestUpdateuser_PUT tests the PUT /api/v1/users/{id} endpoint
 func TestUpdateuser_PUT(t *testing.T) {
@@ -266,7 +250,6 @@ func TestUpdateuser_PUT(t *testing.T) {
 	_ = ctx
 }
 
-
 // TestDeleteuser_DELETE tests the DELETE /api/v1/users/{id} endpoint
 func TestDeleteuser_DELETE(t *testing.T) {
 	ctx := context.Background()
@@ -281,7 +264,6 @@ func TestDeleteuser_DELETE(t *testing.T) {
 	_ = client
 	_ = ctx
 }
-
 
 // TestUpdateusersetting_PUT tests the PUT /api/v1/users/{id}/settings endpoint
 func TestUpdateusersetting_PUT(t *testing.T) {
@@ -298,7 +280,6 @@ func TestUpdateusersetting_PUT(t *testing.T) {
 	_ = ctx
 }
 
-
 // TestChangeuserpassword_PUT tests the PUT /api/v1/users/change-user-password endpoint
 func TestChangeuserpassword_PUT(t *testing.T) {
 	ctx := context.Background()
@@ -313,7 +294,6 @@ func TestChangeuserpassword_PUT(t *testing.T) {
 	_ = client
 	_ = ctx
 }
-
 
 // TestChangepassword_PUT tests the PUT /api/v1/users/change-password endpoint
 func TestChangepassword_PUT(t *testing.T) {
@@ -330,7 +310,6 @@ func TestChangepassword_PUT(t *testing.T) {
 	_ = ctx
 }
 
-
 // TestGetshelf_GET tests the GET /api/v1/shelves/{shelfId} endpoint
 func TestGetshelf_GET(t *testing.T) {
 	ctx := context.Background()
@@ -345,7 +324,6 @@ func TestGetshelf_GET(t *testing.T) {
 	_ = client
 	_ = ctx
 }
-
 
 // TestUpdateshelf_PUT tests the PUT /api/v1/shelves/{shelfId} endpoint
 func TestUpdateshelf_PUT(t *testing.T) {
@@ -362,7 +340,6 @@ func TestUpdateshelf_PUT(t *testing.T) {
 	_ = ctx
 }
 
-
 // TestDeleteshelf_DELETE tests the DELETE /api/v1/shelves/{shelfId} endpoint
 func TestDeleteshelf_DELETE(t *testing.T) {
 	ctx := context.Background()
@@ -377,7 +354,6 @@ func TestDeleteshelf_DELETE(t *testing.T) {
 	_ = client
 	_ = ctx
 }
-
 
 // TestGetappsettings_GET tests the GET /api/v1/settings endpoint
 func TestGetappsettings_GET(t *testing.T) {
@@ -394,7 +370,6 @@ func TestGetappsettings_GET(t *testing.T) {
 	_ = ctx
 }
 
-
 // TestUpdatesettings_PUT tests the PUT /api/v1/settings endpoint
 func TestUpdatesettings_PUT(t *testing.T) {
 	ctx := context.Background()
@@ -409,7 +384,6 @@ func TestUpdatesettings_PUT(t *testing.T) {
 	_ = client
 	_ = ctx
 }
-
 
 // TestGetlibrary_GET tests the GET /api/v1/libraries/{libraryId} endpoint
 func TestGetlibrary_GET(t *testing.T) {
@@ -426,7 +400,6 @@ func TestGetlibrary_GET(t *testing.T) {
 	_ = ctx
 }
 
-
 // TestUpdatelibrary_PUT tests the PUT /api/v1/libraries/{libraryId} endpoint
 func TestUpdatelibrary_PUT(t *testing.T) {
 	ctx := context.Background()
@@ -441,7 +414,6 @@ func TestUpdatelibrary_PUT(t *testing.T) {
 	_ = client
 	_ = ctx
 }
-
 
 // TestDeletelibrary_DELETE tests the DELETE /api/v1/libraries/{libraryId} endpoint
 func TestDeletelibrary_DELETE(t *testing.T) {
@@ -458,7 +430,6 @@ func TestDeletelibrary_DELETE(t *testing.T) {
 	_ = ctx
 }
 
-
 // TestRescanlibrary_PUT tests the PUT /api/v1/libraries/{libraryId}/refresh endpoint
 func TestRescanlibrary_PUT(t *testing.T) {
 	ctx := context.Background()
@@ -473,7 +444,6 @@ func TestRescanlibrary_PUT(t *testing.T) {
 	_ = client
 	_ = ctx
 }
-
 
 // TestGetcurrentuser_GET tests the GET /api/v1/koreader-users/me endpoint
 func TestGetcurrentuser_GET(t *testing.T) {
@@ -490,7 +460,6 @@ func TestGetcurrentuser_GET(t *testing.T) {
 	_ = ctx
 }
 
-
 // TestUpsertcurrentuser_PUT tests the PUT /api/v1/koreader-users/me endpoint
 func TestUpsertcurrentuser_PUT(t *testing.T) {
 	ctx := context.Background()
@@ -505,7 +474,6 @@ func TestUpsertcurrentuser_PUT(t *testing.T) {
 	_ = client
 	_ = ctx
 }
-
 
 // TestGetsettings_GET tests the GET /api/v1/kobo-settings endpoint
 func TestGetsettings_GET(t *testing.T) {
@@ -522,7 +490,6 @@ func TestGetsettings_GET(t *testing.T) {
 	_ = ctx
 }
 
-
 // TestUpdatesettings1_PUT tests the PUT /api/v1/kobo-settings endpoint
 func TestUpdatesettings1_PUT(t *testing.T) {
 	ctx := context.Background()
@@ -537,7 +504,6 @@ func TestUpdatesettings1_PUT(t *testing.T) {
 	_ = client
 	_ = ctx
 }
-
 
 // TestCreateorupdatetoken_PUT tests the PUT /api/v1/kobo-settings/token endpoint
 func TestCreateorupdatetoken_PUT(t *testing.T) {
@@ -554,7 +520,6 @@ func TestCreateorupdatetoken_PUT(t *testing.T) {
 	_ = ctx
 }
 
-
 // TestGetsettings1_GET tests the GET /api/v1/hardcover-sync-settings endpoint
 func TestGetsettings1_GET(t *testing.T) {
 	ctx := context.Background()
@@ -569,7 +534,6 @@ func TestGetsettings1_GET(t *testing.T) {
 	_ = client
 	_ = ctx
 }
-
 
 // TestUpdatesettings2_PUT tests the PUT /api/v1/hardcover-sync-settings endpoint
 func TestUpdatesettings2_PUT(t *testing.T) {
@@ -586,7 +550,6 @@ func TestUpdatesettings2_PUT(t *testing.T) {
 	_ = ctx
 }
 
-
 // TestGetbookviewersettings_GET tests the GET /api/v1/books/{bookId}/viewer-setting endpoint
 func TestGetbookviewersettings_GET(t *testing.T) {
 	ctx := context.Background()
@@ -601,7 +564,6 @@ func TestGetbookviewersettings_GET(t *testing.T) {
 	_ = client
 	_ = ctx
 }
-
 
 // TestUpdatebookviewersettings_PUT tests the PUT /api/v1/books/{bookId}/viewer-setting endpoint
 func TestUpdatebookviewersettings_PUT(t *testing.T) {
@@ -618,7 +580,6 @@ func TestUpdatebookviewersettings_PUT(t *testing.T) {
 	_ = ctx
 }
 
-
 // TestUpdatemetadata_PUT tests the PUT /api/v1/books/{bookId}/metadata endpoint
 func TestUpdatemetadata_PUT(t *testing.T) {
 	ctx := context.Background()
@@ -633,7 +594,6 @@ func TestUpdatemetadata_PUT(t *testing.T) {
 	_ = client
 	_ = ctx
 }
-
 
 // TestUpdatepersonalrating_PUT tests the PUT /api/v1/books/personal-rating endpoint
 func TestUpdatepersonalrating_PUT(t *testing.T) {
@@ -650,7 +610,6 @@ func TestUpdatepersonalrating_PUT(t *testing.T) {
 	_ = ctx
 }
 
-
 // TestTogglefieldlocks_PUT tests the PUT /api/v1/books/metadata/toggle-field-locks endpoint
 func TestTogglefieldlocks_PUT(t *testing.T) {
 	ctx := context.Background()
@@ -665,7 +624,6 @@ func TestTogglefieldlocks_PUT(t *testing.T) {
 	_ = client
 	_ = ctx
 }
-
 
 // TestToggleallmetadata_PUT tests the PUT /api/v1/books/metadata/toggle-all-lock endpoint
 func TestToggleallmetadata_PUT(t *testing.T) {
@@ -682,7 +640,6 @@ func TestToggleallmetadata_PUT(t *testing.T) {
 	_ = ctx
 }
 
-
 // TestBulkeditmetadata_PUT tests the PUT /api/v1/books/bulk-edit-metadata endpoint
 func TestBulkeditmetadata_PUT(t *testing.T) {
 	ctx := context.Background()
@@ -697,7 +654,6 @@ func TestBulkeditmetadata_PUT(t *testing.T) {
 	_ = client
 	_ = ctx
 }
-
 
 // TestGetbookmarkbyid_GET tests the GET /api/v1/bookmarks/{bookmarkId} endpoint
 func TestGetbookmarkbyid_GET(t *testing.T) {
@@ -714,7 +670,6 @@ func TestGetbookmarkbyid_GET(t *testing.T) {
 	_ = ctx
 }
 
-
 // TestUpdatebookmark_PUT tests the PUT /api/v1/bookmarks/{bookmarkId} endpoint
 func TestUpdatebookmark_PUT(t *testing.T) {
 	ctx := context.Background()
@@ -729,7 +684,6 @@ func TestUpdatebookmark_PUT(t *testing.T) {
 	_ = client
 	_ = ctx
 }
-
 
 // TestDeletebookmark_DELETE tests the DELETE /api/v1/bookmarks/{bookmarkId} endpoint
 func TestDeletebookmark_DELETE(t *testing.T) {
@@ -746,7 +700,6 @@ func TestDeletebookmark_DELETE(t *testing.T) {
 	_ = ctx
 }
 
-
 // TestGetannotationbyid_GET tests the GET /api/v1/annotations/{annotationId} endpoint
 func TestGetannotationbyid_GET(t *testing.T) {
 	ctx := context.Background()
@@ -761,7 +714,6 @@ func TestGetannotationbyid_GET(t *testing.T) {
 	_ = client
 	_ = ctx
 }
-
 
 // TestUpdateannotation_PUT tests the PUT /api/v1/annotations/{annotationId} endpoint
 func TestUpdateannotation_PUT(t *testing.T) {
@@ -778,7 +730,6 @@ func TestUpdateannotation_PUT(t *testing.T) {
 	_ = ctx
 }
 
-
 // TestDeleteannotation_DELETE tests the DELETE /api/v1/annotations/{annotationId} endpoint
 func TestDeleteannotation_DELETE(t *testing.T) {
 	ctx := context.Background()
@@ -793,7 +744,6 @@ func TestDeleteannotation_DELETE(t *testing.T) {
 	_ = client
 	_ = ctx
 }
-
 
 // TestUpdatestatus_PUT tests the PUT /api/mobile/v1/books/{bookId}/status endpoint
 func TestUpdatestatus_PUT(t *testing.T) {
@@ -810,7 +760,6 @@ func TestUpdatestatus_PUT(t *testing.T) {
 	_ = ctx
 }
 
-
 // TestUpdaterating_PUT tests the PUT /api/mobile/v1/books/{bookId}/rating endpoint
 func TestUpdaterating_PUT(t *testing.T) {
 	ctx := context.Background()
@@ -825,7 +774,6 @@ func TestUpdaterating_PUT(t *testing.T) {
 	_ = client
 	_ = ctx
 }
-
 
 // TestUpdateprogress_PUT tests the PUT /api/koreader/syncs/progress endpoint
 func TestUpdateprogress_PUT(t *testing.T) {
@@ -842,7 +790,6 @@ func TestUpdateprogress_PUT(t *testing.T) {
 	_ = ctx
 }
 
-
 // TestGetstate_GET tests the GET /api/kobo/{token}/v1/library/{bookId}/state endpoint
 func TestGetstate_GET(t *testing.T) {
 	ctx := context.Background()
@@ -857,7 +804,6 @@ func TestGetstate_GET(t *testing.T) {
 	_ = client
 	_ = ctx
 }
-
 
 // TestUpdatestate_PUT tests the PUT /api/kobo/{token}/v1/library/{bookId}/state endpoint
 func TestUpdatestate_PUT(t *testing.T) {
@@ -874,7 +820,6 @@ func TestUpdatestate_PUT(t *testing.T) {
 	_ = ctx
 }
 
-
 // TestGetusers_GET tests the GET /api/v2/opds-users endpoint
 func TestGetusers_GET(t *testing.T) {
 	ctx := context.Background()
@@ -889,7 +834,6 @@ func TestGetusers_GET(t *testing.T) {
 	_ = client
 	_ = ctx
 }
-
 
 // TestCreateuser_POST tests the POST /api/v2/opds-users endpoint
 func TestCreateuser_POST(t *testing.T) {
@@ -906,7 +850,6 @@ func TestCreateuser_POST(t *testing.T) {
 	_ = ctx
 }
 
-
 // TestGetemailrecipients_GET tests the GET /api/v2/email/recipients endpoint
 func TestGetemailrecipients_GET(t *testing.T) {
 	ctx := context.Background()
@@ -921,7 +864,6 @@ func TestGetemailrecipients_GET(t *testing.T) {
 	_ = client
 	_ = ctx
 }
-
 
 // TestCreateemailrecipient_POST tests the POST /api/v2/email/recipients endpoint
 func TestCreateemailrecipient_POST(t *testing.T) {
@@ -938,7 +880,6 @@ func TestCreateemailrecipient_POST(t *testing.T) {
 	_ = ctx
 }
 
-
 // TestGetemailproviders_GET tests the GET /api/v2/email/providers endpoint
 func TestGetemailproviders_GET(t *testing.T) {
 	ctx := context.Background()
@@ -953,7 +894,6 @@ func TestGetemailproviders_GET(t *testing.T) {
 	_ = client
 	_ = ctx
 }
-
 
 // TestCreateemailprovider_POST tests the POST /api/v2/email/providers endpoint
 func TestCreateemailprovider_POST(t *testing.T) {
@@ -970,7 +910,6 @@ func TestCreateemailprovider_POST(t *testing.T) {
 	_ = ctx
 }
 
-
 // TestSendemail_POST tests the POST /api/v2/email/book endpoint
 func TestSendemail_POST(t *testing.T) {
 	ctx := context.Background()
@@ -985,7 +924,6 @@ func TestSendemail_POST(t *testing.T) {
 	_ = client
 	_ = ctx
 }
-
 
 // TestEmailbookquick_POST tests the POST /api/v2/email/book/{bookId} endpoint
 func TestEmailbookquick_POST(t *testing.T) {
@@ -1002,7 +940,6 @@ func TestEmailbookquick_POST(t *testing.T) {
 	_ = ctx
 }
 
-
 // TestCreatenote_POST tests the POST /api/v2/book-notes endpoint
 func TestCreatenote_POST(t *testing.T) {
 	ctx := context.Background()
@@ -1017,7 +954,6 @@ func TestCreatenote_POST(t *testing.T) {
 	_ = client
 	_ = ctx
 }
-
 
 // TestStarttask_POST tests the POST /api/v1/tasks/start endpoint
 func TestStarttask_POST(t *testing.T) {
@@ -1034,7 +970,6 @@ func TestStarttask_POST(t *testing.T) {
 	_ = ctx
 }
 
-
 // TestGetallshelves_GET tests the GET /api/v1/shelves endpoint
 func TestGetallshelves_GET(t *testing.T) {
 	ctx := context.Background()
@@ -1049,7 +984,6 @@ func TestGetallshelves_GET(t *testing.T) {
 	_ = client
 	_ = ctx
 }
-
 
 // TestCreateshelf_POST tests the POST /api/v1/shelves endpoint
 func TestCreateshelf_POST(t *testing.T) {
@@ -1066,7 +1000,6 @@ func TestCreateshelf_POST(t *testing.T) {
 	_ = ctx
 }
 
-
 // TestSetupfirstuser_POST tests the POST /api/v1/setup endpoint
 func TestSetupfirstuser_POST(t *testing.T) {
 	ctx := context.Background()
@@ -1081,7 +1014,6 @@ func TestSetupfirstuser_POST(t *testing.T) {
 	_ = client
 	_ = ctx
 }
-
 
 // TestRefreshreviews_POST tests the POST /api/v1/reviews/book/{bookId}/refresh endpoint
 func TestRefreshreviews_POST(t *testing.T) {
@@ -1098,7 +1030,6 @@ func TestRefreshreviews_POST(t *testing.T) {
 	_ = ctx
 }
 
-
 // TestRecordreadingsession_POST tests the POST /api/v1/reading-sessions endpoint
 func TestRecordreadingsession_POST(t *testing.T) {
 	ctx := context.Background()
@@ -1113,7 +1044,6 @@ func TestRecordreadingsession_POST(t *testing.T) {
 	_ = client
 	_ = ctx
 }
-
 
 // TestGetlibraries_GET tests the GET /api/v1/libraries endpoint
 func TestGetlibraries_GET(t *testing.T) {
@@ -1130,7 +1060,6 @@ func TestGetlibraries_GET(t *testing.T) {
 	_ = ctx
 }
 
-
 // TestCreatelibrary_POST tests the POST /api/v1/libraries endpoint
 func TestCreatelibrary_POST(t *testing.T) {
 	ctx := context.Background()
@@ -1145,7 +1074,6 @@ func TestCreatelibrary_POST(t *testing.T) {
 	_ = client
 	_ = ctx
 }
-
 
 // TestScanlibrarypaths_POST tests the POST /api/v1/libraries/scan endpoint
 func TestScanlibrarypaths_POST(t *testing.T) {
@@ -1162,7 +1090,6 @@ func TestScanlibrarypaths_POST(t *testing.T) {
 	_ = ctx
 }
 
-
 // TestGeticonnames_GET tests the GET /api/v1/icons endpoint
 func TestGeticonnames_GET(t *testing.T) {
 	ctx := context.Background()
@@ -1177,7 +1104,6 @@ func TestGeticonnames_GET(t *testing.T) {
 	_ = client
 	_ = ctx
 }
-
 
 // TestSavesvgicon_POST tests the POST /api/v1/icons endpoint
 func TestSavesvgicon_POST(t *testing.T) {
@@ -1194,7 +1120,6 @@ func TestSavesvgicon_POST(t *testing.T) {
 	_ = ctx
 }
 
-
 // TestSavebatchsvgicons_POST tests the POST /api/v1/icons/batch endpoint
 func TestSavebatchsvgicons_POST(t *testing.T) {
 	ctx := context.Background()
@@ -1209,7 +1134,6 @@ func TestSavebatchsvgicons_POST(t *testing.T) {
 	_ = client
 	_ = ctx
 }
-
 
 // TestUploadfile_POST tests the POST /api/v1/files/upload endpoint
 func TestUploadfile_POST(t *testing.T) {
@@ -1226,7 +1150,6 @@ func TestUploadfile_POST(t *testing.T) {
 	_ = ctx
 }
 
-
 // TestUploadfile1_POST tests the POST /api/v1/files/upload/bookdrop endpoint
 func TestUploadfile1_POST(t *testing.T) {
 	ctx := context.Background()
@@ -1241,7 +1164,6 @@ func TestUploadfile1_POST(t *testing.T) {
 	_ = client
 	_ = ctx
 }
-
 
 // TestMovefiles_POST tests the POST /api/v1/files/move endpoint
 func TestMovefiles_POST(t *testing.T) {
@@ -1258,7 +1180,6 @@ func TestMovefiles_POST(t *testing.T) {
 	_ = ctx
 }
 
-
 // TestUploadfont_POST tests the POST /api/v1/custom-fonts/upload endpoint
 func TestUploadfont_POST(t *testing.T) {
 	ctx := context.Background()
@@ -1273,7 +1194,6 @@ func TestUploadfont_POST(t *testing.T) {
 	_ = client
 	_ = ctx
 }
-
 
 // TestAttachbookfiles_POST tests the POST /api/v1/books/{targetBookId}/attach-file endpoint
 func TestAttachbookfiles_POST(t *testing.T) {
@@ -1290,7 +1210,6 @@ func TestAttachbookfiles_POST(t *testing.T) {
 	_ = ctx
 }
 
-
 // TestRegeneratecovers_POST tests the POST /api/v1/books/{bookId}/regenerate-cover endpoint
 func TestRegeneratecovers_POST(t *testing.T) {
 	ctx := context.Background()
@@ -1305,7 +1224,6 @@ func TestRegeneratecovers_POST(t *testing.T) {
 	_ = client
 	_ = ctx
 }
-
 
 // TestGetmetadatalist_POST tests the POST /api/v1/books/{bookId}/metadata/prospective endpoint
 func TestGetmetadatalist_POST(t *testing.T) {
@@ -1322,7 +1240,6 @@ func TestGetmetadatalist_POST(t *testing.T) {
 	_ = ctx
 }
 
-
 // TestGetimages_POST tests the POST /api/v1/books/{bookId}/metadata/covers endpoint
 func TestGetimages_POST(t *testing.T) {
 	ctx := context.Background()
@@ -1337,7 +1254,6 @@ func TestGetimages_POST(t *testing.T) {
 	_ = client
 	_ = ctx
 }
-
 
 // TestUploadcoverfromfile_POST tests the POST /api/v1/books/{bookId}/metadata/cover/upload endpoint
 func TestUploadcoverfromfile_POST(t *testing.T) {
@@ -1354,7 +1270,6 @@ func TestUploadcoverfromfile_POST(t *testing.T) {
 	_ = ctx
 }
 
-
 // TestUploadcoverfromurl_POST tests the POST /api/v1/books/{bookId}/metadata/cover/from-url endpoint
 func TestUploadcoverfromurl_POST(t *testing.T) {
 	ctx := context.Background()
@@ -1369,7 +1284,6 @@ func TestUploadcoverfromurl_POST(t *testing.T) {
 	_ = client
 	_ = ctx
 }
-
 
 // TestGeneratecustomcover_POST tests the POST /api/v1/books/{bookId}/generate-custom-cover endpoint
 func TestGeneratecustomcover_POST(t *testing.T) {
@@ -1386,7 +1300,6 @@ func TestGeneratecustomcover_POST(t *testing.T) {
 	_ = ctx
 }
 
-
 // TestGetadditionalfiles_GET tests the GET /api/v1/books/{bookId}/files endpoint
 func TestGetadditionalfiles_GET(t *testing.T) {
 	ctx := context.Background()
@@ -1401,7 +1314,6 @@ func TestGetadditionalfiles_GET(t *testing.T) {
 	_ = client
 	_ = ctx
 }
-
 
 // TestUploadadditionalfile_POST tests the POST /api/v1/books/{bookId}/files endpoint
 func TestUploadadditionalfile_POST(t *testing.T) {
@@ -1418,7 +1330,6 @@ func TestUploadadditionalfile_POST(t *testing.T) {
 	_ = ctx
 }
 
-
 // TestUpdatereadstatus_POST tests the POST /api/v1/books/status endpoint
 func TestUpdatereadstatus_POST(t *testing.T) {
 	ctx := context.Background()
@@ -1433,7 +1344,6 @@ func TestUpdatereadstatus_POST(t *testing.T) {
 	_ = client
 	_ = ctx
 }
-
 
 // TestAddbooktoshelf_POST tests the POST /api/v1/books/shelves endpoint
 func TestAddbooktoshelf_POST(t *testing.T) {
@@ -1450,7 +1360,6 @@ func TestAddbooktoshelf_POST(t *testing.T) {
 	_ = ctx
 }
 
-
 // TestResetprogress_POST tests the POST /api/v1/books/reset-progress endpoint
 func TestResetprogress_POST(t *testing.T) {
 	ctx := context.Background()
@@ -1465,7 +1374,6 @@ func TestResetprogress_POST(t *testing.T) {
 	_ = client
 	_ = ctx
 }
-
 
 // TestResetpersonalrating_POST tests the POST /api/v1/books/reset-personal-rating endpoint
 func TestResetpersonalrating_POST(t *testing.T) {
@@ -1482,7 +1390,6 @@ func TestResetpersonalrating_POST(t *testing.T) {
 	_ = ctx
 }
 
-
 // TestRegeneratecovers1_POST tests the POST /api/v1/books/regenerate-covers endpoint
 func TestRegeneratecovers1_POST(t *testing.T) {
 	ctx := context.Background()
@@ -1497,7 +1404,6 @@ func TestRegeneratecovers1_POST(t *testing.T) {
 	_ = client
 	_ = ctx
 }
-
 
 // TestAddbooktoprogress_POST tests the POST /api/v1/books/progress endpoint
 func TestAddbooktoprogress_POST(t *testing.T) {
@@ -1514,7 +1420,6 @@ func TestAddbooktoprogress_POST(t *testing.T) {
 	_ = ctx
 }
 
-
 // TestCreatephysicalbook_POST tests the POST /api/v1/books/physical endpoint
 func TestCreatephysicalbook_POST(t *testing.T) {
 	ctx := context.Background()
@@ -1529,7 +1434,6 @@ func TestCreatephysicalbook_POST(t *testing.T) {
 	_ = client
 	_ = ctx
 }
-
 
 // TestRecalculatematchscores_POST tests the POST /api/v1/books/metadata/recalculate-match-scores endpoint
 func TestRecalculatematchscores_POST(t *testing.T) {
@@ -1546,7 +1450,6 @@ func TestRecalculatematchscores_POST(t *testing.T) {
 	_ = ctx
 }
 
-
 // TestDeletemetadata_POST tests the POST /api/v1/books/metadata/manage/delete endpoint
 func TestDeletemetadata_POST(t *testing.T) {
 	ctx := context.Background()
@@ -1561,7 +1464,6 @@ func TestDeletemetadata_POST(t *testing.T) {
 	_ = client
 	_ = ctx
 }
-
 
 // TestMergemetadata_POST tests the POST /api/v1/books/metadata/manage/consolidate endpoint
 func TestMergemetadata_POST(t *testing.T) {
@@ -1578,7 +1480,6 @@ func TestMergemetadata_POST(t *testing.T) {
 	_ = ctx
 }
 
-
 // TestBulkuploadcover_POST tests the POST /api/v1/books/bulk-upload-cover endpoint
 func TestBulkuploadcover_POST(t *testing.T) {
 	ctx := context.Background()
@@ -1593,7 +1494,6 @@ func TestBulkuploadcover_POST(t *testing.T) {
 	_ = client
 	_ = ctx
 }
-
 
 // TestRegeneratecoversforbooks_POST tests the POST /api/v1/books/bulk-regenerate-covers endpoint
 func TestRegeneratecoversforbooks_POST(t *testing.T) {
@@ -1610,7 +1510,6 @@ func TestRegeneratecoversforbooks_POST(t *testing.T) {
 	_ = ctx
 }
 
-
 // TestGeneratecustomcoversforbooks_POST tests the POST /api/v1/books/bulk-generate-custom-covers endpoint
 func TestGeneratecustomcoversforbooks_POST(t *testing.T) {
 	ctx := context.Background()
@@ -1625,7 +1524,6 @@ func TestGeneratecustomcoversforbooks_POST(t *testing.T) {
 	_ = client
 	_ = ctx
 }
-
 
 // TestCreatebookmark_POST tests the POST /api/v1/bookmarks endpoint
 func TestCreatebookmark_POST(t *testing.T) {
@@ -1642,7 +1540,6 @@ func TestCreatebookmark_POST(t *testing.T) {
 	_ = ctx
 }
 
-
 // TestRescanbookdrop_POST tests the POST /api/v1/bookdrop/rescan endpoint
 func TestRescanbookdrop_POST(t *testing.T) {
 	ctx := context.Background()
@@ -1657,7 +1554,6 @@ func TestRescanbookdrop_POST(t *testing.T) {
 	_ = client
 	_ = ctx
 }
-
 
 // TestFinalizeimport_POST tests the POST /api/v1/bookdrop/imports/finalize endpoint
 func TestFinalizeimport_POST(t *testing.T) {
@@ -1674,7 +1570,6 @@ func TestFinalizeimport_POST(t *testing.T) {
 	_ = ctx
 }
 
-
 // TestExtractfrompattern_POST tests the POST /api/v1/bookdrop/files/extract-pattern endpoint
 func TestExtractfrompattern_POST(t *testing.T) {
 	ctx := context.Background()
@@ -1689,7 +1584,6 @@ func TestExtractfrompattern_POST(t *testing.T) {
 	_ = client
 	_ = ctx
 }
-
 
 // TestDiscardselectedfiles_POST tests the POST /api/v1/bookdrop/files/discard endpoint
 func TestDiscardselectedfiles_POST(t *testing.T) {
@@ -1706,7 +1600,6 @@ func TestDiscardselectedfiles_POST(t *testing.T) {
 	_ = ctx
 }
 
-
 // TestBulkeditmetadata1_POST tests the POST /api/v1/bookdrop/files/bulk-edit endpoint
 func TestBulkeditmetadata1_POST(t *testing.T) {
 	ctx := context.Background()
@@ -1721,7 +1614,6 @@ func TestBulkeditmetadata1_POST(t *testing.T) {
 	_ = client
 	_ = ctx
 }
-
 
 // TestCreatenote1_POST tests the POST /api/v1/book-notes endpoint
 func TestCreatenote1_POST(t *testing.T) {
@@ -1738,7 +1630,6 @@ func TestCreatenote1_POST(t *testing.T) {
 	_ = ctx
 }
 
-
 // TestRegisteruser_POST tests the POST /api/v1/auth/register endpoint
 func TestRegisteruser_POST(t *testing.T) {
 	ctx := context.Background()
@@ -1753,7 +1644,6 @@ func TestRegisteruser_POST(t *testing.T) {
 	_ = client
 	_ = ctx
 }
-
 
 // TestRefreshtoken_POST tests the POST /api/v1/auth/refresh endpoint
 func TestRefreshtoken_POST(t *testing.T) {
@@ -1770,7 +1660,6 @@ func TestRefreshtoken_POST(t *testing.T) {
 	_ = ctx
 }
 
-
 // TestHandleoidccallback_POST tests the POST /api/v1/auth/mobile/oidc/callback endpoint
 func TestHandleoidccallback_POST(t *testing.T) {
 	ctx := context.Background()
@@ -1785,7 +1674,6 @@ func TestHandleoidccallback_POST(t *testing.T) {
 	_ = client
 	_ = ctx
 }
-
 
 // TestLoginuser_POST tests the POST /api/v1/auth/login endpoint
 func TestLoginuser_POST(t *testing.T) {
@@ -1802,7 +1690,6 @@ func TestLoginuser_POST(t *testing.T) {
 	_ = ctx
 }
 
-
 // TestCreateannotation_POST tests the POST /api/v1/annotations endpoint
 func TestCreateannotation_POST(t *testing.T) {
 	ctx := context.Background()
@@ -1817,7 +1704,6 @@ func TestCreateannotation_POST(t *testing.T) {
 	_ = client
 	_ = ctx
 }
-
 
 // TestUpdateproposalstatus_POST tests the POST /api/metadata/tasks/{taskId}/proposals/{proposalId}/status endpoint
 func TestUpdateproposalstatus_POST(t *testing.T) {
@@ -1834,7 +1720,6 @@ func TestUpdateproposalstatus_POST(t *testing.T) {
 	_ = ctx
 }
 
-
 // TestGetallforuser_GET tests the GET /api/magic-shelves endpoint
 func TestGetallforuser_GET(t *testing.T) {
 	ctx := context.Background()
@@ -1849,7 +1734,6 @@ func TestGetallforuser_GET(t *testing.T) {
 	_ = client
 	_ = ctx
 }
-
 
 // TestCreateupdateshelf_POST tests the POST /api/magic-shelves endpoint
 func TestCreateupdateshelf_POST(t *testing.T) {
@@ -1866,7 +1750,6 @@ func TestCreateupdateshelf_POST(t *testing.T) {
 	_ = ctx
 }
 
-
 // TestCreateuser1_POST tests the POST /api/koreader/users/create endpoint
 func TestCreateuser1_POST(t *testing.T) {
 	ctx := context.Background()
@@ -1881,7 +1764,6 @@ func TestCreateuser1_POST(t *testing.T) {
 	_ = client
 	_ = ctx
 }
-
 
 // TestAuthenticatedevice_POST tests the POST /api/kobo/{token}/v1/auth/device endpoint
 func TestAuthenticatedevice_POST(t *testing.T) {
@@ -1898,7 +1780,6 @@ func TestAuthenticatedevice_POST(t *testing.T) {
 	_ = ctx
 }
 
-
 // TestGettests_POST tests the POST /api/kobo/{token}/v1/analytics/gettests endpoint
 func TestGettests_POST(t *testing.T) {
 	ctx := context.Background()
@@ -1913,7 +1794,6 @@ func TestGettests_POST(t *testing.T) {
 	_ = client
 	_ = ctx
 }
-
 
 // TestDeleteuser1_DELETE tests the DELETE /api/v2/opds-users/{id} endpoint
 func TestDeleteuser1_DELETE(t *testing.T) {
@@ -1930,7 +1810,6 @@ func TestDeleteuser1_DELETE(t *testing.T) {
 	_ = ctx
 }
 
-
 // TestUpdateuser1_PATCH tests the PATCH /api/v2/opds-users/{id} endpoint
 func TestUpdateuser1_PATCH(t *testing.T) {
 	ctx := context.Background()
@@ -1945,7 +1824,6 @@ func TestUpdateuser1_PATCH(t *testing.T) {
 	_ = client
 	_ = ctx
 }
-
 
 // TestSetdefaultemailrecipient_PATCH tests the PATCH /api/v2/email/recipients/{id}/set-default endpoint
 func TestSetdefaultemailrecipient_PATCH(t *testing.T) {
@@ -1962,7 +1840,6 @@ func TestSetdefaultemailrecipient_PATCH(t *testing.T) {
 	_ = ctx
 }
 
-
 // TestSetdefaultemailprovider_PATCH tests the PATCH /api/v2/email/providers/{id}/set-default endpoint
 func TestSetdefaultemailprovider_PATCH(t *testing.T) {
 	ctx := context.Background()
@@ -1977,7 +1854,6 @@ func TestSetdefaultemailprovider_PATCH(t *testing.T) {
 	_ = client
 	_ = ctx
 }
-
 
 // TestPatchcronconfig_PATCH tests the PATCH /api/v1/tasks/{taskType}/cron endpoint
 func TestPatchcronconfig_PATCH(t *testing.T) {
@@ -1994,7 +1870,6 @@ func TestPatchcronconfig_PATCH(t *testing.T) {
 	_ = ctx
 }
 
-
 // TestSetfilenamingpattern_PATCH tests the PATCH /api/v1/libraries/{libraryId}/file-naming-pattern endpoint
 func TestSetfilenamingpattern_PATCH(t *testing.T) {
 	ctx := context.Background()
@@ -2009,7 +1884,6 @@ func TestSetfilenamingpattern_PATCH(t *testing.T) {
 	_ = client
 	_ = ctx
 }
-
 
 // TestUpdatesyncenabled_PATCH tests the PATCH /api/v1/koreader-users/me/sync endpoint
 func TestUpdatesyncenabled_PATCH(t *testing.T) {
@@ -2026,7 +1900,6 @@ func TestUpdatesyncenabled_PATCH(t *testing.T) {
 	_ = ctx
 }
 
-
 // TestTogglesyncprogresswithbooklore_PATCH tests the PATCH /api/v1/koreader-users/me/sync-progress-with-booklore endpoint
 func TestTogglesyncprogresswithbooklore_PATCH(t *testing.T) {
 	ctx := context.Background()
@@ -2041,7 +1914,6 @@ func TestTogglesyncprogresswithbooklore_PATCH(t *testing.T) {
 	_ = client
 	_ = ctx
 }
-
 
 // TestGetcurrentuser1_GET tests the GET /komga/api/v2/users/me endpoint
 func TestGetcurrentuser1_GET(t *testing.T) {
@@ -2058,7 +1930,6 @@ func TestGetcurrentuser1_GET(t *testing.T) {
 	_ = ctx
 }
 
-
 // TestGetallseries_GET tests the GET /komga/api/v1/series endpoint
 func TestGetallseries_GET(t *testing.T) {
 	ctx := context.Background()
@@ -2073,7 +1944,6 @@ func TestGetallseries_GET(t *testing.T) {
 	_ = client
 	_ = ctx
 }
-
 
 // TestGetseries_GET tests the GET /komga/api/v1/series/{seriesId} endpoint
 func TestGetseries_GET(t *testing.T) {
@@ -2090,7 +1960,6 @@ func TestGetseries_GET(t *testing.T) {
 	_ = ctx
 }
 
-
 // TestGetseriesthumbnail_GET tests the GET /komga/api/v1/series/{seriesId}/thumbnail endpoint
 func TestGetseriesthumbnail_GET(t *testing.T) {
 	ctx := context.Background()
@@ -2105,7 +1974,6 @@ func TestGetseriesthumbnail_GET(t *testing.T) {
 	_ = client
 	_ = ctx
 }
-
 
 // TestGetseriesbooks_GET tests the GET /komga/api/v1/series/{seriesId}/books endpoint
 func TestGetseriesbooks_GET(t *testing.T) {
@@ -2122,7 +1990,6 @@ func TestGetseriesbooks_GET(t *testing.T) {
 	_ = ctx
 }
 
-
 // TestGetalllibraries_GET tests the GET /komga/api/v1/libraries endpoint
 func TestGetalllibraries_GET(t *testing.T) {
 	ctx := context.Background()
@@ -2137,7 +2004,6 @@ func TestGetalllibraries_GET(t *testing.T) {
 	_ = client
 	_ = ctx
 }
-
 
 // TestGetlibrary1_GET tests the GET /komga/api/v1/libraries/{libraryId} endpoint
 func TestGetlibrary1_GET(t *testing.T) {
@@ -2154,7 +2020,6 @@ func TestGetlibrary1_GET(t *testing.T) {
 	_ = ctx
 }
 
-
 // TestGetcollections_GET tests the GET /komga/api/v1/collections endpoint
 func TestGetcollections_GET(t *testing.T) {
 	ctx := context.Background()
@@ -2169,7 +2034,6 @@ func TestGetcollections_GET(t *testing.T) {
 	_ = client
 	_ = ctx
 }
-
 
 // TestGetallbooks_GET tests the GET /komga/api/v1/books endpoint
 func TestGetallbooks_GET(t *testing.T) {
@@ -2186,7 +2050,6 @@ func TestGetallbooks_GET(t *testing.T) {
 	_ = ctx
 }
 
-
 // TestGetbook_GET tests the GET /komga/api/v1/books/{bookId} endpoint
 func TestGetbook_GET(t *testing.T) {
 	ctx := context.Background()
@@ -2201,7 +2064,6 @@ func TestGetbook_GET(t *testing.T) {
 	_ = client
 	_ = ctx
 }
-
 
 // TestGetbookthumbnail_GET tests the GET /komga/api/v1/books/{bookId}/thumbnail endpoint
 func TestGetbookthumbnail_GET(t *testing.T) {
@@ -2218,7 +2080,6 @@ func TestGetbookthumbnail_GET(t *testing.T) {
 	_ = ctx
 }
 
-
 // TestGetbookpages_GET tests the GET /komga/api/v1/books/{bookId}/pages endpoint
 func TestGetbookpages_GET(t *testing.T) {
 	ctx := context.Background()
@@ -2233,7 +2094,6 @@ func TestGetbookpages_GET(t *testing.T) {
 	_ = client
 	_ = ctx
 }
-
 
 // TestGetbookpage_GET tests the GET /komga/api/v1/books/{bookId}/pages/{pageNumber} endpoint
 func TestGetbookpage_GET(t *testing.T) {
@@ -2250,7 +2110,6 @@ func TestGetbookpage_GET(t *testing.T) {
 	_ = ctx
 }
 
-
 // TestDownloadbook_GET tests the GET /komga/api/v1/books/{bookId}/file endpoint
 func TestDownloadbook_GET(t *testing.T) {
 	ctx := context.Background()
@@ -2265,7 +2124,6 @@ func TestDownloadbook_GET(t *testing.T) {
 	_ = client
 	_ = ctx
 }
-
 
 // TestGetnotesforbook_GET tests the GET /api/v2/book-notes/book/{bookId} endpoint
 func TestGetnotesforbook_GET(t *testing.T) {
@@ -2282,7 +2140,6 @@ func TestGetnotesforbook_GET(t *testing.T) {
 	_ = ctx
 }
 
-
 // TestGetversioninfo_GET tests the GET /api/v1/version endpoint
 func TestGetversioninfo_GET(t *testing.T) {
 	ctx := context.Background()
@@ -2297,7 +2154,6 @@ func TestGetversioninfo_GET(t *testing.T) {
 	_ = client
 	_ = ctx
 }
-
 
 // TestGetchangelogsincecurrent_GET tests the GET /api/v1/version/changelog endpoint
 func TestGetchangelogsincecurrent_GET(t *testing.T) {
@@ -2314,7 +2170,6 @@ func TestGetchangelogsincecurrent_GET(t *testing.T) {
 	_ = ctx
 }
 
-
 // TestGetallusers_GET tests the GET /api/v1/users endpoint
 func TestGetallusers_GET(t *testing.T) {
 	ctx := context.Background()
@@ -2329,7 +2184,6 @@ func TestGetallusers_GET(t *testing.T) {
 	_ = client
 	_ = ctx
 }
-
 
 // TestGetmyself_GET tests the GET /api/v1/users/me endpoint
 func TestGetmyself_GET(t *testing.T) {
@@ -2346,7 +2200,6 @@ func TestGetmyself_GET(t *testing.T) {
 	_ = ctx
 }
 
-
 // TestGettimelineforweek_GET tests the GET /api/v1/user-stats/timeline endpoint
 func TestGettimelineforweek_GET(t *testing.T) {
 	ctx := context.Background()
@@ -2361,7 +2214,6 @@ func TestGettimelineforweek_GET(t *testing.T) {
 	_ = client
 	_ = ctx
 }
-
 
 // TestGetreadingspeedforyear_GET tests the GET /api/v1/user-stats/speed endpoint
 func TestGetreadingspeedforyear_GET(t *testing.T) {
@@ -2378,7 +2230,6 @@ func TestGetreadingspeedforyear_GET(t *testing.T) {
 	_ = ctx
 }
 
-
 // TestGetpeakreadinghours_GET tests the GET /api/v1/user-stats/peak-hours endpoint
 func TestGetpeakreadinghours_GET(t *testing.T) {
 	ctx := context.Background()
@@ -2393,7 +2244,6 @@ func TestGetpeakreadinghours_GET(t *testing.T) {
 	_ = client
 	_ = ctx
 }
-
 
 // TestGetheatmapforyear_GET tests the GET /api/v1/user-stats/heatmap endpoint
 func TestGetheatmapforyear_GET(t *testing.T) {
@@ -2410,7 +2260,6 @@ func TestGetheatmapforyear_GET(t *testing.T) {
 	_ = ctx
 }
 
-
 // TestGetheatmapformonth_GET tests the GET /api/v1/user-stats/heatmap/monthly endpoint
 func TestGetheatmapformonth_GET(t *testing.T) {
 	ctx := context.Background()
@@ -2425,7 +2274,6 @@ func TestGetheatmapformonth_GET(t *testing.T) {
 	_ = client
 	_ = ctx
 }
-
 
 // TestGetgenrestatistics_GET tests the GET /api/v1/user-stats/genres endpoint
 func TestGetgenrestatistics_GET(t *testing.T) {
@@ -2442,7 +2290,6 @@ func TestGetgenrestatistics_GET(t *testing.T) {
 	_ = ctx
 }
 
-
 // TestGetfavoritereadingdays_GET tests the GET /api/v1/user-stats/favorite-days endpoint
 func TestGetfavoritereadingdays_GET(t *testing.T) {
 	ctx := context.Background()
@@ -2457,7 +2304,6 @@ func TestGetfavoritereadingdays_GET(t *testing.T) {
 	_ = client
 	_ = ctx
 }
-
 
 // TestGetcompletiontimeline_GET tests the GET /api/v1/user-stats/completion-timeline endpoint
 func TestGetcompletiontimeline_GET(t *testing.T) {
@@ -2474,7 +2320,6 @@ func TestGetcompletiontimeline_GET(t *testing.T) {
 	_ = ctx
 }
 
-
 // TestGetbookcompletionheatmap_GET tests the GET /api/v1/user-stats/book-completion-heatmap endpoint
 func TestGetbookcompletionheatmap_GET(t *testing.T) {
 	ctx := context.Background()
@@ -2489,7 +2334,6 @@ func TestGetbookcompletionheatmap_GET(t *testing.T) {
 	_ = client
 	_ = ctx
 }
-
 
 // TestGetavailabletasks_GET tests the GET /api/v1/tasks endpoint
 func TestGetavailabletasks_GET(t *testing.T) {
@@ -2506,7 +2350,6 @@ func TestGetavailabletasks_GET(t *testing.T) {
 	_ = ctx
 }
 
-
 // TestGetlatesttasksforeachtype_GET tests the GET /api/v1/tasks/last endpoint
 func TestGetlatesttasksforeachtype_GET(t *testing.T) {
 	ctx := context.Background()
@@ -2521,7 +2364,6 @@ func TestGetlatesttasksforeachtype_GET(t *testing.T) {
 	_ = client
 	_ = ctx
 }
-
 
 // TestGetshelfbooks_GET tests the GET /api/v1/shelves/{shelfId}/books endpoint
 func TestGetshelfbooks_GET(t *testing.T) {
@@ -2538,7 +2380,6 @@ func TestGetshelfbooks_GET(t *testing.T) {
 	_ = ctx
 }
 
-
 // TestGetsetupstatus_GET tests the GET /api/v1/setup/status endpoint
 func TestGetsetupstatus_GET(t *testing.T) {
 	ctx := context.Background()
@@ -2553,7 +2394,6 @@ func TestGetsetupstatus_GET(t *testing.T) {
 	_ = client
 	_ = ctx
 }
-
 
 // TestListbybook_GET tests the GET /api/v1/reviews/book/{bookId} endpoint
 func TestListbybook_GET(t *testing.T) {
@@ -2570,7 +2410,6 @@ func TestListbybook_GET(t *testing.T) {
 	_ = ctx
 }
 
-
 // TestDeleteallbybookid_DELETE tests the DELETE /api/v1/reviews/book/{bookId} endpoint
 func TestDeleteallbybookid_DELETE(t *testing.T) {
 	ctx := context.Background()
@@ -2585,7 +2424,6 @@ func TestDeleteallbybookid_DELETE(t *testing.T) {
 	_ = client
 	_ = ctx
 }
-
 
 // TestGetreadingsessionsforbook_GET tests the GET /api/v1/reading-sessions/book/{bookId} endpoint
 func TestGetreadingsessionsforbook_GET(t *testing.T) {
@@ -2602,7 +2440,6 @@ func TestGetreadingsessionsforbook_GET(t *testing.T) {
 	_ = ctx
 }
 
-
 // TestGetpublicsettings_GET tests the GET /api/v1/public-settings endpoint
 func TestGetpublicsettings_GET(t *testing.T) {
 	ctx := context.Background()
@@ -2617,7 +2454,6 @@ func TestGetpublicsettings_GET(t *testing.T) {
 	_ = client
 	_ = ctx
 }
-
 
 // TestListpages_GET tests the GET /api/v1/pdf/{bookId}/pages endpoint
 func TestListpages_GET(t *testing.T) {
@@ -2634,7 +2470,6 @@ func TestListpages_GET(t *testing.T) {
 	_ = ctx
 }
 
-
 // TestGetbookinfo_GET tests the GET /api/v1/pdf/{bookId}/info endpoint
 func TestGetbookinfo_GET(t *testing.T) {
 	ctx := context.Background()
@@ -2649,7 +2484,6 @@ func TestGetbookinfo_GET(t *testing.T) {
 	_ = client
 	_ = ctx
 }
-
 
 // TestGetfolders_GET tests the GET /api/v1/path endpoint
 func TestGetfolders_GET(t *testing.T) {
@@ -2666,7 +2500,6 @@ func TestGetfolders_GET(t *testing.T) {
 	_ = ctx
 }
 
-
 // TestGetrootcatalog_GET tests the GET /api/v1/opds endpoint
 func TestGetrootcatalog_GET(t *testing.T) {
 	ctx := context.Background()
@@ -2681,7 +2514,6 @@ func TestGetrootcatalog_GET(t *testing.T) {
 	_ = client
 	_ = ctx
 }
-
 
 // TestDownloadbook1_GET tests the GET /api/v1/opds/{bookId}/download endpoint
 func TestDownloadbook1_GET(t *testing.T) {
@@ -2698,7 +2530,6 @@ func TestDownloadbook1_GET(t *testing.T) {
 	_ = ctx
 }
 
-
 // TestGetbookcover_GET tests the GET /api/v1/opds/{bookId}/cover endpoint
 func TestGetbookcover_GET(t *testing.T) {
 	ctx := context.Background()
@@ -2713,7 +2544,6 @@ func TestGetbookcover_GET(t *testing.T) {
 	_ = client
 	_ = ctx
 }
-
 
 // TestGetsurprisefeed_GET tests the GET /api/v1/opds/surprise endpoint
 func TestGetsurprisefeed_GET(t *testing.T) {
@@ -2730,7 +2560,6 @@ func TestGetsurprisefeed_GET(t *testing.T) {
 	_ = ctx
 }
 
-
 // TestGetshelvesnavigation_GET tests the GET /api/v1/opds/shelves endpoint
 func TestGetshelvesnavigation_GET(t *testing.T) {
 	ctx := context.Background()
@@ -2745,7 +2574,6 @@ func TestGetshelvesnavigation_GET(t *testing.T) {
 	_ = client
 	_ = ctx
 }
-
 
 // TestGetseriesnavigation_GET tests the GET /api/v1/opds/series endpoint
 func TestGetseriesnavigation_GET(t *testing.T) {
@@ -2762,7 +2590,6 @@ func TestGetseriesnavigation_GET(t *testing.T) {
 	_ = ctx
 }
 
-
 // TestGetsearchdescription_GET tests the GET /api/v1/opds/search.opds endpoint
 func TestGetsearchdescription_GET(t *testing.T) {
 	ctx := context.Background()
@@ -2777,7 +2604,6 @@ func TestGetsearchdescription_GET(t *testing.T) {
 	_ = client
 	_ = ctx
 }
-
 
 // TestGetrecentbooks_GET tests the GET /api/v1/opds/recent endpoint
 func TestGetrecentbooks_GET(t *testing.T) {
@@ -2794,7 +2620,6 @@ func TestGetrecentbooks_GET(t *testing.T) {
 	_ = ctx
 }
 
-
 // TestGetmagicshelvesnavigation_GET tests the GET /api/v1/opds/magic-shelves endpoint
 func TestGetmagicshelvesnavigation_GET(t *testing.T) {
 	ctx := context.Background()
@@ -2809,7 +2634,6 @@ func TestGetmagicshelvesnavigation_GET(t *testing.T) {
 	_ = client
 	_ = ctx
 }
-
 
 // TestGetlibrariesnavigation_GET tests the GET /api/v1/opds/libraries endpoint
 func TestGetlibrariesnavigation_GET(t *testing.T) {
@@ -2826,7 +2650,6 @@ func TestGetlibrariesnavigation_GET(t *testing.T) {
 	_ = ctx
 }
 
-
 // TestGetcatalog_GET tests the GET /api/v1/opds/catalog endpoint
 func TestGetcatalog_GET(t *testing.T) {
 	ctx := context.Background()
@@ -2841,7 +2664,6 @@ func TestGetcatalog_GET(t *testing.T) {
 	_ = client
 	_ = ctx
 }
-
 
 // TestGetauthorsnavigation_GET tests the GET /api/v1/opds/authors endpoint
 func TestGetauthorsnavigation_GET(t *testing.T) {
@@ -2858,7 +2680,6 @@ func TestGetauthorsnavigation_GET(t *testing.T) {
 	_ = ctx
 }
 
-
 // TestGetbookdropcover_GET tests the GET /api/v1/media/bookdrop/{bookdropId}/cover endpoint
 func TestGetbookdropcover_GET(t *testing.T) {
 	ctx := context.Background()
@@ -2873,7 +2694,6 @@ func TestGetbookdropcover_GET(t *testing.T) {
 	_ = client
 	_ = ctx
 }
-
 
 // TestGetbookthumbnail1_GET tests the GET /api/v1/media/book/{bookId}/thumbnail endpoint
 func TestGetbookthumbnail1_GET(t *testing.T) {
@@ -2890,7 +2710,6 @@ func TestGetbookthumbnail1_GET(t *testing.T) {
 	_ = ctx
 }
 
-
 // TestGetpdfpage_GET tests the GET /api/v1/media/book/{bookId}/pdf/pages/{pageNumber} endpoint
 func TestGetpdfpage_GET(t *testing.T) {
 	ctx := context.Background()
@@ -2905,7 +2724,6 @@ func TestGetpdfpage_GET(t *testing.T) {
 	_ = client
 	_ = ctx
 }
-
 
 // TestGetbookcover1_GET tests the GET /api/v1/media/book/{bookId}/cover endpoint
 func TestGetbookcover1_GET(t *testing.T) {
@@ -2922,7 +2740,6 @@ func TestGetbookcover1_GET(t *testing.T) {
 	_ = ctx
 }
 
-
 // TestGetcbxpage_GET tests the GET /api/v1/media/book/{bookId}/cbx/pages/{pageNumber} endpoint
 func TestGetcbxpage_GET(t *testing.T) {
 	ctx := context.Background()
@@ -2937,7 +2754,6 @@ func TestGetcbxpage_GET(t *testing.T) {
 	_ = client
 	_ = ctx
 }
-
 
 // TestGetbooks_GET tests the GET /api/v1/libraries/{libraryId}/book endpoint
 func TestGetbooks_GET(t *testing.T) {
@@ -2954,7 +2770,6 @@ func TestGetbooks_GET(t *testing.T) {
 	_ = ctx
 }
 
-
 // TestGetbook1_GET tests the GET /api/v1/libraries/{libraryId}/book/{bookId} endpoint
 func TestGetbook1_GET(t *testing.T) {
 	ctx := context.Background()
@@ -2969,7 +2784,6 @@ func TestGetbook1_GET(t *testing.T) {
 	_ = client
 	_ = ctx
 }
-
 
 // TestGetsvgiconcontent_GET tests the GET /api/v1/icons/{svgName}/content endpoint
 func TestGetsvgiconcontent_GET(t *testing.T) {
@@ -2986,7 +2800,6 @@ func TestGetsvgiconcontent_GET(t *testing.T) {
 	_ = ctx
 }
 
-
 // TestGetalliconscontent_GET tests the GET /api/v1/icons/all/content endpoint
 func TestGetalliconscontent_GET(t *testing.T) {
 	ctx := context.Background()
@@ -3001,7 +2814,6 @@ func TestGetalliconscontent_GET(t *testing.T) {
 	_ = client
 	_ = ctx
 }
-
 
 // TestGetping_GET tests the GET /api/v1/healthcheck endpoint
 func TestGetping_GET(t *testing.T) {
@@ -3018,7 +2830,6 @@ func TestGetping_GET(t *testing.T) {
 	_ = ctx
 }
 
-
 // TestGetbookinfo1_GET tests the GET /api/v1/epub/{bookId}/info endpoint
 func TestGetbookinfo1_GET(t *testing.T) {
 	ctx := context.Background()
@@ -3033,7 +2844,6 @@ func TestGetbookinfo1_GET(t *testing.T) {
 	_ = client
 	_ = ctx
 }
-
 
 // TestGetfile_GET tests the GET /api/v1/epub/{bookId}/file endpoint
 func TestGetfile_GET(t *testing.T) {
@@ -3050,7 +2860,6 @@ func TestGetfile_GET(t *testing.T) {
 	_ = ctx
 }
 
-
 // TestGetuserfonts_GET tests the GET /api/v1/custom-fonts endpoint
 func TestGetuserfonts_GET(t *testing.T) {
 	ctx := context.Background()
@@ -3065,7 +2874,6 @@ func TestGetuserfonts_GET(t *testing.T) {
 	_ = client
 	_ = ctx
 }
-
 
 // TestGetfontfile_GET tests the GET /api/v1/custom-fonts/{fontId}/file endpoint
 func TestGetfontfile_GET(t *testing.T) {
@@ -3082,7 +2890,6 @@ func TestGetfontfile_GET(t *testing.T) {
 	_ = ctx
 }
 
-
 // TestListpages1_GET tests the GET /api/v1/cbx/{bookId}/pages endpoint
 func TestListpages1_GET(t *testing.T) {
 	ctx := context.Background()
@@ -3097,7 +2904,6 @@ func TestListpages1_GET(t *testing.T) {
 	_ = client
 	_ = ctx
 }
-
 
 // TestGetpageinfo_GET tests the GET /api/v1/cbx/{bookId}/page-info endpoint
 func TestGetpageinfo_GET(t *testing.T) {
@@ -3114,7 +2920,6 @@ func TestGetpageinfo_GET(t *testing.T) {
 	_ = ctx
 }
 
-
 // TestGetbooks1_GET tests the GET /api/v1/books endpoint
 func TestGetbooks1_GET(t *testing.T) {
 	ctx := context.Background()
@@ -3129,7 +2934,6 @@ func TestGetbooks1_GET(t *testing.T) {
 	_ = client
 	_ = ctx
 }
-
 
 // TestDeletebooks_DELETE tests the DELETE /api/v1/books endpoint
 func TestDeletebooks_DELETE(t *testing.T) {
@@ -3146,7 +2950,6 @@ func TestDeletebooks_DELETE(t *testing.T) {
 	_ = ctx
 }
 
-
 // TestGetrecommendations_GET tests the GET /api/v1/books/{id}/recommendations endpoint
 func TestGetrecommendations_GET(t *testing.T) {
 	ctx := context.Background()
@@ -3161,7 +2964,6 @@ func TestGetrecommendations_GET(t *testing.T) {
 	_ = client
 	_ = ctx
 }
-
 
 // TestGetbook2_GET tests the GET /api/v1/books/{bookId} endpoint
 func TestGetbook2_GET(t *testing.T) {
@@ -3178,7 +2980,6 @@ func TestGetbook2_GET(t *testing.T) {
 	_ = ctx
 }
 
-
 // TestDownloadadditionalfile_GET tests the GET /api/v1/books/{bookId}/files/{fileId}/download endpoint
 func TestDownloadadditionalfile_GET(t *testing.T) {
 	ctx := context.Background()
@@ -3193,7 +2994,6 @@ func TestDownloadadditionalfile_GET(t *testing.T) {
 	_ = client
 	_ = ctx
 }
-
 
 // TestDownloadbook2_GET tests the GET /api/v1/books/{bookId}/download endpoint
 func TestDownloadbook2_GET(t *testing.T) {
@@ -3210,7 +3010,6 @@ func TestDownloadbook2_GET(t *testing.T) {
 	_ = ctx
 }
 
-
 // TestDownloadallbookfiles_GET tests the GET /api/v1/books/{bookId}/download-all endpoint
 func TestDownloadallbookfiles_GET(t *testing.T) {
 	ctx := context.Background()
@@ -3225,7 +3024,6 @@ func TestDownloadallbookfiles_GET(t *testing.T) {
 	_ = client
 	_ = ctx
 }
-
 
 // TestGetbookcontent_GET tests the GET /api/v1/books/{bookId}/content endpoint
 func TestGetbookcontent_GET(t *testing.T) {
@@ -3242,7 +3040,6 @@ func TestGetbookcontent_GET(t *testing.T) {
 	_ = ctx
 }
 
-
 // TestGetcomicinfometadata_GET tests the GET /api/v1/books/{bookId}/cbx/metadata/comicinfo endpoint
 func TestGetcomicinfometadata_GET(t *testing.T) {
 	ctx := context.Background()
@@ -3257,7 +3054,6 @@ func TestGetcomicinfometadata_GET(t *testing.T) {
 	_ = client
 	_ = ctx
 }
-
 
 // TestGetbooksbyids_GET tests the GET /api/v1/books/batch endpoint
 func TestGetbooksbyids_GET(t *testing.T) {
@@ -3274,7 +3070,6 @@ func TestGetbooksbyids_GET(t *testing.T) {
 	_ = ctx
 }
 
-
 // TestGetbookmarksforbook_GET tests the GET /api/v1/bookmarks/book/{bookId} endpoint
 func TestGetbookmarksforbook_GET(t *testing.T) {
 	ctx := context.Background()
@@ -3289,7 +3084,6 @@ func TestGetbookmarksforbook_GET(t *testing.T) {
 	_ = client
 	_ = ctx
 }
-
 
 // TestGetsummary_GET tests the GET /api/v1/bookdrop/notification endpoint
 func TestGetsummary_GET(t *testing.T) {
@@ -3306,7 +3100,6 @@ func TestGetsummary_GET(t *testing.T) {
 	_ = ctx
 }
 
-
 // TestGetfilesbystatus_GET tests the GET /api/v1/bookdrop/files endpoint
 func TestGetfilesbystatus_GET(t *testing.T) {
 	ctx := context.Background()
@@ -3321,7 +3114,6 @@ func TestGetfilesbystatus_GET(t *testing.T) {
 	_ = client
 	_ = ctx
 }
-
 
 // TestGetnotesforbook1_GET tests the GET /api/v1/book-notes/book/{bookId} endpoint
 func TestGetnotesforbook1_GET(t *testing.T) {
@@ -3338,7 +3130,6 @@ func TestGetnotesforbook1_GET(t *testing.T) {
 	_ = ctx
 }
 
-
 // TestGetauthorsbybookid_GET tests the GET /api/v1/authors/book/{bookId} endpoint
 func TestGetauthorsbybookid_GET(t *testing.T) {
 	ctx := context.Background()
@@ -3353,7 +3144,6 @@ func TestGetauthorsbybookid_GET(t *testing.T) {
 	_ = client
 	_ = ctx
 }
-
 
 // TestLoginremote_GET tests the GET /api/v1/auth/remote endpoint
 func TestLoginremote_GET(t *testing.T) {
@@ -3370,7 +3160,6 @@ func TestLoginremote_GET(t *testing.T) {
 	_ = ctx
 }
 
-
 // TestHandleoidcredirect_GET tests the GET /api/v1/auth/mobile/oidc/redirect endpoint
 func TestHandleoidcredirect_GET(t *testing.T) {
 	ctx := context.Background()
@@ -3385,7 +3174,6 @@ func TestHandleoidcredirect_GET(t *testing.T) {
 	_ = client
 	_ = ctx
 }
-
 
 // TestStreamtrack_GET tests the GET /api/v1/audiobook/{bookId}/track/{trackIndex}/stream endpoint
 func TestStreamtrack_GET(t *testing.T) {
@@ -3402,7 +3190,6 @@ func TestStreamtrack_GET(t *testing.T) {
 	_ = ctx
 }
 
-
 // TestStreamaudiobook_GET tests the GET /api/v1/audiobook/{bookId}/stream endpoint
 func TestStreamaudiobook_GET(t *testing.T) {
 	ctx := context.Background()
@@ -3417,7 +3204,6 @@ func TestStreamaudiobook_GET(t *testing.T) {
 	_ = client
 	_ = ctx
 }
-
 
 // TestGetaudiobookinfo_GET tests the GET /api/v1/audiobook/{bookId}/info endpoint
 func TestGetaudiobookinfo_GET(t *testing.T) {
@@ -3434,7 +3220,6 @@ func TestGetaudiobookinfo_GET(t *testing.T) {
 	_ = ctx
 }
 
-
 // TestGetembeddedcover_GET tests the GET /api/v1/audiobook/{bookId}/cover endpoint
 func TestGetembeddedcover_GET(t *testing.T) {
 	ctx := context.Background()
@@ -3449,7 +3234,6 @@ func TestGetembeddedcover_GET(t *testing.T) {
 	_ = client
 	_ = ctx
 }
-
 
 // TestGetannotationsforbook_GET tests the GET /api/v1/annotations/book/{bookId} endpoint
 func TestGetannotationsforbook_GET(t *testing.T) {
@@ -3466,7 +3250,6 @@ func TestGetannotationsforbook_GET(t *testing.T) {
 	_ = ctx
 }
 
-
 // TestGetshelves_GET tests the GET /api/mobile/v1/shelves endpoint
 func TestGetshelves_GET(t *testing.T) {
 	ctx := context.Background()
@@ -3481,7 +3264,6 @@ func TestGetshelves_GET(t *testing.T) {
 	_ = client
 	_ = ctx
 }
-
 
 // TestGetmagicshelves_GET tests the GET /api/mobile/v1/shelves/magic endpoint
 func TestGetmagicshelves_GET(t *testing.T) {
@@ -3498,7 +3280,6 @@ func TestGetmagicshelves_GET(t *testing.T) {
 	_ = ctx
 }
 
-
 // TestGetlibraries1_GET tests the GET /api/mobile/v1/libraries endpoint
 func TestGetlibraries1_GET(t *testing.T) {
 	ctx := context.Background()
@@ -3513,7 +3294,6 @@ func TestGetlibraries1_GET(t *testing.T) {
 	_ = client
 	_ = ctx
 }
-
 
 // TestGetbooks2_GET tests the GET /api/mobile/v1/books endpoint
 func TestGetbooks2_GET(t *testing.T) {
@@ -3530,7 +3310,6 @@ func TestGetbooks2_GET(t *testing.T) {
 	_ = ctx
 }
 
-
 // TestGetbookdetail_GET tests the GET /api/mobile/v1/books/{bookId} endpoint
 func TestGetbookdetail_GET(t *testing.T) {
 	ctx := context.Background()
@@ -3545,7 +3324,6 @@ func TestGetbookdetail_GET(t *testing.T) {
 	_ = client
 	_ = ctx
 }
-
 
 // TestSearchbooks_GET tests the GET /api/mobile/v1/books/search endpoint
 func TestSearchbooks_GET(t *testing.T) {
@@ -3562,7 +3340,6 @@ func TestSearchbooks_GET(t *testing.T) {
 	_ = ctx
 }
 
-
 // TestGetrecentlyadded_GET tests the GET /api/mobile/v1/books/recently-added endpoint
 func TestGetrecentlyadded_GET(t *testing.T) {
 	ctx := context.Background()
@@ -3577,7 +3354,6 @@ func TestGetrecentlyadded_GET(t *testing.T) {
 	_ = client
 	_ = ctx
 }
-
 
 // TestGetbooksbymagicshelf_GET tests the GET /api/mobile/v1/books/magic-shelf/{magicShelfId} endpoint
 func TestGetbooksbymagicshelf_GET(t *testing.T) {
@@ -3594,7 +3370,6 @@ func TestGetbooksbymagicshelf_GET(t *testing.T) {
 	_ = ctx
 }
 
-
 // TestGetcontinuereading_GET tests the GET /api/mobile/v1/books/continue-reading endpoint
 func TestGetcontinuereading_GET(t *testing.T) {
 	ctx := context.Background()
@@ -3609,7 +3384,6 @@ func TestGetcontinuereading_GET(t *testing.T) {
 	_ = client
 	_ = ctx
 }
-
 
 // TestGettaskwithproposals_GET tests the GET /api/metadata/tasks/{taskId} endpoint
 func TestGettaskwithproposals_GET(t *testing.T) {
@@ -3626,7 +3400,6 @@ func TestGettaskwithproposals_GET(t *testing.T) {
 	_ = ctx
 }
 
-
 // TestDeletetask_DELETE tests the DELETE /api/metadata/tasks/{taskId} endpoint
 func TestDeletetask_DELETE(t *testing.T) {
 	ctx := context.Background()
@@ -3641,7 +3414,6 @@ func TestDeletetask_DELETE(t *testing.T) {
 	_ = client
 	_ = ctx
 }
-
 
 // TestGetactivetasks_GET tests the GET /api/metadata/tasks/active endpoint
 func TestGetactivetasks_GET(t *testing.T) {
@@ -3658,7 +3430,6 @@ func TestGetactivetasks_GET(t *testing.T) {
 	_ = ctx
 }
 
-
 // TestGetshelf1_GET tests the GET /api/magic-shelves/{id} endpoint
 func TestGetshelf1_GET(t *testing.T) {
 	ctx := context.Background()
@@ -3673,7 +3444,6 @@ func TestGetshelf1_GET(t *testing.T) {
 	_ = client
 	_ = ctx
 }
-
 
 // TestDeleteshelf1_DELETE tests the DELETE /api/magic-shelves/{id} endpoint
 func TestDeleteshelf1_DELETE(t *testing.T) {
@@ -3690,7 +3460,6 @@ func TestDeleteshelf1_DELETE(t *testing.T) {
 	_ = ctx
 }
 
-
 // TestAuthorizeuser_GET tests the GET /api/koreader/users/auth endpoint
 func TestAuthorizeuser_GET(t *testing.T) {
 	ctx := context.Background()
@@ -3705,7 +3474,6 @@ func TestAuthorizeuser_GET(t *testing.T) {
 	_ = client
 	_ = ctx
 }
-
 
 // TestGetprogress_GET tests the GET /api/koreader/syncs/progress/{bookHash} endpoint
 func TestGetprogress_GET(t *testing.T) {
@@ -3722,7 +3490,6 @@ func TestGetprogress_GET(t *testing.T) {
 	_ = ctx
 }
 
-
 // TestGetbookmetadata_GET tests the GET /api/kobo/{token}/v1/library/{bookId}/metadata endpoint
 func TestGetbookmetadata_GET(t *testing.T) {
 	ctx := context.Background()
@@ -3737,7 +3504,6 @@ func TestGetbookmetadata_GET(t *testing.T) {
 	_ = client
 	_ = ctx
 }
-
 
 // TestSynclibrary_GET tests the GET /api/kobo/{token}/v1/library/sync endpoint
 func TestSynclibrary_GET(t *testing.T) {
@@ -3754,7 +3520,6 @@ func TestSynclibrary_GET(t *testing.T) {
 	_ = ctx
 }
 
-
 // TestInitialization_GET tests the GET /api/kobo/{token}/v1/initialization endpoint
 func TestInitialization_GET(t *testing.T) {
 	ctx := context.Background()
@@ -3769,7 +3534,6 @@ func TestInitialization_GET(t *testing.T) {
 	_ = client
 	_ = ctx
 }
-
 
 // TestGetversionedgreythumbnail_GET tests the GET /api/kobo/{token}/v1/books/{imageId}/{version}/thumbnail/{width}/{height}/{quality}/{isGreyscale}/image.jpg endpoint
 func TestGetversionedgreythumbnail_GET(t *testing.T) {
@@ -3786,7 +3550,6 @@ func TestGetversionedgreythumbnail_GET(t *testing.T) {
 	_ = ctx
 }
 
-
 // TestGetversionedthumbnail_GET tests the GET /api/kobo/{token}/v1/books/{imageId}/{version}/thumbnail/{width}/{height}/false/image.jpg endpoint
 func TestGetversionedthumbnail_GET(t *testing.T) {
 	ctx := context.Background()
@@ -3801,7 +3564,6 @@ func TestGetversionedthumbnail_GET(t *testing.T) {
 	_ = client
 	_ = ctx
 }
-
 
 // TestGetgreythumbnail_GET tests the GET /api/kobo/{token}/v1/books/{imageId}/thumbnail/{width}/{height}/{quality}/{isGreyscale}/image.jpg endpoint
 func TestGetgreythumbnail_GET(t *testing.T) {
@@ -3818,7 +3580,6 @@ func TestGetgreythumbnail_GET(t *testing.T) {
 	_ = ctx
 }
 
-
 // TestGetthumbnail_GET tests the GET /api/kobo/{token}/v1/books/{imageId}/thumbnail/{width}/{height}/false/image.jpg endpoint
 func TestGetthumbnail_GET(t *testing.T) {
 	ctx := context.Background()
@@ -3833,7 +3594,6 @@ func TestGetthumbnail_GET(t *testing.T) {
 	_ = client
 	_ = ctx
 }
-
 
 // TestDownloadbook3_GET tests the GET /api/kobo/{token}/v1/books/{bookId}/download endpoint
 func TestDownloadbook3_GET(t *testing.T) {
@@ -3850,7 +3610,6 @@ func TestDownloadbook3_GET(t *testing.T) {
 	_ = ctx
 }
 
-
 // TestCanceltask_DELETE tests the DELETE /api/v1/tasks/{taskId}/cancel endpoint
 func TestCanceltask_DELETE(t *testing.T) {
 	ctx := context.Background()
@@ -3865,7 +3624,6 @@ func TestCanceltask_DELETE(t *testing.T) {
 	_ = client
 	_ = ctx
 }
-
 
 // TestDelete_DELETE tests the DELETE /api/v1/reviews/{id} endpoint
 func TestDelete_DELETE(t *testing.T) {
@@ -3882,7 +3640,6 @@ func TestDelete_DELETE(t *testing.T) {
 	_ = ctx
 }
 
-
 // TestDeletesvgicon_DELETE tests the DELETE /api/v1/icons/{svgName} endpoint
 func TestDeletesvgicon_DELETE(t *testing.T) {
 	ctx := context.Background()
@@ -3897,7 +3654,6 @@ func TestDeletesvgicon_DELETE(t *testing.T) {
 	_ = client
 	_ = ctx
 }
-
 
 // TestDeletefont_DELETE tests the DELETE /api/v1/custom-fonts/{fontId} endpoint
 func TestDeletefont_DELETE(t *testing.T) {
@@ -3914,7 +3670,6 @@ func TestDeletefont_DELETE(t *testing.T) {
 	_ = ctx
 }
 
-
 // TestDeleteadditionalfile_DELETE tests the DELETE /api/v1/books/{bookId}/files/{fileId} endpoint
 func TestDeleteadditionalfile_DELETE(t *testing.T) {
 	ctx := context.Background()
@@ -3929,7 +3684,6 @@ func TestDeleteadditionalfile_DELETE(t *testing.T) {
 	_ = client
 	_ = ctx
 }
-
 
 // TestDeletenote1_DELETE tests the DELETE /api/v1/book-notes/{noteId} endpoint
 func TestDeletenote1_DELETE(t *testing.T) {
@@ -3946,7 +3700,6 @@ func TestDeletenote1_DELETE(t *testing.T) {
 	_ = ctx
 }
 
-
 // TestDeletebookfromlibrary_DELETE tests the DELETE /api/kobo/{token}/v1/library/{bookId} endpoint
 func TestDeletebookfromlibrary_DELETE(t *testing.T) {
 	ctx := context.Background()
@@ -3961,8 +3714,6 @@ func TestDeletebookfromlibrary_DELETE(t *testing.T) {
 	_ = client
 	_ = ctx
 }
-
-
 
 // setupTestClient creates a test client using environment variables
 func setupTestClient() (*ClientWithResponses, error) {
