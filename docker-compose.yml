@@ -1,0 +1,57 @@
+services:
+  # PostgreSQL database for Booklore
+  postgres:
+    image: postgres:16-alpine
+    container_name: booklore-db
+    environment:
+      POSTGRES_DB: booklore
+      POSTGRES_USER: booklore
+      POSTGRES_PASSWORD: booklore
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U booklore"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # Booklore API Server
+  booklore:
+    image: ghcr.io/booklore-app/booklore:latest
+    container_name: booklore-api
+    depends_on:
+      postgres:
+        condition: service_healthy
+    environment:
+      # Database configuration
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/booklore
+      SPRING_DATASOURCE_USERNAME: booklore
+      SPRING_DATASOURCE_PASSWORD: booklore
+
+      # Server configuration
+      SERVER_PORT: 8080
+      SERVER_SERVLET_CONTEXT_PATH: /
+
+      # JWT configuration (adjust as needed)
+      JWT_SECRET: dev-secret-key-change-in-production
+
+      # Optional: set log level for development
+      LOGGING_LEVEL_ROOT: INFO
+      LOGGING_LEVEL_COM_BOOKLORE: DEBUG
+    ports:
+      - "8080:8080"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/api/v1/healthcheck"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
+
+volumes:
+  postgres_data:
+
+networks:
+  default:
+    name: booklore-network

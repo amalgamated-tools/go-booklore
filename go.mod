@@ -2,7 +2,10 @@ module github.com/amalgamated-tools/go-booklore
 
 go 1.25.5
 
-require github.com/oapi-codegen/runtime v1.1.2
+require (
+	github.com/buger/jsonparser v1.1.1
+	github.com/oapi-codegen/runtime v1.1.2
+)
 
 require (
 	github.com/apapsch/go-jsonmerge/v2 v2.0.0 // indirect
