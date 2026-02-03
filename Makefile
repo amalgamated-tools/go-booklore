@@ -1,4 +1,4 @@
-.PHONY: help test test-coverage test-race test-short lint fmt vet build clean dev run migrate-up migrate-down migrate-create docker-up docker-down docker-logs docker-test
+.PHONY: help test test-coverage test-race test-short lint fmt vet build clean dev run migrate-up migrate-down migrate-create docker-up docker-down docker-logs docker-test docker-clean
 
 # Default target
 help:

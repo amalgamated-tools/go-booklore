@@ -13,7 +13,7 @@ make docker-up
 This will:
 1. Start a PostgreSQL database container
 2. Start the Booklore API server
-3. Wait for services to be healthy
+3. Pause briefly to allow services to start up
 
 The Booklore API will be available at `http://localhost:8080`
 
