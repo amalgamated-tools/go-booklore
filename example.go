@@ -25,10 +25,10 @@ func main() {
 
 	var endpoints []TestEndpoint
 
-	jsonparser.ObjectEach(specBytes, func(pathKey []byte, pathValue []byte, _ jsonparser.ValueType, _ int) error {
+	err = jsonparser.ObjectEach(specBytes, func(pathKey []byte, pathValue []byte, _ jsonparser.ValueType, _ int) error {
 		path := string(pathKey)
 
-		jsonparser.ObjectEach(pathValue, func(methodKey []byte, methodValue []byte, _ jsonparser.ValueType, _ int) error {
+		err = jsonparser.ObjectEach(pathValue, func(methodKey []byte, methodValue []byte, _ jsonparser.ValueType, _ int) error {
 			method := strings.ToUpper(string(methodKey))
 
 			// Skip non-HTTP methods
@@ -48,9 +48,15 @@ func main() {
 
 			return nil
 		})
-
+		if err != nil {
+			return err
+		}
 		return nil
 	}, "paths")
+
+	if err != nil {
+		panic(err)
+	}
 
 	// Generate test file
 	testCode := generateTestFile(endpoints)
