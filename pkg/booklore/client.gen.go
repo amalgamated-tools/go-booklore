@@ -4577,8 +4577,8 @@ type ClientInterface interface {
 	// GetAllBooks request
 	GetAllBooks(ctx context.Context, params *GetAllBooksParams, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	// GetBook request
-	GetBook(ctx context.Context, bookId int64, reqEditors ...RequestEditorFn) (*http.Response, error)
+	// GetKomgaBookById request
+	GetKomgaBookById(ctx context.Context, bookId int64, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// DownloadBook request
 	DownloadBook(ctx context.Context, bookId int64, reqEditors ...RequestEditorFn) (*http.Response, error)
@@ -8361,8 +8361,8 @@ func (c *Client) GetAllBooks(ctx context.Context, params *GetAllBooksParams, req
 	return c.Client.Do(req)
 }
 
-func (c *Client) GetBook(ctx context.Context, bookId int64, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewGetBookRequest(c.Server, bookId)
+func (c *Client) GetKomgaBookById(ctx context.Context, bookId int64, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetKomgaBookByIdRequest(c.Server, bookId)
 	if err != nil {
 		return nil, err
 	}
@@ -18102,8 +18102,8 @@ func NewGetAllBooksRequest(server string, params *GetAllBooksParams) (*http.Requ
 	return req, nil
 }
 
-// NewGetBookRequest generates requests for GetBook
-func NewGetBookRequest(server string, bookId int64) (*http.Request, error) {
+// NewGetKomgaBookByIdRequest generates requests for GetKomgaBookById
+func NewGetKomgaBookByIdRequest(server string, bookId int64) (*http.Request, error) {
 	var err error
 
 	var pathParam0 string
@@ -19580,8 +19580,8 @@ type ClientWithResponsesInterface interface {
 	// GetAllBooksWithResponse request
 	GetAllBooksWithResponse(ctx context.Context, params *GetAllBooksParams, reqEditors ...RequestEditorFn) (*GetAllBooksResponse, error)
 
-	// GetBookWithResponse request
-	GetBookWithResponse(ctx context.Context, bookId int64, reqEditors ...RequestEditorFn) (*GetBookResponse, error)
+	// GetKomgaBookByIdWithResponse request
+	GetKomgaBookByIdWithResponse(ctx context.Context, bookId int64, reqEditors ...RequestEditorFn) (*GetKomgaBookByIdResponse, error)
 
 	// DownloadBookWithResponse request
 	DownloadBookWithResponse(ctx context.Context, bookId int64, reqEditors ...RequestEditorFn) (*DownloadBookResponse, error)
@@ -24753,14 +24753,14 @@ func (r GetAllBooksResponse) StatusCode() int {
 	return 0
 }
 
-type GetBookResponse struct {
+type GetKomgaBookByIdResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
 	JSON200      *string
 }
 
 // Status returns HTTPResponse.Status
-func (r GetBookResponse) Status() string {
+func (r GetKomgaBookByIdResponse) Status() string {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.Status
 	}
@@ -24768,7 +24768,7 @@ func (r GetBookResponse) Status() string {
 }
 
 // StatusCode returns HTTPResponse.StatusCode
-func (r GetBookResponse) StatusCode() int {
+func (r GetKomgaBookByIdResponse) StatusCode() int {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.StatusCode
 	}
@@ -27769,13 +27769,13 @@ func (c *ClientWithResponses) GetAllBooksWithResponse(ctx context.Context, param
 	return ParseGetAllBooksResponse(rsp)
 }
 
-// GetBookWithResponse request returning *GetBookResponse
-func (c *ClientWithResponses) GetBookWithResponse(ctx context.Context, bookId int64, reqEditors ...RequestEditorFn) (*GetBookResponse, error) {
-	rsp, err := c.GetBook(ctx, bookId, reqEditors...)
+// GetKomgaBookByIdWithResponse request returning *GetKomgaBookByIdResponse
+func (c *ClientWithResponses) GetKomgaBookByIdWithResponse(ctx context.Context, bookId int64, reqEditors ...RequestEditorFn) (*GetKomgaBookByIdResponse, error) {
+	rsp, err := c.GetKomgaBookById(ctx, bookId, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
-	return ParseGetBookResponse(rsp)
+	return ParseGetKomgaBookByIdResponse(rsp)
 }
 
 // DownloadBookWithResponse request returning *DownloadBookResponse
@@ -33691,15 +33691,15 @@ func ParseGetAllBooksResponse(rsp *http.Response) (*GetAllBooksResponse, error) 
 	return response, nil
 }
 
-// ParseGetBookResponse parses an HTTP response from a GetBookWithResponse call
-func ParseGetBookResponse(rsp *http.Response) (*GetBookResponse, error) {
+// ParseGetKomgaBookByIdResponse parses an HTTP response from a GetKomgaBookByIdWithResponse call
+func ParseGetKomgaBookByIdResponse(rsp *http.Response) (*GetKomgaBookByIdResponse, error) {
 	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
 	}
 
-	response := &GetBookResponse{
+	response := &GetKomgaBookByIdResponse{
 		Body:         bodyBytes,
 		HTTPResponse: rsp,
 	}

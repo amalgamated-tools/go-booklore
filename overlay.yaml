@@ -101,3 +101,6 @@ actions:
        "/komga/api/v2/users/me":
          get:
            operationId: GetKomgaCurrentUser
+       "/komga/api/v1/books/{bookId}":
+         get:
+           operationId: GetKomgaBookById
